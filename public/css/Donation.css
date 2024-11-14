@@ -1,0 +1,580 @@
+html {
+    scroll-behavior: smooth;
+}
+.title-donate img{
+    width: 4vw;
+    height: auto;
+}
+
+    /* global selector */
+    /* any title on page give it this properties */
+    .title-donate {
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        grid-area: title;
+    }
+    .amount{
+        display: flex;
+        align-items: center;
+    }
+    .amount input{
+        display: flex;
+        width: 85%;
+    }
+    .amount span{
+    margin: 1vw;
+    font-size: 1.4vw;
+    }
+
+    .title-donate h1 {
+        position: relative;
+        font-size: 2vw;
+    }
+    .title-donate img {
+        margin: 0px 1vw; }
+
+    /* any button on page give it this properties */
+    .call-action {
+    font-size: 1.2vw;
+    justify-self: center;
+    box-shadow: 5px 5px 10px 5px #5b5b5b1f;
+    transition: 0.5s ease-in-out;
+    border-radius: 1vw;
+    cursor: pointer;
+    background-color: #35C0CA !important;
+    color: white !important;
+    font-weight: 600;
+    text-decoration: none !important; }
+
+    #AtherDonationWay .All-Donation-Ways .way button.active {
+        cursor: text;
+    }
+
+    #whyDonation .slider .direction a {
+        padding: 1.5vw 4vw;
+    }
+    #whyDonation .slider .direction img {
+        width: 6vw;
+    }
+    html[lang="ar"] #whyDonation .title-donate img {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+
+    .call-action-btn {
+        font-size: 1.2vw ;
+        box-shadow: 5px 5px 10px 5px #5b5b5b1f;
+        transition: 1s ease-in-out;
+        border-radius:1vw;
+        cursor: pointer;
+        background-color: #35C0CA ;
+        color: white ;
+        outline: none;
+        border: none;
+        font-weight: 600 ;
+    }
+
+    section {
+        margin: 5vw auto 5vw auto;
+    }
+    #whyDonation {
+        display: flex;
+        justify-content: center;
+        width: 80%;
+    }
+    #whyDonation .text-donate {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        grid-area: text;
+    }
+    #whyDonation .text-donate p {
+        box-shadow: 5px 5px 10px 5px #5b5b5b1f;
+        padding: 3vw 4vw;
+        font-size: 1.2vw;
+        border-radius: 1vw;
+        text-align: justify;
+    }
+    #whyDonation .text-donate a {
+        padding: 1vw 2vw;
+        justify-self: center;
+        margin: 1vw;
+        text-align: center;
+    }
+    #whyDonation .text-donate a:hover {
+        box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.179);
+        transition: 0.5s ease-in-out;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    #whyDonation .slider {
+        grid-area: slider;
+    }
+    #whyDonation .slider .slider-photos {
+        position: relative;
+        width: 32vw;
+        margin-top: 2vw;
+    }
+    #whyDonation .slider .slider-photos img {
+        border-radius: 2vw;
+        box-shadow: 5px 5px 10px 5px #5b5b5b1f;
+    }
+    #whyDonation .slider .direction {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        direction: rtl;
+    }
+    #whyDonation .slider .direction img {
+        cursor: pointer;
+    }
+    #whyDonation .slider .direction img:nth-child(1) {
+        transition: 0.5s ease-in-out;
+        -webkit-transform: rotate(90deg) translate(0px, 0px);
+        transform: rotate(90deg) translate(0px, 0px);
+    }
+    #whyDonation .slider .direction img:nth-child(1):hover {
+        transition: 0.5s ease-in-out;
+        -webkit-transform: rotate(90deg) translate(0px, -10px);
+        transform: rotate(90deg) translate(0px, -10px);
+    }
+    #whyDonation .slider .direction a {
+        padding: 0.6vw 3vw;
+        justify-self: end;
+        margin: 0 1vw;
+        font-size: 1.4vw;
+    }
+    #whyDonation .slider .direction a:hover {
+        box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.179);
+        transition: 0.5s ease-in-out;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    #whyDonation .slider .direction img:nth-child(3) {
+        transition: 0.5s ease-in-out;
+        -webkit-transform: rotate(90deg) translate(0px, 0px);
+        transform: rotate(-90deg) translate(0px, 0px);
+    }
+    #whyDonation .slider .direction img:nth-child(3):hover {
+        transition: 0.5s ease-in-out;
+        -webkit-transform: rotate(-90deg) translate(0px, -10px);
+        transform: rotate(-90deg) translate(0px, -10px);
+    }
+
+@media (max-width: 800px) {
+    .amount input{
+        width: 85%;
+    }
+    .amount span{
+        margin: 0 20px;
+        font-size: 18px;
+    }
+    .title-donate h1 {
+        font-size: 22px;
+        margin: 20px 0;
+    }
+    .title-donate img {
+        margin: 0px 20px;
+    }
+    .call-action {
+        font-size: 18px;
+        border-radius: 20px;
+    }
+
+    #whyDonation .slider .direction a {
+        padding: 15px 40px;
+    }
+    #whyDonation .slider .direction img {
+        width: 50px;
+    }
+    .call-action-btn {
+        font-size: 18px;
+        transition: 1s ease-in-out;
+        border-radius:20px;
+    }
+    section {
+        margin: 50px auto 50px auto;
+    }
+    #whyDonation {
+        width: 90%;
+        flex-direction: column-reverse;
+    }
+    #whyDonation .text-donate {
+      flex-direction: column;
+    }
+    #whyDonation .text-donate p {
+        padding: 15px 40px;
+        font-size: 18px;
+        border-radius: 20px;
+    }
+     #whyDonation .text-donate a {
+        padding: 15px 30px;
+        margin: 20px;
+    }
+      #whyDonation .slider .slider-photos {
+        width: 100%;
+        margin:20px auto;
+    }
+    #whyDonation .slider .slider-photos img {
+        border-radius: 20px;
+    }
+    #whyDonation .slider .direction a {
+        padding: 15px 30px;
+        margin: 0 20px;
+        font-size: 18px;
+    }
+    .title-donate img{
+        width: 30px;
+        height: auto;
+    }
+    .title-donate {
+        flex-wrap: wrap;
+    }
+}
+
+.mySlides {
+    display: none;
+}
+
+  /* Fading animation */
+.fade {
+    opacity: 1 !important;
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+@keyframes fade {
+    from {
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+    }
+    to {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+#Fatwa {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: "img  title" "img text";
+    width: 80%;
+    justify-items: center;
+    align-items: center;
+}
+
+#Fatwa img {
+    grid-area: img;
+    width: 20vw;
+    height: auto;
+}
+#Fatwa .title-donate img {
+    width: 4vw;
+}
+#Fatwa p {
+    grid-area: text;
+    font-size: 1.2vw;
+    align-self: start;
+    text-align: justify;
+}
+
+@media (max-width: 800px) {
+    #Fatwa {
+      display: flex;
+      flex-flow: column;
+    }
+    #Fatwa img {
+        width: 80%;
+    }
+    #Fatwa .title-donate img {
+        width: 30px;
+    }
+    #Fatwa p {
+        font-size: 18px;
+    }
+
+}
+
+#All-Fatwas {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: wrap;
+}
+#All-Fatwas .fatwa {
+    margin: 2vw;
+    display: grid;
+    grid-template-rows: 20% 60% 15%;
+    grid-template-areas: "title" "text" "button";
+    justify-content: center;
+}
+#All-Fatwas .fatwa .title-donate h1 {
+    border: 0.2vw solid #F37246;
+    padding: 1vw 3vw;
+    border-radius: 2vw
+}
+#All-Fatwas .fatwa .title-donate h1::after {
+    content: none;
+}
+#All-Fatwas .fatwa p {
+    font-size: 1.2vw;
+    max-width: 25vw;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.179);
+    border-radius: 2vw;
+    padding: 1vw 3vw;
+    grid-area: text;
+    text-align: center;
+    display: grid;
+    align-items: center;
+}
+#All-Fatwas .fatwa a {
+    grid-area: button;
+    margin-top: -1vw;
+    justify-self: center;
+    width: 80%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+#All-Fatwas .fatwa a:hover {
+    box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.179);
+    transition: 0.5s ease-in-out;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/*section4*/
+#Donation {
+    display: grid;
+    grid-template-areas: "title" "donate";
+}
+#Donation .title-donate {
+    grid-area: title; }
+#Donation .donate {
+    grid-area: donate; }
+
+/*section5*/
+#AtherDonationWay {
+    display: grid;
+    grid-template-areas: "title" "ways";
+}
+#AtherDonationWay .title-donate {
+    grid-area: title; }
+#AtherDonationWay .All-Donation-Ways {
+    grid-area: ways;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+}
+#AtherDonationWay .All-Donation-Ways .way {
+    width: 20vw;
+    height: 10vw;
+    margin: 1vw;
+    display: grid;
+    grid-template-rows: 80% 20%;
+    justify-items: center;
+    align-items: center;
+}
+#AtherDonationWay .All-Donation-Ways .way img {
+    align-self: center;
+    width: 13vw;
+    height: auto;
+}
+#AtherDonationWay .All-Donation-Ways .way p {
+    width: 100%;
+    height: 3vw;
+    padding: 0.5vw 0;
+    font-size: 1.2vw;
+    margin: 1vw 0;
+    display:grid;
+    justify-items:center;
+    align-items:center;
+}
+#AtherDonationWay .All-Donation-Ways .way p.active {
+    -webkit-transform: rotatex(360deg);
+    transform: rotatex(360deg);
+    transition: 1s ease-in-out;
+    cursor:text;
+}
+#AtherDonationWay .All-Donation-Ways .way p::after {
+    content: "";
+}
+
+@keyframes appear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+  /*section 6*/
+    #RecoveryMoney {
+        display: grid;
+        grid-template-areas: "title" "Money";
+        justify-content: center;
+        width: 80%;
+        margin: auto;
+    }
+    #RecoveryMoney .Money-Back {
+        grid-area: "Money";
+        display: grid;
+        align-items: center;
+    }
+        #RecoveryMoney .Money-Back p {
+        font-size: 1.2vw;
+        text-align: justify;
+        justify-self: center;
+    }
+    #RecoveryMoney .Money-Back p:nth-child(1) {
+        background-color: #35C0CA;
+        color: #fff;
+        box-shadow: 5px 5px 10px 5px #5b5b5b1f;
+        padding:1vw 3vw;
+        border-radius: 2vw;
+        margin-top:1vw;
+    }
+    #RecoveryMoney .Money-Back p:nth-child(2) {
+        margin: 1vw 0;
+        font-size: 1.4vw;
+        font-weight: 600;
+    }
+    #RecoveryMoney .Money-Back .conditions {
+        margin: 1vw;
+        display: flex;
+        width: 100%;
+    }
+    #RecoveryMoney .Money-Back .conditions p {
+        margin: 0;
+    }
+    #RecoveryMoney .Money-Back .conditions span {
+        background-color: #fdde00;
+        padding: 1vw;
+        height: 0;
+        border-radius: 2vw;
+        margin: 0px 1vw;
+    }
+    #RecoveryMoney .Money-Back a {
+        padding:1vw 3vw;
+        margin: 1vw;
+        font-size: 1.2vw;
+    }
+    #RecoveryMoney .Money-Back a:hover {
+        box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.179);
+        transition: 0.5s ease-in-out;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+  /*view from 990px to 300px*/
+@media (max-width: 800px) {
+    #All-Fatwas {
+        flex-direction: column-reverse;
+    }
+    #All-Fatwas .fatwa {
+        margin: 20px;
+        display: grid;
+        grid-template-rows: 20% 60% 15%;
+        grid-template-areas: "title" "text" "button";
+    }
+    #All-Fatwas .fatwa .title-donate h1 {
+        border: 2px solid #F37246;
+        padding: 15px 40px;
+        border-radius: 20px;
+    }
+    #All-Fatwas .fatwa p {
+        font-size: 18px;
+        max-width: 270px;
+        border-radius: 20px;
+        padding: 10px 20px;
+    }
+    #All-Fatwas .fatwa a {
+        margin-top: 20px;
+        padding: 15px 40px;
+        height: 55px;
+    }
+    #All-Fatwas .fatwa a:hover {
+        box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.179);
+        transition: 0.5s ease-in-out;
+        transform: scale(1.1);
+    }
+
+    #AtherDonationWay .All-Donation-Ways {
+        display: flex;
+        flex-flow: column wrap;
+    }
+    #AtherDonationWay .All-Donation-Ways .way {
+        width: 80%;
+        height: auto;
+        margin: 20px;
+    }
+    #AtherDonationWay .All-Donation-Ways .way img {
+        width: 200px;
+        height: auto;
+    }
+    #AtherDonationWay .All-Donation-Ways .way p {
+        width: 80%;
+        height: 50px;
+        padding: 10px 0;
+        margin: 20px 0;
+        font-size: 18px;
+        border-radius: 10px;
+        display:grid;
+        justify-items:center;
+        align-items:center;
+    }
+    #AtherDonationWay .All-Donation-Ways .way p.active {
+        -webkit-transform: rotatex(360deg);
+        transform: rotatex(360deg);
+        transition: 1s ease-in-out;
+        cursor:text;
+    }
+    #AtherDonationWay .All-Donation-Ways .way p::after {
+        content: "";
+    }
+    #RecoveryMoney {
+      width: auto;
+      margin: 0 20px;
+    }
+    #RecoveryMoney .Money-Back p:nth-child(1) {
+        padding: 20px 40px 20px 40px;
+        border-radius: 30px;
+        margin: 20px 0;
+    }
+    #RecoveryMoney {
+        width: 90%;
+    }
+    #RecoveryMoney .Money-Back p {
+        font-size: 18px;
+    }
+    #RecoveryMoney .Money-Back p:nth-child(1) {
+        padding:15px 20px;
+        border-radius: 20px;
+        margin-top:0;
+    }
+    #RecoveryMoney .Money-Back p:nth-child(2) {
+        margin:0;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    #RecoveryMoney .Money-Back .conditions {
+        margin: 20px;
+        width: 90%;
+    }
+    #RecoveryMoney .Money-Back .conditions span {
+        background-color: #fdde00;
+        padding: 10px;
+        border-radius: 20px;
+        margin: 0px 10px;
+    }
+    #RecoveryMoney .Money-Back a {
+        padding:15px 40px;
+        margin: 20px;
+        font-size: 18px;
+    }
+}
+

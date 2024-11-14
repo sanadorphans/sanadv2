@@ -1,0 +1,131 @@
+#boards .boards ,#staff .staff,.showBoard .member, .showStaff .member{
+    display:flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    margin-top: 4vw;
+}
+
+#boards .boards .member, #staff .staff .member{
+    display:grid;
+    justify-items: center;
+    grid-auto-rows: 23vw 5vw;
+    margin: 0 0 4vw 0;
+    width: 25%;
+}
+
+
+#boards  .boards .member .boardImage div, #staff .staff .member .staffImage div, .showBoard .member .boardMemberWithImage .boardImage div,
+.showStaff .member .StaffMemberWithImage .staffImage div{
+    width: 18vw;
+    height: 22vw;
+    background: var(--background) no-repeat center;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size:cover;
+    background-size: cover;
+    border-radius: 5vw;
+    position: relative;
+    z-index: 1;
+}
+#boards  .boards .member .socialMedia img, .showBoard .member .socialMedia img, .showStaff .member .socialMedia img{
+    width: 2vw;
+    height: auto;
+    margin:0 0.5vw;
+}
+#boards  .boards .member .info h1, #staff .staff .member .info h1{
+    font-size:1.8vw;
+    color:#35C0CA;
+    text-align: center;
+}
+#boards  .boards .member .info p, #staff .staff .member .info p {
+    font-size:1.2vw;
+    color: #001A31;
+    text-align: center;
+    font-weight: bold;
+}
+
+.showBoard .member .title, .showStaff .member .title{
+    margin: 2vw 0;
+}
+.showBoard .member .boardMemberWithImage .title h1, .showStaff .member .StaffMemberWithImage .title h1{
+    color:#35C0CA;
+    font-size:2vw;
+    text-align: center;
+}
+.showBoard .member .boardMemberWithImage .title p, .showStaff .member .StaffMemberWithImage .title p{
+    color:#F37246;
+    font-size:1.6vw;
+    text-align: center;
+}
+.showBoard .member .boardMemberWithImage, .showStaff .member .StaffMemberWithImage{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.showBoard .description, .showStaff .description{
+    width: 60%;
+    margin: 4vw 0;
+}
+.showBoard .description p, .showStaff .description p{
+    text-align: justify;
+    font-size: 1.2vw;
+}
+
+.showBoard .member .socialMedia, .showStaff .member .socialMedia {
+   margin: 1vw 0;
+}
+
+
+@media (max-width:800px){
+    #boards .boards, #staff .staff {
+        margin-top: 60px;
+    }
+    #boards .boards .member, #staff .staff .member{
+        grid-auto-rows: 320px 120px;
+        margin: 0 20px 50px 20px;
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    #boards  .boards .member .boardImage div, #staff .staff .member .staffImage div, .showBoard .member .boardMemberWithImage .boardImage div,
+    .showStaff .member .StaffMemberWithImage .staffImage div{
+        width: 250px;
+        height: 300px;
+        border-radius: 40px;
+    }
+    #boards  .boards .member .boardImage div::after,  #staff .staff .member .staffImage div::after{
+        border-radius: 40px;
+    }
+    #boards  .boards .member .socialMedia img, .showBoard .member .socialMedia img, .showStaff .member .socialMedia img{
+        width: 40px;
+        margin:0 10px;
+    }
+    #boards  .boards .member .info h1, #staff .staff .member .info h1, .showBoard .member .boardMemberWithImage .title h1,
+    .showStaff .member .StaffMemberWithImage .title h1{
+        font-size:25px;
+        font-weight: normal;
+    }
+    #boards  .boards .member .info p, #staff .staff .member .info p,.showBoard .member .boardMemberWithImage .title p,
+    .showStaff .member .StaffMemberWithImage .title p {
+        font-size:18px;
+        font-weight: normal;
+    }
+    .showBoard .member .title, .showStaff .member .title{
+        margin: 40px 0;
+    }
+
+
+    .showBoard .description, .showStaff .description{
+        width: 90%;
+        margin-bottom: 50px;
+    }
+    .showBoard .description p, .showStaff .description p{
+        font-size: 18px;
+    }
+
+    .showBoard .member .socialMedia, .showStaff .member .socialMedia {
+       margin: 20px 0;
+    }
+
+}

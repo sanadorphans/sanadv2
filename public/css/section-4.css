@@ -1,0 +1,255 @@
+:root {
+    --main-color: #DCDBDB;
+    --main-width: 1035px;
+}
+.content-wrapper {
+    background-color: var(--main-color);
+    padding: 20px 30px 30px 0;
+    margin: 0;
+}
+.content-wrapper .container {
+    width: var(--main-width);
+    padding: 0;
+}
+.content-wrapper .container .btn {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+}
+.content-wrapper .container .btn button {
+    border: none;
+    margin-left: 10px;
+    width: 145px;
+    height: 40px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 0;
+    color: white;
+}
+.content-wrapper .container .btn button:first-child {
+    background-color: #41B669;
+}
+.content-wrapper .container .btn button:last-child {
+    background-color: #3cc3d2;
+}
+/* End btn */
+.content-wrapper .container .search {
+    width: 100%;
+    height: 58px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 0 50px;
+    margin-bottom: 30px;
+}
+.content-wrapper .search::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    right: 35px;
+    background-color: #4195C5;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+.content-wrapper .container .search .consulting {
+    width: 189px;
+    height: 25px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 10px;
+}
+.content-wrapper .container .search .consulting p {
+    margin: 0;
+}
+.content-wrapper .container .search .ser {
+    position: relative;
+}
+.content-wrapper .container .search .ser input {
+    padding: 0 30px;
+    width: 231px;
+    height: 21px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border: none;
+    box-shadow: inset -1px -1px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+.content-wrapper .container .search .ser i {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 13.44px;
+    height: 10px;
+}
+/* End Search */
+
+.evaluation {
+    width: 100%;
+    height: 221px;
+    background-color: white;
+    position: relative;
+    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+.evaluation .header-evaluation {
+    background-color: #eeee;
+    position: relative;
+    width: 100%;
+    height: 37px;
+    display: flex;
+    align-items: center;
+}
+.evaluation .header-evaluation::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    background-color: #C4C4C4;
+}
+.evaluation .header-evaluation input {
+    margin: 0 10px 0 10px;
+    width: 14px;
+    height: 13px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    opacity: 70%;
+}
+.evaluation .header-evaluation label {
+    font-size: 24px;
+    font-weight: 40;
+    line-height: 35px;
+    margin-bottom: 0;
+    letter-spacing: 0.2px;
+}
+/* End Header */
+.evaluation table {
+    height: calc(95% - 37px);
+    width: 100%;
+    border-bottom: 2px solid #C4C4C4;
+}
+.evaluation table thead {
+    border-bottom: 2px solid #C4C4C4;
+}
+.evaluation table thead tr td {
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+}
+.evaluation table tbody tr td {
+    position: relative;
+    text-align: center;
+}
+.evaluation table tbody tr td:not(:last-child) {
+    border-left: 2px solid #C4C4C4;
+}
+.evaluation table tbody tr td:nth-child(2) {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.evaluation table tbody tr td:nth-child(2) a {
+    text-decoration: underline;
+}
+.evaluation table tbody tr td:nth-child(3) {
+    text-align: center;
+}
+.evaluation table tbody tr td:nth-child(3) h5 { 
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    margin: 0;
+    position: relative;
+}
+.evaluation table tbody tr td:nth-child(3) h5.square-blue::before,
+.evaluation table tbody tr td:nth-child(3) h5.square-orange::before {
+    content: "";
+    position: absolute;
+    right: 48px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+.evaluation table tbody tr td:nth-child(3) h5.square-blue::before {
+    background-color: #147DB9;
+}
+.evaluation table tbody tr td:nth-child(3) h5.square-orange::before {
+    background-color: #FA9B32;
+}
+.evaluation table tbody tr td:nth-child(3) span {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+} 
+.evaluation table tbody tr td:nth-child(4) button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    border: none;
+    text-align: center;
+    width: 122px;
+    height: 32px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+}
+.evaluation table tbody tr td:nth-child(4) button:first-child {
+    background-color: #797979;
+}
+.evaluation table tbody tr td:nth-child(4) button:nth-child(2) {
+    background-color: #41B669;
+}
+.evaluation table tbody tr td:nth-child(4) button:last-child {
+    background-color: #F61212;
+}
+.evaluation table tbody tr td:nth-child(4) button:last-child i {
+    margin-left: 6px;
+}
+

@@ -1,0 +1,159 @@
+
+#jobs .job{
+    box-shadow: 0.4vw 0.4vw 2vw 0.4vw rgba(0, 0, 0, 0.179);
+    border-radius: 2vw;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-auto-rows: 35% 85% 0%;
+    position: relative;
+    background: #fff;
+    padding: 2vw 1vw 2vw 1vw;
+    margin: 4vw;
+    width: 25%;
+    min-height: 18vw;
+}
+#jobs .jobs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#jobs .job::after {
+    content: "";
+    width: 50%;
+    height: 2vw;
+    position: absolute;
+    top: -3%;
+    left: 50%;
+    z-index: -1;
+    -webkit-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+    border-radius: 85px 63px 158px 196px;
+}
+#jobs .job::after {
+    background: #35C0CA;
+}
+
+#jobs .job h2{
+    font-size: 1.8vw;
+    text-align: center;
+    /* font-weight: bold !important; */
+    font-weight: normal;
+    margin: 1vw 0;
+}
+
+/* #jobs .job h1::after {
+    content: "";
+    width: 25%;
+    height: 1vw;
+    border-radius: 50px;
+    background-color: #fdde00;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+    text-align: center;
+} */
+.job  .links, .consultant .links{
+    display: flex;
+}
+.job a ,.consultant a{
+    font-size: 1.4vw;
+    justify-self: center;
+    box-shadow: 0.4vw 0.4vw 2vw 0.4vw rgba(0, 0, 0, 0.179);
+    transition: 0.5s ease-in-out;
+    border-radius: 1vw;
+    cursor: pointer;
+    color: white !important;
+    font-weight: 600;
+    text-decoration: none !important;
+    padding: 1vw 2vw;
+    display: grid;
+    justify-items: center;
+    margin-top: 0 !important;
+    margin: 0 2vw;
+    position: relative;
+}
+
+#jobs .job .call-to-job{
+    background-color: #35C0CA !important
+}
+
+#jobs .job .apply-to-job , #consultants .consultant .apply-to-job{
+    background-color: #001A31 !important;
+}
+
+
+#ThnaksForApply {
+    width:40%;
+    margin: 2vw auto;
+    text-align: center;
+}
+#ThnaksForApply img{
+    width: 100%;
+    height: auto;
+}
+#ThnaksForApply h1{
+    margin: 4vw 0;
+    font-size: 1.8vw;
+}
+
+#ThnaksForApply a{
+    padding: 1vw 5vw;
+    margin: 4vw 0;
+    border-radius: 1vw;
+    font-size: 1.4vw;
+    color: #fff;
+    background-color: #35C0CA;
+}
+
+@media (max-width: 800px) {
+    #jobs .job{
+        width: 250px;
+        margin: 10px;
+        box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.179);
+        border-radius: 20px;
+        padding: 20px 10px;
+        width: 80%;
+        margin: 50px 0;
+
+    }
+    #jobs .job::after{
+        height: 20px;
+    }
+    #jobs .job h2{
+        font-size: 22px;
+        margin: 10px 0;
+    }
+
+    /* #jobs .job h1::after{
+        height: 10px;
+    } */
+
+    .job a, .consultant a{
+        font-size:16px;
+        box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.179);
+        border-radius: 20px;
+        padding: 8px 20px;
+        margin: 0 20px;
+    }
+    #ThnaksForApply {
+        width:80%;
+        margin: 40px auto;
+    }
+    #ThnaksForApply h1{
+        margin: 40px 0;
+        font-size: 18px;
+    }
+
+    #ThnaksForApply a{
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 20px;
+        font-size: 18px;
+    }
+
+}

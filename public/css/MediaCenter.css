@@ -1,0 +1,149 @@
+#news ,#media_bags,#events,#AnnualReports, #NewsLetters{
+    margin: 4vw 0;
+}
+
+.news,#media_bags .media_bags, #events .events, #AnnualReports .AnnualReports, #NewsLetters .NewsLetters{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 4vw 0;
+    border-radius: 2vw;
+}
+.new, #media_bags .media_bag, #events .event, #AnnualReports .AnnualReport, #NewsLetters .NewsLetter{
+    margin: 1vw 0;
+    border-radius: 2vw;
+    width: 33%;
+    padding: 0 2vw;
+}
+.new a, #media_bags .media_bag a, #events .event a, #AnnualReports .AnnualReport a, #NewsLetters .NewsLetter a{
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+}
+.new .image,#media_bags .media_bag .image, #events .event .image, #AnnualReports .AnnualReport .image, #NewsLetters .NewsLetter .image{
+    width: 100%;
+    background: var(--background) no-repeat center;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size:cover;
+    background-size: cover;
+    border: 0.4vw solid #fff;
+    border-radius:2vw;
+    height: 40vh;
+    position: relative;
+    z-index: 1;
+}
+
+.new h1, #media_bags .media_bag h1,  #events .event h1, #AnnualReports .AnnualReport h1,  #NewsLetters .NewsLetter h1{
+    width: 90%;
+    color:#001A31;
+    font-size: 1.4vw;
+    margin: 1vw 0;
+    line-height: 5vw;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.new a, #media_bags .media_bag a,  #events .event a, #AnnualReports .AnnualReport a,  #NewsLetters .NewsLetter a{
+    color:#fff;
+    padding: 1vw;
+    font-size: 1.8vw;
+}
+
+.ShowNew{
+    margin: 2vw auto;
+    width: 80%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.ShowNew h1 , aside h1{
+   font-size:2.2vw;
+   margin: 1vw 0;
+   text-align: center;
+   color: #35C0CA;
+}
+.ShowNew p{
+    font-size:1.4vw;
+    text-align: justify;
+}
+.ShowNew img{
+    width: 50%;
+    height: auto;
+    margin: 4vw 0;
+    border-radius: 2vw;
+}
+
+aside {
+    margin-bottom: 4vw;
+}
+
+aside .news{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 2vw;
+}
+
+
+@media (max-width:800px) {
+    #news, #media_bags, #events,#AnnualReports, #NewsLetters{
+        margin: 40px 0;
+    }
+    .news, #media_bags .media_bags, #events .events, #AnnualReports .AnnualReports,  #NewsLetters .NewsLetters  {
+        margin: 40px 0;
+        border-radius: 40px;
+    }
+    .new, #media_bags .media_bag, #events .event, #AnnualReports .AnnualReport,  #NewsLetters .NewsLetter {
+        margin: 20px 0;
+        border-radius: 40px;
+        width: 100%;
+        padding: 0px;
+    }
+    .new .image, #media_bags .media_bag .image,  #events .event .image, #AnnualReports .AnnualReport .image,  #NewsLetters .NewsLetter .image{
+        border-radius:40px;
+    }
+    .new h1, #media_bags .media_bag h1, #events .event h1, #AnnualReports .AnnualReport h1,  #NewsLetters .NewsLetter h1{
+        width: 90%;
+        font-size: 18px;
+        margin: 20px 0;
+        line-height: 50px;
+    }
+    .new a, #media_bags .media_bag a, #events .event a, #AnnualReports .AnnualReport a,  #NewsLetters .NewsLetter a{
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+    .new .image::after,#media_bags .media_bag .image::after, #events .event .image::after, #AnnualReports .AnnualReport .image::after,
+    #NewsLetters .NewsLetter .image::after{
+        border-radius:40px;
+    }
+    .ShowNew{
+        margin: 20px auto;
+        width: 90%;
+    }
+    .ShowNew h1 , aside h1{
+       font-size:25px;
+       margin: 20px 0;
+    }
+    .ShowNew p{
+        font-size:18px;
+    }
+    .ShowNew img{
+        width: 100%;
+        margin: 20px 0;
+        border-radius:40px;
+    }
+    aside .news{
+        margin: 0 40px;
+    }
+    aside {
+        margin-bottom: 50px;
+    }
+
+}
+
+
+

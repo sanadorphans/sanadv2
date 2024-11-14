@@ -1,0 +1,141 @@
+#service{
+    overflow: hidden;
+    margin: 4vw 0;
+
+}
+.service{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+.details{
+    padding: 0 4vw;
+    text-align: justify;
+}
+.details ul{
+    list-style: numeric;
+    margin: 0 2vw;
+}
+.details a{
+   display: block;
+   padding: 1vw;
+   text-align: center;
+   color:#fff;
+   background-color:#35C0CA;
+   width: 40%;
+   margin: auto;
+}
+html[lang="ar"] .details ul{
+    list-style: arabic-indic;
+}
+.target{
+    margin: 2vw 0;
+}
+.target h1{
+    color:#35C0CA;
+    justify-self: center;
+    font-size: 2vw;
+}
+.target p{
+    margin: 1vw 0;
+}
+#service .details p{
+    font-size: 1.4vw;
+}
+#service .image{
+    position: relative;
+    align-self: start;
+}
+#service .image img{
+    width: 30vw;
+    height: auto;
+    border-radius: 2vw;
+}
+#service .image::after{
+   content: "";
+   position: absolute;
+   top: 50%;
+   /* support safari */
+   -webkit-transform: translate(0, -50%);
+   transform: translate(0, -50%);
+   width: 100%;
+   height: 70%;
+   background-color:#7950A0;
+   z-index: -1;
+   right: -100%;
+}
+html[lang="ar"] #service .image::after{
+    right: 100%;
+ }
+#service .title {
+    margin:  0 auto 1vw auto;
+}
+#service .title span{
+    font-size:4vw;
+    font-weight: 600;
+    color:#7950A0;
+}
+#service .title h1{
+    font-size:2vw;
+    font-weight: 600;
+    color:#35C0CA;
+}
+
+
+@media (max-width: 800px){
+    #service{
+        margin: 20px 0;
+    }
+    .service{
+        flex-flow: column-reverse wrap;
+        width: 90%;
+    }
+    .details{
+        padding: 30px 0;
+    }
+    .details ul{
+        margin: 0 40px;
+    }
+    .details a{
+       padding: 10px;
+       width:50%;
+    }
+    .target{
+        margin: 20px 0;
+        text-align: center;
+    }
+    .target h1{
+        font-size: 22px;
+    }
+    .target p{
+        margin: 20px 0;
+    }
+    #service .details p{
+        font-size: 18px;
+    }
+    #service .image img{
+        width: 250px;
+        border-radius: 20px;
+    }
+    #service .image::after{
+       content: "";
+       background-color:#ffffff00;
+    }
+    #service .title {
+        width: 100%;
+        text-align: center;
+        margin: 30px 0;
+    }
+    #service .title span{
+        font-size:35px;
+        margin: 20px 0 0 0;
+    }
+    #service .title h1{
+        font-size:25px;
+        margin: 0;
+
+    }
+
+}

@@ -1,0 +1,121 @@
+#partners .Government-Sector {
+    display: flex;
+    flex-flow: row;
+    justify-content:center;
+    align-items: center;
+}
+#partners .Government-Sector img {
+   width: 20%;
+   height: auto;
+}
+#partners .Government-Sector .description {
+    width: 70%;
+}
+#partners .Government-Sector .description div {
+    width: 95%;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+#partners .Government-Sector .description div ol {
+    margin: 2vw;
+}
+#partners .Government-Sector .description div ol li {
+    margin: 1vw 0;
+}
+#partners .partners {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-auto-columns: 100%;
+}
+
+#partners .partners .image{
+    width: 100%;
+    margin: 4vw 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#partners .partners .image img{
+    width: 12vw;
+    height: auto;
+}
+
+#partners .partners{
+    margin: 4vw 0;
+ }
+
+#partners .partners img{
+    width: 6vw;
+    height: auto;
+    margin: 4vw;
+}
+#partners .partners .description{
+    font-size: 1.4vw;
+    margin: 1vw 0;
+    padding: 0 4vw;
+    text-align: justify;
+}
+
+@media (max-width:800px) {
+    #partners .Government-Sector {
+        flex-flow: column;
+    }
+    #partners .Government-Sector img {
+       width: 70%;
+       height: auto;
+    }
+    #partners .Government-Sector .description {
+        width: 90%;
+    }
+    #partners .Government-Sector .description div {
+        width: 95%;
+
+    }
+
+    #partners .Government-Sector .description div ol {
+        margin: 20px;
+    }
+    #partners .Government-Sector .description div ol li {
+        margin: 10px 0;
+    }
+    #partners .partners .image{
+        margin: 20px 0;
+    }
+
+    #partners .partners .image img{
+        width: 150px;
+        margin: 40px;
+    }
+
+    #partners .partners{
+        margin: 20px 0;
+     }
+
+    #partners .partners .glide__track{
+        width:100%;
+    }
+    #partners .partners .glide__arrow img{
+        width: 60px;
+    }
+    #partners .partners .description{
+        font-size: 18px;
+        margin: 20px 0;
+        padding: 0 20px;
+    }
+    #partners .partners .glide__arrow--left {
+        /* support safari */
+        -webkit-transform: rotate(270deg) translate(100%,0);
+        transform: rotate(270deg) translate(100%,0);
+    }
+    #partners .partners .glide__arrow--right {
+        /* support safari */
+        -webkit-transform: rotate(90deg) translate(-100%,0);
+        transform: rotate(90deg) translate(-100%,0);
+    }
+
+
+}

@@ -1,0 +1,101 @@
+#ContactUs form {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+}
+#ContactUs form div{
+    display: grid;
+    width: 100%;
+}
+#ContactUs form div input{
+    border:none;
+    outline: none;
+    padding: 1vw;
+    margin: 1vw 0;
+    border-radius: 1vw;
+    font-size: 1.4vw;
+    font-weight: 600;
+    color: #001A31;
+    background-color: #D9D9D9;
+}
+#ContactUs form div textarea {
+    border:none;
+    outline: none;
+    padding: 1vw;
+    margin: 1vw 0;
+    border-radius: 1vw;
+    font-size: 1.4vw;
+    font-weight: 600;
+    color: #001A31;
+    background-color: #D9D9D9;
+}
+#ContactUs form div label{
+    font-size: 1.4vw;
+    font-weight: 600;
+    color: #001A31;
+}
+#ContactUs form button{
+    border:none;
+    outline: none;
+    padding: 1vw 5vw;
+    margin: 1vw 0;
+    border-radius: 1vw;
+    font-size: 1.4vw;
+    color: #fff;
+    background-color: #001A31;
+}
+#ContactUs li a object svg path{
+    fill:#001A31 !important;
+}
+.details{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.details iframe{
+    width: 80%;
+    margin: 2vw auto;
+    height: 30vw;
+}
+
+@media (max-width: 800px) {
+
+    #ContactUs form {
+        width: 90%;
+        margin: 40px auto;
+    }
+    #ContactUs form div input{
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 20px;
+        font-size: 16px;
+    }
+    #ContactUs form div textarea {
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 20px;
+        font-size: 18px;
+    }
+    #ContactUs form div label{
+        font-size: 18px;
+    }
+    #ContactUs form input[type="submit"]{
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 20px;
+        font-size: 18px;
+    }
+    .details iframe{
+        width: 90%;
+        margin: 50px auto;
+        height: 300px;
+    }
+    #ContactUs form button{
+        padding: 15px 40px;
+        margin: 20px 0;
+        border-radius: 20px;
+        font-size: 18px;
+    }
+}

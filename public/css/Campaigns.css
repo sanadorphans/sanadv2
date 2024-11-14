@@ -1,0 +1,183 @@
+#Campaigns .Campaigns {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-auto-columns: 100%;
+}
+.AllCampaigns{
+    width: 80%;
+    margin: auto;
+}
+
+#Campaigns .Campaigns .image{
+    width: 100%;
+    margin: 2vw 0;
+}
+#Campaigns .Campaigns .glide__track h1{
+    font-size:2vw;
+}
+html[lang="ar"] #Campaigns .Campaigns .glide__track h1{
+    direction: rtl;
+}
+#Campaigns .Campaigns .title{
+    font-size:2vw;
+    margin: 4vw 0;
+    text-align: center;
+}
+#Campaigns .campaigns_details{
+    width:80%;
+}
+
+#Campaigns .Campaigns{
+    margin: 4vw 0;
+ }
+
+#Campaigns  .glide__track{
+    margin: auto;
+}
+
+#Campaigns .glide__arrow{
+    padding: 0;
+    background-color: transparent;
+    border: 0 solid rgba(255,255,255,0.5);
+    box-shadow: 0 0 0 0 rgba(0,0,0,0.1);
+    text-shadow: 0 0 0 0 rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+#Campaigns  .glide__arrow--left {
+    -webkit-transform: rotate(270deg) translate(80%,0);
+    transform: rotate(270deg) translate(80%,0);
+    left: -2em;
+}
+#Campaigns  .glide__arrow--right {
+    -webkit-transform: rotate(90deg) translate(-80%,0);
+    transform: rotate(90deg) translate(-80%,0);
+    right: -2em;
+}
+
+#Campaigns  .glide__arrow img{
+    width: 6vw;
+    height: auto;
+}
+
+#Campaigns .details{
+   display: flex;
+   flex-flow: row-reverse;
+   justify-content: space-evenly;
+   align-items: center;
+   width: 80%;
+   margin: 4vw auto;
+}
+#Campaigns .details section h1{
+   font-size: 2vw;
+   margin:1vw 0;
+   color: #F37246;
+   text-align: center;
+}
+
+#Campaigns .details img{
+    margin:0 2vw;
+    width: 35%;
+    max-height: 450px;
+ }
+ #Campaigns .details section a{
+    font-size: 1.4vw;
+    text-align: center;
+    color: #fff;
+    background-color: #35C0CA;
+    padding: 0.6vw 4vw;
+    margin: 2vw 0;
+}
+#Campaigns .details section {
+   width: 80%;
+   position: relative;
+   display: grid;
+   justify-items: center;
+}
+#Campaigns img{
+    margin: 2vw 0;
+}
+#Campaigns .details section div{
+    color:#001A31 ;
+    text-align: justify;
+    font-size: 1.4vw;
+}
+#Campaigns .details section img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: auto;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    z-index: -1;
+    opacity: 0.3;
+}
+@media (max-width:800px) {
+    #Campaigns .Campaigns .image{
+        margin: 20px 0;
+    }
+
+    #Campaigns .Campaigns{
+        margin: 20px 0;
+     }
+    #Campaigns .glide__arrow img{
+        width: 50px;
+    }
+    #Campaigns .Campaigns .glide__track h1{
+        font-size:22px
+    }
+    #Campaigns .Campaigns .description{
+        font-size: 18px;
+        margin: 20px 0;
+        padding: 0 20px;
+    }
+    #Campaigns  .glide__arrow--left {
+        -webkit-transform: rotate(270deg) translate(120%,0);
+        transform: rotate(270deg) translate(120%,0);
+        left: 0;
+    }
+    #Campaigns  .glide__arrow--right {
+        -webkit-transform: rotate(90deg) translate(-120%,0);
+        transform: rotate(90deg) translate(-120%,0);
+        right: 0;
+    }
+    #Campaigns .details section h1{
+        font-size: 22px;
+        text-align: center;
+        margin:20px 0;
+    }
+    #Campaigns .details img{
+        width: 200px;
+        max-height: 200px;
+    }
+    #Campaigns .details section {
+        width: 95%;
+    }
+    #Campaigns .details section div{
+        font-size: 18px;
+    }
+    #Campaigns .details section a{
+        font-size: 18px;
+        padding: 10px 40px;
+        margin: 20px 0;
+    }
+    #Campaigns .details section h1{
+        font-size: 22px;
+        margin:20px 0;
+    }
+     #Campaigns .Campaigns .title{
+        font-size:22px;
+        margin: 40px 0;
+        text-align: center;
+    }
+    #Campaigns .details{
+        flex-flow: column;
+    }
+    #Campaigns .details section img{
+        width: 90%;
+        height: auto;
+    }
+
+}

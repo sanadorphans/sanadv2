@@ -1,0 +1,105 @@
+#ResourceForm{
+    margin: 6vw 0;
+}
+#ResourceForm form {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+    width: 40%;
+}
+#ResourceForm form div{
+    display: grid;
+    width: 100%;
+}
+#ResourceForm form div input{
+    border:none;
+    outline: none;
+    padding: 1vw;
+    margin: 1vw 0;
+    border-radius: 1vw;
+    font-size: 1.4vw;
+    font-weight: 600;
+    color: #001A31;
+    background-color: #D9D9D9;
+}
+#ResourceForm form div label{
+    font-size: 1.4vw;
+    font-weight: 600;
+    color: #001A31;
+}
+#ResourceForm form button{
+    border:none;
+    outline: none;
+    padding: 1vw 5vw;
+    margin: 1vw 0;
+    border-radius: 1vw;
+    font-size: 1.4vw;
+    color: #fff;
+    background-color: #001A31;
+}
+#ResourceForm li a object svg path{
+    fill:#001A31 !important;
+}
+#ResourceForm{
+    display: flex;
+}
+#ResourceForm .image{
+    width: 20%;
+    height: auto;
+    margin:auto;
+    background: var(--background) no-repeat center;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size:cover;
+    background-size: cover;
+    position: relative;
+    z-index: 2;
+}
+.DataRequired{
+    font-size:1.8vw;
+    color: #F37246;
+    font-weight: 600;
+    margin: 1vw 0;
+    justify-self: start;
+}
+
+@media (max-width: 800px) {
+    #ResourceForm{
+        flex-flow: column;
+    }
+    #ResourceForm form {
+        width: 90%;
+        margin: 40px auto;
+    }
+    #ResourceForm form div input{
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 20px;
+        font-size: 16px;
+    }
+    #ResourceForm form div label{
+        font-size: 18px;
+    }
+    #ResourceForm form input[type="submit"]{
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 20px;
+        font-size: 18px;
+    }
+    #ResourceForm .image {
+        width: 60%;
+        margin: 20px auto;
+    }
+    .DataRequired{
+        font-size:18px;
+        margin: 20px 0;
+    }
+    #ResourceForm form button{
+        padding: 15px 40px;
+        margin: 20px 0;
+        font-size: 18px;
+        border-radius: 20px;
+    }
+
+}

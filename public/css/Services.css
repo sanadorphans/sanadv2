@@ -1,0 +1,124 @@
+
+#services .services .service{
+    width: 25%;
+    background: var(--background) no-repeat center;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size:cover;
+    background-size: cover;
+    height: 25vw;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    border-radius: 2vw;
+    padding: 2vw;
+    margin: 2vw 4vw;
+}
+#services{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+#services .services .service::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #001b339b;
+    border-radius: 2vw;
+    z-index: 1;
+}
+
+#services .services .service h1{
+    z-index: 2;
+    color: #fff;
+    font-size: 2vw;
+    text-align: center;
+    align-self: end;
+}
+
+#services .services .service a{
+    color:#fff;
+    background-color: #ffd9009b;
+    padding: 1vw 2vw;
+    z-index: 2;
+}
+
+#services p {
+    font-size: 1.4vw;
+    text-align: center;
+    color: #001A31;
+    padding: 1vw;
+    margin: 1vw 0;
+}
+
+#services .services{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 2vw 0;
+    flex-direction: row-reverse;
+    width: 90%;
+    margin: auto;
+}
+#services .services p{
+    font-size:1.2vw;
+    text-align: justify;
+}
+#services .services img{
+    width: 35vw;
+    height: auto;
+    border-radius: 2vw;
+}
+
+@media (max-width: 800px) {
+    #services .services .service{
+        width: 100%;
+        height: 250px;
+        border-radius: 20px;
+        padding: 15px;
+        margin: 40px 20px;
+    }
+
+    #services .services .service h1{
+        font-size: 22px;
+    }
+
+    #services .services .service a{
+        padding: 20px 30px;
+    }
+
+    #services p {
+        font-size: 18px;
+        text-align: center;
+        color: #001A31;
+        padding: 10px;
+        margin: 10px 0;
+        text-align: justify;
+    }
+
+    #services .services{
+        margin: 20px 0;
+        flex-direction: column;
+    }
+    #services .services p{
+        font-size: 18px;
+    }
+    #services .services img{
+        width: 80%;
+        border-radius: 20px;
+    }
+    #services .services .service::after{
+        border-radius: 20px;
+    }
+
+    #services .services .service a{
+        padding: 20px;
+    }
+
+}

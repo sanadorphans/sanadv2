@@ -1,0 +1,256 @@
+:root {
+    --main-color: #DCDBDB;
+    --main-width: 1035px;
+}
+.content-wrapper {
+    background-color: var(--main-color);
+    padding: 35px 200px 50px 0;
+}
+.content-wrapper .container {
+    direction: ltr;
+    width: var(--main-width);
+    margin: 0;
+    padding: 0;
+}
+
+.content-wrapper .search {
+    width: 100%;
+    height: 58px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px 0 50px;
+    align-items: center;
+    position: relative;
+    margin-bottom: 50px;
+}
+.content-wrapper .search::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    left: 35px;
+    background-color: #4195C5;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+.content-wrapper .search .consulting {
+    width: 189px;
+    height: 25px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.search .consulting span {
+    display: flex;
+    margin: 0;
+}
+.search .consulting p {
+    font-size: 10px;
+    margin: 0;
+}
+.search .ser {
+    position: relative;
+}
+.search .ser label {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 17px;
+    margin-right: 2px;
+}
+.search .ser input {
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    width: 231px;
+    height: 21px;
+    padding: 0 25px 0 10px;
+    border: 1px solid black;
+}
+.search .ser .search-icon {
+    width: 13.44px;
+    height: 10px;
+    top: 3px;
+    right: 5px;
+    position: absolute;
+    cursor: pointer;
+}
+/* End Search */
+.evaluation {
+    width: 100%;
+    height: 221px;
+    background-color: white;
+    position: relative;
+    margin-bottom: 10px;
+    direction: ltr;
+    margin-bottom: 20px;
+}
+.evaluation .header-evaluation {
+    background-color: #eeee;
+    position: relative;
+    width: 100%;
+    height: 37px;
+    display: flex;
+    align-items: center;
+}
+.evaluation .header-evaluation::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    background-color: #C4C4C4;
+}
+.evaluation .header-evaluation input {
+    margin: 0 10px 0 10px;
+    width: 14px;
+    height: 13px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    opacity: 70%;
+}
+.evaluation .header-evaluation label {
+    font-size: 24px;
+    font-weight: 40;
+    line-height: 35px;
+    margin-bottom: 0;
+    letter-spacing: 0.2px;
+}
+/* End Header */
+.evaluation table {
+    height: calc(95% - 37px);
+    width: 100%;
+    border-bottom: 2px solid #C4C4C4;
+}
+.evaluation table thead {
+    border-bottom: 2px solid #C4C4C4;
+}
+.evaluation table thead tr td {
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+}
+.evaluation table thead tr .measures {
+    display: flex;
+    justify-content: center;
+}
+.evaluation table tbody tr td {
+    position: relative;
+}
+.evaluation table tbody tr td:not(:last-child) {
+    border-left: 1px solid #C4C4C4;
+}
+.evaluation table tbody tr .first {
+    display: flex;
+    height: 100%;
+    flex: 2;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.evaluation table tbody tr .first a {
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20.58px;
+}
+.evaluation table tbody tr td:nth-child(2) div {
+    display: flex;
+    justify-content: center;
+}
+.evaluation table tbody tr td:nth-child(2) div div {
+    width: 17px;
+    height: 17px;
+    border-radius: 1.42px;
+    -webkit-border-radius: 1.42px;
+    -moz-border-radius: 1.42px;
+    -ms-border-radius: 1.42px;
+    -o-border-radius: 1.42px;
+    background-color: #333333;
+    margin-right: 10px;
+}
+.evaluation table tbody tr td:nth-child(2) div span {
+    font-weight: 400;
+    font-size: 14.24px;
+    line-height: 14.24px;
+    letter-spacing: 0.14px;
+}
+.evaluation table tbody tr .second {
+    text-align: center;
+    flex: 2;
+}
+.evaluation table tbody tr .second button {
+    width: 130px;
+    height: 32px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    padding: 0;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    box-shadow: 0 4px 0 rgba(69,69,69,.11);
+    color: white;
+}
+.evaluation table tbody tr .second button:first-child {
+    margin-bottom: 15px;
+    background-color: #41B669;
+}
+.evaluation table tbody tr .second button:last-child {
+    background-color: #F61212;
+}
+.evaluation table tbody tr .second button:last-child i {
+    margin: 0 0 0 10px;
+}
+.evaluation table tbody tr td:last-child {
+    border-left: 1px solid #C4C4C4;
+    text-align: center;
+}
+.new-evaluation {
+    text-align: center;
+    margin: 50px auto 0;
+}
+.new-evaluation button {
+    color: white;
+    box-shadow: 0 4px 0 rgba(69,69,69,.11);
+    background-color: #DBB128;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    width: 263px;
+    height: 42px;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 400;
+    border: none;
+    padding: 0;
+}
+.new-evaluation button i {
+    margin-right: 5px;
+}
