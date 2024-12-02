@@ -447,8 +447,6 @@ nav .navItem a{
     margin: 0.5vw 0;
     display: flex;
     align-items: center;
-    justify-content: center;
-
 }
 nav .dropdownMenu{
     display: none;
@@ -465,10 +463,9 @@ nav .dropdownMenu{
 nav .dropdownMenu.active{
     display: grid;
     margin: auto;
-    padding: 0 30px;
-    text-align: center;
-    width: 200%;
-
+    padding: 0 10px;
+    width: 150%;
+    min-width: 11vw;
 }
 html[lang="ar"] nav .dropdownMenu.active {
     right: -50%;
@@ -506,7 +503,7 @@ nav .navbar-nav ul{
 
 
 nav .navLink span {
-    font-size: 1.2vw;
+    font-size: 1.1vw;
 }
 
 nav .buttons{

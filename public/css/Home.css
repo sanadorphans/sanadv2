@@ -1,84 +1,140 @@
-
-.slider{
-    opacity: 0;
-}
-.slider .link{
-    position: absolute;
-    bottom: 20%;
-}
-.slider .link a{
-    background: #35C0CA;
-    color: #fff;
-    padding: 1vw 2vw;
-    font-size: 1.2vw;
-    font-weight: bold;
-}
-
-#about .description{
-    display: grid;
-    justify-items: center;
-}
-#about .description img{
-    height: auto;
-    margin: 1vw 4vw;
-
-}
-#about .description img:nth-of-type(1){
-    width: 4vw;
-    justify-self: start;
-}
-#about .description img:nth-of-type(2){
-    width: 2.5vw;
-    justify-self: end;
-}
-
-#about .description p{
-    margin: 0.5vw 0;
-    padding: 0 4vw;
-    text-align: justify;
+.fullscreen-video-container {
     position: relative;
+    height: 75vh; 
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0vw 0vw 4vw 4vw;
 }
-.sanadstory {
+.fullscreen-video-container iframe {
+    position: absolute;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;  
+}
+.fullscreen-video-content{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #001a312f;
+    padding: 30px;
+    border-radius: 5px;
+    height: 75vh; 
+} 
+.fullscreen-video-content h1 {
+    font-size: 2.5vw;
+    font-weight: 700;
+    color: #fff;
+}
+.fullscreen-video-content button {
+    font-size: 1.2vw;
+    padding: 0.7vw 4vw;
+    font-weight: 700;
+    background: #35C0CA;
+    margin:2vw 0;
+}
+#about{
+    margin-bottom: 2vw;
+}
+#about h2{
+    text-align: center;
+    margin: 2vw 0;
+    font-size: 2vw;
+}
+#about .about{
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+#about .aboutNums, #about .aboutdes{
+    padding: 0 2vw;
+}
+#about .aboutdes{
+    width: 80%;
+}
+#about .aboutNums div{
     display: grid;
     justify-items: center;
     align-items: center;
-    margin:4vw 0;
+    margin:2vw 0;
 }
-.sanadstory iframe{
-    border-radius: 2vw;
-    width: 50%;
+#about .aboutNums div h3{
+    font-size: 3vw;
+}
+#about .aboutNums div:nth-child(1) h3{
+    color: #F37246;
+}
+#about .aboutNums div:nth-child(2) h3{
+    color: #7950A0;
+}
+#about .aboutNums div:nth-child(3) h3{
+    color: #43B649;
+}
+#about .aboutNums div p{
+    text-align: center;
 }
 @media (max-width:800px) {
-    .slider .link{
-        bottom: 0%;
+    .fullscreen-video-content h1 {
+        font-size: 22px;
+        text-align: center;
     }
-    .slider .link a{
-        padding: 5px 10px;
-        font-size: 14px;
+    .fullscreen-video-content button {
+        font-size: 16px;
+        padding: 10px 20px;
+        font-weight: 600;
+        margin:20px 0;
     }
-    .sanadstory {
-        margin:40px 0;
+    #about{
+        margin-bottom: 40px;
     }
-    .sanadstory iframe{
-        border-radius: 20px;
-        width: 80%;
+    #about h2{
+        margin: 20px 0;
+        font-size: 20px;
     }
-    #about .description img{
-        margin: 40px 20px 20px 20px;
+    #about .about{
+        flex-wrap: wrap;
     }
-    #about .description img:nth-of-type(1){
-        width: 50px;
+    #about .aboutNums, #about .aboutdes{
+        padding: 0 10px;
     }
-    #about .description img:nth-of-type(2){
-        width: 40px;
+    #about .aboutNums div{
+        margin:20px 0;
     }
-    #about .description p{
-        font-size: 18px;
-        padding: 0 15px;
+    #about .aboutNums div h3{
+        font-size: 30px;
     }
-
+    #about .aboutdes{
+        width: 100%;
+    }
 }
 
+#qoutation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    width: 90%;
+    margin: auto;
+}
+#qoutation p:first-child{
+    font-size: 10vw;
+    opacity: 50%;
+}
+#qoutation .qoutation{
+    font-size: 1.2vw;
+    text-align: center;
+    width:70%
+}
+#qoutation p:last-child{
+    align-self: end;
+    font-size: 10vw;
+    opacity: 50%;
+}
 #numbers{
     background-color: rgb(121 , 80 , 160);
     display: grid;
@@ -163,7 +219,7 @@ html[lang="ar"] #numbers .title .persons-icons{
 }
 
 #numbers .glide__slide img{
-    width: 6vw;
+    width: 4vw;
     height: auto;
     margin: auto;
 }
@@ -175,7 +231,7 @@ html[lang="ar"] #numbers .title .persons-icons{
     color: #fff;
 }
 #numbers .glide__slide span{
-    font-size: 1.2vw;
+    font-size: 3vw;
     font-weight: bold;
     margin: 1vw auto;
     color: #fff;
@@ -559,6 +615,29 @@ html[lang="ar"] #donation .photo img{
 }
 
 
+#Accreditation{
+    margin: 4vw 0;
+}
+#Accreditation .Accreditation{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row-reverse;
+    width: 90%;
+    margin: 2vw auto;
+}
+#Accreditation .Accreditation p{
+    font-size:1.2vw;
+    text-align: justify;
+    margin: 0 2vw;
+}
+#Accreditation .Accreditation img{
+    width: 25vw;
+    height: auto;
+    border-radius: 2vw;
+}
+
+
 @media (max-width:800px) {
     #services{
         margin: 40px 0;
@@ -574,6 +653,24 @@ html[lang="ar"] #donation .photo img{
         margin: 20px;
     }
     #services .services img{
+        width: 80%;
+        border-radius: 20px;
+    }
+
+    #Accreditation{
+        margin: 40px 0;
+        display: grid;
+        justify-items: center;
+    }
+    #Accreditation .Accreditation{
+        flex-direction: column;
+        margin: 20px 0;
+    }
+    #Accreditation .Accreditation p{
+        font-size: 18px;
+        margin: 20px;
+    }
+    #Accreditation .Accreditation img{
         width: 80%;
         border-radius: 20px;
     }
@@ -805,23 +902,23 @@ html[lang="ar"] #media #news .more img,html[lang="ar"] #media #annuals .more img
 
 }
 
-#Impacts .Impact{
+#Links .Impact{
     margin: 2vw 0;
     display: flex;
     align-items: center;
 }
-#Impacts .Impacts{
+#Links .Links{
     width: 80%;
     margin: 0 auto;
 }
 
-#Impacts .Impact .details {
+#Links .Impact .details {
     margin: 1vw;
     display: grid;
     align-items: center;
 }
 
-#Impacts .Impact .details p {
+#Links .Impact .details p {
     font-size: 1.2vw;
     padding: 1.5vw;
     border-radius: 2vw;
@@ -829,7 +926,7 @@ html[lang="ar"] #media #news .more img,html[lang="ar"] #media #annuals .more img
     background-color: #F5F5F5;
 }
 
-#Impacts .Impact .title {
+#Links .Impact .title {
     padding: 1.5vw;
     border-radius: 2vw 2vw 2vw 0vw;
     display: grid;
@@ -837,25 +934,25 @@ html[lang="ar"] #media #news .more img,html[lang="ar"] #media #annuals .more img
     justify-items: center;
     width: 25vw;
 }
-#Impacts .Impact:nth-of-type(odd) .title {
+#Links .Impact:nth-of-type(odd) .title {
     background-color:#35C0CA;
 }
-#Impacts .Impact:nth-of-type(even) .title {
+#Links .Impact:nth-of-type(even) .title {
     background-color:#F37246;
 }
 
-#Impacts .Impact:nth-of-type(3) .title {
+#Links .Impact:nth-of-type(3) .title {
     background-color:#43b649;
 }
-#Impacts .Impact:nth-of-type(4) .title {
+#Links .Impact:nth-of-type(4) .title {
     background-color:#7950a0;
 }
 
-#Impacts .Impact:nth-of-type(5) .title {
+#Links .Impact:nth-of-type(5) .title {
     background-color:#3e97c9;
 }
 
-#Impacts .Impact .title h2 {
+#Links .Impact .title h2 {
     font-size: 2.2vw;
     text-align: center;
     margin: 2vw;
@@ -864,32 +961,32 @@ html[lang="ar"] #media #news .more img,html[lang="ar"] #media #annuals .more img
 }
 
 
-.AllImpacts{
+.AllLinks{
     width: 80%;
     margin: auto;
 }
 
-#Impacts  .slider{
+#Links  .slider{
     width: 100%;
     margin: 2vw 0;
     display: contents;
 }
 
-#Impacts .slider img{
+#Links .slider img{
     width: 15vw;
     height: auto;
     border-radius: 2vw;
 }
-#Impacts .slider p{
+#Links .slider p{
 font-size:1.2vw;
 color: #F37246;
 text-align: center;
 }
 
-.AllImpacts  .glide__track{
+.AllLinks  .glide__track{
     margin: auto;
 }
-#Impacts .content{
+#Links .content{
     height: 60vw;
     display: flex;
     align-items: center;
@@ -897,11 +994,11 @@ text-align: center;
     flex-direction: column;
 }
 
-.AllImpacts .glide__slide{
+.AllLinks .glide__slide{
     margin:auto;
 }
 
-.AllImpacts .glide__arrow{
+.AllLinks .glide__arrow{
     padding: 0;
     background-color: transparent;
     border: 0 solid rgba(255,255,255,0.5);
@@ -910,13 +1007,13 @@ text-align: center;
     cursor: pointer;
 }
 
-.AllImpacts .glide__arrow--left {
+.AllLinks .glide__arrow--left {
     /* support safari */
     -webkit-transform: rotate(270deg) translate(50%,0);
     transform: rotate(270deg) translate(50%,0);
     left: -2em;
     z-index: 5;}
-.AllImpacts .glide__arrow--right {
+.AllLinks .glide__arrow--right {
     /* support safari */
     -webkit-transform: rotate(90deg) translate(-50%,0);
     transform: rotate(90deg) translate(-50%,0);
@@ -924,12 +1021,12 @@ text-align: center;
     z-index: 5;
 }
 
-#Impacts .glide__arrow img{
+#Links .glide__arrow img{
     width: 6vw;
     height: auto;
 }
 
-.moreStories .more{
+.moreLinks .more{
     text-align: center;
     background-color: #35C0CA;
     color: #fff;
@@ -939,7 +1036,23 @@ text-align: center;
     margin: 3vw;
 }
 
-.moreStories{
+.moreLinks{
+    width: 100%;
+    display: grid;
+    justify-items: center;
+}
+
+.moreAwards .more{
+    text-align: center;
+    background-color: #35C0CA;
+    color: #fff;
+    padding: 1vw 4vw;
+    font-size: 1.5vw;
+    cursor: pointer;
+    margin: 3vw;
+}
+
+.moreAwards{
     width: 100%;
     display: grid;
     justify-items: center;
@@ -948,36 +1061,36 @@ text-align: center;
 
 @media (max-width:800px) {
 
-    #Impacts .Impact{
+    #Links .Impact{
         margin: 50px;
         flex-flow: column;
     }
-    #Impacts .Impacts{
+    #Links .Links{
         width: 95%;
     }
 
-    #Impacts .Impact .details {
+    #Links .Impact .details {
         margin: 15px 0;
     }
 
-    #Impacts .Impact .details p {
+    #Links .Impact .details p {
         font-size: 18px;
         padding: 15px;
         border-radius:20px;
         margin: 15px 0;
     }
 
-    #Impacts .Impact .title {
+    #Links .Impact .title {
         padding: 15px;
         border-radius: 20px 20px 20px 0;
         width: 100%;
     }
-    #Impacts .Impact .title h2 {
+    #Links .Impact .title h2 {
         font-size: 22px;
         width: auto;
         margin: 15px 0;
     }
-    #Impacts .slider a p{
+    #Links .slider a p{
         font-size:18px;
     }
     .glide__slide a{
@@ -986,33 +1099,33 @@ text-align: center;
         align-items: center;
     }
 
-    #Impacts .slider{
+    #Links .slider{
         margin:50px 0;
     }
 
-    #Impacts .slider img{
+    #Links .slider img{
         width: 160px;
     }
 
-    #Impacts  .glide__arrow img{
+    #Links  .glide__arrow img{
         width: 50px;
     }
 
-    .AllImpacts .glide__arrow--left {
+    .AllLinks .glide__arrow--left {
         /* support safari */
         -webkit-transform: rotate(270deg) translate(120%,0);
         transform: rotate(270deg) translate(120%,0);
         left: -0.2em;
 
     }
-    .AllImpacts .glide__arrow--right {
+    .AllLinks .glide__arrow--right {
         /* support safari */
         -webkit-transform: rotate(90deg) translate(-120%,0);
         transform: rotate(90deg) translate(-120%,0);
         right: -0.2em;
 
     }
-    .moreStories .more{
+    .moreLinks .more{
         color: #fff;
         padding: 10px 40px;
         font-size: 18px;

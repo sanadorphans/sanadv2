@@ -1,6 +1,6 @@
 @extends('web.layouts.master')
 
-@section('page_name') {{ __('lang.impact') }}@endsection
+@section('page_name') {{ __('lang.Achievements') }}@endsection
 
 @section('style')
     <link rel="stylesheet" href="{{asset('css/Impact.css?v=2.3')}}">
@@ -18,7 +18,7 @@
     <section id="Impacts">
         <div class="title general">
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-            <h1 class="GeneralTitle">{{ __('lang.impact') }}</h1>
+            <h1 class="GeneralTitle">{{ __('lang.Achievements') }}</h1>
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
         </div>
         <div class="Impacts">
@@ -44,7 +44,7 @@
             @empty
             @endforelse
         </div>
-
+{{-- 
         <section id="numbers">
             <div class="title">
                 <h2>{{ __('lang.achievements') }}</h2>
@@ -106,7 +106,7 @@
                 <a class="more" href="/pages/stories">{{ __('lang.more') }}</a>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 @endsection
 

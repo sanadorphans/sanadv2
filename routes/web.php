@@ -31,6 +31,7 @@ use App\Http\Controllers\Users\OrphanageController;
 use App\Http\Controllers\Users\IndividualController;
 use App\Http\Controllers\cms\AccreditationController;
 use App\Http\Controllers\Admin\ConsultationController;
+use App\Http\Controllers\cms\ImportantLinksController;
 use App\Http\Controllers\Users\OrganisationController;
 use App\Http\Controllers\cms\TechnicalReportsController;
 use App\Http\Controllers\cms\KnowledgeCreationController;
@@ -109,6 +110,7 @@ Route::group([
         Route::get('/careers/{id}',[PageController::class,'show'])->name('pages.carrer');
         Route::post('/careers/apply',[PageController::class,'apply'])->name('pages.carrer.apply');
         Route::get('/awards',[PageController::class,'awards'])->name('pages.certificates');
+        Route::get('/important-links',[ImportantLinksController::class,'index'])->name('pages.ImportantLinks.index');
         Route::get('/technical-reports',[TechnicalReportsController::class,'index'])->name('pages.technical_reports');
         Route::get('/periodical-newsletters',[PeriodicalNewsletterController::class,'index'])->name('pages.periodical_newsletters');
         Route::get('/media-bags',[MediaBagController::class,'index'])->name('pages.media_bags');

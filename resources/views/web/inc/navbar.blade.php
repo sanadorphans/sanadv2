@@ -45,15 +45,63 @@
         <div class="navbar-nav navbar-nav-hover">
             <img class="deactive" src="{{asset('img/nav/remove.svg')}}" alt="deactive" width="30" height="30" onclick="toggleNavActive()">
             <ul>
+                <li class="navItem" onclick="toggleActiveClass(this)">
+                    <a class="navLink" href="#">
+                            <span >{{ __('lang.our_services') }}</span>
+                            <span class="bg-blue"></span>
+                            <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
+                    </a>
+                    <div class="dropdownMenu">
+                            @forelse (\App\Models\Service::get() as $service)
+                                <a href="{{ route('web.pages.services', $service->id) }}" >
+                                    <span>{{ $service->$title }}</span>
+                                </a>
+                            @empty
+                            @endforelse
+                    </div>
+                </li>
+                <li class="navItem" onclick="toggleActiveClass(this)">
+                    <a class="navLink" href="#">
+                            <span >{{ __('lang.our_programs') }}</span>
+                            <span class="bg-blue"></span>
+                            <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
+                    </a>
+                    <div class="dropdownMenu">
+                            @forelse (\App\Models\Service::get() as $service)
+                                <a href="{{ route('web.pages.services', $service->id) }}" >
+                                    <span>{{ $service->$title }}</span>
+                                </a>
+                            @empty
+                            @endforelse
+                    </div>
+                </li>
                 <li class="navItem " onclick="toggleActiveClass(this)">
                     <a class="navLink" href="#">
-                        <span >{{ __('lang.about') }}</span>
+                        <span >{{ __('lang.our_impact') }}</span>
+                        <span class="bg-blue"></span>
+                        <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
+                    </a>
+                    <div class="dropdownMenu">
+                            <a href="{{ route('web.pages.impact') }}">
+                                <span>{{ __('lang.Achievements') }}</span>
+                            </a>
+                            <a href="{{ route('web.stories.index') }}">
+                                <span>{{ __('lang.stories') }}</span>
+                            </a>
+                            <a href="#">
+                                <span>{{ __('lang.Our_Aspirations') }}</span>
+                            </a>
+                    </div>
+                </li>
+                <li class="navItem " onclick="toggleActiveClass(this)">
+                    <a class="navLink" href="#">
+                        <span >{{ __('lang.Who We Are') }}</span>
                         <span class="bg-blue"></span>
                         <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
                     </a>
                     <div class="dropdownMenu">
                             <a href="{{ route('web.pages.who_we_are') }}">
-                                <span>{{ __('lang.Who We Are') }}</span>
+                                <span>{{ __('lang.about') }}</span>
                             </a>
                             <a href="{{ route('web.board.index') }}">
                                 <span>{{ __('lang.board_members') }}</span>
@@ -61,38 +109,13 @@
                             <a href="{{ route('web.team_members.index') }}">
                                 <span>{{ __('lang.staff') }}</span>
                             </a>
+                            <a href="{{ route('web.pages.vacancies') }}">
+                                <span>{{ __('lang.Partners_Network') }}</span>
+                            </a>
                             <a href="{{ route('web.pages.certificates') }}">
                                 <span>{{ __('lang.awards') }}</span>
                             </a>
-                            <a href="{{ route('web.pages.impact') }}">
-                                <span>{{ __('lang.impact') }}</span>
-                            </a>
-                            <a href="{{ route('web.pages.alliances') }}">
-                                <span>{{ __('lang.Alliances') }}</span>
-                            </a>
-                            {{-- <a href="{{ route('web.pages.Accreditation ') }}">
-                                <span>{{ __('lang.Accreditation ') }}</span>
-                            </a> --}}
-                            <a href="{{ route('web.pages.vacancies') }}">
-                                <span>{{ __('lang.join_wataneya') }}</span>
-                            </a>
-
                     </div>
-                </li>
-                <li class="navItem" onclick="toggleActiveClass(this)">
-                    <a class="navLink" href="{{ route('web.pages.services', 1) }}">
-                            <span >{{ __('lang.our_services') }}</span>
-                            <span class="bg-blue"></span>
-                            {{-- <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow"> --}}
-                    </a>
-                    {{-- <div class="dropdownMenu">
-                            @forelse (\App\Models\Service::get() as $service)
-                                <a href="{{ route('web.pages.services', $service->id) }}" >
-                                    <span>{{ $service->$title }}</span>
-                                </a>
-                            @empty
-                            @endforelse
-                    </div> --}}
                 </li>
                 <li class="navItem " onclick="toggleActiveClass(this)">
                     <a class="navLink" href="#">
@@ -101,12 +124,21 @@
                         <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
                     </a>
                     <div class="dropdownMenu">
+                            <a href="#">
+                                <span>{{ __('lang.Photos_and_videos') }}</span>
+                            </a>
                             <a href="{{ route('web.news.index') }}">
                                 <span>{{ __('lang.news') }}</span>
                             </a>
-                            <a href="{{ route('web.pages.campaigns') }}">
-                                <span>{{ __('lang.campaigns') }}</span>
+                            <a href="#">
+                                <span>{{ __('lang.Press_Releases') }}</span>
                             </a>
+                            <a href="#">
+                                <span>{{ __('lang.Photos_and_videos') }}</span>
+                            </a>
+                            {{-- <a href="{{ route('web.pages.campaigns') }}">
+                                <span>{{ __('lang.campaigns') }}</span>
+                            </a> --}}
                             {{-- <a href="{{ route('web.pages.events') }}">
                                 <span>{{ __('lang.events') }}</span>
                             </a> --}}
@@ -121,8 +153,25 @@
                             </a>
                     </div>
                 </li>
-
-                <li class="navItem" onclick="toggleActiveClass(this)">
+                <li class="navItem " onclick="toggleActiveClass(this)">
+                    <a class="navLink" href="#">
+                        <span >{{ __('lang.Get_Involved') }}</span>
+                        <span class="bg-blue"></span>
+                        <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
+                    </a>
+                    <div class="dropdownMenu">
+                            <a href="#">
+                                <span>{{ __('lang.Partner_with_us') }}</span>
+                            </a>
+                            <a href="#">
+                                <span>{{ __('lang.volunteer') }}</span>
+                            </a>
+                            <a href="{{ route('web.pages.vacancies') }}">
+                                <span>{{ __('lang.join_wataneya') }}</span>
+                            </a>
+                    </div>
+                </li>
+                {{-- <li class="navItem" onclick="toggleActiveClass(this)">
                     <a class="navLink" href="#" >
                         <span>{{ __('lang.our_partners') }}</span>
                         <span class="bg-blue"></span>
@@ -136,7 +185,7 @@
                             @empty
                             @endforelse
                     </div>
-                </li>
+                </li> --}}
             </ul>
             <div class="buttons">
                     <a href="{{ route('web.donations.index') }}">{{ __('lang.donate_now') }}</a>
