@@ -8,14 +8,14 @@
             تعيين مستشار
         </h1>
 
-        
-        
+
+
     </div>
 @stop
 
 
 @section('content')
-{{ App::setLocale('ar'); }}
+{{ App::setLocale('ar') }}
 
     <div class="page-content browse container-fluid">
         @include('voyager::alerts')
@@ -235,14 +235,14 @@
                                                 @endif
                                             </td>
                                         @endforeach
-                                       
+
                                         <td class="no-sort no-click bread-actions">
-                                            
+
                                             <a href="{{ route('admin.consultations.consultants.assign',[$consultation->id,$data->id])}}" title="تعيين" class="btn btn-sm btn-primary pull-right edit">
-                                                <i class="voyager-edit"></i> 
+                                                <i class="voyager-edit"></i>
                                                 <span class="hidden-xs hidden-sm">تعيين</span>
                                             </a>
-                                            
+
                                         </td>
                                     </tr>
                                     @endforeach
@@ -352,7 +352,7 @@
 .dropdown-menu {
     left: 0 !important;
     right: auto !important;
-   
+
 }
 div.dataTables_wrapper div.dataTables_filter {
     margin-right: 100px;
@@ -377,13 +377,13 @@ div.dataTables_wrapper div.dataTables_filter {
                         "columnDefs" => [
                             ['targets' => 'dt-not-orderable', 'searchable' =>  false, 'orderable' => false],
                         ],
-                        
-                            
-                        
-   
-                        
-                        
-                        
+
+
+
+
+
+
+
                     ],
                     config('voyager.dashboard.data_tables', []))
                 , true) !!}).buttons().container().appendTo('#dataTable_wrapper .col-md-6:eq(0)');
@@ -393,7 +393,7 @@ div.dataTables_wrapper div.dataTables_filter {
                 });
             @endif
 
-            
+
             $('.select_all').on('click', function(e) {
                 $('input[name="row_id"]').prop('checked', $(this).prop('checked')).trigger('change');
             });
@@ -406,7 +406,7 @@ div.dataTables_wrapper div.dataTables_filter {
             $('#delete_modal').modal('show');
         });
 
-      
+
         $('input[name="row_id"]').on('change', function () {
             var ids = [];
             $('input[name="row_id"]').each(function() {
@@ -434,7 +434,7 @@ div.dataTables_wrapper div.dataTables_filter {
     <!-- InputMask -->
     <script src="{{asset('plugins/moment/moment.min.js')}}"></script>
     <script src="{{asset('plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"></script>
-    
+
     {{-- <!-- AdminLTE App -->
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->

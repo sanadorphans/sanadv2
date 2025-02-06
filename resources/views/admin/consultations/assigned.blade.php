@@ -15,15 +15,15 @@
         @can('delete', app($dataType->model_name))
             @include('voyager::partials.bulk-delete')
         @endcan
-        
-        
-        
+
+
+
     </div>
 @stop
 
 
 @section('content')
-    {{ App::setLocale('ar'); }}
+    {{ App::setLocale('ar') }}
     <div class="page-content browse container-fluid">
         @include('voyager::alerts')
         <div class="row">
@@ -76,7 +76,7 @@
                                                     @if ($isServerSide && in_array($row->field, $sortableColumns))
                                                         <a href="{{ $row->sortByUrl($orderBy, $sortOrder) }}">
                                                     @endif
-                                                    
+
                                                     {{ $row->getTranslatedAttribute('display_name') }}
                                                     @if ($isServerSide)
                                                         @if ($row->isCurrentSortField($orderBy))
@@ -148,15 +148,15 @@
                                                                     class="badge badge-pill badge-warning">{{ __('site.waiting for consultant reply') }}
                                                                 </span>
                                                             @endif
-                                                            
+
                                                         @endif
                                                     </td>
-                                                @elseif($row->field == 'attachment') 
+                                                @elseif($row->field == 'attachment')
                                                     <td>
                                                         <a href="{{ $data->attachment }}" target="_blank" >{{ __('site.download') }}</a>
                                                     </td>
                                                 @else
-                                                
+
                                                     <td>
                                                         @if (isset($row->details->view))
                                                             @include($row->details->view, ['row' => $row, 'dataType' => $dataType, 'dataTypeContent' => $dataTypeContent, 'content' => $data->{$row->field}, 'action' => 'browse', 'view' => 'browse', 'options' => $row->details])
@@ -289,25 +289,25 @@
                                                         @endif
                                                     </td>
                                                 @endif
-                                            @endif    
+                                            @endif
                                         @endforeach
-                                       
+
                                         <td class="no-sort no-click bread-actions">
                                             {{-- <button  title="حذف" class="btn btn-sm btn-danger pull-right delete" data-id="2" id="delete-2">
-                                                <i class="voyager-trash"></i> 
+                                                <i class="voyager-trash"></i>
                                                 <span class="hidden-xs hidden-sm">حذف</span>
                                             </button> --}}
 
-                                            
+
                                             <a href="{{ route('admin.consultations.close',$data->id)}}" title="إتمام" class="btn btn-sm btn-success pull-right edit">
-                                                <i class="voyager-check"></i> 
+                                                <i class="voyager-check"></i>
                                                 <span class="hidden-xs hidden-sm">إتمام</span>
                                             </a>
                                             <a href="{{ route('admin.consultations.manage',$data->id)}}" title="تفاصيل" class="btn btn-sm btn-primary pull-right edit">
-                                                <i class="voyager-edit"></i> 
+                                                <i class="voyager-edit"></i>
                                                 <span class="hidden-xs hidden-sm">تفاصيل</span>
                                             </a>
-                                            
+
                                         </td>
                                     </tr>
                                     @endforeach
@@ -380,7 +380,7 @@
 
                             <input type="submit" class="btn btn-danger pull-right delete-confirm"
                                     value="نعم" style="margin: 0 5px;">
-                        
+
                         <button type="button" class="btn btn-default pull-right" data-dismiss="modal">
                             {{ __('voyager::generic.cancel') }}
                         </button>
@@ -448,7 +448,7 @@
 .dropdown-menu {
     left: 0 !important;
     right: auto !important;
-   
+
 }
 div.dataTables_wrapper div.dataTables_filter {
     margin-right: 100px;
@@ -490,16 +490,16 @@ div.dataTables_wrapper div.dataTables_filter {
                             [
                                 'extend'=> 'colvis',
                                 'text'=>'الحقول المتاحة',
-                                                                
+
                             ],
-                            
+
                         ]
-                            
-                        
-   
-                        
-                        
-                        
+
+
+
+
+
+
                     ],
                     config('voyager.dashboard.data_tables', []))
                 , true) !!}).buttons().container().appendTo('#dataTable_wrapper .col-md-6:eq(0)');
@@ -509,7 +509,7 @@ div.dataTables_wrapper div.dataTables_filter {
                 });
             @endif
 
-            
+
             $('.select_all').on('click', function(e) {
                 $('input[name="row_id"]').prop('checked', $(this).prop('checked')).trigger('change');
             });
@@ -522,7 +522,7 @@ div.dataTables_wrapper div.dataTables_filter {
             $('#delete_modal').modal('show');
         });
 
-      
+
         $('input[name="row_id"]').on('change', function () {
             var ids = [];
             $('input[name="row_id"]').each(function() {
@@ -550,7 +550,7 @@ div.dataTables_wrapper div.dataTables_filter {
     <!-- InputMask -->
     <script src="{{asset('plugins/moment/moment.min.js')}}"></script>
     <script src="{{asset('plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"></script>
-    
+
     {{-- <!-- AdminLTE App -->
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
@@ -597,7 +597,7 @@ div.dataTables_wrapper div.dataTables_filter {
 
             $rejectModal.appendTo('body');
             $rejectBtn.on('click',function (e) {
-                
+
                 var arr = ($(e.target).attr('class')).split('id_');
                 // console.log(arr[1]);
                 $('#rejection_id').val(arr[1]);
