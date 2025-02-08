@@ -147,3 +147,148 @@ aside .news{
 
 
 
+#PressReleases{
+    margin: 4vw 0;
+}
+
+.PressReleases{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 4vw 0;
+    border-radius: 2vw;
+}
+.PressRelease{
+    margin: 1vw 0;
+    border-radius: 2vw;
+    width: 33%;
+    padding: 0 2vw;
+}
+.PressRelease a{
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+}
+.PressRelease .image {
+    width: 100%;
+    background: var(--background) no-repeat center;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size:cover;
+    background-size: cover;
+    border: 0.4vw solid #fff;
+    border-radius:2vw;
+    height: 40vh;
+    position: relative;
+    z-index: 1;
+}
+
+.PressRelease h1{
+    width: 90%;
+    color:#001A31;
+    font-size: 1.4vw;
+    margin: 1vw 0;
+    line-height: 5vw;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.PressRelease a{
+    color:#fff;
+    padding: 1vw;
+    font-size: 1.8vw;
+}
+
+.ShowPressRelease{
+    margin: 2vw auto;
+    width: 80%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.ShowPressRelease h1 , aside h1{
+   font-size:2.2vw;
+   margin: 1vw 0;
+   text-align: center;
+   color: #35C0CA;
+}
+.ShowPressRelease p{
+    font-size:1.4vw;
+    text-align: justify;
+}
+.ShowPressRelease img{
+    width: 50%;
+    height: auto;
+    margin: 4vw 0;
+    border-radius: 2vw;
+}
+
+aside {
+    margin-bottom: 4vw;
+}
+
+aside .PressReleases{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 2vw;
+}
+
+
+@media (max-width:800px) {
+    #PressReleases{
+        margin: 40px 0;
+    }
+    .PressReleases{
+        margin: 40px 0;
+        border-radius: 40px;
+    }
+    .PressRelease{
+        margin: 20px 0;
+        border-radius: 40px;
+        width: 100%;
+        padding: 0px;
+    }
+    .PressRelease .image{
+        border-radius:40px;
+    }
+    .PressRelease h1{
+        width: 90%;
+        font-size: 18px;
+        margin: 20px 0;
+        line-height: 50px;
+    }
+    .PressRelease a{
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+    .PressRelease .image::after{
+        border-radius:40px;
+    }
+    .ShowPressRelease{
+        margin: 20px auto;
+        width: 90%;
+    }
+    .ShowPressRelease h1 , aside h1{
+       font-size:25px;
+       margin: 20px 0;
+    }
+    .ShowPressRelease p{
+        font-size:18px;
+    }
+    .ShowPressRelease img{
+        width: 100%;
+        margin: 20px 0;
+        border-radius:40px;
+    }
+    aside .PressReleases{
+        margin: 0 40px;
+    }
+    aside {
+        margin-bottom: 50px;
+    }
+
+}

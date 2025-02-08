@@ -109,7 +109,7 @@
                             <a href="{{ route('web.team_members.index') }}">
                                 <span>{{ __('lang.staff') }}</span>
                             </a>
-                            <a href="{{ route('web.pages.vacancies') }}">
+                            <a href="{{ route('web.pages.alliances') }}">
                                 <span>{{ __('lang.Partners_Network') }}</span>
                             </a>
                             <a href="{{ route('web.pages.certificates') }}">
@@ -124,18 +124,18 @@
                         <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
                     </a>
                     <div class="dropdownMenu">
-                            <a href="#">
+                            <!-- <a href="#">
                                 <span>{{ __('lang.Photos_and_videos') }}</span>
-                            </a>
+                            </a> -->
                             <a href="{{ route('web.news.index') }}">
                                 <span>{{ __('lang.news') }}</span>
                             </a>
-                            <a href="#">
+                            <a href="{{ route('web.PressRelease.index') }}">
                                 <span>{{ __('lang.Press_Releases') }}</span>
                             </a>
-                            <a href="#">
+                            <!-- <a href="#">
                                 <span>{{ __('lang.Photos_and_videos') }}</span>
-                            </a>
+                            </a> -->
                             {{-- <a href="{{ route('web.pages.campaigns') }}">
                                 <span>{{ __('lang.campaigns') }}</span>
                             </a> --}}
@@ -163,9 +163,9 @@
                             <a href="#">
                                 <span>{{ __('lang.Partner_with_us') }}</span>
                             </a>
-                            <a href="#">
+                            <!-- <a href="#">
                                 <span>{{ __('lang.volunteer') }}</span>
-                            </a>
+                            </a> -->
                             <a href="{{ route('web.pages.vacancies') }}">
                                 <span>{{ __('lang.join_wataneya') }}</span>
                             </a>

@@ -41,6 +41,7 @@ use App\Http\Controllers\cms\PeriodicalNewsletterController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Consultants\RepliesConsultantController;
 use App\Http\Controllers\cms\StoriesController as CMSStoriesController;
+use App\Http\Controllers\cms\PressReleaseController;
 /*
 
 |--------------------------------------------------------------------------
@@ -103,6 +104,8 @@ Route::group([
         Route::get('/team-members/{id}',[TeamMemberController::class,'show'])->name('team_members.show');
         Route::get('/stories/{id}',[CMSStoriesController::class,'show'])->name('stories.show');
         Route::get('/stories',[CMSStoriesController::class,'index'])->name('stories.index');
+        Route::get('/PressRelease',[PressReleaseController::class,'index'])->name('PressRelease.index');
+        Route::get('/PressRelease/{id}',[PressReleaseController::class,'show'])->name('PressRelease.show');
         Route::get('/news',[NewsController::class,'index'])->name('news.index');
         Route::get('/news/{id}',[NewsController::class,'show'])->name('news.show');
         Route::get('/who-we-are',[PageController::class,'who_we_are'])->name('pages.who_we_are');

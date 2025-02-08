@@ -1,6 +1,9 @@
 <?php
 
 return [
+    "pearson_Accreditation"=>"Vocational Qualification in Child Care (2012) Sanad was internationally accredited by PEARSON to provide a professional certificate for care givers, a certificate that promotes child and youth development. ",
+    "pearson_Accreditation2"=>"PEARSON Accreditation (2016) A quality assurance certification supporting all educational training processes and programs in Sanad. ",
+    "PWC_Accreditation"=>"Quality Standards for Care Homes (2014) An accreditation given by the Ministry of Social Solidarity applied in collaboration with PwC. ",
     "Home_qou" => "providing a safe environment for younger orphans, empowering youth, facilitating their integration within the community, equipping all parties involved in the system, paving the way for the Kafala System, and enlightening the society about the essentiality of its support.",
     "impact" => "Impact",
     'Get_Involved' => 'Get Involved',

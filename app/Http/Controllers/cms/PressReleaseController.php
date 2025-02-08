@@ -27,9 +27,9 @@ class PressReleaseController extends Controller
         if (!$PressRelease) {
             abort(404);
         }else{
-            return view('cms.news.show')->with([
+            return view('cms.PressRelease.show')->with([
                 'PressRelease' => $PressRelease,
-                'other_news' => PressRelease::inRandomOrder()->whereNotNull($columnName)->take(3)->get(),
+                'other_PressReleases' => PressRelease::inRandomOrder()->whereNotNull($columnName)->take(3)->get(),
                 'title' => $PressRelease->title,
                 'date' => app()->getLocale() == 'ar' ? to_arabic_number(date('F Y', strtotime($PressRelease->created_at))) : $PressRelease->created_at->formatLocalized('%B %Y')
             ]);

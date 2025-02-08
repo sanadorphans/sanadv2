@@ -10,7 +10,7 @@
 @section('page_name') {{ __('lang.home') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.8')}}">
+    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.9')}}">
     <link rel="stylesheet" href="{{asset('css/ImportantLink.css?v=1.3')}}"/>
 @endsection
 
@@ -134,15 +134,21 @@
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
         </div>
         <div class="Accreditation">
-            <img src="{{ asset('/img/Accreditation/E7dMxSow70rkm5QfJ5C0 1.png') }}" alt="Accreditation" width="100" height="100">
-            <p>{{ __('lang.services-details-home') }}</p>
+            <img src="{{ asset('/img/Accreditation/E7dMxSow70rkm5QfJ5C0 1.png') }}" alt="Accreditation" width="50px" height="50px">
+            <div>
+                <p>{{ __('lang.pearson_Accreditation') }}</p>
+                <p>{{ __('lang.pearson_Accreditation2') }}</p>
+            </div>
         </div>
         <div class="Accreditation">
-            <img src="{{ asset('/img/Accreditation/E7dMxSow70rkm5QfJ5C0 1.png') }}" alt="Accreditation" width="100" height="100">
-            <p>{{ __('lang.services-details-home') }}</p>
+            <div class="logos">
+                <img src="{{ asset('/img/Accreditation/6Q56Ocp7IhA1PcQrdXVN.png') }}" alt="Accreditation" width="50px" height="50px">
+                <img src="{{ asset('/img/Accreditation/original.png') }}" alt="Accreditation" width="50px" height="50px">
+            </div>
+            <p>{{ __('lang.PWC_Accreditation') }}</p>
         </div>
         <div class="moreAwards">
-            <a class="more" href="/pages/stories">{{ __('lang.our_awards') }}</a>
+            <a class="more" href="/pages/awards">{{ __('lang.our_awards') }}</a>
         </div>
     </section>
 
