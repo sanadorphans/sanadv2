@@ -15,6 +15,7 @@ use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\DonationsController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\cms\PartnerController;
+use App\Http\Controllers\cms\ProgramController;
 use App\Http\Controllers\cms\ServiceController;
 use App\Http\Controllers\cms\AllianceController;
 use App\Http\Controllers\cms\CampaignController;
@@ -25,9 +26,12 @@ use App\Http\Controllers\Users\SearchController;
 use App\Http\Controllers\cms\ResourcesController;
 use App\Http\Controllers\Users\RepliesController;
 use App\Http\Controllers\Users\RequestController;
+use App\Http\Controllers\cms\AspirationController;
+use App\Http\Controllers\cms\SubProgramController;
 use App\Http\Controllers\cms\SubServiceController;
 use App\Http\Controllers\cms\TeamMemberController;
 use App\Http\Controllers\Users\OrphanageController;
+use App\Http\Controllers\cms\PressReleaseController;
 use App\Http\Controllers\Users\IndividualController;
 use App\Http\Controllers\cms\AccreditationController;
 use App\Http\Controllers\Admin\ConsultationController;
@@ -41,7 +45,6 @@ use App\Http\Controllers\cms\PeriodicalNewsletterController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Consultants\RepliesConsultantController;
 use App\Http\Controllers\cms\StoriesController as CMSStoriesController;
-use App\Http\Controllers\cms\PressReleaseController;
 /*
 
 |--------------------------------------------------------------------------
@@ -120,17 +123,20 @@ Route::group([
         Route::get('/events',[CmsEventController::class,'index'])->name('pages.events');
         Route::get('/events/{id}',[CmsEventController::class,'show'])->name('pages.events.show');
         Route::get('/alliances',[AllianceController::class,'index'])->name('pages.alliances');
+        Route::get('/aspirations',[AspirationController::class,'index'])->name('pages.Aspirations');
         Route::get('/accreditation',[AccreditationController::class,'index'])->name('pages.Accreditation ');
         Route::get('/campaigns',[CampaignController::class,'index'])->name('pages.campaigns');
         Route::get('/sanad',[SanadController::class,'index'])->name('pages.sanad');
         Route::get('/partners',[PartnerController::class,'index'])->name('pages.partners');
         Route::get('/partners/{id}',[PartnerController::class,'show'])->name('pages.partners');
-        Route::get('/services/{id}',[ServiceController::class,'show'])->name('pages.services');
         Route::get('/knowledge-creation/{id}',[KnowledgeCreationController::class,'index'])->name('pages.KnowledgeCreation');
         Route::post('/knowledge-creation/search',[KnowledgeCreationController::class,'search'])->name('pages.KnowledgeCreation.search');
         Route::get('/KnowledgeCreation/resources/{id}',[ResourceController::class,'index'])->name('pages.resource');
         Route::post('/KnowledgeCreation/resources/{id}/download',[ResourceController::class,'download'])->name('pages.resource.download');
+        Route::get('/services/{id}',[ServiceController::class,'show'])->name('pages.services');
         Route::get('/sub-services/{id}',[SubServiceController::class,'show'])->name('pages.sub_services');
+        Route::get('/program/{id}',[ProgramController::class,'show'])->name('pages.programs');
+        Route::get('/sub-programs/{id}',[SubProgramController::class,'show'])->name('pages.sub_Programs');
         Route::get('/impact',[PageController::class,'impact'])->name('pages.impact');
         Route::namespace('Donations')->group(function() {
             // Donations

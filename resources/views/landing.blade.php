@@ -115,7 +115,7 @@
             @forelse ($ImportantLinks as $ImportantLink)
                 <div class="Link Link{{$ImportantLink->id}}">
                     <a href="{{$ImportantLink->link}}">
-                        <div class="image" style="--background: url(../storage/{{str_replace("\/" , "/",$ImportantLink->image)}})"></div>
+                        <div class="image" style="--background: url('../storage/{{ str_replace('\\', '/', $ImportantLink->image) }}')"></div>
                         <p>{{$ImportantLink->$title}}</p>
                     </a>
                 </div>
@@ -160,7 +160,7 @@
             <div class="news">
             @forelse ($news as $new)
                 <div class="new new{{$new->id}}">
-                    <div class="image" style="--background: url(../storage/{{str_replace("\/" , "/",$new->image)}})"></div>
+                    <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$new->image)}})"></div>
                     <a title="news" title="arrow" href="/pages/news/{{$new->id}}"><p>{{$new->$title}}</p></a>
                 </div>
             @empty

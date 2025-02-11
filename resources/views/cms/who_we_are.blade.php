@@ -166,17 +166,6 @@
                     <img src="{{ asset('img/b8_en.png') }}" loading="lazy" alt="achieve">
                 </div>
             @endif
-            {{-- <div class="watania2030-video">
-                <div class="text">
-                    <h1 class="title">{{ $sections[15]->$title }}</h1>
-                    <p>{{ $sections[15]->$details }}</p>
-                </div>
-                <div class="watania-video">
-                    <iframe class="story-video" src="{{ $sections[15]->link_url }}" width="450" height="300"
-                        loading="lazy"></iframe>
-                </div>
-            </div> --}}
-            {{-- <a class="call-action" href="{{ $sections[16]->file }}">{{ $sections[16]->$title }}</a> --}}
         </div>
     </section>
 @endsection

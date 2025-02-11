@@ -67,9 +67,9 @@
                             <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
                     </a>
                     <div class="dropdownMenu">
-                            @forelse (\App\Models\Service::get() as $service)
-                                <a href="{{ route('web.pages.services', $service->id) }}" >
-                                    <span>{{ $service->$title }}</span>
+                            @forelse (\App\Models\Program::get() as $program)
+                                <a href="{{ route('web.pages.programs', $program->id) }}" >
+                                    <span>{{ $program->$title }}</span>
                                 </a>
                             @empty
                             @endforelse
@@ -88,7 +88,7 @@
                             <a href="{{ route('web.stories.index') }}">
                                 <span>{{ __('lang.stories') }}</span>
                             </a>
-                            <a href="#">
+                            <a href="{{ route('web.pages.Aspirations') }}">
                                 <span>{{ __('lang.Our_Aspirations') }}</span>
                             </a>
                     </div>
@@ -160,9 +160,9 @@
                         <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
                     </a>
                     <div class="dropdownMenu">
-                            <a href="#">
+                            {{-- <a href="#">
                                 <span>{{ __('lang.Partner_with_us') }}</span>
-                            </a>
+                            </a> --}}
                             <!-- <a href="#">
                                 <span>{{ __('lang.volunteer') }}</span>
                             </a> -->

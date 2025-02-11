@@ -22,7 +22,7 @@
             @forelse ($PressReleases as $PressRelease)
                 <div class="PressRelease PressRelease{{$PressRelease->id}}">
                     <a href="/pages/PressRelease/{{$PressRelease->id}}">
-                        <div class="image" style="--background: url(../storage/{{str_replace("\/" , "/",$PressRelease->image)}})"></div>
+                        <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$PressRelease->image)}})"></div>
                         <p>{{$PressRelease->$title}}</p>
                     </a>
                 </div>
