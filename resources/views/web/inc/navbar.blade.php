@@ -109,7 +109,7 @@
                             <a href="{{ route('web.team_members.index') }}">
                                 <span>{{ __('lang.staff') }}</span>
                             </a>
-                            <a href="{{ route('web.pages.alliances') }}">
+                            <a href="{{ route('web.pages.partners') }}">
                                 <span>{{ __('lang.Partners_Network') }}</span>
                             </a>
                             <a href="{{ route('web.pages.certificates') }}">

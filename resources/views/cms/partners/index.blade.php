@@ -5,7 +5,7 @@
     $details =  'details' . '_' . app()->getLocale();
 @endphp
 
-@section('page_name') {{ $Partner_Type->$title }} @endsection
+@section('page_name') {{ __('lang.Partners_Network') }} @endsection
 
 
 @section('style')
@@ -15,38 +15,28 @@
 @section('content')
     @include('web.inc.map')
 
+    @forelse ($PartnerType as $PartnerType)
     <section id="partners">
         <div class="title general">
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-            <h1 class="GeneralTitle">{{$Partner_Type->$title}}</h1>
+            <h1 class="GeneralTitle">{{$PartnerType->$title}}</h1>
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
         </div>
-        @if ($Partner_Type->title_en == 'Government Sector')
-            <div class="Government-Sector">
-                @forelse ($Partners as $Partner)
-                    <img src="{{ asset('storage/' . $Partner->image) }}" alt="image" width="100" height="100">
-                @empty
-                @endforelse
-                    <div class="description">
-                        <div>{!! $Partner_Type->$details !!}</div>
-                    </div>
-            </div>
-        @else
             <div class="partners">
                 <div class="description">
-                    <p>{!! $Partner_Type->$details !!}</p>
+                    <p>{!! $PartnerType->$details !!}</p>
                 </div>
                 <div class="image">
-                    @forelse ($Partners as $Partner)
-                        <li class="glide__slide"><img src="{{ asset('storage/' . $Partner->image) }}" alt="image" width="100" height="100"></li>
-                    @empty
-                    @endforelse
-                </div>
+                @forelse ($PartnerType->Partner as $Partner)
+                    <li class="glide__slide"><img src="{{ asset('storage/' . $Partner->image) }}" alt="image" width="100" height="100"></li>
+                @empty
+                @endforelse
+               </div>
+
             </div>
-        @endif
-
     </section>
-
+    @empty
+    @endforelse
 @endsection
 
 @section('js')

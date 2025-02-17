@@ -11,13 +11,15 @@ class PartnerController extends Controller
     //
     public function index()
     {
-        return view('cms.partners.index',compact(['partner']));
+        $PartnerType = PartnerType::with('Partner')->get();
+        // dd(vars: $PartnerType);
+        return view('cms.partners.index',compact(['PartnerType']));
     }
 
-    public function show($id)
-    {
-        $Partners = Partner::join('partner_types','partner_types.id','partners.partner_type')->where('partner_types.id',$id)->get();
-        $Partner_Type = PartnerType::where('id',$id)->first();
-        return view('cms.partners.index',compact(['Partners','Partner_Type']));
-    }
+    // public function show($id)
+    // {
+    //     $Partners = Partner::join('partner_types','partner_types.id','partners.partner_type')->where('partner_types.id',$id)->get();
+    //     $Partner_Type = PartnerType::where('id',$id)->first();
+    //     return view('cms.partners.index',compact(['Partners','Partner_Type']));
+    // }
 }

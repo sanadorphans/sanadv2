@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Partner extends Model
 {
     use HasFactory;
+
+    public function PartnerType(){
+        return $this->belongsTo(PartnerType::class);
+    }
 }

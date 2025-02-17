@@ -23,8 +23,6 @@
         <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
     </header>
     @include('web.inc.map')
-
-    @if ($sub_program->$details != "" &&  $sub_program->$achievement != "")
         <section id="service">
             <div class="service">
                 <div class="details">
@@ -43,7 +41,6 @@
                 </div>
             </div>
         </section>
-    @endif
 
     {{-- @if($sub_program->items->first() != null)
 

@@ -128,7 +128,7 @@ Route::group([
         Route::get('/campaigns',[CampaignController::class,'index'])->name('pages.campaigns');
         Route::get('/sanad',[SanadController::class,'index'])->name('pages.sanad');
         Route::get('/partners',[PartnerController::class,'index'])->name('pages.partners');
-        Route::get('/partners/{id}',[PartnerController::class,'show'])->name('pages.partners');
+        // Route::get('/partners/{id}',[PartnerController::class,'show'])->name('pages.partners');
         Route::get('/knowledge-creation/{id}',[KnowledgeCreationController::class,'index'])->name('pages.KnowledgeCreation');
         Route::post('/knowledge-creation/search',[KnowledgeCreationController::class,'search'])->name('pages.KnowledgeCreation.search');
         Route::get('/KnowledgeCreation/resources/{id}',[ResourceController::class,'index'])->name('pages.resource');
