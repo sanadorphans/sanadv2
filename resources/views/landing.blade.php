@@ -16,7 +16,7 @@
 
 @section('content')
 
-  
+
     <div class="fullscreen-video-container">
         <iframe src="https://www.youtube.com/embed/lNpo7sIex6s?si=oxXJ9-_wct4JbPTa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <div class="fullscreen-video-content">   

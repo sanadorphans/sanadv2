@@ -9,7 +9,7 @@ return [
     'volunteer' => 'متطوع',
     'Partner_with_us' => 'كن شريك معنا',
     'Publications' => 'المنشورات',
-    'Press_Releases' => 'البيانات الصحفية',
+    'Press_Releases' => 'البيان الصحفي الجديد',
     'Photos_and_videos' => 'الصور و الفيديوهات',
     'Partners_Network' => 'الشركاء و الشبكة',
     'Our_Aspirations' => 'تطلعاتنا',

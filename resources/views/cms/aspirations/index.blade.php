@@ -46,9 +46,9 @@
                 </div>
             @endif
         </div>
-        <div class="Aspirations" style="margin:0px 50px">
+        {{-- <div class="Aspirations" style="margin:0px 50px">
             <p>{!! $Aspiration[0]->$details !!}</p>
-        </div>
+        </div> --}}
     </section>
 
 @endsection
