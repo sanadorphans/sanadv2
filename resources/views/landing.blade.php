@@ -21,7 +21,7 @@
         <iframe src="https://www.youtube.com/embed/lNpo7sIex6s?si=oxXJ9-_wct4JbPTa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <div class="fullscreen-video-content">   
             <h1>{{ __('lang.vision') }}</h1>
-            <button>{{ __('lang.more') }}</button>
+            <button> <a style="color:#fff" href="{{ route('web.pages.who_we_are') }}">{{ __('lang.more') }}</a></button>
         </div>
     </div>
 
