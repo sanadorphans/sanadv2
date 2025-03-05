@@ -50,6 +50,25 @@
             <p>{!! $Aspiration[0]->$details !!}</p>
         </div> --}}
     </section>
+    <!-- section5 -->
+    <section class="future-of-watania">
+        <div class="container">
+            <div class="watania d2017">
+                <h1>{{ $sections[10]->$title }}</h1>
+                <div class="targets">
+                    @forelse (App\Models\WhoWeArePage::where('title_en','Strategic Goals 2024 - 2030')->get() as $index => $target)
+                        <div class="target target{{ $index + 1 }}">
+                            <h1>{{ to_arabic_number($index + 1) }}</h1>
+                            <p>
+                                {{ $target->$details }} ​
+                            </p>
+                        </div>
+                    @empty
+                    @endforelse
 
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
 
