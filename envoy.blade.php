@@ -1,7 +1,7 @@
 @servers(['main' => ['root@153.92.210.80']])
 
 @setup
-    $repository = 'https://github.com/sanadorphans/sanad-orphans.git';
+    $repository = 'https://github.com/sanadorphans/sanadv2.git';
     $releases_dir = 'releases';
     $release = date('YmdHis');
     $new_release_dir = $releases_dir .'/'. $release;
