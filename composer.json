@@ -19,17 +19,18 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
-        "symfony/css-selector": "6.4.*",  
-        "symfony/event-dispatcher": "6.4.*",
-        "symfony/string": "6.4.*",
-        "symfony/yaml": "6.4.*",
-        "symfony/console": "6.4.*", 
+        "laravel/envoy": "^2.10",
         "laravel/pint": "1.19.*",
         "laravel/sail": "^1.18",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^7.0",
         "phpunit/phpunit": "^10.0",
-        "spatie/laravel-ignition": "^2.0"
+        "spatie/laravel-ignition": "^2.0",
+        "symfony/console": "6.4.*",
+        "symfony/css-selector": "6.4.*",
+        "symfony/event-dispatcher": "6.4.*",
+        "symfony/string": "6.4.*",
+        "symfony/yaml": "6.4.*"
     },
     "autoload": {
         "psr-4": {
