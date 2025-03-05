@@ -11,7 +11,7 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Service.css?v=1.3')}}"/>
+    <link rel="stylesheet" href="{{asset('css/Service.css?v=1.4')}}"/>
 @endsection
 
 @section('content')
@@ -24,19 +24,18 @@
     </header>
     @include('web.inc.map')
 
-    @if ($sub_service->$details != "" &&  $sub_service->$target != "")
+    @if ($sub_service->$details != "")
         <section id="service">
             <div class="service">
                 <div class="details">
                     <p>{!! $sub_service->$details !!}</p>
-                    <div class="target">
+                    {{-- <div class="target">
                         <h1>{{__('lang.targeted_groups')}}</h1>
                         <p>{!! $sub_service->$target !!}</p>
                         @if (!empty(json_decode($sub_service->file)))
                             <a href="/storage/{{json_decode($sub_service->file)[0]->download_link}}">{{ __('lang.more') }}</a>
                         @endif
-                    </div>
-
+                    </div> --}}
                 </div>
                 <div class="image">
                     <img src="{{asset('/storage/' . str_replace("\\" , "/",$sub_service->image))}}" alt="{{ $sub_service->$title }}">

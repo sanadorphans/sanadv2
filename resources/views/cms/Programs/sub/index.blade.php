@@ -27,13 +27,13 @@
             <div class="service">
                 <div class="details">
                     <p>{!! $sub_program->$details !!}</p>
-                    <div class="target">
+                    {{-- <div class="target">
                         <h1>{{__('lang.Achievements')}}</h1>
                         <p>{!! $sub_program->$achievement !!}</p>
                         @if (!empty(json_decode($sub_program->file)))
                             <a href="/storage/{{json_decode($sub_program->file)[0]->download_link}}">{{ __('lang.more') }}</a>
                         @endif
-                    </div>
+                    </div> --}}
 
                 </div>
                 <div class="image">

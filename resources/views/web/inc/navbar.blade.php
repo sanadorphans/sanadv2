@@ -153,23 +153,11 @@
                             </a>
                     </div>
                 </li>
+
                 <li class="navItem " onclick="toggleActiveClass(this)">
-                    <a class="navLink" href="#">
-                        <span >{{ __('lang.Get_Involved') }}</span>
-                        <span class="bg-blue"></span>
-                        <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
+                    <a href="{{ route('web.pages.vacancies') }}">
+                        <span>{{ __('lang.join_wataneya') }}</span>
                     </a>
-                    <div class="dropdownMenu">
-                            {{-- <a href="#">
-                                <span>{{ __('lang.Partner_with_us') }}</span>
-                            </a> --}}
-                            <!-- <a href="#">
-                                <span>{{ __('lang.volunteer') }}</span>
-                            </a> -->
-                            <a href="{{ route('web.pages.vacancies') }}">
-                                <span>{{ __('lang.join_wataneya') }}</span>
-                            </a>
-                    </div>
                 </li>
                 {{-- <li class="navItem" onclick="toggleActiveClass(this)">
                     <a class="navLink" href="#" >
@@ -221,3 +209,21 @@
 
 
 
+                {{-- <li class="navItem " onclick="toggleActiveClass(this)">
+                    <a class="navLink" href="#">
+                        <span >{{ __('lang.Get_Involved') }}</span>
+                        <span class="bg-blue"></span>
+                        <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
+                    </a>
+                    <div class="dropdownMenu">
+                             <a href="#">
+                                <span>{{ __('lang.Partner_with_us') }}</span>
+                            </a> 
+                            <!-- <a href="#">
+                                <span>{{ __('lang.volunteer') }}</span>
+                            </a> -->
+                            <a href="{{ route('web.pages.vacancies') }}">
+                                <span>{{ __('lang.join_wataneya') }}</span>
+                            </a>
+                    </div>
+                </li> --}}

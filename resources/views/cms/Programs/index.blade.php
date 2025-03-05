@@ -6,7 +6,7 @@
 @endphp
 
 @section('page_name')
-    {{ __('lang.Programs') }}
+    {{ __('lang.our_programs') }}
 @endsection
 
 @section('style')
