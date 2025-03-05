@@ -9,7 +9,7 @@
 
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Partners.css?v=2.1')}}">
+    <link rel="stylesheet" href="{{asset('css/Partners.css?v=2.2')}}">
 @endsection
 
 @section('content')
@@ -28,7 +28,7 @@
                 </div>
                 <div class="image">
                 @forelse ($PartnerType->Partner as $Partner)
-                    <li class="glide__slide"><img src="{{ asset('storage/' . $Partner->image) }}" alt="image" width="100" height="100"></li>
+                    <li class="glide__slide"><img src="{{ asset('storage/' . $Partner->image) }}" alt="image" width="60" height="60"></li>
                 @empty
                 @endforelse
                </div>

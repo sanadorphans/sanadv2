@@ -127,7 +127,7 @@
             <div class="watania d2017">
                 <h1>{{ $sections[10]->$title }}</h1>
                 <div class="targets">
-                    @forelse (App\Models\WhoWeArePage::where('title_ar','الأهداف الاستراتيجية طويلة المدى ٢٠١٧ - ٢٠٢٤')->get() as $index => $target)
+                    @forelse (App\Models\WhoWeArePage::where('title_en','Strategic Goals 2024 - 2030')->get() as $index => $target)
                         <div class="target target{{ $index + 1 }}">
                             <h1>{{ to_arabic_number($index + 1) }}</h1>
                             <p>
@@ -140,34 +140,8 @@
                 </div>
             </div>
         </div>
-        <!-- part2 -->
-        <div class="watania d2030">
-            <h1>{{ $sections[14]->$title }}</h1>
-            @if (app()->getLocale() == 'ar')
-                <div class="development-img">
-                    <img src="{{ asset('img/b1.png') }}" loading="lazy" alt="achieve">
-                    <img src="{{ asset('img/b2.png') }}" loading="lazy" alt="achieve">
-                    <img src="{{ asset('img/b3.png') }}" loading="lazy" alt="achieve">
-                    <img src="{{ asset('img/b4.png') }}" loading="lazy" alt="achieve">
-                    <img src="{{ asset('img/b5.png') }}" loading="lazy" alt="achieve">
-                    <img src="{{ asset('img/b6.png') }}" loading="lazy" alt="achieve">
-                    <img src="{{ asset('img/b7.png') }}" loading="lazy" alt="achieve">
-                    <img src="{{ asset('img/b8.png') }}" loading="lazy" alt="achieve">
-                </div>
-            @else
-                <div class="development-img">
-                    <img src="{{ asset('img/b1_en.png') }}" loading="lazy" alt="achieve">
-                    <img src="{{ asset('img/b2_en.png') }}" loading="lazy" alt="achieve">
-                    <img src="{{ asset('img/b3_en.png') }}" loading="lazy" alt="achieve">
-                    <img src="{{ asset('img/b4_en.png') }}" loading="lazy" alt="achieve">
-                    <img src="{{ asset('img/b5_en.png') }}" loading="lazy" alt="achieve">
-                    <img src="{{ asset('img/b6_en.png') }}" loading="lazy" alt="achieve">
-                    <img src="{{ asset('img/b7_en.png') }}" loading="lazy" alt="achieve">
-                    <img src="{{ asset('img/b8_en.png') }}" loading="lazy" alt="achieve">
-                </div>
-            @endif
-        </div>
     </section>
+
 @endsection
 
 @section('js')
