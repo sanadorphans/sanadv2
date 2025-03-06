@@ -8,7 +8,7 @@
 @section('page_name') {{ __('lang.join_wataneya') }}  @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Careers.css?v=1.6')}}"/>
+    <link rel="stylesheet" href="{{asset('css/Careers.css?v=1.7')}}"/>
 @endsection
 
 @section('content')
