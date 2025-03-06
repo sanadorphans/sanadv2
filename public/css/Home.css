@@ -1,6 +1,6 @@
 .fullscreen-video-container {
     position: relative;
-    height: 75vh; 
+    height: 75vh;
     width: 100%;
     overflow: hidden;
     border-radius: 0vw 0vw 4vw 4vw;
@@ -14,7 +14,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    z-index: -1;  
+    z-index: -1;
 }
 .fullscreen-video-content{
     display: flex;
@@ -24,8 +24,8 @@
     background-color: #001a312f;
     padding: 30px;
     border-radius: 5px;
-    height: 75vh; 
-} 
+    height: 75vh;
+}
 .fullscreen-video-content h1 {
     font-size: 2.5vw;
     font-weight: 700;
@@ -307,6 +307,30 @@ html[lang="ar"] #numbers .title .persons-icons{
 
     #numbers .glide__bullets {
         bottom: -10% !important;
+    }
+    #qoutation{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 200px;
+        width: 90%;
+        margin: auto;
+    }
+    #qoutation p:first-child{
+        font-size: 60px;
+        opacity: 50%;
+        align-self: start;
+    }
+    #qoutation .qoutation{
+        font-size: 20px;
+        text-align: center;
+        width:90%
+    }
+    #qoutation p:last-child{
+        align-self: end;
+        font-size: 60px;
+        opacity: 50%;
+        align-self: end;
     }
 }
 

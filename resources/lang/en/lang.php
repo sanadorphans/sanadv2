@@ -1,6 +1,12 @@
 <?php
 
 return [
+    "career_title" => "Join Our Journey at Sanad",
+    'career_details1' => 'Every day at Sanad is a new chapter in a story of passion, dedication, and transformative impact.',
+    'career_details2' => 'We are a team that dreams big, daring to pave new paths in our quest to enhance the lives of those we serve.',
+    'career_details3' => 'Our approach combines the rigor of expert knowledge with the warmth of empathy, allowing us to meet challenges with innovative solutions that truly resonate.',
+    'career_details4' => 'As pioneers in our field, we constantly explore new horizons, driven by a commitment to excellence and a spirit of continuous improvement. ',
+    'career_details5' => 'Here, your work is more than a job, it’s a call to make a difference, in a community where every member’s growth is nurtured. Join us, and help shape a future where everyone’s potential can flourish.',
     "pearson_Accreditation"=>"Vocational Qualification in Child Care (2012) Sanad was internationally accredited by PEARSON to provide a professional certificate for care givers, a certificate that promotes child and youth development. ",
     "pearson_Accreditation2"=>"PEARSON Accreditation (2016) A quality assurance certification supporting all educational training processes and programs in Sanad. ",
     "PWC_Accreditation"=>"Quality Standards for Care Homes (2014) An accreditation given by the Ministry of Social Solidarity applied in collaboration with PwC. ",

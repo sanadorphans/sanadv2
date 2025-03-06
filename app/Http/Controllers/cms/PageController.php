@@ -22,7 +22,7 @@ class PageController extends Controller
     }
     public function index(){
         $carrers = Carrer::get();
-        $carrer_types = CarrerType::with('carrer')->orderBy('created_at', 'desc')->get();
+        $carrer_types = CarrerType::with('carrer')->get();
         return view('cms.carrers.index',compact(['carrers','carrer_types']));
     }
     public function show($id){

@@ -10,7 +10,7 @@
 @section('page_name') {{ __('lang.home') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.9')}}">
+    <link rel="stylesheet" href="{{asset('css/Home.css?v=3')}}">
     <link rel="stylesheet" href="{{asset('css/ImportantLink.css?v=1.3')}}"/>
 @endsection
 
@@ -19,7 +19,7 @@
 
     <div class="fullscreen-video-container">
         <iframe src="https://www.youtube.com/embed/lNpo7sIex6s?si=oxXJ9-_wct4JbPTa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <div class="fullscreen-video-content">   
+        <div class="fullscreen-video-content">
             <h1>{{ __('lang.vision') }}</h1>
             <button> <a style="color:#fff" href="{{ route('web.pages.who_we_are') }}">{{ __('lang.more') }}</a></button>
         </div>
@@ -105,7 +105,7 @@
         </div>
     </section>
 
-    <section id="Links">
+    {{-- <section id="Links">
         <div class="title general">
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
             <h2 class="GeneralTitle">{{ __('lang.important links') }}</h2>
@@ -125,7 +125,7 @@
         <div class="moreLinks">
             <a class="more" href="{{route('web.pages.ImportantLinks.index')}}">{{ __('lang.more') }}</a>
         </div>
-    </section>
+    </section> --}}
 
     <section id="Accreditation">
         <div class="title general">

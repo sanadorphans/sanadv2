@@ -1,4 +1,33 @@
-
+#career{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: row;
+    width: 90%;
+    margin: auto;
+}
+#career img{
+    width: 20vw;
+    height: auto;
+    margin: 1vw 4vw;
+}
+#career .images{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+#career .details{
+    width: 60%;
+    margin: auto;
+}
+#career h2{
+    color: #35C0CA;
+    font-size: 2.5vw;
+    margin-bottom: 1vw;
+}
+#career p{
+    font-size: 1.5vw;
+}
 #jobs .job{
     box-shadow: 0.4vw 0.4vw 2vw 0.4vw rgba(0, 0, 0, 0.179);
     border-radius: 2vw;
@@ -111,6 +140,28 @@
 }
 
 @media (max-width: 800px) {
+    #career{
+        justify-content: center;
+        flex-flow: column-reverse wrap;
+        width: 90%;
+        margin: auto;
+    }
+    #career img{
+        width: 200px;
+        height: auto;
+        margin: 20px;
+    }
+    #career .details{
+        width: 90%;
+    }
+    #career h2{
+        font-size: 22px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    #career p{
+        font-size: 18px;
+    }
     #jobs .job{
         width: 250px;
         margin: 10px;
