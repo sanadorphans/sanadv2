@@ -5,6 +5,15 @@
     overflow: hidden;
     border-radius: 0vw 0vw 4vw 4vw;
 }
+
+#popup{
+    position:fixed;
+    bottom:0;
+    left:0;
+    z-index:1000;
+    border-radius:20px;
+}
+
 .fullscreen-video-container iframe {
     position: absolute;
     width: auto;
