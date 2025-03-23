@@ -15,7 +15,7 @@
                 <p>
                     شكراً لدعمكم...
                 </p> <p>
-                    ترعكم بقيمة   {{$donation->amount}}  جنيهاً يسهم في مهمتنا ورسالتنا من أجل كل يتيم.
+                    تبرعكم بقيمة   {{$donation->amount}}  جنيهاً يسهم في مهمتنا ورسالتنا من أجل كل يتيم.
                 </p><p>
                     تحياتنا،
                 </p><p>
@@ -44,7 +44,7 @@
             @endif
 
         </div>
-        <p>{{ __('lang.toShowAnneulReport') }} <a href="https://wataneya.org/storage/532/Wataneya-Annual-Report-2021-DigitalVersion.pdf" target="blank">{{ __('lang.clickHere') }}</a></p>
+        <p>{{ __('lang.toShowAnneulReport') }} <a href="https://sanadorphans.org/storage/annual-report/February2024/k7UdPMar0vqnILHkr5wa.pdf" target="blank">{{ __('lang.clickHere') }}</a></p>
         <br>
         <a href="/">{{__('lang.home')}}</a>
     </div>
