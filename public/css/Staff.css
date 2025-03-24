@@ -27,6 +27,7 @@
     border-radius: 5vw;
     position: relative;
     z-index: 1;
+    background-position: unset;
 }
 #boards  .boards .member .socialMedia img, .showBoard .member .socialMedia img, .showStaff .member .socialMedia img{
     width: 2vw;
