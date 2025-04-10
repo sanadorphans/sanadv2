@@ -10,11 +10,11 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{ asset('css/MediaCenter.css?v=1.2') }}">
+    <link rel="stylesheet" href="{{ asset('css/MediaCenter.css?v=1.5') }}">
 @endsection
 
 @section('content')
-
+    @include('web.inc.map')
     <section class="ShowNew new{{ $new->id }}">
         <h1>{{ $new->$title }}</h1>
         <p>{{ $date }}</p>

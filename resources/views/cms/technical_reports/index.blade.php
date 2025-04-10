@@ -13,7 +13,6 @@
 
 @section('content')
     @include('web.inc.map')
-
     <section id="AnnualReports">
         <div class="title general">
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">

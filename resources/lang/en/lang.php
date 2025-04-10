@@ -1,6 +1,8 @@
 <?php
 
 return [
+    "details"=>"Details",
+    "we_Aspire" => "We Aspire",
     "career_title" => "Join Our Journey at Sanad",
     'career_details1' => 'Every day at Sanad is a new chapter in a story of passion, dedication, and transformative impact.',
     'career_details2' => 'We are a team that dreams big, daring to pave new paths in our quest to enhance the lives of those we serve.',
@@ -843,7 +845,8 @@ The Sanad Society Team",
 'phone_number_wataneya'=>' +201027744425 ',
 'home_phone_wataneya'=>' +226907195 ',
 'mail_wataneya'=>' Info@sanadorphans.org ',
-'address_wataneya'=>' 3 Al Bairouny St. - Baron Palace - Heliopolis - Cairo ',
+'address_wataneya'=>' 3 Al Bairouny St. - Baron Palace - Heliopolis - Cairo - Egypt ',
+'Advertisement_number' => "Registered under No. 7478 of 2008, Ministry of Social Solidarity",
 
 // donation page ------->
 

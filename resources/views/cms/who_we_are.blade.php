@@ -40,11 +40,11 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{ asset('css/WhoWeAre.css?v=1.6') }}">
+    <link rel="stylesheet" href="{{ asset('css/WhoWeAre.css?v=1.7') }}">
 @endsection
 
 @section('content')
-    @include('web.inc.map')
+    @include(view: 'web.inc.map')
     <section class="watania-story">
         <div class="title general">
             <h1 class="GeneralTitle">{{ $sections[0]->$title }}</h1>

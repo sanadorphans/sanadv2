@@ -122,24 +122,29 @@
     }
 }
 
-#qoutation{
+#qoutation .qoutation {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 400px;
     width: 90%;
     margin: auto;
 }
-#qoutation p:first-child{
+#qoutation .GeneralTitle {
+   color: #F37246;
+}
+#qoutation .general {
+    margin: 0 !important;
+}
+#qoutation .qoutation p:first-child{
     font-size: 10vw;
     opacity: 50%;
 }
-#qoutation .qoutation{
+#qoutation .qoutation .qoutation_text{
     font-size: 1.2vw;
     text-align: center;
     width:70%
 }
-#qoutation p:last-child{
+#qoutation .qoutation p:last-child{
     align-self: end;
     font-size: 10vw;
     opacity: 50%;
@@ -269,7 +274,11 @@ html[lang="ar"] #numbers .title .persons-icons{
     #numbers .title{
        width: 90%;
     }
-
+#qoutation .general {
+    justify-content: start;
+    align-items: end;
+    margin: 0 !important;
+}
     #numbers .title h2{
         font-size: 35px;
     }
@@ -317,7 +326,7 @@ html[lang="ar"] #numbers .title .persons-icons{
     #numbers .glide__bullets {
         bottom: -10% !important;
     }
-    #qoutation{
+    #qoutation .qoutation {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -325,17 +334,17 @@ html[lang="ar"] #numbers .title .persons-icons{
         width: 90%;
         margin: auto;
     }
-    #qoutation p:first-child{
+    #qoutation .qoutation  p:first-child{
         font-size: 60px;
         opacity: 50%;
         align-self: start;
     }
-    #qoutation .qoutation{
+    #qoutation .qoutation  .qoutation_text{
         font-size: 20px;
         text-align: center;
         width:90%
     }
-    #qoutation p:last-child{
+    #qoutation .qoutation  p:last-child{
         align-self: end;
         font-size: 60px;
         opacity: 50%;

@@ -14,6 +14,7 @@
 @endsection
 
 @section('content')
+@include('web.inc.map')
     <div class="showBoard">
         <div class="member">
             <div class="boardMemberWithImage">

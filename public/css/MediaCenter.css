@@ -38,7 +38,7 @@
 
 .new h1, #media_bags .media_bag h1,  #events .event h1, #AnnualReports .AnnualReport h1,  #NewsLetters .NewsLetter h1{
     width: 90%;
-    color:#001A31;
+    color:#35C0CA !important;
     font-size: 1.4vw;
     margin: 1vw 0;
     line-height: 5vw;
@@ -164,6 +164,9 @@ aside .news{
     width: 33%;
     padding: 0 2vw;
 }
+.PressRelease a .title, .new a .title{
+    color:#35C0CA  !important;
+}
 .PressRelease a{
     width: 100%;
     display: grid;
@@ -187,7 +190,7 @@ aside .news{
 
 .PressRelease h1{
     width: 90%;
-    color:#001A31;
+    color:#35C0CA  !important;
     font-size: 1.4vw;
     margin: 1vw 0;
     line-height: 5vw;

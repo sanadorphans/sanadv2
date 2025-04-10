@@ -42,7 +42,7 @@ iframe {
 .text p {
     font-size: 1.2vw;
     width: 90%;
-    height: 15vw;
+    height: 16vw;
     overflow: hidden;
     text-align: justify;
     justify-self: end;
@@ -56,6 +56,8 @@ iframe {
     color: #fff;
     padding: 1vw 3vw;
     margin: 1vw 0;
+    opacity: 0;
+    cursor: default;
 }
 
 /* section 1 */

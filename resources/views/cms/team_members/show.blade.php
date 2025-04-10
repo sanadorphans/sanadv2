@@ -14,7 +14,7 @@
 @endsection
 
 @section('content')
-
+@include('web.inc.map')
     <div class="showStaff">
         <div class="member">
             <div class="StaffMemberWithImage">

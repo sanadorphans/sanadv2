@@ -25,6 +25,8 @@
                         style="--fa-animation-duration: 3s;"></i> info@sanadorphans.org </li>
                 <li style="color:white;"><i class="fa-solid fa-map-location-dot fa-bounce"
                         style="--fa-animation-duration: 3s;"></i><a href="https://www.google.co.uk/maps/place/%D8%AC%D9%85%D8%B9%D9%8A%D8%A9+%D9%88%D8%B7%D9%86%D9%8A%D8%A9+%D9%84%D8%AA%D9%86%D9%85%D9%8A%D8%A9+%D9%88%D8%AA%D8%B7%D9%88%D9%8A%D8%B1+%D8%AF%D9%88%D8%B1+%D8%A7%D9%84%D8%A3%D9%8A%D8%AA%D8%A7%D9%85%E2%80%AD/@30.086658,31.3289431,15z/data=!4m5!3m4!1s0x0:0x7728f47eab7d5044!8m2!3d30.086658!4d31.3289431?hl=ar&shorturl=1">{{ __('lang.address_wataneya') }}</a></li>
+                <li style="color:white;"> {{ __('lang.Advertisement_number') }}  </li>
+
             </ul>
         </div>
      </div>
@@ -46,18 +48,13 @@
                          <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
                      </div>
 
-                     <div class="mc-field-group">
-                             <label for="mce-PHONE"><span class="asterisk"></span></label>
-                             <input type="text" name="PHONE" class="required" value="" id="mce-PHONE" required placeholder="{{__('lang.phone')}}*">
-                             <span id="mce-PHONE-HELPERTEXT" class="helper_text"></span>
-                     </div>
 
                          <div class="mc-field-group">
                              <label for="mce-MMERGE7"><span class="asterisk"></span></label>
                              <input type="text" value="" name="MMERGE7" class="required" id="mce-MMERGE7" required placeholder="{{__('lang.organizationOrCompany')}}*">
                              <span id="mce-MMERGE7-HELPERTEXT" class="helper_text"></span>
                          </div>
-                     </div>
+                    </div>
          <div hidden="true"><input type="hidden" name="tags" value="6393289"></div>
              <div id="mce-responses" class="clear">
                  <div class="response" id="mce-error-response" style="display:none"></div>
@@ -78,27 +75,4 @@
     <p>{{ __('lang.copy_rights') }} <?php echo date("Y"); ?></p>
 </div>
 
-{{-- <div class="achieve">
-    <h3>{{ __('lang.wataneya_is_working_to_achieve_goals') }}</h3>
-    <ul class="achieve-goals-imgs">
-        @if(app()->getLocale()=='ar')
-            <li><img alt="achieve" src="{{ asset('/img/b1.png') }}" width="61" height="61"></li>
-            <li><img alt="achieve" src="{{ asset('/img/b2.png') }}" width="61" height="61"></li>
-            <li><img alt="achieve" src="{{ asset('/img/b3.png') }}" width="61" height="61"></li>
-            <li><img alt="achieve" src="{{ asset('/img/b4.png') }}" width="61" height="61"></li>
-            <li><img alt="achieve" src="{{ asset('/img/b5.png') }}" width="61" height="61"></li>
-            <li><img alt="achieve" src="{{ asset('/img/b6.png') }}" width="61" height="61"></li>
-            <li><img alt="achieve" src="{{ asset('/img/b7.png') }}" width="61" height="61"></li>
-            <li><img alt="achieve" src="{{ asset('/img/b8.png') }}" width="61" height="61"></li>
-        @else
-            <li><img alt="achieve" src="{{ asset('/img/b1_en.png') }}" width="70" height="70"></li>
-            <li><img alt="achieve" src="{{ asset('/img/b2_en.png') }}" width="70" height="70"></li>
-            <li><img alt="achieve" src="{{ asset('/img/b3_en.png') }}" width="70" height="70"></li>
-            <li><img alt="achieve" src="{{ asset('/img/b4_en.png') }}" width="70" height="70"></li>
-            <li><img alt="achieve" src="{{ asset('/img/b5_en.png') }}" width="70" height="70"></li>
-            <li><img alt="achieve" src="{{ asset('/img/b6_en.png') }}" width="70" height="70"></li>
-            <li><img alt="achieve" src="{{ asset('/img/b7_en.png') }}" width="70" height="70"></li>
-            <li><img alt="achieve" src="{{ asset('/img/b8_en.png') }}" width="70" height="70"></li>
-        @endif
-    </ul>
-</div> --}}
+

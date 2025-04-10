@@ -8,7 +8,7 @@
 @section('page_name') {{ __('lang.join_wataneya') }}  @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Careers.css?v=1.7')}}"/>
+    <link rel="stylesheet" href="{{asset('css/Careers.css?v=1.9')}}"/>
 @endsection
 
 @section('content')
@@ -61,7 +61,7 @@
                             {{-- <h1>{{ __('lang.looking_for_talents') }}</h1> --}}
                             <h2>{!! $carrer->$title !!}</h2>
                             <div class="links">
-                                <a class="call-to-job" href="/storage/{{json_decode($carrer->file)[0]->download_link}}">{{ __('lang.more') }}</a>
+                                <a class="call-to-job" href="/storage/{{json_decode($carrer->file)[0]->download_link}}">{{ __('lang.details') }}</a>
                                 @if ($carrer->apply_link)
                                         <a class="apply-to-job" href="{{$carrer->apply_link}}">{{ __('lang.Apply') }}</a>
                                 @endif
