@@ -168,19 +168,21 @@
             <h2 class="GeneralTitle">{{ __('lang.Accreditation and Awards') }}</h2>
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
         </div>
-        <div class="Accreditation">
-            <img src="{{ asset('/img/Accreditation/E7dMxSow70rkm5QfJ5C0 1.png') }}" alt="Accreditation" width="50px" height="50px">
-            <div>
-                <p>{{ __('lang.pearson_Accreditation') }}</p>
-                <p>{{ __('lang.pearson_Accreditation2') }}</p>
+        <div class="AllAccreditation">
+            <div class="Accreditation">
+                <img src="{{ asset('/img/Accreditation/E7dMxSow70rkm5QfJ5C0 1.png') }}" alt="Accreditation" width="50px" height="50px">
+                <div>
+                    <p>{{ __('lang.pearson_Accreditation') }}</p>
+                    <p>{{ __('lang.pearson_Accreditation2') }}</p>
+                </div>
             </div>
-        </div>
-        <div class="Accreditation">
-            <div class="logos">
-                <img src="{{ asset('/img/Accreditation/6Q56Ocp7IhA1PcQrdXVN.png') }}" alt="Accreditation" width="50px" height="50px">
-                <img src="{{ asset('/img/Accreditation/original.png') }}" alt="Accreditation" width="50px" height="50px">
+            <div class="Accreditation">
+                <div class="logos">
+                    <img src="{{ asset('/img/Accreditation/6Q56Ocp7IhA1PcQrdXVN.png') }}" alt="Accreditation" width="50px" height="50px">
+                    <img src="{{ asset('/img/Accreditation/original.png') }}" alt="Accreditation" width="50px" height="50px">
+                </div>
+                <p>{{ __('lang.PWC_Accreditation') }}</p>
             </div>
-            <p>{{ __('lang.PWC_Accreditation') }}</p>
         </div>
         <div class="moreAwards">
             <a class="more" href="/pages/awards">{{ __('lang.our_awards') }}</a>

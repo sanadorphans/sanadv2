@@ -658,14 +658,20 @@ html[lang="ar"] #donation .photo img{
 
 
 #Accreditation{
-    margin: 4vw 0;
+    margin: 4vw auto;
+    width: 80%;
 }
 #Accreditation .Accreditation{
-    display: flex;
-    flex-direction: row-reverse;
+    display: grid;
+    justify-items: center;
+    align-items: center;
     width: 90%;
     margin: 2vw auto;
     justify-content: space-between;
+}
+#Accreditation .AllAccreditation{
+    display: flex;
+    justify-content: space-evenly;
 }
 #Accreditation .Accreditation p{
     font-size:1.2vw;
@@ -679,12 +685,9 @@ html[lang="ar"] #donation .photo img{
 #Accreditation .Accreditation .logos img{
     margin: 0 2vw;
 }
-#Accreditation .Accreditation p:nth-child(1){
-   width: 65%;
-}
 #Accreditation .Accreditation img{
     width: auto !important;
-    height: 5vw !important;
+    height: 8vw !important;
 }
 
 
@@ -708,9 +711,15 @@ html[lang="ar"] #donation .photo img{
     }
 
     #Accreditation{
-        margin: 40px 0;
+        margin: 40px auto;
         display: grid;
         text-align: start;
+        width: 95%;
+    }
+    #Accreditation .AllAccreditation{
+        display: grid;
+        justify-items: center;
+        align-items: center;
     }
     #Accreditation .Accreditation{
         flex-direction: column;
@@ -720,9 +729,7 @@ html[lang="ar"] #donation .photo img{
         font-size: 18px;
         margin: 20px;
     }
-    #Accreditation .Accreditation p:nth-child(1){
-        width: 100%;
-     }
+
      #Accreditation .Accreditation img{
          width: 100px !important;
          height: auto !important;
