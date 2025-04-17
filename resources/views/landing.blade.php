@@ -44,7 +44,7 @@
 @section('content')
 
     <div id="popup">
-       <a href="https://conference.sanadorphans.org/ar/home-ar/"><img src="https://conference.sanadorphans.org/wp-content/uploads/2024/12/sanad-confrence-Poster-1-0%D9%A2-1024x550.jpg" alt="conference" width="200"></a>
+       <a href="https://conference.sanadorphans.org/ar/home-ar/"><img src="https://conference.sanadorphans.org/wp-content/uploads/2024/12/sanad-confrence-Poster-1-0%D9%A2-1024x550.jpg" alt="conference" width="300"></a>
     </div>
 
     <div class="fullscreen-video-container">

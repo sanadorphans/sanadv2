@@ -81,3 +81,4 @@
 @section('js')
     <script src="{{asset('js/Carrers.js?v=1.0')}}"></script>
 @endsection
+

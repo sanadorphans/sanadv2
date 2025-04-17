@@ -663,11 +663,12 @@ html[lang="ar"] #donation .photo img{
 }
 #Accreditation .Accreditation{
     display: grid;
+    grid-auto-rows: 40% 60%;
     justify-items: center;
-    align-items: center;
     width: 90%;
     margin: 2vw auto;
     justify-content: space-between;
+    min-height: 350px;
 }
 #Accreditation .AllAccreditation{
     display: flex;
