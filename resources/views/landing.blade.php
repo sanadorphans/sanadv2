@@ -37,8 +37,8 @@
 @section('page_name') {{ __('lang.home') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Home.css?v=1.9')}}">
-    <link rel="stylesheet" href="{{asset('css/ImportantLink.css?v=1.4')}}"/>
+    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.0')}}">
+    <link rel="stylesheet" href="{{asset('css/ImportantLink.css?v=1.5')}}"/>
 @endsection
 
 @section('content')
@@ -85,9 +85,7 @@
             <h2 class="GeneralTitle">{{ __('lang.we_Aspire') }}</h2>
         </div>
         <div class="qoutation">
-            <p>“</p>
             <p class="qoutation_text">{{ __('lang.Home_qou') }}</p>
-            <p>“</p>
         </div>
     </section>
 

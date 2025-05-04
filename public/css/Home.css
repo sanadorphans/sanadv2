@@ -135,20 +135,20 @@
 #qoutation .general {
     margin: 0 !important;
 }
-#qoutation .qoutation p:first-child{
+/* #qoutation .qoutation p:first-child{
     font-size: 10vw;
     opacity: 50%;
-}
+} */
 #qoutation .qoutation .qoutation_text{
     font-size: 1.2vw;
     text-align: center;
     width:70%
 }
-#qoutation .qoutation p:last-child{
+/* #qoutation .qoutation p:last-child{
     align-self: end;
     font-size: 10vw;
     opacity: 50%;
-}
+} */
 #numbers{
     background-color: rgb(121 , 80 , 160);
     display: grid;
