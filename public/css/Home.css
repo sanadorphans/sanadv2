@@ -142,7 +142,8 @@
 #qoutation .qoutation .qoutation_text{
     font-size: 1.2vw;
     text-align: center;
-    width:70%
+    width:70%;
+    margin-top: 2vw;
 }
 /* #qoutation .qoutation p:last-child{
     align-self: end;
@@ -274,9 +275,7 @@ html[lang="ar"] #numbers .title .persons-icons{
     #numbers .title{
        width: 90%;
     }
-#qoutation .general {
-    justify-content: start;
-    align-items: end;
+ #qoutation .general {
     margin: 0 !important;
 }
     #numbers .title h2{
@@ -334,21 +333,11 @@ html[lang="ar"] #numbers .title .persons-icons{
         width: 90%;
         margin: auto;
     }
-    #qoutation .qoutation  p:first-child{
-        font-size: 60px;
-        opacity: 50%;
-        align-self: start;
-    }
     #qoutation .qoutation  .qoutation_text{
         font-size: 20px;
         text-align: center;
-        width:90%
-    }
-    #qoutation .qoutation  p:last-child{
-        align-self: end;
-        font-size: 60px;
-        opacity: 50%;
-        align-self: end;
+        width:90%;
+        margin-top: 20px;
     }
 }
 
@@ -666,7 +655,7 @@ html[lang="ar"] #donation .photo img{
     grid-auto-rows: 40% 60%;
     justify-items: center;
     width: 90%;
-    margin: 2vw auto;
+    margin: 2vw auto 0 auto;
     justify-content: space-between;
     min-height: 350px;
 }
@@ -733,7 +722,7 @@ html[lang="ar"] #donation .photo img{
     }
 
      #Accreditation .Accreditation img{
-         width: 100px !important;
+         width: 150px !important;
          height: auto !important;
          margin: 20px 0;
 
@@ -1119,7 +1108,7 @@ text-align: center;
     padding: 1vw 4vw;
     font-size: 1.5vw;
     cursor: pointer;
-    margin: 3vw;
+    margin: 1vw 0;
 }
 
 .moreAwards{

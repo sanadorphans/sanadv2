@@ -37,7 +37,7 @@
 @section('page_name') {{ __('lang.home') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.0')}}">
+    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.1')}}">
     <link rel="stylesheet" href="{{asset('css/ImportantLink.css?v=1.5')}}"/>
 @endsection
 
