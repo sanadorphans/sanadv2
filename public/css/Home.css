@@ -689,6 +689,7 @@ html[lang="ar"] #donation .photo img{
 #Accreditation .Accreditation img{
     width: auto !important;
     height: 8vw !important;
+    margin: 1vw 0;
 }
 
 
@@ -734,6 +735,8 @@ html[lang="ar"] #donation .photo img{
      #Accreditation .Accreditation img{
          width: 100px !important;
          height: auto !important;
+         margin: 20px 0;
+
      }
     #Accreditation .more {
         color: #fff;
