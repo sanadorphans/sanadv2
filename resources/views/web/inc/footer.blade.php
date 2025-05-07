@@ -34,7 +34,7 @@
     <div class="newsletters">
         <h2>{{ __('lang.subscribe') }}</h2>
         <div id="mc_embed_signup">
-            <form action="https://wataneya.us17.list-manage.com/subscribe/post?u=25ba645f10169963cf352dcf8&amp;id=8ebbd70fee&amp;f_id=00b245e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+ <form action="https://wataneya.us17.list-manage.com/subscribe/post?u=25ba645f10169963cf352dcf8&amp;id=8ebbd70fee&amp;f_id=00b245e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                  <div id="mc_embed_signup_scroll">
                      <div class="mc-field-group">
                          <label for="mce-MMERGE13"><span class="asterisk"></span></label>
@@ -48,13 +48,18 @@
                          <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
                      </div>
 
+                     {{-- <div class="mc-field-group">
+                             <label for="mce-PHONE"><span class="asterisk"></span></label>
+                             <input type="text" name="PHONE" class="required" value="" id="mce-PHONE" required placeholder="{{__('lang.phone')}}*">
+                             <span id="mce-PHONE-HELPERTEXT" class="helper_text"></span>
+                     </div> --}}
 
                          <div class="mc-field-group">
                              <label for="mce-MMERGE7"><span class="asterisk"></span></label>
                              <input type="text" value="" name="MMERGE7" class="required" id="mce-MMERGE7" required placeholder="{{__('lang.organizationOrCompany')}}*">
                              <span id="mce-MMERGE7-HELPERTEXT" class="helper_text"></span>
                          </div>
-                    </div>
+                     </div>
          <div hidden="true"><input type="hidden" name="tags" value="6393289"></div>
              <div id="mce-responses" class="clear">
                  <div class="response" id="mce-error-response" style="display:none"></div>
