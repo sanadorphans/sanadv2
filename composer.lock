@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "20a255c9eba1b220314b555ef1f4e5fa",
+    "content-hash": "3dbbddc4f50767c713191fde29228ee4",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -2983,16 +2983,16 @@
         },
         {
             "name": "mcamara/laravel-localization",
-            "version": "v2.2.0",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mcamara/laravel-localization.git",
-                "reference": "fea226dfe4c4352839bb08ee1d6d80302b1ddcf3"
+                "reference": "ff6bcf8077131792a7ff2be59d44d18ae0452fb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mcamara/laravel-localization/zipball/fea226dfe4c4352839bb08ee1d6d80302b1ddcf3",
-                "reference": "fea226dfe4c4352839bb08ee1d6d80302b1ddcf3",
+                "url": "https://api.github.com/repos/mcamara/laravel-localization/zipball/ff6bcf8077131792a7ff2be59d44d18ae0452fb5",
+                "reference": "ff6bcf8077131792a7ff2be59d44d18ae0452fb5",
                 "shasum": ""
             },
             "require": {
@@ -3001,7 +3001,7 @@
             },
             "require-dev": {
                 "orchestra/testbench-browser-kit": "^8.5|^9.0",
-                "phpunit/phpunit": "^10.1"
+                "phpunit/phpunit": "^9.5.10|^10.0"
             },
             "suggest": {
                 "ext-intl": "*"
@@ -3043,7 +3043,7 @@
             ],
             "support": {
                 "issues": "https://github.com/mcamara/laravel-localization/issues",
-                "source": "https://github.com/mcamara/laravel-localization/tree/v2.2.0"
+                "source": "https://github.com/mcamara/laravel-localization/tree/v2.1.0"
             },
             "funding": [
                 {
@@ -3055,7 +3055,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-27T19:22:55+00:00"
+            "time": "2024-11-26T21:38:16+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
