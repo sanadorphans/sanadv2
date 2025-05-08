@@ -121,9 +121,11 @@
                 <p>{{ $sections[8]->$details }}</p>
             </div>
         </div>
-        <a class="call-action" href="/storage/{{json_decode($sections[15]->$file)[0]->download_link }}">{{ $sections[15]->$title }}</a>
     </section>
 
+    <div style="display:grid; justify-items: center; margin: 20px 0;">
+        <a class="call-action" href="/storage/{{json_decode($sections[15]->$file)[0]->download_link }}">{{ $sections[15]->$title }}</a>
+    </div>
 
 @endsection
 
