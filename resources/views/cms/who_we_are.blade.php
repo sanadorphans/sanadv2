@@ -6,8 +6,6 @@
     $image = 'image' . '_' . app()->getLocale();
     $file = 'file' . '_' . app()->getLocale();
 
-    dd($sections);
-
     function to_arabic_number($Month)
     {
         if (app()->getLocale() == 'ar') {
