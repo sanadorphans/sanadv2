@@ -18,7 +18,7 @@
     list-style: numeric;
     margin: 0 2vw;
 }
-.details a{
+/* .details a{
    display: block;
    padding: 1vw;
    text-align: center;
@@ -26,7 +26,7 @@
    background-color:#35C0CA;
    width: 40%;
    margin: auto;
-}
+} */
 html[lang="ar"] .details ul{
     list-style: arabic-indic;
 }
