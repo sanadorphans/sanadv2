@@ -4,6 +4,9 @@
     $title = 'title' . '_' . app()->getLocale();
     $details = 'details' . '_' . app()->getLocale();
     $image = 'image' . '_' . app()->getLocale();
+    $file = 'file' . '_' . app()->getLocale();
+
+    dd($sections);
 
     function to_arabic_number($Month)
     {
@@ -122,6 +125,7 @@
         </div>
     </section>
 
+    <a class="call-action" href="{{ $sections[15]->$file }}">{{ $sections[15]->$title }}</a>
 
 @endsection
 
