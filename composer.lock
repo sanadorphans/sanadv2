@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a65ba5c1ccb281ef245845b8ea640ade",
+    "content-hash": "20a255c9eba1b220314b555ef1f4e5fa",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -2983,25 +2983,25 @@
         },
         {
             "name": "mcamara/laravel-localization",
-            "version": "v2.3.0",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mcamara/laravel-localization.git",
-                "reference": "af91f489f518fb1907944de8622a19266159d28f"
+                "reference": "fea226dfe4c4352839bb08ee1d6d80302b1ddcf3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mcamara/laravel-localization/zipball/af91f489f518fb1907944de8622a19266159d28f",
-                "reference": "af91f489f518fb1907944de8622a19266159d28f",
+                "url": "https://api.github.com/repos/mcamara/laravel-localization/zipball/fea226dfe4c4352839bb08ee1d6d80302b1ddcf3",
+                "reference": "fea226dfe4c4352839bb08ee1d6d80302b1ddcf3",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "^10.0|^11.0|^12.0",
+                "laravel/framework": "^10.0|^11.0",
                 "php": "^8.2"
             },
             "require-dev": {
-                "orchestra/testbench-browser-kit": "^8.5|^9.0|^10.0",
-                "phpunit/phpunit": "^10.1|^11.0"
+                "orchestra/testbench-browser-kit": "^8.5|^9.0",
+                "phpunit/phpunit": "^10.1"
             },
             "suggest": {
                 "ext-intl": "*"
@@ -3043,7 +3043,7 @@
             ],
             "support": {
                 "issues": "https://github.com/mcamara/laravel-localization/issues",
-                "source": "https://github.com/mcamara/laravel-localization/tree/v2.3.0"
+                "source": "https://github.com/mcamara/laravel-localization/tree/v2.2.0"
             },
             "funding": [
                 {
@@ -3055,7 +3055,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-26T06:38:01+00:00"
+            "time": "2024-11-27T19:22:55+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
