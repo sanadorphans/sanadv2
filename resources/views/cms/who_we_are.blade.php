@@ -41,7 +41,7 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{ asset('css/WhoWeAre.css?v=1.8') }}">
+    <link rel="stylesheet" href="{{ asset('css/WhoWeAre.css?v=1.9') }}">
 @endsection
 
 @section('content')
@@ -121,9 +121,9 @@
                 <p>{{ $sections[8]->$details }}</p>
             </div>
         </div>
+        <a class="call-action" href="/storage/{{json_decode($sections[15]->$file)[0]->download_link }}">{{ $sections[15]->$title }}</a>
     </section>
 
-    <a class="call-action" href="{{ $sections[15]->$file }}">{{ $sections[15]->$title }}</a>
 
 @endsection
 
