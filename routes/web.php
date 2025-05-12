@@ -13,6 +13,7 @@ use App\Http\Controllers\cms\BoardController;
 use App\Http\Controllers\cms\SanadController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\DonationsController;
+use App\Http\Controllers\SearchbarController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\cms\PartnerController;
 use App\Http\Controllers\cms\ProgramController;
@@ -45,6 +46,7 @@ use App\Http\Controllers\cms\PeriodicalNewsletterController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Consultants\RepliesConsultantController;
 use App\Http\Controllers\cms\StoriesController as CMSStoriesController;
+
 /*
 
 |--------------------------------------------------------------------------
@@ -64,7 +66,6 @@ Route::middleware(['auth:sanctum', 'verified','documented', 'redirect.consultant
 Route::prefix('newsletter')->name('newsletter.')->group(function () {
     Route::get('/subscribe',[App\Http\Controllers\NewsletterController::class,'subscribe'])->name('subscribe');
     Route::post('/store',[App\Http\Controllers\NewsletterController::class,'store'])->name('store');
-
     Route::post('/store-user',[App\Http\Controllers\NewsletterController::class,'store_user'])->name('store_user');
     Route::get('/create',[App\Http\Controllers\NewsletterController::class,'createCampaign'])->name('create');
 
@@ -96,9 +97,9 @@ Route::group([
     });
 
     Route::get('/', [HomeController::class,'index'])->name('landing');
-
     Route::get('/contact-us',[ContactUsController::class,'index'])->name('contact_us');
     Route::post('/contact-us',[ContactUsController::class,'send'])->name('contact_us.send');
+    Route::get('/search', [SearchbarController::class, 'search'])->name('search');
 
     Route::prefix('pages')->name('web.')->group(function () {
         Route::get('/board',[BoardController::class,'index'])->name('board.index');

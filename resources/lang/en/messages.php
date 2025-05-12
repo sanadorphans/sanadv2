@@ -15,6 +15,6 @@
 return [
 
     'sent successfully' => 'sent successfully',
-
+    'keyword_found_times' => '{0} Keyword not found|{1} Keyword found :count time|[2,*] Keyword found :count times',
 
 ];

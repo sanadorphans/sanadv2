@@ -1,6 +1,11 @@
 <?php
 
 return [
+    'category' => 'الفئة',
+    "Care_leaver" => "شاب/ة خريج/ة رعاية",
+    "Young_person_in_care" => "شاب/ة داخل الدار",
+    "Volunteer" => "متطوع",
+    "Alternative_care_worker" => "موظف في مجال الرعاية البديلة",
     "details"=>"التفاصيل",
     "we_Aspire" => "نتطلع إلى",
     "career_title" => "انضم إلى رحلتنا في سند",

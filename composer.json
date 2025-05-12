@@ -12,6 +12,7 @@
         "laravel/jetstream": "^4.0.5",
         "laravel/pulse": "^1.4.1",
         "laravel/sanctum": "^3.3.3",
+        "laravel/scout": "^10.14",
         "laravel/telescope": "^5.7",
         "laravel/tinker": "^2.10",
         "mcamara/laravel-localization": "2.3",

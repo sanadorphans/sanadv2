@@ -27,7 +27,8 @@ class ResourceDataRequest extends FormRequest
             'name' => 'required',
             'email' => 'required',
             'phone' => 'required',
-            'society' => 'required',
+            'category' => 'required',
+            'society' => 'nullable',
         ];
 
     }

@@ -16,6 +16,8 @@ class ResourceDownload extends Model
         $ResourceDownload->email = $request['email'];
         $ResourceDownload->phone = $request['phone'];
         $ResourceDownload->society = $request['society'];
+        $ResourceDownload->category = $request['category'];
+
         $ResourceDownload->save();
     }
 }

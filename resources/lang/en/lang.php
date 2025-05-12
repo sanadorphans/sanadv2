@@ -1,6 +1,11 @@
 <?php
 
 return [
+    'category' => 'Category',
+    "Care leaver" => "Care leaver",
+    "Young person in care" => "Young in care",
+    "Volunteer" => "Volunteer",
+    "Alternative care worker" => "Alternative care worker",
     "details"=>"Details",
     "we_Aspire" => "We Aspire",
     "career_title" => "Join Our Journey at Sanad",

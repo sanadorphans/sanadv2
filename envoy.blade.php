@@ -36,7 +36,7 @@
     ln -nfs /home/sanadorphans.org/.env /home/sanadorphans.org/{{ $new_release_dir }}
     cd /home/sanadorphans.org/{{ $new_release_dir }}
     echo "Starting composer"
-    composer install
+    composer install --ignore-platform-reqs
     echo "finishing composer"
 @endtask
 
