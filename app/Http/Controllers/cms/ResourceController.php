@@ -18,7 +18,7 @@ class ResourceController extends Controller
         ResourceDownload::StoreData($request,$id);
         $file= public_path(). "/storage/" . json_decode(Resource::find($id)->first()->file)[0]->download_link;
         if($id == "9"){
-            $file= public_path(). "/storage/" . 'resources/May2025/bQHiUoWE2M4BbHqMiJaB.pdf';
+            $file= public_path(). "/storage/" . 'resources/May2025/K4C3FeBKtxNB8vtXi6IF.pdf';
         }
         $headers = array('Content-Type: application/pdf',);
         return Response::download($file, $id . '.pdf', $headers);
