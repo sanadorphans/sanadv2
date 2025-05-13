@@ -72,7 +72,7 @@ return [
     'slogan' => 'For Every Orphan',
     'field_required' => 'required',
     'fullName' => 'Full Name',
-    'organizationOrCompany' => 'Organization/Company',
+    'organizationOrCompany' => 'Organization/Company/Care Home',
     'verifyYourEmail'=>'We need to confirm your email address. To complete the subscription process, please click the link in the email we just sent you.',
     'required' => 'This field is required',
     'noResults' => 'Not found result',

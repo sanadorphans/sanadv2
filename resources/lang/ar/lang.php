@@ -71,7 +71,7 @@ return [
     'field_required' => 'مطلوب',
     'slogan' => 'لكــــل يتيـــــم',
     'fullName' => 'الاسم بالكامل',
-    'organizationOrCompany' => 'الشركة / المؤسسة',
+    'organizationOrCompany' => 'الشركة / المؤسسة / الدار',
     'organization' => 'مؤسسة',
     'orphanage' => 'دار رعاية',
     'individual' => 'فرد',
