@@ -19,6 +19,8 @@ class ResourceController extends Controller
         $file= public_path(). "/storage/" . json_decode(Resource::find($id)->first()->file)[0]->download_link;
         if($id == "9"){
             $file= public_path(). "/storage/" . 'resources/May2025/K4C3FeBKtxNB8vtXi6IF.pdf';
+            $headers = array('Content-Type: application/pdf',);
+            return Response::download($file,'الدليل خدمات الرعاية الاحقة لخريج دور الايتام.pdf', $headers);
         }
         $headers = array('Content-Type: application/pdf',);
         return Response::download($file, $id . '.pdf', $headers);
