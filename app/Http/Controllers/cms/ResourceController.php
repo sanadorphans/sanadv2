@@ -20,7 +20,7 @@ class ResourceController extends Controller
         if($id == "9"){
             $file= public_path(). "/storage/" . 'resources/May2025/K4C3FeBKtxNB8vtXi6IF.pdf';
             $headers = array('Content-Type: application/pdf',);
-            return Response::download($file,'الدليل خدمات الرعاية الاحقة لخريج دور الايتام.pdf', $headers);
+            return Response::download($file,'دليل خدمات الرعاية اللاحقة للشباب خريجي دور الرعاية.pdf', $headers);
         }
         $headers = array('Content-Type: application/pdf',);
         return Response::download($file, $id . '.pdf', $headers);
