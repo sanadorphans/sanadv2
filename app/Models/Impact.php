@@ -1,15 +1,11 @@
 <?php
 
 namespace App\Models;
-
-use App\Traits\SearchablePageTrait;
-use TCG\Voyager\Traits\Translatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Impact extends Model
 {
-    use HasFactory, Translatable, SearchablePageTrait;
-    protected $translatable = ['title','details'];
+    use HasFactory;
     protected $table = 'impact';
 }

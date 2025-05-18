@@ -2,14 +2,11 @@
 
 namespace App\Models;
 
-use TCG\Voyager\Traits\Translatable;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Laravel\Scout\Searchable;
+use Illuminate\Database\Eloquent\Model;
 
 class AnnualReport extends Model
 {
-    use HasFactory, Translatable, Searchable;
-    protected $translatable = ['title'];
+    use HasFactory;
     public $table = 'annual_report';
 }
