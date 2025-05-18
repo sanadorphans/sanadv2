@@ -25,7 +25,7 @@
                 <div class="AnnualReport AnnualReport{{$report->id}}">
                     @if ($report->$file == null || json_decode($report->$file) == [])
                         <a href="/storage/{{json_decode($report->file_ar)[0]->download_link}}">
-                            <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$report->$image)}})"></div>
+                            <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$report->$image == null ? $report->image : $report->$image)}})"></div>
                             <p>{{$report->$title}}</p>
                         </a>
                     @else
