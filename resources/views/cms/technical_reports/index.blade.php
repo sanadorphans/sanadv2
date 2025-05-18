@@ -30,7 +30,7 @@
                         </a>
                     @else
                         <a href="/storage/{{json_decode($report->$file)[0]->download_link}}">
-                            <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$report->$image)}})"></div>
+                            <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$report->$image == null ? $report->image : $report->$image)}})"></div>
                             <p>{{$report->$title}}</p>
                         </a>
                     @endif
