@@ -3,6 +3,7 @@
 @php
     $title = "title" . "_" . app()->getLocale();
     $file = "file" . "_" . app()->getLocale();
+    $image = "image" . "_" . app()->getLocale();
 @endphp
 
 @section('page_name') {{ __('lang.technical_reports') }}  @endsection
@@ -24,12 +25,12 @@
                 <div class="AnnualReport AnnualReport{{$report->id}}">
                     @if ($report->$file == null || json_decode($report->$file) == [])
                         <a href="/storage/{{json_decode($report->file_ar)[0]->download_link}}">
-                            <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$report->image)}})"></div>
+                            <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$report->$image)}})"></div>
                             <p>{{$report->$title}}</p>
                         </a>
                     @else
                         <a href="/storage/{{json_decode($report->$file)[0]->download_link}}">
-                            <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$report->image)}})"></div>
+                            <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$report->$image)}})"></div>
                             <p>{{$report->$title}}</p>
                         </a>
                     @endif
