@@ -1,73 +1,94 @@
 @extends('web.layouts.master')
 
 
-@section('page_name')  Search Results  @endsection
-
-@section('style')
-{{-- Add your site's CSS --}}
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-<style>
-    .search-bar { margin-bottom: 30px; }
-    .result-item { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
-    .result-item h5 { margin-bottom: 5px; }
-    .result-item .meta { font-size: 0.9em; color: #666; }
-</style>
-@endsection
+@section('page_name')  {{__('lang.Search_Results')}}  @endsection
 
 @section('content')
-<div class="container">
-    <h1>{{ __('Search Results') }}</h1>
+<style>
+    .search-form-section {
+        /* Add any custom styles for the search bar section if needed */
+        margin-top:50px !important;
+    }
+    .search-results-section .list-group-item h5 {
+        color: var(--bs-primary); /* Example: make result titles primary color */
+    }
 
-    {{-- Include the search form again or ensure it's in your layout --}}
-    @include('partials.search-form')
+    .search-results-section .list-group-item:hover h5 {
+        text-decoration: underline;
+    }
+    mark { /* Style for the highlighted keyword */
+        padding: 0.2em 0.1em;
+        background-color: #fff3cd; /* Bootstrap's warning background, or choose another */
+    }
+</style>
+<main class="container my-4"> {{-- Added my-4 for vertical spacing --}}
 
-    @if($keyword)
-        <p>{{ __('Showing results for:') }} <strong>{{ htmlspecialchars($keyword) }}</strong></p>
+    {{-- Search Bar Section --}}
+    <section class="search-form-section mb-5 p-4 bg-light rounded shadow-sm">
+        <form action="{{ route('search') }}" method="GET" class="row g-3 align-items-center">
+            <div class="col flex-grow-1">
+                <label for="searchInput" class="visually-hidden">{{ __('lang.search') }}</label>
+                <input class="form-control form-control-lg" id="searchInput" type="search" name="q"
+                       placeholder="{{ __('lang.search') }}" aria-label="{{ __('lang.search') }}"
+                       value="{{ request('q') }}">
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-primary btn-lg" type="submit">
+                    {{ __('lang.search') }}
+                    <i class="fas fa-search me-2"></i> {{-- Optional: Font Awesome icon --}}
+                </button>
+            </div>
+        </form>
+    </section>
 
-        @if(count($results) > 0)
-            <ul class="search-results-list">
+    <section style="width: 80%;margin: auto;">
+        <h1>{{__('lang.Search_Results')}}</h1>
+
+        @if($keyword)
+            <p class="mt-3">{{__('lang.You_searched_for')}} <strong>{{ $keyword }}</strong></p>
+        @endif
+
+        @if($results->isEmpty())
+            @if($keyword)
+                <p>{{__('lang.No_results_found')}} </p>
+            @else
+                <p>{{__('lang.Please_enter_a_search_keyword')}}</p>
+            @endif
+        @else
+            <p>{{ $results->count() }} {{__('lang.results_found')}}</p>
+            <ul class="list-group mt-3">
                 @foreach($results as $result)
-                    <li>
-                        <h3>
-                            <a href="{{ $result['url'] }}">{{ $result['title'] }}</a>
-                        </h3>
-                        @if($result['snippet'])
-                            <p>{{ $result['snippet'] }}</p>
-                        @endif
-                        <small>{{ trans_choice('messages.keyword_found_times', $result['keyword_count'], ['count' => $result['keyword_count']]) }}</small>
-                        {{-- Using trans_choice for pluralization --}}
+                    <li class="list-group-item" style="margin-top:20px;">
+                        <h5>
+                            <a href="{{ $result['url'] }}"
+                                class="list-group-item list-group-item-action flex-column align-items-start py-3"
+                                @if(isset($result['is_file_download']) && $result['is_file_download'])
+                                    target="_blank" {{-- Open PDF in new tab --}}
+                                    {{-- title="{{ __('lang.download_report_title', ['report_title' => $result['title']]) }}" --}}
+                                @endif
+                                >
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1 h5" style="color:#F37246;font-weight: bold;font-size: 20px;">
+                                            {!! $result['title'] !!}
+                                            @if(isset($result['is_file_download']) && $result['is_file_download'])
+                                                <i class="fas fa-file-pdf text-danger ms-2" title="{{ __('lang.pdf_document') }}"></i> {{-- Optional: PDF icon --}}
+                                            @endif
+                                        </h5>
+                                    </div>
+                                    {{-- ... snippet and keyword count ... --}}
+                            </a>
+                            <small class="text-muted" style="font-size: 16px;"> ({{ $result['type'] }})</small>
+                        </h5>
+                        {{-- @if(isset($result['snippet']))
+                            <p class="mb-0 text-muted"><small>{!! $result['snippet'] !!}</small></p>
+                        @endif --}}
                     </li>
                 @endforeach
             </ul>
-        @else
-            <p>{{ __('No results found for your query.') }}</p>
         @endif
-    @else
-        @if(request()->has('q'))
-             <p>{{ __('Please enter a more specific keyword.') }}</p>
-        @else
-             <p>{{ __('Please enter a keyword to search.') }}</p>
-        @endif
-    @endif
-</div>
+    </section>
+
+</main>
 @endsection
-
-@push('styles')
-<style>
-.search-results-list {
-    list-style: none;
-    padding-left: 0;
-}
-.search-results-list li {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #e0e0e0;
-}
-.search-results-list li:last-child {
-    border-bottom: none;
-}
-</style>
-@endpush
-
 
 

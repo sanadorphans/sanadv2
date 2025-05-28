@@ -1,6 +1,11 @@
 <?php
 
 return [
+    'results_found' => 'نتيجة تم العثور عليها.',
+    'Please_enter_a_search_keyword' => 'الرجاء ادخال كلمة البحث',
+    'No_results_found' => 'لا توجد نتائج',
+    'You_searched_for' => 'لقد بحثت عن:',
+    'Search_Results' =>'نتائج البحث',
     'category' => 'الفئة',
     "Care_leaver" => "شاب/ة خريج/ة رعاية",
     "Young_person_in_care" => "شاب/ة داخل الدار",
@@ -801,7 +806,7 @@ return [
     'our_services' => 'خدماتنا',
     'services' => 'الخدمات',
     'blog' => 'المدونة',
-    'technical_reports' => 'التقارير الفنية',
+    'technical_reports' => 'التقارير السنوي',
     'periodical_newsletters' => 'النشرة الدورية',
     'donate_for_support_our_program' => 'تبرع لدعم برامجنا',
     'become_a_volunteer' => 'تطوع معنا',

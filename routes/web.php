@@ -119,6 +119,7 @@ Route::group([
         Route::get('/awards',[PageController::class,'awards'])->name('pages.certificates');
         Route::get('/important-links',[ImportantLinksController::class,'index'])->name('pages.ImportantLinks.index');
         Route::get('/technical-reports',[TechnicalReportsController::class,'index'])->name('pages.technical_reports');
+        Route::get('/annual-reports/{id}/download', [TechnicalReportsController::class, 'download'])->name('annual_report.download');
         Route::get('/periodical-newsletters',[PeriodicalNewsletterController::class,'index'])->name('pages.periodical_newsletters');
         Route::get('/media-bags',[MediaBagController::class,'index'])->name('pages.media_bags');
         Route::get('/events',[CmsEventController::class,'index'])->name('pages.events');

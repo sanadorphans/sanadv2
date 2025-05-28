@@ -2,157 +2,126 @@
 // app/Http/Controllers/SearchController.php
 namespace App\Http\Controllers;
 
+use App\Models\AnnualReport;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Config; // To get the list of models
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization; // Correct import
-use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\App; // For getting locale
+// Or: use Illuminate\Support\Facades\Lang; // For translation
+// Or: use Illuminate\Contracts\Translation\Translator; // Inject if preferred
 
 class SearchbarController extends Controller
 {
+    public function search(Request $request)
+    {
+        $keyword = $request->input('q');
+        $results = collect();
 
-public function search(Request $request)
-{
-    $keyword = $request->input('q');
-    $allProcessedResults = [];
-    $currentLocale = App::getLocale();
-    $title = 'title' . '_' . $currentLocale;
-    $details = 'details' . '_' . $currentLocale;
+        if (empty($keyword)) {
+            return view('search.results', ['results' => $results, 'keyword' => $keyword]);
+        }
 
-    if ($keyword) {
-        $pageModelsToSearch = Config::get('searchable_pages.models', []);
+        $searchableModelConfigurations = Config::get('searchable.models');
+        $currentLocale = App::getLocale(); // Get the current application locale (e.g., 'en', 'ar')
 
-        foreach ($pageModelsToSearch as $modelClass) {
-            if (class_exists($modelClass) && method_exists($modelClass, 'search')) {
-                $columns = Schema::getColumnListing((new $modelClass)->getTable());
-                $searchableColumns = array_filter($columns, fn($column) => str_contains($column, $currentLocale) || str_contains($column, 'title') || str_contains($column, 'details'));
+        foreach ($searchableModelConfigurations as $modelClass => $config) {
+            $query = $modelClass::query();
 
-                $scoutResults = $modelClass::search($keyword)
-                    ->where(function ($query) use ($searchableColumns, $keyword) {
-                        foreach ($searchableColumns as $column) {
-                            $query->orWhere($column, 'LIKE', "%{$keyword}%");
-                        }
-                    })
-                    ->get();
+            // Construct localized field names for searching
+            $localizedSearchFields = [];
+            foreach ($config['base_fields'] as $baseField) {
+                // Assuming your Voyager translatable fields are suffixed with _locale (e.g., name_en, details_ar)
+                // Adjust this if your Voyager setup uses a different pattern (e.g., JSON translations)
+                $localizedSearchFields[] = $baseField . '_' . $currentLocale;
+            }
 
-                $scoutResults = $modelClass::search($keyword)->get();
+            // Construct localized display title column name
+            $localizedDisplayTitleColumn = $config['display_title_base_column'] . '_' . $currentLocale;
 
-                foreach ($scoutResults as $hit) {
-                    $body = strip_tags((string)$details);
-                    $contentToCountIn = strtolower((string)$title . " " . (string)$body);
-                    $keywordCount = substr_count($contentToCountIn, strtolower($keyword));
-
-                    if ($keywordCount > 0) {
-                        try {
-                            $url = $hit->getPageUrl($currentLocale);
-                        } catch (\Exception $e) {
-                            $url = LaravelLocalization::getLocalizedURL($currentLocale, '/');
-                        }
-
-                        $allProcessedResults[] = [
-                            'id' => $hit->getScoutKey(),
-                            'url' => $url,
-                            'title' => $title,
-                            'snippet' => Str::limit($body, 200),
-                            'keyword_count' => $keywordCount,
-                            'type' => class_basename($modelClass)
-                        ];
+            $query->where(function ($q) use ($localizedSearchFields, $keyword) {
+                foreach ($localizedSearchFields as $field) {
+                    // Check if the column actually exists before querying to avoid errors
+                    // This is a good practice if some locales might not have all fields
+                    if (method_exists($q->getModel(), 'getFillable') && in_array($field, $q->getModel()->getFillable()) || \Schema::hasColumn($q->getModel()->getTable(), $field) ) {
+                       $q->orWhere($field, 'LIKE', "%{$keyword}%");
                     }
+                }
+            });
+
+            $modelResults = $query->get();
+
+            foreach ($modelResults as $modelResult) {
+                // Get the title from the localized column
+                // Add a fallback or check if the property exists
+                $title = $modelResult->{$localizedDisplayTitleColumn} ?? $modelResult->{$config['display_title_base_column']} ?? 'N/A';
+                if($modelResult instanceof AnnualReport){
+                    $url = '';
+                    if (isset($config['is_direct_file_link']) && $config['is_direct_file_link']) {
+                        $filePath = '';
+                        if (!empty($config['file_model_relation'])) {
+                            $relatedModel = $modelResult->{$config['file_model_relation']};
+                            if ($relatedModel) {
+                                $filePath = $relatedModel->{$config['file_column_on_related']};
+                            }
+                        } else {
+                            $filePath = $modelResult->{$config['file_path_column_on_self']};
+                        }
+                        if ($filePath) {
+                            $url = Storage::url($filePath); // Or asset('storage/' . $filePath) if link is setup
+                        } else {
+                            $url = '#'; // Fallback
+                        }
+                    } else {
+                        $url = route($config['route_name'], [$config['route_param_key'] => $modelResult->{$config['route_param_value_column']}]);
+                    }
+
+                    $results->push([
+                        'title' => $title,
+                        'url' => $url, // Use the dynamically generated URL
+                        'type' => __($config['type_label_key']), // Translate the type label
+                        'is_file_download' => (isset($config['is_direct_file_link']) && $config['is_direct_file_link']) || (isset($config['is_file_download']) && $config['is_file_download']),
+                        'model' => $modelResult,
+
+                    ]);
+                }else{
+                    $results->push([
+                        'title' => $title,
+                        'url' => route($config['route_name'], [$config['route_param_key'] => $modelResult->{$config['route_param_value_column']}]),
+                        'type' => __($config['type_label_key']), // Translate the type label
+                        'model' => $modelResult,
+                    ]);
                 }
             }
         }
 
-        usort($allProcessedResults, fn($a, $b) => $b['keyword_count'] <=> $a['keyword_count']);
+        $results = $results->sortBy('title');
+        return view('search.results', ['results' => $results, 'keyword' => $keyword]);
     }
 
-    return view('search.results', [
-        'keyword' => $keyword,
-        'results' => $allProcessedResults,
-    ]);
-}
 
-    // public function search(Request $request)
+    // Optional: Helper to generate a snippet
+    // protected function generateSnippet($model, $fields, $keyword, $length = 150)
     // {
-    //     $keyword = $request->input('q');
-    //     $allProcessedResults = [];
-    //     $currentLocale = App::getLocale();
+    //     $textToSearch = '';
+    //     foreach ($fields as $field) {
+    //         $textToSearch .= strip_tags($model->{$field}) . ' '; // Combine content from searchable fields
+    //     }
+    //     $textToSearch = trim($textToSearch);
 
-    //     if ($keyword) {
-    //         $pageModelsToSearch = Config::get('searchable_pages.models', []);
-
-    //         foreach ($pageModelsToSearch as $modelClass) {
-    //             if (class_exists($modelClass) && method_exists($modelClass, 'search')) {
-    //                 $this->info("Searching in model: {$modelClass}"); // For logging/debugging
-
-    //                 // Perform the search using Scout for this specific model
-    //                 $scoutResults = $modelClass::search($keyword)
-    //                     // ->within(config('scout.prefix').Str::snake(class_basename($modelClass)).'_'.$currentLocale) // If you try per-locale indexes
-    //                     ->get();
-
-    //                 foreach ($scoutResults as $hit) {
-    //                     // $hit is an instance of $modelClass (e.g., AboutUsPage)
-    //                     // It should have the SearchablePageTrait methods and its own translatable fields.
-
-    //                     $title = $hit->getTranslatedAttribute('title', $currentLocale, config('app.fallback_locale'));
-    //                     $body = strip_tags((string)$hit->getTranslatedAttribute('details', $currentLocale, config('app.fallback_locale'))); // Assume 'body' or a common field name
-    //                     // $slug = $hit->getTranslatedAttribute('slug', $currentLocale, config('app.fallback_locale'));
-
-    //                     // Construct the content used for keyword counting from fields known to be on THIS model
-    //                     // This part might need to be more dynamic if 'body' isn't the universal content field.
-    //                     $contentToCountIn = strtolower(
-    //                         (string)$title . " " .
-    //                         (string)$body . " "  // Assuming 'body' or similar primary content field
-    //                     );
-
-    //                     $keywordCount = substr_count($contentToCountIn, strtolower($keyword));
-
-    //                     if ($keywordCount > 0) {
-    //                         try {
-    //                             $url = $hit->getPageUrl($currentLocale); // Use the method from the trait/model
-    //                         } catch (\Exception $e) {
-    //                             $this->error("Could not get URL for {$modelClass} with ID {$hit->id}");
-    //                             $url = LaravelLocalization::getLocalizedURL($currentLocale, '/'); // Fallback URL
-    //                         }
-
-    //                         $allProcessedResults[] = [
-    //                             'id' => $hit->getScoutKey(), // The unique key we defined
-    //                             'url' => $url,
-    //                             'title' => $title,
-    //                             'snippet' => Str::limit($body, 200),
-    //                             'keyword_count' => $keywordCount,
-    //                             'type' => class_basename($modelClass) // So you know what kind of page it is
-    //                         ];
-    //                     }
-    //                 }
-    //             }
-    //         }
-
-    //         // Sort all combined results by keyword count
-    //         usort($allProcessedResults, function ($a, $b) {
-    //             return $b['keyword_count'] <=> $a['keyword_count'];
-    //         });
+    //     $position = stripos($textToSearch, $keyword);
+    //     if ($position === false) {
+    //         return Str::limit($textToSearch, $length);
     //     }
 
-    //     return view('search.results', [
-    //         'keyword' => $keyword,
-    //         'results' => $allProcessedResults,
-    //     ]);
-    // }
+    //     $start = max(0, $position - ($length / 2));
+    //     $snippet = Str::substr($textToSearch, $start, $length);
 
-    // // Helper methods for logging if needed (optional)
-    // private function info($message) {
-    //     if (app()->runningInConsole()) {
-    //         // For Artisan commands, you might use $this->output
-    //     } else {
-    //         logger()->info('[SearchController] ' . $message);
+    //     if ($start > 0) {
+    //         $snippet = '...' . $snippet;
     //     }
-    // }
-    // private function error($message) {
-    //     if (app()->runningInConsole()) {
-    //          // For Artisan commands, you might use $this->output
-    //     } else {
-    //         logger()->error('[SearchController] ' . $message);
+    //     if ( ($start + $length) < Str::length($textToSearch) ) {
+    //         $snippet = $snippet . '...';
     //     }
+    //     return $snippet;
     // }
 }

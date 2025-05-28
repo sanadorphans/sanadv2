@@ -1,6 +1,11 @@
 <?php
 
 return [
+    'results_found' => 'results found.',
+    'Please_enter_a_search_keyword' => 'Please enter a search keyword.',
+    'No_results_found' => 'No results found',
+    'You_searched_for' => 'You searched for',
+    'Search_Results' =>'Search Results',
     'category' => 'Category',
     "Care leaver" => "Care leaver",
     "Young person in care" => "Young in care",
