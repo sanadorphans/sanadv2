@@ -27,7 +27,7 @@
         {{-- <p>{{ __('lang.slogan') }}</p> --}}
         <div class="language" style="display: flex; align-items: center; justify-content: center;">
             <a href="{{ route('search') }}"
-                style="color: white;font-weight:bold"><img src="{{asset('img/search.svg')}}" alt="search" width="15px" height="15px" /></a>
+                style="color: white;font-weight:bold"><i class="fas fa-search me-2"></i></a>
             <a href="{{ str_replace([env('APP_URL') . '/' . 'ar', env('APP_URL') . '/' . 'en'], env('APP_URL') . '/' . $language, url()->full()) }}"
                 style="color: white;font-weight:bold">{{ $lang }}</a>
         </div>
