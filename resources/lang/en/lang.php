@@ -928,7 +928,8 @@ The Sanad Society Team",
 
  'servay' => 'servay',
   'clickHere' => 'Click here',
-  'toShowAnneulReport' => 'To view the Annuel Report',
+  'toShowAnneulReport' => 'To view the Sanad Impact',
+  'report_2023_2024' => 'Annual Report 2023-2024',
 ];
 
 

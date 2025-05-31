@@ -3,7 +3,9 @@
 // config/searchable.php
 use App\Models\News;
 use App\Models\Board;
+use App\Models\Story;
 use App\Models\Carrer;
+use App\Models\Impact;
 use App\Models\Program;
 use App\Models\Service;
 use App\Models\Aspiration;
@@ -12,6 +14,8 @@ use App\Models\SubService;
 use App\Models\TeamMember;
 use App\Models\Certificate;
 use App\Models\AnnualReport;
+use App\Models\PressRelease;
+use App\Models\WhoWeArePage;
 
 return [
     'models' => [
@@ -110,5 +114,37 @@ return [
         //     'display_title_base_column' => 'lang.Our_Aspirations', // Base column for the display title
         //     'type_label_key' => 'lang.Our_Aspirations', // Translation key for the type
         // ],
+        WhoWeArePage::class => [
+            'base_fields' => ['title','details'], // Base field names
+            'route_name' => 'web.pages.who_we_are',
+            'route_param_key' => '',
+            'route_param_value_column' => '',
+            'display_title_base_column' => 'title', // Base column for the display title
+            'type_label_key' => 'lang.Who We Are', // Translation key for the type
+        ],
+        Impact::class => [
+            'base_fields' => ['title','details'], // Base field names
+            'route_name' => 'web.pages.impact',
+            'route_param_key' => '',
+            'route_param_value_column' => '',
+            'display_title_base_column' => 'title', // Base column for the display title
+            'type_label_key' => 'lang.impact', // Translation key for the type
+        ],
+        PressRelease::class => [
+            'base_fields' => ['title','details'], // Base field names
+            'route_name' => 'web.PressRelease.show',
+            'route_param_key' => 'id',
+            'route_param_value_column' => 'id',
+            'display_title_base_column' => 'title', // Base column for the display title
+            'type_label_key' => 'lang.Press_Releases', // Translation key for the type
+        ],
+        Story::class => [
+            'base_fields' => ['title','details','position'], // Base field names
+            'route_name' => 'web.stories.show',
+            'route_param_key' => 'id',
+            'route_param_value_column' => 'id',
+            'display_title_base_column' => 'title', // Base column for the display title
+            'type_label_key' => 'lang.stories', // Translation key for the type
+        ],
     ],
 ];
