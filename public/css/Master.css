@@ -329,6 +329,7 @@ body{
     font-size: 1.2vw;
     color: #fff;
     justify-self: end;
+    margin: 0 2px;
 }
 .glide{
     position: relative;
