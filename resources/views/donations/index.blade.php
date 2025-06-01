@@ -8,7 +8,7 @@
 @section('page_name') {{ __('lang.donation_to') }} @endsection
 
 @section('style')
-<link rel="stylesheet" href="{{ asset('css/Donation.css?v=1.2') }}">
+<link rel="stylesheet" href="{{ asset('css/Donation.css?v=1.3') }}">
 @endsection
 
 @section('content')
@@ -109,6 +109,17 @@
                     <input name="amount" type="number" id="amount">
                     <span>{{ __('lang.d_txt15') }}</span>
                 </div>
+            </div>
+            <div>
+                <label for="donation_ad">{{ __('lang.donation_question') }}</label>
+                <select name="donation_ad" id="donation_ad">
+                    <option value="{{ __('lang.donation_answer1') }}">{{ __('lang.donation_answer1') }}</option>
+                    <option value="{{ __('lang.donation_answer2') }}">{{ __('lang.donation_answer2') }}</option>
+                    <option value="{{ __('lang.donation_answer3') }}">{{ __('lang.donation_answer3') }}</option>
+                    <option value="{{ __('lang.donation_answer4') }}">{{ __('lang.donation_answer4') }}</option>
+                    <option value="{{ __('lang.donation_answer5') }}">{{ __('lang.donation_answer5') }}</option>
+                    <option value="{{ __('lang.donation_answer6') }}">{{ __('lang.donation_answer6') }}</option>
+                </select>
             </div>
 
             <button class="donate-btn" type="submit">{{ __('lang.d_txt16') }}</button>

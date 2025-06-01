@@ -39,7 +39,7 @@
 @section('page_name') {{ __('lang.home') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.1')}}">
+    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.2')}}">
     <link rel="stylesheet" href="{{asset('css/ImportantLink.css?v=1.5')}}"/>
 @endsection
 
@@ -48,7 +48,9 @@
     {{-- <div id="popup">
        <a href="https://conference.sanadorphans.org/ar/home-ar/"><img src="https://conference.sanadorphans.org/wp-content/uploads/2024/12/sanad-confrence-Poster-1-0%D9%A2-1024x550.jpg" alt="conference" width="300"></a>
     </div> --}}
-
+    <div class="buttons-botton">
+        <a href="{{ route('web.donations.index') }}">{{ __('lang.donate_now') }}</a>
+    </div>
     <div class="fullscreen-video-container">
         <iframe src="https://www.youtube.com/embed/lNpo7sIex6s?si=oxXJ9-_wct4JbPTa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <div class="fullscreen-video-content">

@@ -17,10 +17,11 @@ html {
     .amount{
         display: flex;
         align-items: center;
+        justify-content: center;
     }
     .amount input{
         display: flex;
-        width: 85%;
+        width: 28%;
     }
     .amount span{
     margin: 1vw;

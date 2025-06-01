@@ -1,3 +1,6 @@
+.buttons-botton{
+    display: none;
+}
 .fullscreen-video-container {
     position: relative;
     height: 75vh;
@@ -119,6 +122,22 @@
     }
     #about .aboutdes{
         width: 100%;
+    }
+    .buttons-botton{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0;
+        background-color: #35C0CA;
+        display: flex;
+    }
+    .buttons-botton a{
+        color: #fff;
     }
 }
 

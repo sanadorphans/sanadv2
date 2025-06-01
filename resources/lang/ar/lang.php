@@ -1,6 +1,13 @@
 <?php
 
 return [
+    'donation_question' => 'عرفت ازاي عن طريقة التبرع؟',
+    'donation_answer1' => 'اعلان فيسبوك',
+    'donation_answer2' => 'اعلان انستجرام',
+    'donation_answer3' => 'رسالة واتس اب',
+    'donation_answer4' => 'تشجيع من صديق',
+    'donation_answer5' => 'بالبحث المباشر عن سند',
+    'donation_answer6' => 'اخرى',
     'results_found' => 'نتيجة تم العثور عليها.',
     'Please_enter_a_search_keyword' => 'الرجاء ادخال كلمة البحث',
     'No_results_found' => 'لا توجد نتائج',

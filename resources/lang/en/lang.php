@@ -1,6 +1,13 @@
 <?php
 
 return [
+    'donation_question' => 'How did you learn about donation method?',
+    'donation_answer1' => 'Facebook Ad',
+    'donation_answer2' => 'Instagram Ad',
+    'donation_answer3' => 'WhatsApp Message',
+    'donation_answer4' => 'Encouragement from a Friend',
+    'donation_answer5' => 'Direct Search for Support',
+    'donation_answer6' => 'Other',
     'results_found' => 'results found.',
     'Please_enter_a_search_keyword' => 'Please enter a search keyword.',
     'No_results_found' => 'No results found',
