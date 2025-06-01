@@ -100,7 +100,9 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=187745878913077&ev=PageView&noscript=1"
     /></noscript>
-
+    <script>
+    fbq('track', 'Purchase', {currency: "EGP", value: 00.00});
+    </script>
 </head>
 <body>
 
