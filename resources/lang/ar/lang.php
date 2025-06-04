@@ -813,7 +813,7 @@ return [
     'our_services' => 'خدماتنا',
     'services' => 'الخدمات',
     'blog' => 'المدونة',
-    'technical_reports' => 'التقارير السنوي',
+    'technical_reports' => 'التقارير السنوية',
     'periodical_newsletters' => 'النشرة الدورية',
     'donate_for_support_our_program' => 'تبرع لدعم برامجنا',
     'become_a_volunteer' => 'تطوع معنا',
