@@ -51,8 +51,8 @@
     </div>
 @endsection
 
-@section('scripts')
-
+@push('scripts')
+    
 <script>
     // Render PHP value directly into JavaScript
     var donationAmount = <?php echo json_encode($donation->amount); ?>;
@@ -64,4 +64,4 @@
     });
 </script>
 
-@endsection
+@endpush
