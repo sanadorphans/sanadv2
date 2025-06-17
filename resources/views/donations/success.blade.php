@@ -53,15 +53,26 @@
 
 @push('scripts')
     
-<script>
-    // Render PHP value directly into JavaScript
-    var donationAmount = <?php echo json_encode($donation->amount); ?>;
 
-    // Fire Purchase event with dynamic value and EGP currency
-    fbq('track', 'Purchase', {
-        value: donationAmount,
-        currency: 'EGP'
+<script>
+  // Ensure this code runs only once
+  if (!window.hasFiredPurchase) {
+    window.hasFiredPurchase = true;
+
+    // Wait until the page is fully loaded
+    window.addEventListener('DOMContentLoaded', function () {
+      // Locate the donation amount from the thank-you message
+      let donationAmount =  <?php echo json_encode($donation->amount); ?>;
+
+      // Fire Meta Purchase event
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'Purchase', {
+          value: donationAmount,
+          currency: 'EGP'
+        });
+      }
     });
+  }
 </script>
 
 @endpush
