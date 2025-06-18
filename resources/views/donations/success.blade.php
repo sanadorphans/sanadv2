@@ -1,6 +1,32 @@
 @extends('web.layouts.master')
 
+@section('style')
+<script>
+  // Fire Purchase event only once per session
+  if (!sessionStorage.getItem('purchaseFired')) {
+    window.addEventListener('DOMContentLoaded', function () {
+      const textBlock = document.querySelector('.text p');
+      let donationAmount = 0;
 
+      if (textBlock) {
+        const match = textBlock.textContent.match(/(\d+([\.,]\d+)?)/);
+        if (match) {
+          donationAmount = parseFloat(match[0].replace(',', '.'));
+        }
+      }
+
+      if (typeof fbq !== 'undefined' && donationAmount > 0) {
+        fbq('track', 'Purchase', {
+          value: donationAmount,
+          currency: 'EGP'
+        });
+        sessionStorage.setItem('purchaseFired', 'true');
+      }
+    });
+  }
+</script>
+
+@endsection
 @section('content')
     <div class="success">
         <div class="thank img">
@@ -52,27 +78,7 @@
 @endsection
 
 @push('scripts')
-    
 
-<script>
-  // Ensure this code runs only once
-  if (!window.hasFiredPurchase) {
-    window.hasFiredPurchase = true;
 
-    // Wait until the page is fully loaded
-    window.addEventListener('DOMContentLoaded', function () {
-      // Locate the donation amount from the thank-you message
-      let donationAmount =  <?php echo json_encode($donation->amount); ?>;
-
-      // Fire Meta Purchase event
-      if (typeof fbq !== 'undefined') {
-        fbq('track', 'Purchase', {
-          value: donationAmount,
-          currency: 'EGP'
-        });
-      }
-    });
-  }
-</script>
 
 @endpush
