@@ -16,38 +16,14 @@
 <!DOCTYPE html>
 <html dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}" lang="{{ app()->getLocale() }}">
 <head>
-    <!-- Meta Pixel Code -->
-    <script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K8F3Z52H');</script>
+    <!-- End Google Tag Manager -->
 
-    !function(f,b,e,v,n,t,s)
-
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-
-    n.queue=[];t=b.createElement(e);t.async=!0;
-
-    t.src=v;s=b.getElementsByTagName(e)[0];
-
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-
-    'https://connect.facebook.net/en_US/fbevents.js');
-
-    fbq('init', '187745878913077');
-
-    fbq('track', 'PageView');
-
-    </script>
-
-    <noscript><img height="1" width="1" style="display:none"
-
-    src="https://www.facebook.com/tr?id=187745878913077&ev=PageView&noscript=1"
-
-    /></noscript>
-
-    <!-- End Meta Pixel Code -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdnjs.cloudflare.com/ 'unsafe-inline';"> --}}
@@ -120,6 +96,10 @@
     <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/25ba645f10169963cf352dcf8/30c2c3c184cc8965f4d9de383.js");</script>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8F3Z52H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     @include('web.inc.navbar')
     @yield('content')

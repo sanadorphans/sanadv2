@@ -1,30 +1,6 @@
 @extends('web.layouts.master')
 
 @section('style')
-<script>
-  // Fire Purchase event only once per session
-  if (!sessionStorage.getItem('purchaseFired')) {
-    window.addEventListener('DOMContentLoaded', function () {
-      const textBlock = document.querySelector('.text p');
-      let donationAmount = 0;
-
-      if (textBlock) {
-        const match = textBlock.textContent.match(/(\d+([\.,]\d+)?)/);
-        if (match) {
-          donationAmount = parseFloat(match[0].replace(',', '.'));
-        }
-      }
-
-      if (typeof fbq !== 'undefined' && donationAmount > 0) {
-        fbq('track', 'Purchase', {
-          value: donationAmount,
-          currency: 'EGP'
-        });
-        sessionStorage.setItem('purchaseFired', 'true');
-      }
-    });
-  }
-</script>
 
 @endsection
 @section('content')
