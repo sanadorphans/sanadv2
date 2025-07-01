@@ -94,7 +94,13 @@
     @yield('style')
 
     <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/25ba645f10169963cf352dcf8/30c2c3c184cc8965f4d9de383.js");</script>
+    <script
+        src="https://app.rybbit.io/api/script.js"
+        data-site-id="1247"
+        defer
+    ></script>
 </head>
+
 <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8F3Z52H"
