@@ -1,7 +1,12 @@
 @extends('web.layouts.master')
 
 @section('style')
-
+<script>
+  fbq('track', 'Purchase', {
+    value: {{Donation Value}},
+    currency: 'EGP'
+  });
+</script>
 @endsection
 @section('content')
     <div class="success">
