@@ -10,7 +10,7 @@ class NewsController extends Controller{
     public function index(){
         $locale = app()->getLocale();
         $columnName = $locale ? 'title_' . $locale : false;
-        $news = News::orderBy('order','asc')
+        $news = News::orderBy('created_at','desc')
             ->whereNotNull($columnName)
             ->paginate(12);
 
@@ -55,7 +55,7 @@ function to_arabic_number($Month)
         $Month = str_replace("April", "أبريل", $Month);
         $Month = str_replace("May", "مايو", $Month);
         $Month = str_replace("June", "يونيو", $Month);
-        $Month = str_replace("July", "يليو", $Month);
+        $Month = str_replace("July", "يوليو", $Month);
         $Month = str_replace("August", "أغسطس", $Month);
         $Month = str_replace("September", "سبتمبر", $Month);
         $Month = str_replace("October", "أكتوبر", $Month);
