@@ -2,8 +2,7 @@
 
 @section('style')
 <script>
-    const donationValue = {{ $donationValue }};
-    console.log(donationValue);
+    const donationValue = {{ $donation->amount }};
 </script>
 <script>
     fbq('track', 'Purchase', {
