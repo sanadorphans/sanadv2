@@ -1,8 +1,12 @@
 @extends('web.layouts.master')
+@php
+    $donationValue = $donation->amount ?? 0;
+@endphp
 
 @section('style')
 <script>
-    const donationValue = {{ $donation->amount }};
+    const donationValue = {{ $donationValue }};
+    console.log(donationValue);
 </script>
 <script>
     fbq('track', 'Purchase', {
