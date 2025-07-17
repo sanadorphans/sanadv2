@@ -8,12 +8,7 @@
     const donationValue = {{ $donationValue }};
     console.log(donationValue);
 </script>
-<script>
-    fbq('track', 'Purchase', {
-        value: {{ $donationValue }},
-        currency: 'EGP'
-    });
-</script>
+
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
