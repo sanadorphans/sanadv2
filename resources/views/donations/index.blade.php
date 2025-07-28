@@ -106,7 +106,15 @@
             <div>
                 <label for="amount">{{ __('lang.d_txt14') }}</label>
                 <div class="amount">
-                    <input name="amount" type="number" id="amount">
+                    <input
+                        name="amount"
+                        type="number"
+                        id="amount"
+                        min="50"
+                        value=""
+                        required
+                        oninput="validateAmount(this)"
+                    >
                     <span>{{ __('lang.d_txt15') }}</span>
                 </div>
             </div>
@@ -169,6 +177,16 @@
 @endsection
 
 @push('scripts')
+    <script>
+    function validateAmount(input) {
+        const value = parseFloat(input.value);
+
+        // If empty or invalid, set to minimum
+        if (isNaN(value) || value < 50) {
+            input.value = 50;
+        }
+    }
+    </script>
     <script src="https://cibpaynow.gateway.mastercard.com/checkout/version/61/checkout.js" data-error="errorCallback"
             data-cancel="cancelCallback"></script>
 
