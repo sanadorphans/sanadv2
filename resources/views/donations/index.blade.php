@@ -111,12 +111,16 @@
                         type="number"
                         id="amount"
                         min="50"
-                        value=""
+                        value="50"
                         required
-                        oninput="validateAmount(this)"
+                        oninput="deferValidation(this)"
+                        onblur="enforceMinimum(this)"
                     >
                     <span>{{ __('lang.d_txt15') }}</span>
                 </div>
+                <p id="amountError" style="color: red; font-size: 0.8rem; display: none;">
+                    {{ __('lang.minimum_donation_50') }}
+                </p>
             </div>
             <div>
                 <label for="donation_ad">{{ __('lang.donation_question') }}</label>
@@ -177,16 +181,44 @@
 @endsection
 
 @push('scripts')
-    <script>
-    function validateAmount(input) {
-        const value = parseFloat(input.value);
+<script>
+let timeout;
 
-        // If empty or invalid, set to minimum
-        if (isNaN(value) || value < 50) {
+// On input: delay validation to allow typing
+function deferValidation(input) {
+    const errorEl = document.getElementById('amountError');
+    errorEl.style.display = 'none';
+
+    // Clear previous timeout
+    clearTimeout(timeout);
+
+    // Wait for user to stop typing (e.g., 500ms)
+    timeout = setTimeout(() => {
+        const value = parseFloat(input.value);
+        if (!isNaN(value) && value < 50) {
             input.value = 50;
+            showError();
         }
+    }, 500); // Adjust delay as needed
+}
+
+// On blur (when user leaves the field): always enforce minimum
+function enforceMinimum(input) {
+    const value = parseFloat(input.value);
+    if (isNaN(value) || value < 50) {
+        input.value = 50;
+        showError();
     }
-    </script>
+}
+
+function showError() {
+    const errorEl = document.getElementById('amountError');
+    errorEl.style.display = 'block';
+    setTimeout(() => {
+        errorEl.style.display = 'none';
+    }, 3000);
+}
+</script>
     <script src="https://cibpaynow.gateway.mastercard.com/checkout/version/61/checkout.js" data-error="errorCallback"
             data-cancel="cancelCallback"></script>
 
