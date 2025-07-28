@@ -8,7 +8,7 @@
 @section('style')
 <script>
     const donationValue = {{ $donationValue }};
-    const donationId = {{ $donationId }}; // Unique ID for this donation
+    const donationId = {{ $donationId }};
 
     if (!donationId) {
         console.warn('No donation ID found. Skipping tracking.');
@@ -30,23 +30,23 @@
         console.log('This donation has already been tracked. Skipping pixels.', donationId);
     } else {
         // Track with Facebook Pixel
-        fbq('track', 'Purchase', {
-            value: donationValue,
-            currency: 'EGP',
-            content_ids: [donationId] // Optional: pass ID for better tracking
-        });
-        console.log('Donation tracked:', donationValue);
-        // Push to Google Tag Manager
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            event: 'donationCompleted',
-            donationValue: donationValue,
-            donationId: donationId
-        });
+
 
         // Save this donation ID as tracked
         trackedDonations.push(donationId);
         localStorage.setItem('trackedDonations', JSON.stringify(trackedDonations));
+        console.log('Donation tracked:', donationValue);
+
+        fbq('track', 'Purchase', {
+            value: {{ $donationValue }},
+            currency: 'EGP'
+        });
+        // Push to Google Tag Manager
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'donationCompleted',
+            'donationValue': {{ $donationValue }}
+        });
     }
 
     // Expose values globally if needed by other scripts
