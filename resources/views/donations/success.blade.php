@@ -37,16 +37,17 @@
         localStorage.setItem('trackedDonations', JSON.stringify(trackedDonations));
         console.log('Donation tracked:', donationValue);
 
-        fbq('track', 'Purchase', {
-            value: {{ $donationValue }},
-            currency: 'EGP'
-        });
         // Push to Google Tag Manager
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
             'event': 'donationCompleted',
             'donationValue': {{ $donationValue }}
         });
+        fbq('track', 'Purchase', {
+            value: {{ $donationValue }},
+            currency: 'EGP'
+        });
+
     }
 
     // Expose values globally if needed by other scripts
@@ -59,7 +60,7 @@
 @section('content')
     <div class="success">
         <div class="thank img">
-            <img src="{{ asset('/img/heart.png') }}" alt="">
+            <img src="{{ asset('/img/IMG-20250728-WA0009.jpg') }}" alt="" width="80%">
         </div>
         <div class="text">
 
