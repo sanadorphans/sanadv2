@@ -1,27 +1,61 @@
 @extends('web.layouts.master')
+
 @php
     $donationValue = $donation->amount ?? 0;
+    $donationId = $donation->id ?? null; // Or use a transaction/session ID
 @endphp
 
 @section('style')
 <script>
     const donationValue = {{ $donationValue }};
-    console.log(donationValue);
-</script>
-<script>
-    fbq('track', 'Purchase', {
-        value: {{ $donationValue }},
-        currency: 'EGP'
-    });
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'donationCompleted',
-    'donationValue': {{ $donationValue }}
-  });
+    const donationId = {{ $donationId }}; // Unique ID for this donation
+
+    if (!donationId) {
+        console.warn('No donation ID found. Skipping tracking.');
+        localStorage.setItem('donationTracked', 'true'); // optional fallback
+        window.donationValue = donationValue;
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'donationCompleted',
+            'donationValue': donationValue
+        });
+        exit;
+    }
+
+    // Get already tracked donation IDs
+    const trackedDonations = JSON.parse(localStorage.getItem('trackedDonations') || '[]');
+
+    // Check if this donation ID has already been tracked
+    if (trackedDonations.includes(donationId)) {
+        console.log('This donation has already been tracked. Skipping pixels.', donationId);
+    } else {
+        // Track with Facebook Pixel
+        fbq('track', 'Purchase', {
+            value: donationValue,
+            currency: 'EGP',
+            content_ids: [donationId] // Optional: pass ID for better tracking
+        });
+        console.log('Donation tracked with Facebook Pixel:', donationValue);
+        // Push to Google Tag Manager
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'donationCompleted',
+            donationValue: donationValue,
+            donationId: donationId
+        });
+
+        // Save this donation ID as tracked
+        trackedDonations.push(donationId);
+        localStorage.setItem('trackedDonations', JSON.stringify(trackedDonations));
+    }
+
+    // Expose values globally if needed by other scripts
+    window.donationValue = donationValue;
+    window.donationId = donationId;
 </script>
 @endsection
+
+
 @section('content')
     <div class="success">
         <div class="thank img">
