@@ -35,7 +35,7 @@
             currency: 'EGP',
             content_ids: [donationId] // Optional: pass ID for better tracking
         });
-        console.log('Donation tracked with Facebook Pixel:', donationValue);
+        console.log('Donation tracked:', donationValue);
         // Push to Google Tag Manager
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
