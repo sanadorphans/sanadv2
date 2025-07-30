@@ -1,36 +1,37 @@
 @extends('web.layouts.master')
 
-@php
+{{-- @php
     $donationId = $donation->id ?? null; // Or use a transaction/session ID
-@endphp
+@endphp --}}
 
 @section('style')
 <script>
-    const donationId = {{ $donationId }};
+    // const donationId = {{ $donationId }};
 
-    if (!donationId) {
-        console.warn('No donation ID found. Skipping tracking.');
-        localStorage.setItem('donationTracked', 'true'); // optional fallback
-        exit;
-    }
+    // if (!donationId) {
+    //     console.warn('No donation ID found. Skipping tracking.');
+    //     localStorage.setItem('donationTracked', 'true'); // optional fallback
+    //     exit;
+    // }
 
-    // Get already tracked donation IDs
-    const trackedDonations = JSON.parse(localStorage.getItem('trackedDonations') || '[]');
+    // // Get already tracked donation IDs
+    // const trackedDonations = JSON.parse(localStorage.getItem('trackedDonations') || '[]');
 
-    // Check if this donation ID has already been tracked
-    if (trackedDonations.includes(donationId)) {
-        console.log('This donation has already been tracked. Skipping pixels.', donationId);
-    } else {
+    // // Check if this donation ID has already been tracked
+    // if (trackedDonations.includes(donationId)) {
+    //     console.log('This donation has already been tracked. Skipping pixels.', donationId);
+    // } else {
 
-        // Save this donation ID as tracked
-        trackedDonations.push(donationId);
-        localStorage.setItem('trackedDonations', JSON.stringify(trackedDonations));
+    //     // Save this donation ID as tracked
+    //     trackedDonations.push(donationId);
+    //     localStorage.setItem('trackedDonations', JSON.stringify(trackedDonations));
 
-        fbq('track', 'Purchase', {currency: "EGP", value: 00.00});
 
-    }
-    // Expose values globally if needed by other scripts
-    window.donationId = donationId;
+    // }
+    // // Expose values globally if needed by other scripts
+    // window.donationId = donationId;
+    fbq('track', 'Purchase', {currency: "EGP", value: 00.00});
+
 </script>
 @endsection
 
