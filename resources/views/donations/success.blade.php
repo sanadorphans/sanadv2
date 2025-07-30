@@ -1,24 +1,16 @@
 @extends('web.layouts.master')
 
 @php
-    $donationValue = $donation->amount ?? 0;
     $donationId = $donation->id ?? null; // Or use a transaction/session ID
 @endphp
 
 @section('style')
 <script>
-    const donationValue = {{ $donationValue }};
     const donationId = {{ $donationId }};
 
     if (!donationId) {
         console.warn('No donation ID found. Skipping tracking.');
         localStorage.setItem('donationTracked', 'true'); // optional fallback
-        window.donationValue = donationValue;
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            'event': 'donationCompleted',
-            'donationValue': donationValue
-        });
         exit;
     }
 
@@ -29,20 +21,15 @@
     if (trackedDonations.includes(donationId)) {
         console.log('This donation has already been tracked. Skipping pixels.', donationId);
     } else {
-        // Track with Facebook Pixel
-
 
         // Save this donation ID as tracked
         trackedDonations.push(donationId);
         localStorage.setItem('trackedDonations', JSON.stringify(trackedDonations));
-        console.log('Donation tracked:', donationValue);
 
         fbq('track', 'Purchase', {currency: "EGP", value: 00.00});
 
     }
-
     // Expose values globally if needed by other scripts
-    window.donationValue = donationValue;
     window.donationId = donationId;
 </script>
 @endsection
