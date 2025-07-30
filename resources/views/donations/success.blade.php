@@ -37,16 +37,7 @@
         localStorage.setItem('trackedDonations', JSON.stringify(trackedDonations));
         console.log('Donation tracked:', donationValue);
 
-        // Push to Google Tag Manager
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            'event': 'donationCompleted',
-            'donationValue': {{ $donationValue }}
-        });
-        fbq('track', 'Purchase', {
-            value: {{ $donationValue }},
-            currency: 'EGP'
-        });
+        fbq('track', 'Purchase', {currency: "EGP", value: 00.00});
 
     }
 
