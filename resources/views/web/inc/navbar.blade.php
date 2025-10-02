@@ -179,10 +179,10 @@
                     </div>
                 </li> --}}
             </ul>
-            <div class="buttons">
+            {{-- <div class="buttons">
                     <a href="{{ route('web.donations.index') }}">{{ __('lang.donate_now') }}</a>
                  @if (!Auth::user())
-                    {{-- <a href="{{ route('login') }}">{{ __('lang.get_our_services') }}</a> --}}
+                    <a href="{{ route('login') }}">{{ __('lang.get_our_services') }}</a>
                 @else
                 <ul>
                     <li class="navItem" onclick="toggleActiveClass(this)">
@@ -205,7 +205,7 @@
                     </li>
                 </ul>
                 @endif
-            </div>
+            </div> --}}
         </div>
     </nav>
 
