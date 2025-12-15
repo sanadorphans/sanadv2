@@ -1,26 +1,45 @@
 @extends('web.layouts.master')
-@php
-    $donationValue = $donation->amount ?? 0;
-@endphp
+
+{{-- @php
+    $donationId = $donation->id ?? null; // Or use a transaction/session ID
+@endphp --}}
 
 @section('style')
 <script>
-    const donationValue = {{ $donationValue }};
-    console.log(donationValue);
-</script>
+    // const donationId = {{ $donationId }};
 
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'donationCompleted',
-    'donationValue': {{ $donationValue }}
-  });
+    // if (!donationId) {
+    //     console.warn('No donation ID found. Skipping tracking.');
+    //     localStorage.setItem('donationTracked', 'true'); // optional fallback
+    //     exit;
+    // }
+
+    // // Get already tracked donation IDs
+    // const trackedDonations = JSON.parse(localStorage.getItem('trackedDonations') || '[]');
+
+    // // Check if this donation ID has already been tracked
+    // if (trackedDonations.includes(donationId)) {
+    //     console.log('This donation has already been tracked. Skipping pixels.', donationId);
+    // } else {
+
+    //     // Save this donation ID as tracked
+    //     trackedDonations.push(donationId);
+    //     localStorage.setItem('trackedDonations', JSON.stringify(trackedDonations));
+
+
+    // }
+    // // Expose values globally if needed by other scripts
+    // window.donationId = donationId;
+    fbq('track', 'Purchase', {currency: "EGP", value: 00.00});
+
 </script>
 @endsection
+
+
 @section('content')
     <div class="success">
         <div class="thank img">
-            <img src="{{ asset('/img/heart.png') }}" alt="">
+            <img src="{{ asset('/img/IMG-20250728-WA0009.jpg') }}" alt="" width="80%">
         </div>
         <div class="text">
 

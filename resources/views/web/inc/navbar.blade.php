@@ -181,8 +181,8 @@
             </ul>
             <div class="buttons">
                     <a href="{{ route('web.donations.index') }}">{{ __('lang.donate_now') }}</a>
-                 @if (!Auth::user())
-                    {{-- <a href="{{ route('login') }}">{{ __('lang.get_our_services') }}</a> --}}
+                {{-- @if (!Auth::user())
+                    <a href="{{ route('login') }}">{{ __('lang.get_our_services') }}</a>
                 @else
                 <ul>
                     <li class="navItem" onclick="toggleActiveClass(this)">
@@ -204,7 +204,7 @@
                         </div>
                     </li>
                 </ul>
-                @endif
+                @endif --}}
             </div>
         </div>
     </nav>
@@ -222,7 +222,7 @@
                     <div class="dropdownMenu">
                              <a href="#">
                                 <span>{{ __('lang.Partner_with_us') }}</span>
-                            </a> 
+                            </a>
                             <!-- <a href="#">
                                 <span>{{ __('lang.volunteer') }}</span>
                             </a> -->
