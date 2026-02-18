@@ -1,4 +1,4 @@
-@servers(['main' => ['root@153.92.210.80']])
+@servers(['main' => ['root@72.62.27.13']])
 
 @setup
     $repository = 'https://github.com/sanadorphans/sanadv2.git';
