@@ -1,8 +1,8 @@
 @extends('web.layouts.master')
 
-{{-- @php
+@php
     $donationId = $donation->id ?? null; // Or use a transaction/session ID
-@endphp --}}
+@endphp 
 
 @section('style')
 <script>

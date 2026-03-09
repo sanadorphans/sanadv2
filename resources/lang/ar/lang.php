@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'minimum_donation_50' => 'الحد الأدنى للتبرع هو 50 جنيه',
+    'minimum_donation_50' => 'الحد الأدنى للتبرع هو 150 جنيه',
     'donation_question' => 'عرفت ازاي عن طريقة التبرع؟',
     'donation_answer1' => 'اعلان فيسبوك',
     'donation_answer2' => 'اعلان انستجرام',
