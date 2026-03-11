@@ -89,18 +89,22 @@
 
             <div>
                 <label for="name">{{ __('lang.d_txt11') }}</label>
-                <input name="name" type="text" id="name">
+                <input name="name" type="text" id="name" required>
+            </div>
+
+            <div>
+                <label for="country">{{ __('lang.country') }}</label>
+                <input name="country" type="country" id="country" required>
+            </div>
+
+            <div>
+                <label for="email">{{ __('lang.d_txt13') }}</label>
+                <input name="email" type="text" id="email" required>
             </div>
 
             <div>
                 <label for="phone_number">{{ __('lang.d_txt12') }}</label>
                 <input name="phone_number" type="text" id="phone_number">
-            </div>
-
-
-            <div>
-                <label for="email">{{ __('lang.d_txt13') }}</label>
-                <input name="email" type="text" id="email">
             </div>
 
             <div>

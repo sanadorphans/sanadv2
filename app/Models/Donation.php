@@ -24,7 +24,7 @@ class Donation extends Model
             'bank_name' => 'required|string|min:2|max:100',
             'amount' => 'required|numeric|min:0|max:999999',
             'donation_ad' => 'nullable|string|min:2|max:100',
-
+            'country' => 'nullable|string|min:2|max:100',
         ];
     }
 }
