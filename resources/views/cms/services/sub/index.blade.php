@@ -77,7 +77,6 @@
     @endif
 
     @if($sub_service->items->first() != null)
-
         @forelse($sub_service->items as $index => $items)
             <section id="service">
                 <div class="service">
