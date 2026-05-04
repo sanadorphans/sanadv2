@@ -49,7 +49,7 @@
         <div class="navbar-nav navbar-nav-hover">
             <img class="deactive" src="{{asset('img/nav/remove.svg')}}" alt="deactive" width="30" height="30" onclick="toggleNavActive()">
             <ul>
-                <li class="navItem" onclick="toggleActiveClass(this)">
+                {{-- <li class="navItem" onclick="toggleActiveClass(this)">
                     <a class="navLink" href="#">
                             <span >{{ __('lang.our_services') }}</span>
                             <span class="bg-blue"></span>
@@ -63,7 +63,7 @@
                             @empty
                             @endforelse
                     </div>
-                </li>
+                </li> --}}
                 <li class="navItem" onclick="toggleActiveClass(this)">
                     <a class="navLink" href="#">
                             <span >{{ __('lang.our_programs') }}</span>

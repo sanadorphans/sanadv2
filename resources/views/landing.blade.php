@@ -93,7 +93,7 @@
         </div>
     </section>
 
-    <section id="services">
+    {{-- <section id="services">
         <div class="title general">
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
             <h2 class="GeneralTitle">{{ __('lang.our_services') }}</h2>
@@ -108,7 +108,7 @@
             @empty
             @endforelse
         </div>
-    </section>
+    </section> --}}
 
     <section id="numbers">
         <div class="title">
