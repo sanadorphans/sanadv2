@@ -16,11 +16,6 @@
 @endsection
 
 @section('content')
-    <header id="header" data-content="{{ $service->$title }}" style="--background: url(../storage/{{str_replace("\\" , "/",$service->image)}})">
-        <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-        <h1 class="GeneralTitle">{{ $service->$title }}</h1>
-        <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-    </header>
     @include('web.inc.map')
     <section id="jobs">
         <p> {!! $service->$details !!} </p>
