@@ -89,18 +89,22 @@
 
             <div>
                 <label for="name">{{ __('lang.d_txt11') }}</label>
-                <input name="name" type="text" id="name">
+                <input name="name" type="text" id="name" required>
+            </div>
+
+            <div>
+                <label for="country">{{ __('lang.country') }}</label>
+                <input name="country" type="country" id="country" required>
+            </div>
+
+            <div>
+                <label for="email">{{ __('lang.d_txt13') }}</label>
+                <input name="email" type="text" id="email" required>
             </div>
 
             <div>
                 <label for="phone_number">{{ __('lang.d_txt12') }}</label>
                 <input name="phone_number" type="text" id="phone_number">
-            </div>
-
-
-            <div>
-                <label for="email">{{ __('lang.d_txt13') }}</label>
-                <input name="email" type="text" id="email">
             </div>
 
             <div>
@@ -110,8 +114,8 @@
                         name="amount"
                         type="number"
                         id="amount"
-                        min="50"
-                        value="50"
+                        min="150"
+                        value="150"
                         required
                         oninput="deferValidation(this)"
                         onblur="enforceMinimum(this)"
@@ -195,8 +199,8 @@ function deferValidation(input) {
     // Wait for user to stop typing (e.g., 500ms)
     timeout = setTimeout(() => {
         const value = parseFloat(input.value);
-        if (!isNaN(value) && value < 50) {
-            input.value = 50;
+        if (!isNaN(value) && value < 150) {
+            input.value = 150;
             showError();
         }
     }, 500); // Adjust delay as needed
@@ -205,8 +209,8 @@ function deferValidation(input) {
 // On blur (when user leaves the field): always enforce minimum
 function enforceMinimum(input) {
     const value = parseFloat(input.value);
-    if (isNaN(value) || value < 50) {
-        input.value = 50;
+    if (isNaN(value) || value < 150) {
+        input.value = 150;
         showError();
     }
 }

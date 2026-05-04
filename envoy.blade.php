@@ -1,4 +1,4 @@
-@servers(['main' => ['root@153.92.210.80']])
+@servers(['main' => ['root@72.62.27.13']])
 
 @setup
     $repository = 'https://github.com/sanadorphans/sanadv2.git';
@@ -54,7 +54,6 @@
     ln -nfs /home/sanadorphans.org/{{ $new_release_dir }}/public/js /home/sanadorphans.org/public_html/js
     ln -nfs /home/sanadorphans.org/{{ $new_release_dir }}/public/fonts /home/sanadorphans.org/public_html/fonts
     php artisan storage:link
-    php artisan migrate
 @endtask
 
 @task('update_symlinks2')
@@ -71,5 +70,6 @@
     ln -nfs /home/sanadorphans.org/{{ $existing_release_dir }}/public/js /home/sanadorphans.org/public_html/js
     ln -nfs /home/sanadorphans.org/{{ $existing_release_dir }}/public/fonts /home/sanadorphans.org/public_html/fonts
     php artisan storage:link
-    php artisan migrate
+
+        php artisan migrate
 @endtask
