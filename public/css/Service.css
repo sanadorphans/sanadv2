@@ -15,7 +15,7 @@
     text-align: justify;
 }
 .details ul{
-    list-style: numeric;
+    list-style: unset;
     margin: 0 2vw;
 }
 /* .details a{
