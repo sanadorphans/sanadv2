@@ -18,6 +18,12 @@
     list-style: unset;
     margin: 0 2vw;
 }
+.glide__slide img {
+    width: 300px !important;
+    height: auto !important;
+    /* margin: auto; */
+    border-radius: 20px;
+}
 /* .details a{
    display: block;
    padding: 1vw;
