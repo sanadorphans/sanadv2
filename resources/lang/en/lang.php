@@ -728,7 +728,7 @@ return [
     'services_type' => 'Services',
     'reports' => 'Reports',
     'about_wataneya' => 'About Sanad',
-    'our_services' => 'Our Services',
+    'our_services' => 'Our Training Services',
     'services' => 'Services',
     'blog' => 'Blog',
     'donate_for_support_our_program' => 'Donate to support our programs',
