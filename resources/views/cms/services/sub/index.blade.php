@@ -13,6 +13,7 @@
 
 @section('style')
     <link rel="stylesheet" href="{{asset('css/Service.css?v=1.6')}}"/>
+        <link rel="stylesheet" href="{{asset('css/Impact.css?v=2.2')}}">
 @endsection
 
 @section('content')
@@ -128,4 +129,9 @@
                 </div>
             </div>
         </div>
+@endsection
+
+
+@section('js')
+    <script src="{{asset('js/Stories.js?v=1.2')}}"></script>
 @endsection
