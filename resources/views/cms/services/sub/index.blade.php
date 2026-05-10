@@ -107,16 +107,8 @@
             <div class="glide AllImpacts">
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
-                        <!-- @forelse ($category->Story as $story)
-                            <li class="glide__slide">
-                                <a href="{{ route('web.stories.show',$story->id) }}">
-                                    <img alt="{{$story->$title}}" src="{{ asset('storage/' . $story->$image) }}">
-                                    <h1>{{$story->$title}}</h1>
-                                </a>
-                            </li>
-                        @empty
-                        @endforelse -->
-                                         <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/original-8D046854-26FA-4919-872B-E55076023210.jpeg" alt="image" width="100" height="100"></li>
+ 
+                    <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/original-8D046854-26FA-4919-872B-E55076023210.jpeg" alt="image" width="100" height="100"></li>
                  <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/processed-DC493410-E6B3-48F0-BE3A-1DDFE0AE0F70.jpeg" alt="image" width="100" height="100"></li>
                  <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/processed-CC140086-C930-4275-8068-93D71624A1D3.jpeg" alt="image" width="100" height="100"></li>
                  <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/processed-C8A12AB2-750E-459C-8DE1-D5323AEB5839.jpeg" alt="image" width="100" height="100"></li>
