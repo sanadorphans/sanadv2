@@ -96,18 +96,18 @@
                         <img src="{{asset('/storage/' . str_replace("\\" , "/",$items->image))}}" alt="{{ $items->$title }}">
                     </div>
                 </div>
-
+            @if($sub_service->id == 37)
+                <button> <a style="color:#fff;background:#35C0CA;" href="https://forms.office.com/pages/responsepage.aspx?id=g11yLv_fmkufB2_5vZQDnYt-qNTHUTtCj-DLbk9A77NURElBTjhCT0JJRjA4VjVHTUhLSUFUNkpIWS4u&route=shorturl">{{ __('lang.Apply') }}</a></button>
+            @else
+                <button> <a style="color:#fff;background:#35C0CA;" href="https://forms.cloud.microsoft/r/JVGxFj8WXK">{{ __('lang.Apply') }}</a></button>
+            @endif
             </section>
         @empty
             <div class="alert alert-info">{{ __('lang.no_data') }}</div>
         @endforelse
 
     @endif
-    @if($sub_service->id == 37)
-        <button> <a style="color:#fff" href="https://forms.office.com/pages/responsepage.aspx?id=g11yLv_fmkufB2_5vZQDnYt-qNTHUTtCj-DLbk9A77NURElBTjhCT0JJRjA4VjVHTUhLSUFUNkpIWS4u&route=shorturl">{{ __('lang.Apply') }}</a></button>
-    @else
-        <button> <a style="color:#fff" href="https://forms.cloud.microsoft/r/JVGxFj8WXK">{{ __('lang.Apply') }}</a></button>
-    @endif
+
             <div class="slider">
             <div class="glide AllImpacts">
                 <div class="glide__track" data-glide-el="track">
