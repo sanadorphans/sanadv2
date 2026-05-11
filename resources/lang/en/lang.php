@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'consultation2' => 'Consulting',
     'minimum_donation_50' => 'Minimum donation is 150EGP',
     'donation_question' => 'How did you learn about donation method?',
     'donation_answer1' => 'Facebook Ad',
@@ -71,7 +72,7 @@ return [
     'consultants' => 'Consultants',
     'looking_for_talents' => 'Looking For Talents',
     'looking_for_consultant' => 'Looking For Consultant',
-    'Apply' => 'Apply',
+    'Apply' => 'Apply Now',
     'contactInfo' => 'Contact Information',
     'sanad' => 'Sanad',
     'Who We Are' => 'Who We Are',
@@ -325,7 +326,6 @@ return [
     'has_discount' => 'Has discount',
     'thanks_for_registration' => 'Thanks for your registration',
     'you_can_search_for_products_from' => 'You can search for products from',
-    'apply' => 'Apply',
     'clear' => 'Clear',
     'register_help' => 'A new customer ? register here .',
     'login_help' => 'Do you have an account ? login here .',

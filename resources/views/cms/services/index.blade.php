@@ -10,8 +10,8 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{ asset('css/Services.css?v=2.2') }}" />
-    <link rel="stylesheet" href="{{asset('css/Careers.css?v=1.9')}}"/>
+    <link rel="stylesheet" href="{{ asset('css/Services.css?v=2.3') }}" />
+    <link rel="stylesheet" href="{{asset('css/Careers.css?v=2.0')}}"/>
 
 @endsection
 

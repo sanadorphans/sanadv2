@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'consultation2' => 'وحدة الاستشارات',
     'minimum_donation_50' => 'الحد الأدنى للتبرع هو 150 جنيه',
     'donation_question' => 'عرفت ازاي عن طريقة التبرع؟',
     'donation_answer1' => 'اعلان فيسبوك',
@@ -69,7 +70,7 @@ return [
     'cv' => 'السيرة الذاتية',
     'ApplyJob' => 'التقديم للوظيفة',
     'consultants' => 'أستشاريين',
-    'Apply' => 'للتقديم',
+    'Apply' => 'قدم الأن',
     'contactInfo' => 'معلومات التواصل',
     'sanad' => 'سند',
     'Who We Are' => 'من نحن',
@@ -326,7 +327,6 @@ return [
     'has_discount' => 'عليه خصم',
     'thanks_for_registration' => 'شكرا على تسجيلك',
     'you_can_search_for_products_from' => 'يمكنك البحث عن منتجات من',
-    'apply' => 'تطبيق',
     'clear' => 'حذف',
     'register_help' => 'هل انت عميل جديد ؟ سجل اشتراكك .',
     'login_help' => 'هل لديك حساب معنا ؟ سجل دخولك .',
