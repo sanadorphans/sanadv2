@@ -10,7 +10,9 @@ class Service extends Model
 {
     use HasFactory;
 
-    public function sub_services(){
-        return $this->hasMany(SubService::class);
+    public function sub_services()
+    {
+        return $this->belongsToMany(SubService::class, 'multi_sub_services', 'service_id', 'sub_service_id');
     }
+
 }
