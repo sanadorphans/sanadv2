@@ -105,9 +105,9 @@
     <section id="service">
         <div class="service">
         @if($sub_service->id == 37)
-                <button style="color:#fff;background:#35C0CA;width:15%;"> <a style="color:#fff;" href="https://forms.office.com/pages/responsepage.aspx?id=g11yLv_fmkufB2_5vZQDnYt-qNTHUTtCj-DLbk9A77NURElBTjhCT0JJRjA4VjVHTUhLSUFUNkpIWS4u&route=shorturl">{{ __('lang.Apply') }}</a></button>
+                <button style="color:#fff;background:#35C0CA;width:15%;"> <a style="color:#fff;" href="https://forms.office.com/pages/responsepage.aspx?id=g11yLv_fmkufB2_5vZQDnYt-qNTHUTtCj-DLbk9A77NURElBTjhCT0JJRjA4VjVHTUhLSUFUNkpIWS4u&route=shorturl" target="_blank">{{ __('lang.Apply') }}</a></button>
         @else
-                <button style="color:#fff;background:#35C0CA;width:15%;"> <a style="color:#fff;" href="https://forms.cloud.microsoft/r/JVGxFj8WXK">{{ __('lang.Apply') }}</a></button>
+                <button style="color:#fff;background:#35C0CA;width:15%;"> <a style="color:#fff;" href="https://forms.cloud.microsoft/r/JVGxFj8WXK" target="_blank">{{ __('lang.Apply') }}</a></button>
         @endif
         </div>
     </section>
