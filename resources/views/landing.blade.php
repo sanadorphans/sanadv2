@@ -39,7 +39,7 @@
 @section('page_name') {{ __('lang.home') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.2')}}">
+    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.3')}}">
     <link rel="stylesheet" href="{{asset('css/ImportantLink.css?v=1.5')}}"/>
 @endsection
 
@@ -78,10 +78,49 @@
             </div>
             <div class="aboutdes">
                 <p>{{ __('lang.about_text1') }}</p>
-                <p>{{ __('lang.about_text2') }}</p>
-                <p>{{ __('lang.about_text3') }}</p>
+                {{-- <p>{{ __('lang.about_text2') }}</p>
+                <p>{{ __('lang.about_text3') }}</p> --}}
             </div>
          </div>
+    </section>
+
+    <section id="media">
+        <div class="title">
+            <h2>{{ __('lang.latest_news') }}</h2>
+        </div>
+        <div id="news">
+            {{-- <div class="glide news">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        @forelse ($news as $new)
+                            <div class="new new{{$new->id}}">
+                                <li class="glide__slide"><div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$new->image)}})"></div></li>
+                                <li class="glide__slide"><a title="news" title="arrow" href="/pages/news/{{$new->id}}"><p>{{$new->$title}}</p></a></li>
+                                <li class="glide__slide"><p>{{ app()->getLocale() == 'ar' ? to_arabic_number(date('F Y', strtotime($new->created_at))) : $new->created_at->formatLocalized('%B %Y') }}</p></li>
+                            </div>
+                        @empty
+                        @endforelse
+                    </ul>
+                </div>
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
+                </div>
+            </div>
+        </div> --}}
+
+            <div class="news">
+            @forelse ($news as $new)
+                <div class="new new{{$new->id}}">
+                    <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$new->image)}})"></div>
+                    <a title="news" title="arrow" href="/pages/news/{{$new->id}}"><p>{{$new->$title}}</p></a>
+                    <p>{{ app()->getLocale() == 'ar' ? to_arabic_number(date('F Y', strtotime($new->created_at))) : $new->created_at->formatLocalized('%B %Y') }}</p>
+                </div>
+            @empty
+            @endforelse
+                <a title="more" class="more" href="/pages/news">{{ __('lang.more') }}</a>
+            </div>
+
     </section>
 
     <section id="qoutation">
@@ -92,6 +131,7 @@
             <p class="qoutation_text">{{ __('lang.Home_qou') }}</p>
         </div>
     </section>
+
 
     {{-- <section id="services">
         <div class="title general">
@@ -191,25 +231,6 @@
         </div>
     </section>
 
-    <section id="media">
-        <div class="title">
-            <h2>{{ __('lang.latest_news') }}</h2>
-        </div>
-        <div id="news">
-            <div class="news">
-            @forelse ($news as $new)
-                <div class="new new{{$new->id}}">
-                    <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$new->image)}})"></div>
-                    <a title="news" title="arrow" href="/pages/news/{{$new->id}}"><p>{{$new->$title}}</p></a>
-                    <p>{{ app()->getLocale() == 'ar' ? to_arabic_number(date('F Y', strtotime($new->created_at))) : $new->created_at->formatLocalized('%B %Y') }}</p>
-                </div>
-            @empty
-            @endforelse
-                <a title="more" class="more" href="/pages/news">{{ __('lang.more') }}</a>
-            </div>
-        </div>
-    </section>
-
     <section id="partners">
         <div class="title general">
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
@@ -239,6 +260,6 @@
 
 
 @section('js')
-    <script src="{{asset('js/Home.js?v=1.5')}}"></script>
+    <script src="{{asset('js/Home.js?v=1.6')}}"></script>
 @endsection
 
