@@ -67,9 +67,7 @@
 #about .aboutNums, #about .aboutdes{
     padding: 0 2vw;
 }
-#about .aboutdes{
-    width: 80%;
-}
+
 #about .aboutNums{
     display: flex;
 }
