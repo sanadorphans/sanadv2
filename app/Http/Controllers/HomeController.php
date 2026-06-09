@@ -33,4 +33,10 @@ class HomeController extends Controller
 
         return view('landing',compact(['slides','impact_numbers','news','services','NewsLetter','AnnualReport','Campaign','Partners','stories','ImportantLinks']));
     }
+
+    
+    function index2(){
+        $services= Service::get();
+        return view('targetaudience',compact(['services']));
+    }
 }

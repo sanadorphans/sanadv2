@@ -26,7 +26,7 @@
                 <li style="color:white;"><i class="fa-solid fa-map-location-dot fa-bounce"
                         style="--fa-animation-duration: 3s;"></i><a href="https://www.google.co.uk/maps/place/%D8%AC%D9%85%D8%B9%D9%8A%D8%A9+%D9%88%D8%B7%D9%86%D9%8A%D8%A9+%D9%84%D8%AA%D9%86%D9%85%D9%8A%D8%A9+%D9%88%D8%AA%D8%B7%D9%88%D9%8A%D8%B1+%D8%AF%D9%88%D8%B1+%D8%A7%D9%84%D8%A3%D9%8A%D8%AA%D8%A7%D9%85%E2%80%AD/@30.086658,31.3289431,15z/data=!4m5!3m4!1s0x0:0x7728f47eab7d5044!8m2!3d30.086658!4d31.3289431?hl=ar&shorturl=1">{{ __('lang.address_wataneya') }}</a></li>
                 <li style="color:white;"> {{ __('lang.Advertisement_number') }}  </li>
-
+               <li style="color:white;"> {{ __('lang.protection_police') }} <a  herf="https://sanadorphans.org/storage/link/protectionism.pdf">{{ __('lang.protection_police') }}</a> </li>
             </ul>
         </div>
      </div>

@@ -97,6 +97,7 @@ Route::group([
     });
 
     Route::get('/', [HomeController::class,'index'])->name('landing');
+    Route::get('/target-audience', [HomeController::class,'index2'])->name('targetaudience');
     Route::get('/contact-us',[ContactUsController::class,'index'])->name('contact_us');
     Route::post('/contact-us',[ContactUsController::class,'send'])->name('contact_us.send');
     Route::get('/search', [SearchbarController::class, 'search'])->name('search');

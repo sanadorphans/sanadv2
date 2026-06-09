@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'protection_police' => 'To view the privacy policy: ',
     'minimum_donation_50' => 'Minimum donation is 150EGP',
     'donation_question' => 'How did you learn about donation method?',
     'donation_answer1' => 'Facebook Ad',
@@ -561,7 +562,7 @@ return [
     'service_category' => 'Service category',
     'service_category_id' => 'Service category',
     'images' => 'Images',
-    'targeted_groups' => 'Targeted groups',
+    'targeted_groups' => 'Target Audience',
     'previous_work' => 'Previous work',
     'media_center' => 'Media',
     'events' => 'Events',
@@ -824,7 +825,7 @@ return [
 
     'd_txt22'=>"According to Egypt's Dar al-Ifta, Zakat money may be spent for the education of children and youth without parental care, and a continuous charity, Sadaqah Jariyah, can be given for their education and the education of their caregivers.",
 
-    'd_txt23'=>'click Here!',
+    'd_txt23'=>'click Here',
 
     'd_txt24'=>'*فتوى من الأزهر الشريف يجوز صرف مال الزكاة على تدريب مقدمي الرعاية للإطلاع على الفتوى',
 

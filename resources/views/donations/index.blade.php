@@ -170,10 +170,10 @@
         <div class="Money-Back">
             <p>{{ $return_policy->$details }}</p>
             <p>{{ __('lang.Kindly_understand_that') }}</p>
-            <div class="conditions">
+            <!-- <div class="conditions">
                 <span></span>
                 <p>{{ __('lang.frist_condition') }}</p>
-            </div>
+            </div> -->
             <div class="conditions">
                 <span></span>
                 <p>{{ __('lang.second_condition') }}</p>
