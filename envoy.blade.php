@@ -5,16 +5,15 @@
     $releases_dir = 'releases';
     $release = date('YmdHis');
     $new_release_dir = $releases_dir .'/'. $release;
-    $existing_release_dir = $releases_dir .'/'. '20240130121652';
+    $existing_release_dir = $releases_dir .'/'. '20260604105340';
     $branch = 'main';
 @endsetup
 
 @story('deploy', ['on' => 'main'])
-    clone_repository
+       {{--clone_repository
     run_composer
-    update_symlinks
-    {{-- update_symlinks2 --}}
-    {{-- test --}}
+    update_symlinks--}}
+  update_symlinks2 
 @endstory
 
 @task('test')
@@ -70,6 +69,4 @@
     ln -nfs /home/sanadorphans.org/{{ $existing_release_dir }}/public/js /home/sanadorphans.org/public_html/js
     ln -nfs /home/sanadorphans.org/{{ $existing_release_dir }}/public/fonts /home/sanadorphans.org/public_html/fonts
     php artisan storage:link
-
-        php artisan migrate
 @endtask
