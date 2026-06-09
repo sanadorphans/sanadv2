@@ -49,7 +49,7 @@
         <div class="navbar-nav navbar-nav-hover">
             <img class="deactive" src="{{asset('img/nav/remove.svg')}}" alt="deactive" width="30" height="30" onclick="toggleNavActive()">
             <ul>
-                {{-- <li class="navItem" onclick="toggleActiveClass(this)">
+                <li class="navItem" onclick="toggleActiveClass(this)">
                     <a class="navLink" href="#">
                             <span >{{ __('lang.our_services') }}</span>
                             <span class="bg-blue"></span>
@@ -63,7 +63,7 @@
                             @empty
                             @endforelse
                     </div>
-                </li> --}}
+                </li>
                 <li class="navItem" onclick="toggleActiveClass(this)">
                     <a class="navLink" href="#">
                             <span >{{ __('lang.our_programs') }}</span>
@@ -181,6 +181,8 @@
             </ul>
             <div class="buttons">
                     <a href="{{ route('web.donations.index') }}">{{ __('lang.donate_now') }}</a>
+                    <a style="background:rgb(243, 114, 70);" href="https://sanadorphans.org/en/pages/sub-services/37">{{ __('lang.consultation2') }}</a>
+
                 {{-- @if (!Auth::user())
                     <a href="{{ route('login') }}">{{ __('lang.get_our_services') }}</a>
                 @else

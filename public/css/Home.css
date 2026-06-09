@@ -62,12 +62,14 @@
     width: 80%;
     margin: auto;
     display: flex;
+    flex-direction: column;
 }
 #about .aboutNums, #about .aboutdes{
     padding: 0 2vw;
 }
-#about .aboutdes{
-    width: 80%;
+
+#about .aboutNums{
+    display: flex;
 }
 #about .aboutNums div{
     display: grid;
@@ -979,6 +981,32 @@ html[lang="ar"] #media #news .more img,html[lang="ar"] #media #annuals .more img
     }
 
 }
+#media #news .glide__arrow--left {
+    /* support safari */
+    -webkit-transform: rotate(270deg) translate(50%,0);
+    transform: rotate(270deg) translate(50%,0);
+}
+#media #news .glide__arrow--right {
+    /* support safari */
+    -webkit-transform: rotate(90deg) translate(-50%,0);
+    transform: rotate(90deg) translate(-50%,0);
+}
+
+
+@media (max-width:800px) {
+
+    #media #news .glide__arrow--left {
+        /* support safari */
+        -webkit-transform: rotate(270deg) translate(100%,0);
+        transform: rotate(270deg) translate(100%,0);
+    }
+    #media #news .glide__arrow--right {
+        /* support safari */
+        -webkit-transform: rotate(90deg) translate(-100%,0);
+        transform: rotate(90deg) translate(-100%,0);
+    }
+
+}
 
 #Links .Impact{
     margin: 2vw 0;
@@ -1220,10 +1248,6 @@ text-align: center;
    height: auto;
 }
 
-#partners .partners .glide__track{
-    width:100%;
-    margin: auto;
-}
 
 #partners .partners span{
     width: 20%;
@@ -1250,7 +1274,10 @@ text-align: center;
     overflow: hidden;
 }
 
-
+#partners .partners .glide__track{
+    width:100%;
+    margin: auto;
+}
 #partners .partners .glide__arrow{
     padding: 0;
     background-color: transparent;

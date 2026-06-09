@@ -12,8 +12,8 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Service.css?v=1.6')}}"/>
-        <link rel="stylesheet" href="{{asset('css/Impact.css?v=2.2')}}">
+    <link rel="stylesheet" href="{{asset('css/Service.css?v=1.7')}}"/>
+        <link rel="stylesheet" href="{{asset('css/Impact.css?v=2.3')}}">
 @endsection
 
 @section('content')
@@ -96,39 +96,41 @@
                         <img src="{{asset('/storage/' . str_replace("\\" , "/",$items->image))}}" alt="{{ $items->$title }}">
                     </div>
                 </div>
-
             </section>
         @empty
             <div class="alert alert-info">{{ __('lang.no_data') }}</div>
         @endforelse
 
     @endif
-   
-            <div class="slider">
-            <div class="glide AllImpacts">
-                <div class="glide__track" data-glide-el="track">
-                    <ul class="glide__slides">
- 
-                    <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/original-8D046854-26FA-4919-872B-E55076023210.jpeg" alt="image" width="100" height="100"></li>
-                 <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/processed-DC493410-E6B3-48F0-BE3A-1DDFE0AE0F70.jpeg" alt="image" width="100" height="100"></li>
-                 <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/processed-CC140086-C930-4275-8068-93D71624A1D3.jpeg" alt="image" width="100" height="100"></li>
-                 <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/processed-C8A12AB2-750E-459C-8DE1-D5323AEB5839.jpeg" alt="image" width="100" height="100"></li>
-                 <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/processed-8F82BB40-AB06-4641-9B5B-30CD86946335.jpeg" alt="image" width="100" height="100"></li>
-                 <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/processed-6D16A562-DCDA-424C-9D13-B4693705A5C5.jpeg" alt="image" width="100" height="100"></li>
-                 <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/processed-449CCEFC-1FC6-4198-9C47-BF1BCF5F330E.jpeg" alt="image" width="100" height="100"></li>
-                 <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/processed-23419708-5B10-497B-ADE4-101499D8798C.jpeg" alt="image" width="100" height="100"></li>
-                 <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/processed-220A9EA4-3346-40DF-9688-A518B86E749F.jpeg" alt="image" width="100" height="100"></li>
-                 <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/original-C8D1C753-383E-42E0-B1A8-B295C6110E79.jpeg" alt="image" width="100" height="100"></li>
-                 <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/original-99554F2E-3989-44D5-BB8A-E59D177B9E1F.jpeg" alt="image" width="100" height="100"></li>
-
-                    </ul>
-                </div>
-                <div class="glide__arrows" data-glide-el="controls">
-                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
-                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
-                </div>
-            </div>
+    <section id="service">
+        <div class="service">
+        @if($sub_service->id == 37)
+                <button style="color:#fff;background:#35C0CA;width:15%;"> <a style="color:#fff;" href="https://forms.office.com/pages/responsepage.aspx?id=g11yLv_fmkufB2_5vZQDnYt-qNTHUTtCj-DLbk9A77NURElBTjhCT0JJRjA4VjVHTUhLSUFUNkpIWS4u&route=shorturl" target="_blank">{{ __('lang.Apply') }}</a></button>
+        @else
+                <button style="color:#fff;background:#35C0CA;width:15%;"> <a style="color:#fff;" href="https://forms.cloud.microsoft/r/JVGxFj8WXK" target="_blank">{{ __('lang.Apply') }}</a></button>
+        @endif
         </div>
+    </section>
+    <div class="slider">
+    <div class="glide AllImpacts">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+
+            <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/original-8D046854-26FA-4919-872B-E55076023210.jpeg" alt="image" width="100" height="100"></li>
+            <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/processed-C8A12AB2-750E-459C-8DE1-D5323AEB5839.jpeg" alt="image" width="100" height="100"></li>
+            <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/processed-6D16A562-DCDA-424C-9D13-B4693705A5C5.jpeg" alt="image" width="100" height="100"></li>
+            <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/processed-23419708-5B10-497B-ADE4-101499D8798C.jpeg" alt="image" width="100" height="100"></li>
+            <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/original-C8D1C753-383E-42E0-B1A8-B295C6110E79.jpeg" alt="image" width="100" height="100"></li>
+            <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/original-99554F2E-3989-44D5-BB8A-E59D177B9E1F.jpeg" alt="image" width="100" height="100"></li>
+
+            </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
+        </div>
+    </div>
+</div>
 @endsection
 
 
