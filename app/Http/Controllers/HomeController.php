@@ -37,6 +37,6 @@ class HomeController extends Controller
     
     function index2(){
         $services= Service::get();
-        return view('targetaudience',compact(['services']));
+        return view('ourservices',compact(['services']));
     }
 }
