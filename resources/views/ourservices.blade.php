@@ -11,7 +11,6 @@
 @section('style')
     <link rel="stylesheet" href="{{ asset('css/Services.css?v=2.2') }}" />
     <link rel="stylesheet" href="{{asset('css/Careers.css?v=1.9')}}"/>
-
 @endsection
 
 @section('content')
