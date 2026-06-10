@@ -24,7 +24,7 @@
         </div>
         <div class="jobs">
             @forelse($services as $service)
-                <div class="job job{{$sub_service->id}}">
+                <div class="job job{{$service->id}}">
                     <h2>{{ $service->$title }}</h2>
                     <div class="links">
                         <a class="call-to-job" href="{{ route('web.pages.services', $service->id) }}">{{ __('lang.details') }}</a>

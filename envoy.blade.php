@@ -10,10 +10,10 @@
 @endsetup
 
 @story('deploy', ['on' => 'main'])
-       {{--clone_repository
+      clone_repository
     run_composer
-    update_symlinks--}}
-  update_symlinks2 
+    update_symlinks
+  {{-- update_symlinks2 --}}
 @endstory
 
 @task('test')
