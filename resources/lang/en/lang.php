@@ -1,7 +1,8 @@
 <?php
 
 return [
-    'protection_police' => 'To view the privacy policy: ',
+    'consultation2' => 'Consulting',
+    'protection_police' => 'To view the Protection policy: ',
     'minimum_donation_50' => 'Minimum donation is 150EGP',
     'donation_question' => 'How did you learn about donation method?',
     'donation_answer1' => 'Facebook Ad',

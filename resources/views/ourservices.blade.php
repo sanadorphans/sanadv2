@@ -11,7 +11,6 @@
 @section('style')
     <link rel="stylesheet" href="{{ asset('css/Services.css?v=2.2') }}" />
     <link rel="stylesheet" href="{{asset('css/Careers.css?v=1.9')}}"/>
-
 @endsection
 
 @section('content')
@@ -24,7 +23,7 @@
         </div>
         <div class="jobs">
             @forelse($services as $service)
-                <div class="job job{{$sub_service->id}}">
+                <div class="job job{{$service->id}}">
                     <h2>{{ $service->$title }}</h2>
                     <div class="links">
                         <a class="call-to-job" href="{{ route('web.pages.services', $service->id) }}">{{ __('lang.details') }}</a>
