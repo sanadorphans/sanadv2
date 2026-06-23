@@ -5,15 +5,15 @@
     $releases_dir = 'releases';
     $release = date('YmdHis');
     $new_release_dir = $releases_dir .'/'. $release;
-    $existing_release_dir = $releases_dir .'/'. '20260604105340';
+    $existing_release_dir = $releases_dir .'/'. '20260609075958';
     $branch = 'main';
 @endsetup
 
 @story('deploy', ['on' => 'main'])
-       {{--clone_repository
+      {{--  clone_repository
     run_composer
-    update_symlinks--}}
-  update_symlinks2 
+    update_symlinks2 --}}
+ update_symlinks2
 @endstory
 
 @task('test')
