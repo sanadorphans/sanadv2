@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sanad for Alternative Parental Care — transforming orphan care in Egypt since 2008.">
+<title>Sanad | Orphan Care & Child Protection — Egypt | مؤسسة سند</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  /* ── Sanad Brand Teal ── */
+  --teal:#29B8C1;
+  --teal-dark:#1A9DA6;
+  --teal-deeper:#127880;
+  --teal-light:#E0F7F8;
+  --teal-mid:#B2E8EB;
+  /* ── Supporting Palette ── */
+  --navy:#0A2533;
+  --navy-mid:#0D3344;
+  --gold:#E8A020;
+  --gold-light:#FBF0D8;
+  --coral:#E85C3A;
+  --white:#FFFFFF;
+  --off-white:#F5FAFA;
+  --cream:#F0F9F9;
+  --sand:#E8F4F5;
+  --text:#0E2230;
+  --muted:#4A7080;
+  --border:#C5E4E6;
+  --border-light:#DFF2F3;
+  /* ── Typography ── */
+  --font-en:'DM Sans',sans-serif;
+  --font-ar:'Cairo',sans-serif;
+  --font-display:'Playfair Display',serif;
+}
+
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-en);color:var(--text);background:var(--white);overflow-x:hidden;}
+body.ar{font-family:var(--font-ar);}
+[dir="rtl"] .flip{transform:scaleX(-1);}
+
+/* ══ LANGUAGE SWITCH ══ */
+.lang-bar{background:var(--navy);padding:8px 2rem;display:flex;justify-content:flex-end;align-items:center;gap:1rem;}
+.lang-btn{font-size:12px;font-weight:600;letter-spacing:0.05em;cursor:pointer;padding:5px 14px;border-radius:20px;border:1.5px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);background:transparent;font-family:inherit;transition:all 0.2s;}
+.lang-btn.active{background:var(--teal);border-color:var(--teal);color:white;}
+.lang-btn:hover:not(.active){border-color:rgba(255,255,255,0.45);color:white;}
+.lang-note{font-size:11px;color:rgba(255,255,255,0.3);margin-right:auto;}
+[dir="rtl"] .lang-note{margin-right:0;margin-left:auto;}
+
+/* ══ NAV ══ */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:70px;padding:0 2rem;}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.logo-mark{width:42px;height:42px;background:var(--teal);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;overflow:hidden;}
+.logo-mark::after{content:'';position:absolute;bottom:-8px;right:-8px;width:24px;height:24px;background:var(--teal-dark);border-radius:50%;}
+.logo-mark svg{position:relative;z-index:1;}
+.logo-text-wrap{}
+.logo-name{font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--teal-dark);display:block;line-height:1;}
+.logo-sub{font-size:10px;font-weight:500;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;display:block;margin-top:2px;}
+.nav-links{display:flex;align-items:center;gap:1.75rem;}
+.nav-links a{font-size:13.5px;color:var(--muted);text-decoration:none;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:var(--teal-dark);}
+.nav-donate{background:var(--teal)!important;color:white!important;padding:10px 24px!important;border-radius:8px!important;font-weight:700!important;font-size:13.5px!important;transition:background 0.2s!important;box-shadow:0 4px 14px rgba(41,184,193,0.35)!important;}
+.nav-donate:hover{background:var(--teal-dark)!important;box-shadow:0 4px 18px rgba(41,184,193,0.45)!important;}
+
+/* ══ HERO ══ */
+.hero{background:var(--navy);min-height:90vh;display:flex;flex-direction:column;position:relative;overflow:hidden;}
+/* Decorative teal waves */
+.hero-wave{position:absolute;bottom:0;left:0;right:0;z-index:1;}
+.hero-orb1{position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(41,184,193,0.15) 0%,transparent 70%);}
+.hero-orb2{position:absolute;bottom:100px;left:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(41,184,193,0.08) 0%,transparent 70%);}
+.hero-grid-pattern{position:absolute;inset:0;background-image:linear-gradient(rgba(41,184,193,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(41,184,193,0.04) 1px,transparent 1px);background-size:50px 50px;}
+.hero-teal-accent{position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--teal),var(--teal-dark),var(--teal));}
+.hero-inner{max-width:1160px;margin:0 auto;padding:5rem 2rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center;width:100%;position:relative;z-index:2;flex:1;}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(41,184,193,0.15);border:1px solid rgba(41,184,193,0.3);border-radius:100px;padding:7px 18px;font-size:12px;color:var(--teal);letter-spacing:0.04em;font-weight:600;margin-bottom:1.75rem;}
+.badge-dot{width:7px;height:7px;background:var(--teal);border-radius:50%;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+h1.hero-h1{font-family:var(--font-display);font-size:3.3rem;font-weight:900;color:white;line-height:1.1;margin-bottom:1.5rem;}
+h1.hero-h1 .accent{color:var(--teal);}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.65);line-height:1.8;margin-bottom:2.25rem;font-weight:300;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:3rem;}
+.btn-teal{background:var(--teal);color:white;padding:14px 32px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;border:none;cursor:pointer;transition:all 0.2s;display:inline-flex;align-items:center;gap:9px;font-family:inherit;box-shadow:0 6px 20px rgba(41,184,193,0.4);}
+.btn-teal:hover{background:var(--teal-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(41,184,193,0.5);}
+.btn-outline-w{background:transparent;color:white;padding:14px 32px;border-radius:10px;font-weight:500;font-size:15px;text-decoration:none;border:1.5px solid rgba(255,255,255,0.22);cursor:pointer;transition:all 0.2s;display:inline-flex;align-items:center;gap:9px;font-family:inherit;}
+.btn-outline-w:hover{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.4);}
+.hero-trust{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.hero-trust-label{font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.07em;text-transform:uppercase;font-weight:600;}
+.hero-trust-chips{display:flex;gap:8px;flex-wrap:wrap;}
+.htchip{font-size:11px;font-weight:600;color:rgba(255,255,255,0.55);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:4px 12px;}
+
+/* Hero right: visual cards */
+.hero-right{display:flex;flex-direction:column;gap:1rem;}
+.hero-impact-card{background:rgba(255,255,255,0.05);border:1px solid rgba(41,184,193,0.2);border-radius:18px;padding:1.75rem;backdrop-filter:blur(4px);}
+.hero-impact-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;}
+.hero-impact-card-header p{font-size:11px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:var(--teal);}
+.live-badge{font-size:10px;background:rgba(41,184,193,0.15);color:var(--teal);border:1px solid rgba(41,184,193,0.3);border-radius:100px;padding:3px 10px;font-weight:700;display:flex;align-items:center;gap:5px;}
+.live-dot{width:5px;height:5px;background:var(--teal);border-radius:50%;}
+.stats-2x2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.07);border-radius:10px;overflow:hidden;}
+.sstat{padding:1.25rem 1rem;background:rgba(255,255,255,0.03);}
+.sstat-num{font-family:var(--font-display);font-size:2rem;font-weight:900;color:var(--teal);display:block;line-height:1;}
+.sstat-label{font-size:11px;color:rgba(255,255,255,0.5);margin-top:5px;line-height:1.4;}
+.hero-story-preview{background:rgba(41,184,193,0.08);border:1px solid rgba(41,184,193,0.18);border-radius:14px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:14px;}
+.hsp-avatar{width:44px;height:44px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:white;flex-shrink:0;}
+.hsp-text p{font-size:13px;color:rgba(255,255,255,0.75);line-height:1.5;}
+.hsp-text strong{color:var(--teal);font-size:11px;display:block;margin-top:4px;font-weight:700;letter-spacing:0.04em;}
+.hero-reach{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.hr-num{font-family:var(--font-display);font-size:1.6rem;font-weight:900;color:white;}
+.hr-label{font-size:12px;color:rgba(255,255,255,0.45);margin-top:3px;}
+.hr-bar{flex:1;height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;}
+.hr-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--teal-dark));border-radius:3px;width:74%;}
+
+/* ══ TRUST BAR ══ */
+.trust-bar{background:var(--teal);padding:0.9rem 2rem;}
+.trust-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;}
+.trust-label{font-size:10.5px;font-weight:800;color:rgba(255,255,255,0.75);letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;}
+.trust-divider{width:1px;height:20px;background:rgba(255,255,255,0.25);}
+.trust-logos{display:flex;align-items:center;gap:1.75rem;flex:1;flex-wrap:wrap;}
+.titem{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:rgba(255,255,255,0.9);}
+.ticon{width:26px;height:26px;border-radius:6px;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:white;}
+
+/* ══ COMMON SECTION STYLES ══ */
+section{padding:5.5rem 2rem;}
+.si{max-width:1160px;margin:0 auto;}
+.stag{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:1rem;}
+.stag-line{width:24px;height:3px;background:var(--teal);border-radius:2px;display:block;}
+h2.sh2{font-family:var(--font-display);font-size:2.5rem;font-weight:800;color:var(--navy);line-height:1.18;margin-bottom:1rem;}
+.ssub{font-size:1rem;color:var(--muted);line-height:1.8;max-width:550px;}
+[dir="rtl"] h2.sh2,[dir="rtl"] .stag,[dir="rtl"] .ssub{text-align:right;}
+[dir="rtl"] .stag{flex-direction:row-reverse;justify-content:flex-end;}
+
+/* ══ NUMBERS / CHALLENGE ══ */
+.challenge-section{background:var(--off-white);}
+.challenge-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:3.5rem;}
+[dir="rtl"] .challenge-grid{direction:rtl;}
+.c-stat{display:flex;align-items:flex-start;gap:1.25rem;padding:1.75rem 0;border-bottom:1px solid var(--border-light);}
+.c-stat:last-of-type{border-bottom:none;}
+.c-num{font-family:var(--font-display);font-size:2.3rem;font-weight:900;color:var(--teal-dark);min-width:95px;flex-shrink:0;line-height:1;}
+.c-body h4{font-size:14.5px;font-weight:700;color:var(--navy);margin-bottom:5px;}
+.c-body p{font-size:13.5px;color:var(--muted);line-height:1.7;}
+.mission-visual-box{position:relative;padding-bottom:3rem;padding-right:3rem;}
+[dir="rtl"] .mission-visual-box{padding-right:0;padding-left:3rem;}
+.mv-card{background:var(--navy);border-radius:20px;padding:2.5rem;color:white;position:relative;overflow:hidden;}
+.mv-card::before{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;border-radius:50%;background:rgba(41,184,193,0.1);}
+[dir="rtl"] .mv-card::before{right:auto;left:-40px;}
+.mv-card h3{font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:1rem;color:white;position:relative;}
+.mv-card p{font-size:0.9rem;color:rgba(255,255,255,0.7);line-height:1.8;position:relative;}
+.mv-mini-stats{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;}
+.mv-mini{background:rgba(41,184,193,0.15);border:1px solid rgba(41,184,193,0.25);border-radius:12px;padding:1rem 1.25rem;flex:1;min-width:80px;}
+.mv-mini strong{font-family:var(--font-display);font-size:1.5rem;font-weight:900;color:var(--teal);display:block;line-height:1;}
+.mv-mini span{font-size:11px;color:rgba(255,255,255,0.5);margin-top:4px;display:block;line-height:1.3;}
+.mv-float{position:absolute;bottom:0;right:0;background:var(--teal);border-radius:16px;padding:1.375rem 1.625rem;text-align:center;color:white;box-shadow:0 10px 36px rgba(41,184,193,0.45);}
+[dir="rtl"] .mv-float{right:auto;left:0;}
+.mv-float strong{font-family:var(--font-display);font-size:2.1rem;font-weight:900;display:block;line-height:1;}
+.mv-float span{font-size:11px;opacity:0.85;display:block;margin-top:4px;}
+
+/* ══ IMPACT NUMBERS ══ */
+.impact-section{background:white;}
+.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem;}
+.ic{background:var(--cream);border-radius:18px;padding:2rem 1.5rem;text-align:center;border:1px solid var(--border-light);transition:all 0.25s;position:relative;overflow:hidden;}
+.ic::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--teal);transform:scaleX(0);transition:transform 0.3s;transform-origin:center;}
+.ic:hover::after{transform:scaleX(1);}
+.ic:hover{transform:translateY(-5px);box-shadow:0 12px 36px rgba(41,184,193,0.12);border-color:var(--border);}
+.ic-icon{width:54px;height:54px;border-radius:14px;margin:0 auto 1.125rem;display:flex;align-items:center;justify-content:center;font-size:26px;background:var(--teal-light);}
+.ic-num{font-family:var(--font-display);font-size:2.2rem;font-weight:900;color:var(--teal-dark);display:block;line-height:1;}
+.ic-lbl{font-size:12.5px;color:var(--muted);margin-top:7px;line-height:1.45;}
+.ic-w2{grid-column:span 2;}
+.ic-teal{background:var(--teal);border-color:var(--teal);}
+.ic-teal::after{display:none;}
+.ic-teal .ic-num{color:white;font-size:3rem;}
+.ic-teal .ic-lbl{color:rgba(255,255,255,0.75);}
+.ic-teal .ic-icon{background:rgba(255,255,255,0.15);}
+.ic-navy{background:var(--navy);border-color:var(--navy);}
+.ic-navy::after{display:none;}
+.ic-navy .ic-num{color:var(--teal);font-size:3rem;}
+.ic-navy .ic-lbl{color:rgba(255,255,255,0.6);}
+.ic-navy .ic-icon{background:rgba(41,184,193,0.15);}
+
+/* ══ PROGRAMS ══ */
+.programs-section{background:var(--off-white);}
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+.prog-card{background:white;border:1px solid var(--border-light);border-radius:20px;padding:2.25rem;position:relative;overflow:hidden;transition:all 0.25s;}
+.prog-card:hover{box-shadow:0 16px 48px rgba(41,184,193,0.12);transform:translateY(-5px);border-color:var(--border);}
+.prog-num{font-family:var(--font-display);font-size:4rem;font-weight:900;line-height:1;margin-bottom:1rem;color:var(--teal-light);}
+.prog-icon{width:56px;height:56px;border-radius:14px;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:1.25rem;}
+.prog-card h3{font-size:1.25rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem;}
+.prog-card p{font-size:0.875rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;}
+.prog-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem;}
+.ptag{font-size:11.5px;padding:4px 12px;border-radius:100px;font-weight:600;background:var(--teal-light);color:var(--teal-deeper);}
+.prog-lnk{font-size:13.5px;font-weight:700;color:var(--teal-dark);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:gap 0.2s;}
+.prog-lnk:hover{gap:9px;}
+
+/* ══ SVG ILLUSTRATIONS ══ */
+.illus-child{display:block;}
+.hero-visual-illo{width:100%;max-width:420px;}
+
+/* ══ STORIES ══ */
+.stories-section{background:var(--navy);}
+.stories-section .stag{color:var(--teal);}
+.stories-section .stag-line{background:var(--teal);}
+.stories-section .sh2{color:white;}
+.stories-section .ssub{color:rgba(255,255,255,0.6);}
+.stories-grid{display:grid;grid-template-columns:1.65fr 1fr;gap:1.5rem;margin-top:3rem;}
+.sc{background:rgba(255,255,255,0.05);border:1px solid rgba(41,184,193,0.15);border-radius:20px;padding:2.25rem;color:white;transition:background 0.2s;}
+.sc:hover{background:rgba(41,184,193,0.07);border-color:rgba(41,184,193,0.25);}
+.sq{font-family:var(--font-display);font-size:3.5rem;color:var(--teal);line-height:0.8;margin-bottom:1.125rem;}
+.sc p{font-size:0.925rem;color:rgba(255,255,255,0.78);line-height:1.9;margin-bottom:1.5rem;}
+.sauthor{display:flex;align-items:center;gap:12px;}
+.savatar{width:44px;height:44px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:white;flex-shrink:0;}
+.sname{font-size:14px;color:white;font-weight:700;display:block;}
+.srole{font-size:12px;color:rgba(255,255,255,0.4);display:block;margin-top:2px;}
+.stories-right{display:flex;flex-direction:column;gap:1.5rem;}
+.sc-sm p{font-size:0.875rem;}
+.outcomes-card{background:rgba(41,184,193,0.1);border:1px solid rgba(41,184,193,0.2);border-radius:20px;padding:2rem;}
+.oc-label{font-size:10.5px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin-bottom:1.25rem;}
+.oc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
+.oc-num{font-family:var(--font-display);font-size:1.85rem;font-weight:900;color:var(--teal);display:block;line-height:1;}
+.oc-lbl{font-size:11.5px;color:rgba(255,255,255,0.5);margin-top:5px;line-height:1.4;}
+
+/* ══ DONATE ══ */
+.donate-section{background:var(--cream);}
+.donate-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:start;margin-top:3rem;}
+[dir="rtl"] .donate-grid{direction:rtl;}
+.dform{background:white;border-radius:24px;padding:2.5rem;box-shadow:0 8px 48px rgba(41,184,193,0.1);border:1px solid var(--border);}
+.zakat-box{background:linear-gradient(135deg,#edfaf5,#d5f5e3);border:1px solid #7dcea0;border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1.75rem;display:flex;gap:12px;}
+.zi{font-size:24px;flex-shrink:0;margin-top:1px;}
+.zt strong{font-size:13px;font-weight:800;color:#1a6b40;display:block;margin-bottom:4px;}
+.zt span{font-size:12px;color:#1e8449;line-height:1.6;}
+.flabel{font-size:11.5px;font-weight:800;color:var(--text);margin-bottom:8px;display:block;letter-spacing:0.02em;}
+.dtype-wrap{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1.5rem;}
+.dtyp{padding:10px 12px;border:1.5px solid var(--border);border-radius:10px;font-size:12.5px;font-weight:600;color:var(--muted);cursor:pointer;background:white;transition:all 0.15s;text-align:center;font-family:inherit;}
+.dtyp.active,.dtyp:hover{border-color:var(--teal);color:var(--teal-deeper);background:var(--teal-light);}
+.amounts-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem;}
+.abtn{padding:12px 8px;border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-weight:700;color:var(--text);cursor:pointer;background:white;transition:all 0.15s;text-align:center;font-family:inherit;}
+.abtn small{display:block;font-size:10px;font-weight:500;margin-top:3px;color:var(--muted);}
+.abtn:hover{border-color:var(--teal);color:var(--teal-dark);}
+.abtn.active{background:var(--teal);border-color:var(--teal);color:white;}
+.abtn.active small{color:rgba(255,255,255,0.8);}
+.custom-wrap{margin-bottom:1.25rem;}
+.custom-wrap input{width:100%;padding:12px 16px;border:2px solid var(--teal);border-radius:10px;font-size:14px;color:var(--text);font-family:inherit;outline:none;}
+.rec-toggle{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1.5px solid var(--border-light);border-radius:12px;margin-bottom:1.5rem;cursor:pointer;background:var(--off-white);transition:border-color 0.15s;}
+.rec-toggle:hover{border-color:var(--teal);}
+.tog{width:44px;height:24px;background:var(--teal);border-radius:100px;position:relative;flex-shrink:0;}
+.tog-dot{position:absolute;right:3px;top:3px;width:18px;height:18px;background:white;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.2);}
+.rec-txt strong{font-size:13px;color:var(--text);font-weight:700;display:block;}
+.rec-txt span{font-size:11.5px;color:var(--muted);}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:0.875rem;}
+.ff{margin-bottom:0.875rem;}
+.ff label{display:block;font-size:11.5px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.ff input,.ff select{width:100%;padding:12px 15px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;color:var(--text);background:white;outline:none;transition:border-color 0.2s;font-family:inherit;appearance:none;}
+.ff input:focus,.ff select:focus{border-color:var(--teal);}
+.donate-submit{width:100%;background:var(--teal);color:white;padding:16px;border-radius:12px;font-weight:800;font-size:16px;border:none;cursor:pointer;font-family:inherit;letter-spacing:0.02em;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 8px 24px rgba(41,184,193,0.4);transition:all 0.2s;margin-bottom:1rem;}
+.donate-submit:hover{background:var(--teal-dark);box-shadow:0 10px 30px rgba(41,184,193,0.5);transform:translateY(-1px);}
+.pay-row{display:flex;align-items:center;justify-content:center;gap:8px;}
+.pbadge{padding:4px 10px;border:1px solid var(--border);border-radius:6px;font-size:10.5px;font-weight:700;color:var(--muted);}
+.sec-txt{font-size:11px;color:var(--teal-dark);font-weight:700;display:flex;align-items:center;gap:4px;}
+/* Donate right col */
+.di h3{font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:1rem;}
+.di .ssub{max-width:100%;margin-bottom:2rem;}
+.imp-list{display:flex;flex-direction:column;gap:15px;margin-bottom:2.5rem;}
+.ii{display:flex;align-items:flex-start;gap:14px;}
+.idot{width:12px;height:12px;border-radius:50%;flex-shrink:0;margin-top:4px;}
+.ii p{font-size:13.5px;color:var(--text);line-height:1.65;}
+.ii p strong{color:var(--navy);font-weight:800;}
+.bank-card{background:var(--teal-light);border:1px solid var(--border);border-radius:16px;padding:1.625rem;}
+.bank-card h4{font-size:13px;font-weight:800;color:var(--teal-deeper);margin-bottom:1rem;}
+.brow{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;padding:7px 0;border-bottom:1px solid var(--border);}
+.brow:last-child{border-bottom:none;}
+.brow span{color:var(--muted);font-weight:500;}
+.brow strong{color:var(--text);font-family:monospace;font-size:12px;}
+
+/* ══ PARTNERS ══ */
+.partners-section{background:white;}
+.pg{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border-light);border:1px solid var(--border-light);border-radius:16px;overflow:hidden;margin-top:2.5rem;}
+.pc{background:white;padding:2rem 1.5rem;display:flex;align-items:center;justify-content:center;transition:background 0.2s;cursor:default;}
+.pc:hover{background:var(--cream);}
+.pn{font-size:11px;font-weight:700;color:var(--muted);text-align:center;letter-spacing:0.05em;text-transform:uppercase;line-height:1.5;}
+
+/* ══ AWARDS ══ */
+.awards-section{background:var(--cream);}
+.awards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;}
+.aw{background:white;border-radius:16px;padding:1.75rem;border:1px solid var(--border-light);display:flex;gap:1.125rem;transition:box-shadow 0.2s;}
+.aw:hover{box-shadow:0 8px 28px rgba(41,184,193,0.1);}
+.aw-icon{width:50px;height:50px;border-radius:12px;background:var(--teal-light);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.aw h4{font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:5px;line-height:1.4;}
+.aw p{font-size:12.5px;color:var(--muted);line-height:1.65;}
+
+/* ══ NEWS ══ */
+.news-section{background:white;}
+.news-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2rem;}
+.news-all{font-size:13px;color:var(--teal-dark);font-weight:700;text-decoration:none;}
+.ng{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.ncard{border:1px solid var(--border-light);border-radius:18px;overflow:hidden;transition:all 0.22s;}
+.ncard:hover{box-shadow:0 12px 36px rgba(41,184,193,0.1);transform:translateY(-4px);}
+.nimg{height:160px;display:flex;align-items:flex-end;padding:1.125rem;position:relative;overflow:hidden;}
+.nimg-badge{font-size:10.5px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:white;background:rgba(0,0,0,0.4);padding:4px 10px;border-radius:100px;backdrop-filter:blur(4px);}
+.nbody{padding:1.5rem;}
+.ndate{font-size:11px;color:var(--teal-dark);font-weight:700;margin-bottom:7px;letter-spacing:0.03em;}
+.nbody h4{font-size:14.5px;font-weight:700;color:var(--navy);line-height:1.5;margin-bottom:10px;}
+.nread{font-size:12.5px;color:var(--teal-dark);font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:5px;}
+
+/* ══ GET INVOLVED ══ */
+.involve-section{background:var(--navy);padding:5.5rem 2rem;}
+.inv-header{text-align:center;margin-bottom:3.25rem;}
+.inv-header .stag{justify-content:center;color:var(--teal);}
+.inv-header .stag-line{background:var(--teal);}
+.inv-header .sh2{color:white;text-align:center;}
+.inv-header .ssub{color:rgba(255,255,255,0.6);margin:0.5rem auto 0;text-align:center;}
+.inv-grid{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.icard{background:rgba(41,184,193,0.06);border:1px solid rgba(41,184,193,0.15);border-radius:20px;padding:2.5rem;transition:all 0.2s;}
+.icard:hover{background:rgba(41,184,193,0.1);border-color:rgba(41,184,193,0.3);}
+.icard-icon{width:56px;height:56px;border-radius:14px;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:1.5rem;}
+.icard h3{font-size:1.2rem;font-weight:700;margin-bottom:0.625rem;color:white;}
+.icard p{font-size:0.875rem;color:rgba(255,255,255,0.62);line-height:1.8;margin-bottom:1.625rem;}
+.ibtn{display:inline-flex;align-items:center;gap:6px;color:var(--teal);font-size:13.5px;font-weight:700;cursor:pointer;background:none;border:none;padding:0;font-family:inherit;transition:gap 0.2s;}
+.ibtn:hover{gap:10px;}
+.vol-mini-form{background:rgba(255,255,255,0.04);border:1px solid rgba(41,184,193,0.2);border-radius:14px;padding:1.5rem;margin-top:1.25rem;display:none;}
+.vif input{width:100%;padding:9px 13px;background:rgba(255,255,255,0.07);border:1px solid rgba(41,184,193,0.2);border-radius:8px;font-size:13px;color:white;font-family:inherit;outline:none;margin-bottom:9px;}
+.vif input::placeholder{color:rgba(255,255,255,0.3);}
+.vsub{background:var(--teal);color:white;padding:10px 22px;border-radius:8px;border:none;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit;transition:background 0.2s;}
+.vsub:hover{background:var(--teal-dark);}
+
+/* ══ NEWSLETTER ══ */
+.nl-section{background:var(--teal);padding:2.75rem 2rem;}
+.nl-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.nl-inner h3{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:white;max-width:380px;line-height:1.3;}
+.nl-form{display:flex;gap:8px;flex:1;max-width:420px;}
+.nl-form input{flex:1;padding:12px 18px;border-radius:10px;border:none;font-size:14px;font-family:inherit;outline:none;color:var(--text);}
+.nl-form button{background:var(--navy);color:white;padding:12px 24px;border-radius:10px;border:none;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap;font-family:inherit;transition:background 0.2s;}
+.nl-form button:hover{background:#0D3344;}
+
+/* ══ FOOTER ══ */
+footer{background:#061828;padding:4.5rem 2rem 2.5rem;}
+.fg{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3.5rem;margin-bottom:3.5rem;}
+[dir="rtl"] .fg{direction:rtl;}
+.fbrand p{font-size:13px;color:rgba(255,255,255,0.42);line-height:1.8;margin-top:1rem;max-width:240px;}
+.f-logo{display:flex;align-items:center;gap:11px;}
+.f-logo .logo-name{color:white;}
+.f-logo .logo-sub{color:rgba(255,255,255,0.35);}
+.freg{display:inline-flex;align-items:center;gap:6px;background:rgba(41,184,193,0.08);border:1px solid rgba(41,184,193,0.15);border-radius:7px;padding:6px 12px;font-size:11px;color:rgba(255,255,255,0.4);margin-top:1.25rem;}
+.fc h4{font-size:10.5px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.125rem;}
+.fc a{display:block;font-size:13px;color:rgba(255,255,255,0.52);text-decoration:none;margin-bottom:8px;transition:color 0.15s;}
+.fc a:hover{color:white;}
+.fb{max-width:1160px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.07);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.fb p{font-size:12px;color:rgba(255,255,255,0.25);}
+.socials{display:flex;gap:10px;}
+.soc{width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;font-weight:700;transition:all 0.2s;}
+.soc:hover{background:rgba(41,184,193,0.2);color:var(--teal);}
+
+/* ══ LANGUAGE-SPECIFIC CONTENT ══ */
+.en-only{display:block;}
+.ar-only{display:none;}
+body.ar .en-only{display:none;}
+body.ar .ar-only{display:block;}
+body.ar .en-inline{display:none;}
+body.ar .ar-inline{display:inline;}
+
+/* Arabic typography overrides */
+body.ar h1.hero-h1{font-size:2.9rem;line-height:1.25;font-family:var(--font-ar);}
+body.ar h2.sh2{font-size:2.2rem;font-family:var(--font-ar);}
+body.ar .logo-name{font-family:var(--font-ar);}
+body.ar .sq{font-family:var(--font-ar);}
+body.ar .mv-card h3{font-family:var(--font-ar);}
+body.ar .di h3{font-family:var(--font-ar);}
+body.ar .icard h3{font-family:var(--font-ar);}
+body.ar .nl-inner h3{font-family:var(--font-ar);}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:960px){
+  .hero-inner,.challenge-grid,.donate-grid,.fg,.stories-grid{grid-template-columns:1fr;}
+  .impact-grid,.prog-grid,.awards-grid,.ng,.inv-grid{grid-template-columns:1fr 1fr;}
+  .ic-w2{grid-column:span 2;}
+  .pg{grid-template-columns:repeat(3,1fr);}
+  h1.hero-h1{font-size:2.3rem;}
+  h2.sh2{font-size:2rem;}
+  .mission-visual-box{padding-bottom:2rem;padding-right:2rem;}
+}
+@media(max-width:640px){
+  .nav-links{display:none;}
+  .impact-grid,.prog-grid,.awards-grid,.ng,.inv-grid{grid-template-columns:1fr;}
+  .ic-w2{grid-column:span 1;}
+  .amounts-wrap{grid-template-columns:1fr 1fr;}
+  .dtype-wrap{grid-template-columns:1fr;}
+  .frow{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ LANGUAGE BAR ══ -->
+<div class="lang-bar">
+  <span class="lang-note en-only">Sanad for Alternative Parental Care</span>
+  <span class="lang-note ar-only" style="font-family:var(--font-ar)">مؤسسة سند للرعاية الوالدية البديلة</span>
+  <button class="lang-btn active" id="btnEn" onclick="setLang('en')">English</button>
+  <button class="lang-btn" id="btnAr" onclick="setLang('ar')" style="font-family:var(--font-ar)">العربية</button>
+</div>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-mark">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M12 3C7 3 4 7 4 12C4 15.5 6 18.5 9 20V17C7.5 15.8 6.5 14 6.5 12C6.5 8.4 9 5.5 12 5.5C15 5.5 17.5 8.4 17.5 12C17.5 14 16.5 15.8 15 17V20C18 18.5 20 15.5 20 12C20 7 17 3 12 3Z" fill="white"/>
+          <circle cx="12" cy="12" r="2.5" fill="white"/>
+        </svg>
+      </div>
+      <div class="logo-text-wrap">
+        <span class="logo-name en-only">Sanad</span>
+        <span class="logo-name ar-only" style="font-family:var(--font-ar);">سند</span>
+        <span class="logo-sub en-only">For Alternative Parental Care</span>
+        <span class="logo-sub ar-only" style="font-family:var(--font-ar);">للرعاية الوالدية البديلة</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#programs" class="en-only">Our Programs</a>
+      <a href="#programs" class="ar-only" style="font-family:var(--font-ar)">برامجنا</a>
+      <a href="#impact" class="en-only">Our Impact</a>
+      <a href="#impact" class="ar-only" style="font-family:var(--font-ar)">أثرنا</a>
+      <a href="#stories" class="en-only">Stories</a>
+      <a href="#stories" class="ar-only" style="font-family:var(--font-ar)">قصص</a>
+      <a href="#about" class="en-only">Who We Are</a>
+      <a href="#about" class="ar-only" style="font-family:var(--font-ar)">من نحن</a>
+      <a href="#news" class="en-only">News</a>
+      <a href="#news" class="ar-only" style="font-family:var(--font-ar)">الإعلام</a>
+      <a href="#donate" class="nav-donate en-only">Donate Now</a>
+      <a href="#donate" class="nav-donate ar-only" style="font-family:var(--font-ar)">تبرع الآن</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="home">
+  <div class="hero-teal-accent"></div>
+  <div class="hero-grid-pattern"></div>
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-inner">
+    <!-- Left -->
+    <div>
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span class="en-only">Since 2008 — Cairo, Egypt · Reg. No. 7478</span>
+        <span class="ar-only" style="font-family:var(--font-ar)">منذ 2008 — القاهرة · رقم تسجيل 7478</span>
+      </div>
+      <h1 class="hero-h1">
+        <span class="en-only">A world where<br>orphans <span class="accent">shape</span><br>their own future</span>
+        <span class="ar-only" style="font-family:var(--font-ar);direction:rtl;display:block;">عالم يصنع فيه<br>الأيتام <span class="accent">مستقبلهم</span><br>بأيديهم</span>
+      </h1>
+      <p class="hero-sub en-only">Sanad means presence — with knowledge, action, and an unwavering promise. We work across 19 governorates to transform alternative parental care in Egypt and the MENA region.</p>
+      <p class="hero-sub ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">سند تعني الحضور — بالمعرفة والعمل والوعد الثابت. نعمل في 19 محافظة لتحويل منظومة الرعاية الوالدية البديلة في مصر ومنطقة الشرق الأوسط وشمال أفريقيا.</p>
+      <div class="hero-btns">
+        <a href="#donate" class="btn-teal en-only">Donate Now →</a>
+        <a href="#donate" class="btn-teal ar-only" style="font-family:var(--font-ar)">تبرع الآن ←</a>
+        <a href="#programs" class="btn-outline-w en-only">Our Programs</a>
+        <a href="#programs" class="btn-outline-w ar-only" style="font-family:var(--font-ar)">برامجنا</a>
+      </div>
+      <div class="hero-trust">
+        <span class="hero-trust-label en-only">Trusted by</span>
+        <span class="hero-trust-label ar-only" style="font-family:var(--font-ar)">معتمدون من</span>
+        <div class="hero-trust-chips">
+          <span class="htchip">UNICEF</span>
+          <span class="htchip">Pearson</span>
+          <span class="htchip">PwC</span>
+          <span class="htchip en-only">Dar al-Ifta</span>
+          <span class="htchip ar-only" style="font-family:var(--font-ar)">دار الإفتاء</span>
+        </div>
+      </div>
+    </div>
+    <!-- Right: visual -->
+    <div class="hero-right">
+      <!-- SVG Children Illustration -->
+      <div style="background:rgba(41,184,193,0.08);border:1px solid rgba(41,184,193,0.18);border-radius:20px;padding:1.5rem;margin-bottom:0;">
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+          <!-- Sky gradient -->
+          <defs>
+            <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0A2533"/>
+              <stop offset="100%" stop-color="#0D3344"/>
+            </linearGradient>
+            <linearGradient id="tealGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#29B8C1"/>
+              <stop offset="100%" stop-color="#1A9DA6"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="200" fill="url(#skyGrad)" rx="12"/>
+          <!-- Stars -->
+          <circle cx="30" cy="20" r="1.2" fill="#29B8C1" opacity="0.8"/>
+          <circle cx="80" cy="35" r="0.9" fill="white" opacity="0.5"/>
+          <circle cx="150" cy="15" r="1.1" fill="#29B8C1" opacity="0.6"/>
+          <circle cx="200" cy="28" r="0.8" fill="white" opacity="0.4"/>
+          <circle cx="300" cy="18" r="1.3" fill="#29B8C1" opacity="0.9"/>
+          <circle cx="360" cy="32" r="0.9" fill="white" opacity="0.5"/>
+          <circle cx="380" cy="12" r="1.1" fill="#29B8C1" opacity="0.7"/>
+          <!-- Moon -->
+          <circle cx="350" cy="30" r="16" fill="#1A9DA6" opacity="0.15"/>
+          <circle cx="342" cy="26" r="13" fill="#0D3344" opacity="0.9"/>
+          <!-- Ground -->
+          <ellipse cx="200" cy="185" rx="200" ry="30" fill="#29B8C1" opacity="0.12"/>
+          <!-- House / care home -->
+          <rect x="150" y="100" width="100" height="80" fill="url(#tealGrad)" rx="4"/>
+          <polygon points="140,105 200,65 260,105" fill="#29B8C1"/>
+          <rect x="180" y="140" width="40" height="40" fill="#0A2533" rx="3"/><!-- door -->
+          <rect x="158" y="115" width="22" height="18" fill="rgba(255,255,255,0.2)" rx="2"/><!-- window -->
+          <rect x="220" y="115" width="22" height="18" fill="rgba(255,255,255,0.2)" rx="2"/>
+          <!-- Child 1 (left, smaller) -->
+          <circle cx="100" cy="130" r="14" fill="#F5A623"/><!-- head -->
+          <rect x="90" y="144" width="20" height="28" fill="#E8701A" rx="4"/><!-- body -->
+          <line x1="90" y1="152" x2="76" y2="165" stroke="#E8701A" stroke-width="5" stroke-linecap="round"/>
+          <line x1="110" y1="152" x2="124" y2="165" stroke="#29B8C1" stroke-width="5" stroke-linecap="round"/><!-- arm reaching to center -->
+          <line x1="93" y1="172" x2="88" y2="190" stroke="#E8701A" stroke-width="4" stroke-linecap="round"/>
+          <line x1="107" y1="172" x2="112" y2="190" stroke="#E8701A" stroke-width="4" stroke-linecap="round"/>
+          <!-- Child 1 face -->
+          <circle cx="96" cy="127" r="2" fill="#0A2533"/>
+          <circle cx="104" cy="127" r="2" fill="#0A2533"/>
+          <path d="M96 133 Q100 137 104 133" stroke="#0A2533" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <!-- Child 2 (right, bigger) -->
+          <circle cx="300" cy="128" r="16" fill="#F5A623"/>
+          <rect x="289" y="144" width="22" height="30" fill="#29B8C1" rx="4"/>
+          <line x1="289" y1="153" x2="274" y2="168" stroke="#29B8C1" stroke-width="5" stroke-linecap="round"/><!-- arm reaching to center -->
+          <line x1="311" y1="153" x2="326" y2="168" stroke="#29B8C1" stroke-width="5" stroke-linecap="round"/>
+          <line x1="292" y1="174" x2="286" y2="192" stroke="#29B8C1" stroke-width="4" stroke-linecap="round"/>
+          <line x1="308" y1="174" x2="314" y2="192" stroke="#29B8C1" stroke-width="4" stroke-linecap="round"/>
+          <!-- Child 2 face -->
+          <circle cx="294" cy="125" r="2.2" fill="#0A2533"/>
+          <circle cx="306" cy="125" r="2.2" fill="#0A2533"/>
+          <path d="M294 132 Q300 137 306 132" stroke="#0A2533" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <!-- Child 3 (center, adult/caregiver) -->
+          <circle cx="200" cy="60" r="18" fill="#1A9DA6"/><!-- caregiver head -->
+          <rect x="186" y="78" width="28" height="36" fill="#127880" rx="6"/>
+          <line x1="186" y1="88" x2="166" y2="105" stroke="#127880" stroke-width="7" stroke-linecap="round"/>
+          <line x1="214" y1="88" x2="234" y2="105" stroke="#127880" stroke-width="7" stroke-linecap="round"/>
+          <!-- Caregiver hands touching children's hands -->
+          <circle cx="124" cy="165" r="6" fill="#29B8C1" opacity="0.7"/>
+          <circle cx="276" cy="168" r="6" fill="#29B8C1" opacity="0.7"/>
+          <!-- Caregiver face -->
+          <circle cx="194" cy="57" r="2.5" fill="white"/>
+          <circle cx="206" cy="57" r="2.5" fill="white"/>
+          <path d="M193 65 Q200 70 207 65" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- Heart -->
+          <path d="M200 44 C200 44 194 38 192 35 C190 32 190 28 194 27 C197 26 200 29 200 29 C200 29 203 26 206 27 C210 28 210 32 208 35 C206 38 200 44 200 44Z" fill="#E85C3A" opacity="0.9"/>
+          <!-- Text label -->
+          <text x="200" y="195" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.35)" font-family="DM Sans,sans-serif" letter-spacing="1">SANAD FOR ALTERNATIVE PARENTAL CARE</text>
+        </svg>
+      </div>
+      <div class="hero-impact-card">
+        <div class="hero-impact-card-header">
+          <p class="en-only">Live Impact Dashboard</p>
+          <p class="ar-only" style="font-family:var(--font-ar)">لوحة الأثر المباشر</p>
+          <div class="live-badge"><div class="live-dot"></div>2026</div>
+        </div>
+        <div class="stats-2x2">
+          <div class="sstat"><span class="sstat-num">338</span><div class="sstat-label en-only">Care homes developed</div><div class="sstat-label ar-only" style="font-family:var(--font-ar)">دار رعاية طُوِّرت</div></div>
+          <div class="sstat"><span class="sstat-num">4,517</span><div class="sstat-label en-only">Children reached</div><div class="sstat-label ar-only" style="font-family:var(--font-ar)">طفل وشاب</div></div>
+          <div class="sstat"><span class="sstat-num">2,603</span><div class="sstat-label en-only">Caregivers trained</div><div class="sstat-label ar-only" style="font-family:var(--font-ar)">مربية مدرّبة</div></div>
+          <div class="sstat"><span class="sstat-num">3.49M</span><div class="sstat-label en-only">Total individuals reached</div><div class="sstat-label ar-only" style="font-family:var(--font-ar)">إجمالي المستفيدين</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- SVG Wave -->
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;display:block;">
+      <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#29B8C1" opacity="0.15"/>
+      <path d="M0,40 C480,10 960,60 1440,40 L1440,60 L0,60 Z" fill="#29B8C1" opacity="0.08"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ══ TRUST BAR ══ -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <span class="trust-label en-only">Accredited by</span>
+    <span class="trust-label ar-only" style="font-family:var(--font-ar)">معتمدون من</span>
+    <div class="trust-divider"></div>
+    <div class="trust-logos">
+      <div class="titem"><div class="ticon">P</div>Pearson International</div>
+      <div class="titem"><div class="ticon">D</div><span class="en-only">Dar al-Ifta Egypt</span><span class="ar-only" style="font-family:var(--font-ar)">دار الإفتاء</span></div>
+      <div class="titem"><div class="ticon">U</div>UNICEF</div>
+      <div class="titem"><div class="ticon">P</div>PwC</div>
+      <div class="titem"><div class="ticon">M</div><span class="en-only">Ministry of Social Solidarity</span><span class="ar-only" style="font-family:var(--font-ar)">وزارة التضامن</span></div>
+      <div class="titem"><div class="ticon">S</div>SOS Children's Villages</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CHALLENGE / MISSION ══ -->
+<section class="challenge-section" id="about">
+  <div class="si">
+    <div class="stag"><span class="stag-line"></span><span class="en-only">The Challenge We Face</span><span class="ar-only" style="font-family:var(--font-ar)">التحدي الذي نواجهه</span></div>
+    <h2 class="sh2 en-only">1.4 million orphans in Egypt alone —<br>the system needs transformation</h2>
+    <h2 class="sh2 ar-only" style="font-family:var(--font-ar);direction:rtl">1.4 مليون طفل بلا رعاية والدية في مصر —<br>المنظومة تحتاج تحولاً جذرياً</h2>
+    <div class="challenge-grid">
+      <div>
+        <div class="c-stat">
+          <div class="c-num">140M</div>
+          <div class="c-body">
+            <h4 class="en-only">Children without parental care worldwide</h4>
+            <h4 class="ar-only" style="font-family:var(--font-ar)">طفل حول العالم بلا رعاية أسرية</h4>
+            <p class="en-only">UNICEF estimates 140 million children globally live without parental care. Most are in institutions, even though family-based care produces far better outcomes.</p>
+            <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">تقدّر اليونيسف أن 140 مليون طفل حول العالم يعيشون بلا رعاية والدية، معظمهم في مؤسسات رغم أن الرعاية الأسرية تحقق نتائج أفضل بكثير.</p>
+          </div>
+        </div>
+        <div class="c-stat">
+          <div class="c-num">35M</div>
+          <div class="c-body">
+            <h4 class="en-only">Children without care in Africa</h4>
+            <h4 class="ar-only" style="font-family:var(--font-ar)">طفل بلا رعاية في أفريقيا</h4>
+            <p class="en-only">Africa carries one of the heaviest burdens of child care crisis. Egypt, at its heart, shoulders responsibility for the MENA region's largest orphan population.</p>
+            <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">تحمل أفريقيا عبء الأزمة بشكل مضاعف، ومصر في قلبها تتحمل مسؤولية أكبر تجمع للأيتام في منطقة الشرق الأوسط وشمال أفريقيا.</p>
+          </div>
+        </div>
+        <div class="c-stat">
+          <div class="c-num">1.4M</div>
+          <div class="c-body">
+            <h4 class="en-only">Orphans in Egypt</h4>
+            <h4 class="ar-only" style="font-family:var(--font-ar)">طفل يتيم في مصر</h4>
+            <p class="en-only">Many leave care at 18 with no family support, no savings, and no preparation. Sanad works to change this from the root.</p>
+            <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">كثيرون يغادرون دور الرعاية عند سن 18 بلا دعم أسري ولا مدخرات ولا تأهيل. سند تعمل على تغيير هذا من جذوره.</p>
+          </div>
+        </div>
+        <a href="#programs" style="display:inline-flex;align-items:center;gap:6px;color:var(--teal-dark);font-weight:700;font-size:14px;text-decoration:none;margin-top:0.5rem;border-bottom:1px solid var(--teal-mid);padding-bottom:1px;">
+          <span class="en-only">See how Sanad responds →</span>
+          <span class="ar-only" style="font-family:var(--font-ar)">← اكتشف كيف تستجيب سند</span>
+        </a>
+      </div>
+      <div class="mission-visual-box">
+        <div class="mv-card">
+          <h3 class="en-only">Our Approach: Systemic Change</h3>
+          <h3 class="ar-only" style="font-family:var(--font-ar);direction:rtl">نهجنا: التغيير المنظومي</h3>
+          <p class="en-only">We don't just support individual children — we transform the entire alternative care ecosystem: developing care homes, empowering caregivers, facilitating Kafala, and preparing youth for life after care.</p>
+          <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">لا نكتفي بدعم الأطفال — نحوّل منظومة الرعاية البديلة بالكامل: تطوير دور الرعاية وتمكين المربيات وتيسير الكفالة وتأهيل الشباب للحياة المستقلة.</p>
+          <div class="mv-mini-stats">
+            <div class="mv-mini"><strong>19</strong><span class="en-only">Governorates</span><span class="ar-only" style="font-family:var(--font-ar)">محافظة</span></div>
+            <div class="mv-mini"><strong>1,921</strong><span class="en-only">Civil Society Orgs</span><span class="ar-only" style="font-family:var(--font-ar)">منظمة مجتمع مدني</span></div>
+            <div class="mv-mini"><strong>1,075</strong><span class="en-only">MoSS Staff</span><span class="ar-only" style="font-family:var(--font-ar)">موظف وزارة</span></div>
+          </div>
+        </div>
+        <div class="mv-float">
+          <strong>18+</strong>
+          <span class="en-only">Years of Impact</span>
+          <span class="ar-only" style="font-family:var(--font-ar)">عاماً من الأثر</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ IMPACT ══ -->
+<section class="impact-section" id="impact">
+  <div class="si">
+    <div class="stag"><span class="stag-line"></span><span class="en-only">Our Impact</span><span class="ar-only" style="font-family:var(--font-ar)">أثرنا</span></div>
+    <h2 class="sh2 en-only">Numbers that represent real lives changed</h2>
+    <h2 class="sh2 ar-only" style="font-family:var(--font-ar);direction:rtl">أرقام تمثّل حيوات حقيقية تغيّرت</h2>
+    <div class="impact-grid">
+      <div class="ic ic-w2 ic-teal">
+        <div class="ic-icon">🏠</div>
+        <span class="ic-num">338</span>
+        <div class="ic-lbl en-only">Care homes developed and quality-upgraded across Egypt</div>
+        <div class="ic-lbl ar-only" style="font-family:var(--font-ar)">دار رعاية طُوِّرت ورُفع مستواها في مصر</div>
+      </div>
+      <div class="ic">
+        <div class="ic-icon">👶</div>
+        <span class="ic-num">4,517</span>
+        <div class="ic-lbl en-only">Children & youth directly served</div>
+        <div class="ic-lbl ar-only" style="font-family:var(--font-ar)">طفل وشاب خُدموا مباشرة</div>
+      </div>
+      <div class="ic">
+        <div class="ic-icon">👩‍🏫</div>
+        <span class="ic-num">2,603</span>
+        <div class="ic-lbl en-only">Caregivers & managers trained</div>
+        <div class="ic-lbl ar-only" style="font-family:var(--font-ar)">مربية ومدير تلقّوا التدريب</div>
+      </div>
+      <div class="ic">
+        <div class="ic-icon">🏛️</div>
+        <span class="ic-num">1,075</span>
+        <div class="ic-lbl en-only">Ministry staff trained</div>
+        <div class="ic-lbl ar-only" style="font-family:var(--font-ar)">موظف وزارة تضامن مدرَّب</div>
+      </div>
+      <div class="ic">
+        <div class="ic-icon">🤝</div>
+        <span class="ic-num">1,921</span>
+        <div class="ic-lbl en-only">Civil society organizations engaged</div>
+        <div class="ic-lbl ar-only" style="font-family:var(--font-ar)">منظمة مجتمع مدني شاركت</div>
+      </div>
+      <div class="ic ic-w2 ic-navy">
+        <div class="ic-icon">🌍</div>
+        <span class="ic-num">3,490,500</span>
+        <div class="ic-lbl en-only">Total individuals reached nationwide</div>
+        <div class="ic-lbl ar-only" style="font-family:var(--font-ar)">إجمالي الأفراد المستفيدين على المستوى الوطني</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROGRAMS ══ -->
+<section id="programs" style="background:var(--off-white);">
+  <div class="si">
+    <div class="stag"><span class="stag-line"></span><span class="en-only">What We Do</span><span class="ar-only" style="font-family:var(--font-ar)">ماذا نفعل</span></div>
+    <h2 class="sh2 en-only">Three pillars. One mission.</h2>
+    <h2 class="sh2 ar-only" style="font-family:var(--font-ar);direction:rtl">ثلاثة محاور. رسالة واحدة.</h2>
+    <p class="ssub en-only">Our programs work across every layer of the care system — from preventing family breakdown to advocating for national reform.</p>
+    <p class="ssub ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">تعمل برامجنا عبر جميع طبقات منظومة الرعاية — من الوقاية من تفكك الأسرة إلى المناصرة من أجل الإصلاح الوطني.</p>
+    <div class="prog-grid" style="margin-top:3rem;">
+      <!-- Prevention -->
+      <div class="prog-card">
+        <div class="prog-icon">🛡️</div>
+        <div class="prog-num">01</div>
+        <h3 class="en-only">Prevention</h3>
+        <h3 class="ar-only" style="font-family:var(--font-ar)">الوقاية</h3>
+        <p class="en-only">Strengthening families before crisis. We work with at-risk families to prevent unnecessary separation and keep children with their biological or extended kin.</p>
+        <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">تقوية الأسر قبل الأزمة. نعمل مع الأسر المعرّضة للخطر لمنع الانفصال غير الضروري والحفاظ على الأطفال في أكناف أسرهم.</p>
+        <div class="prog-tags">
+          <span class="ptag en-only">Family Support</span><span class="ptag ar-only" style="font-family:var(--font-ar)">دعم الأسرة</span>
+          <span class="ptag en-only">Early Intervention</span><span class="ptag ar-only" style="font-family:var(--font-ar)">التدخل المبكر</span>
+          <span class="ptag en-only">Community Programs</span><span class="ptag ar-only" style="font-family:var(--font-ar)">البرامج المجتمعية</span>
+        </div>
+        <a href="#" class="prog-lnk"><span class="en-only">Learn more →</span><span class="ar-only" style="font-family:var(--font-ar)">← اعرف أكثر</span></a>
+      </div>
+      <!-- Protection -->
+      <div class="prog-card">
+        <div class="prog-icon">🏠</div>
+        <div class="prog-num">02</div>
+        <h3 class="en-only">Protection</h3>
+        <h3 class="ar-only" style="font-family:var(--font-ar)">الحماية</h3>
+        <p class="en-only">Transforming care homes into nurturing, child-centered spaces. We train caregivers, set quality standards, and monitor child well-being continuously.</p>
+        <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">تحويل دور الرعاية إلى بيئات دافئة تتمحور حول الطفل. ندرّب المربيين ونضع معايير الجودة ونراقب رفاه الأطفال باستمرار.</p>
+        <div class="prog-tags">
+          <span class="ptag en-only">Care Home Development</span><span class="ptag ar-only" style="font-family:var(--font-ar)">تطوير دور الرعاية</span>
+          <span class="ptag en-only">Caregiver Training</span><span class="ptag ar-only" style="font-family:var(--font-ar)">تدريب المربيين</span>
+          <span class="ptag en-only">Youth Empowerment</span><span class="ptag ar-only" style="font-family:var(--font-ar)">تمكين الشباب</span>
+        </div>
+        <a href="#" class="prog-lnk"><span class="en-only">Learn more →</span><span class="ar-only" style="font-family:var(--font-ar)">← اعرف أكثر</span></a>
+      </div>
+      <!-- Advocacy -->
+      <div class="prog-card">
+        <div class="prog-icon">📣</div>
+        <div class="prog-num">03</div>
+        <h3 class="en-only">Advocacy</h3>
+        <h3 class="ar-only" style="font-family:var(--font-ar)">المناصرة</h3>
+        <p class="en-only">Shaping national policy. We work with government, civil society, and international bodies to reform the Kafala system and advance children's rights in law.</p>
+        <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">صياغة السياسات الوطنية. نعمل مع الحكومة والمجتمع المدني والهيئات الدولية لإصلاح نظام الكفالة وتعزيز حقوق الأطفال في القانون.</p>
+        <div class="prog-tags">
+          <span class="ptag en-only">Policy Reform</span><span class="ptag ar-only" style="font-family:var(--font-ar)">إصلاح السياسات</span>
+          <span class="ptag en-only">Kafala System</span><span class="ptag ar-only" style="font-family:var(--font-ar)">نظام الكفالة</span>
+          <span class="ptag en-only">Public Awareness</span><span class="ptag ar-only" style="font-family:var(--font-ar)">التوعية العامة</span>
+        </div>
+        <a href="#" class="prog-lnk"><span class="en-only">Learn more →</span><span class="ar-only" style="font-family:var(--font-ar)">← اعرف أكثر</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STORIES ══ -->
+<section class="stories-section" id="stories">
+  <div class="si">
+    <div class="stag"><span class="stag-line"></span><span class="en-only">Success Stories</span><span class="ar-only" style="font-family:var(--font-ar)">قصص النجاح</span></div>
+    <h2 class="sh2 en-only">Behind every number, a name</h2>
+    <h2 class="sh2 ar-only" style="font-family:var(--font-ar);direction:rtl">خلف كل رقم، اسم إنسان</h2>
+    <p class="ssub en-only">Our work is measured in the lives of real people — children who found their voice, youth who built careers, caregivers who became champions.</p>
+    <p class="ssub ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">عملنا يُقاس بحيوات أناس حقيقيين — أطفال وجدوا صوتهم، وشباب بنوا مسيرتهم، ومربيات صرن رائدات التغيير.</p>
+    <div class="stories-grid">
+      <div class="sc">
+        <div class="sq">"</div>
+        <p class="en-only">Sanad taught me that leaving the care home at 18 wasn't an ending — it was a beginning I could shape myself. The vocational skills training gave me a career path I never imagined was possible. Today I run my own business and mentor younger youth still in care. Sanad gave me more than skills — it gave me a belief in my own future.</p>
+        <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">علّمتني سند أن مغادرة دار الرعاية عند 18 لم تكن نهاية — بل كانت بداية أستطيع تشكيلها بنفسي. أعطتني برامج التدريب المهني مساراً مهنياً لم أكن أتخيله يوماً. اليوم أدير مشروعي الخاص وأرشد شباباً أصغر لا يزالون في دور الرعاية. سند منحتني أكثر من مهارات — منحتني الإيمان بمستقبلي.</p>
+        <div class="sauthor">
+          <div class="savatar">AM</div>
+          <div>
+            <span class="sname en-only">Ahmed M., 24 — Care Leaver, Cairo</span>
+            <span class="sname ar-only" style="font-family:var(--font-ar)">أحمد م.، 24 عاماً — مغادر لدار رعاية، القاهرة</span>
+            <span class="srole en-only">Program Graduate 2023</span>
+            <span class="srole ar-only" style="font-family:var(--font-ar)">خريج البرنامج 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="stories-right">
+        <div class="sc sc-sm">
+          <div class="sq" style="font-size:2.5rem;">"</div>
+          <p class="en-only">The caregiver training changed how I relate to the children entirely. I stopped managing them and started truly seeing them — as individuals with dreams, fears, and rights.</p>
+          <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">التدريب غيّر تماماً طريقة تعاملي مع الأطفال. توقفت عن "إدارتهم" وبدأت أراهم فعلاً — أفراداً لهم أحلام ومخاوف وحقوق.</p>
+          <div class="sauthor" style="margin-top:1rem;">
+            <div class="savatar" style="background:var(--teal-deeper);font-size:12px;">FM</div>
+            <div>
+              <span class="sname en-only">Fatma M. — Care Home Manager</span>
+              <span class="sname ar-only" style="font-family:var(--font-ar)">فاطمة م. — مديرة دار رعاية</span>
+              <span class="srole en-only">Alexandria</span>
+              <span class="srole ar-only" style="font-family:var(--font-ar)">الإسكندرية</span>
+            </div>
+          </div>
+        </div>
+        <div class="outcomes-card">
+          <div class="oc-label en-only">Measured Outcomes</div>
+          <div class="oc-label ar-only" style="font-family:var(--font-ar)">نتائج مقيسة</div>
+          <div class="oc-grid">
+            <div><span class="oc-num">94%</span><div class="oc-lbl en-only">Caregivers report improved child relationships</div><div class="oc-lbl ar-only" style="font-family:var(--font-ar)">مربيات يُبلّغن بتحسّن علاقتهن بالأطفال</div></div>
+            <div><span class="oc-num">87%</span><div class="oc-lbl en-only">Youth report improved life skills & confidence</div><div class="oc-lbl ar-only" style="font-family:var(--font-ar)">شباب يُبلّغون بتحسّن مهاراتهم وثقتهم</div></div>
+            <div><span class="oc-num">78%</span><div class="oc-lbl en-only">Care leavers in work or education at 12 months</div><div class="oc-lbl ar-only" style="font-family:var(--font-ar)">مغادرون في عمل أو تعليم بعد 12 شهراً</div></div>
+            <div><span class="oc-num">3.2x</span><div class="oc-lbl en-only">Improvement in care home quality scores</div><div class="oc-lbl ar-only" style="font-family:var(--font-ar)">تحسّن في درجات جودة دور الرعاية</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DONATE ══ -->
+<section class="donate-section" id="donate">
+  <div class="si">
+    <div class="stag"><span class="stag-line"></span><span class="en-only">Support Our Work</span><span class="ar-only" style="font-family:var(--font-ar)">ادعم عملنا</span></div>
+    <h2 class="sh2 en-only">Your donation transforms lives</h2>
+    <h2 class="sh2 ar-only" style="font-family:var(--font-ar);direction:rtl">تبرعك يحوّل حيوات</h2>
+    <div class="donate-grid">
+      <div class="dform">
+        <div class="zakat-box">
+          <div class="zi">☪️</div>
+          <div class="zt">
+            <strong class="en-only">Zakat & Sadaqah Accepted — Official Fatwa Issued by Dar al-Ifta Egypt</strong>
+            <strong class="ar-only" style="font-family:var(--font-ar)">تُقبل الزكاة والصدقة — فتوى رسمية من دار الإفتاء المصرية</strong>
+            <span class="en-only">Dar al-Ifta confirms that Zakat may be spent on the care and education of children without parental care. Sadaqah Jariyah also applies.</span>
+            <span class="ar-only" style="font-family:var(--font-ar);direction:rtl;display:block">أكدت دار الإفتاء المصرية أن الزكاة تجوز في رعاية وتعليم الأطفال فاقدي الرعاية الوالدية. كما تنطبق عليها الصدقة الجارية.</span>
+          </div>
+        </div>
+        <span class="flabel en-only">I want to support</span>
+        <span class="flabel ar-only" style="font-family:var(--font-ar)">أريد أن أدعم</span>
+        <div class="dtype-wrap">
+          <div class="dtyp active" onclick="setD(this)"><span class="en-only">Children's Development</span><span class="ar-only" style="font-family:var(--font-ar)">تنمية الأطفال</span></div>
+          <div class="dtyp" onclick="setD(this)"><span class="en-only">Youth Empowerment</span><span class="ar-only" style="font-family:var(--font-ar)">تمكين الشباب</span></div>
+          <div class="dtyp" onclick="setD(this)"><span class="en-only">Caregiver Training</span><span class="ar-only" style="font-family:var(--font-ar)">تدريب المربيين</span></div>
+          <div class="dtyp" onclick="setD(this)"><span class="en-only">General Donation</span><span class="ar-only" style="font-family:var(--font-ar)">تبرع عام</span></div>
+        </div>
+        <span class="flabel en-only">Select amount (EGP)</span>
+        <span class="flabel ar-only" style="font-family:var(--font-ar)">اختر المبلغ (جنيه مصري)</span>
+        <div class="amounts-wrap">
+          <div class="abtn" onclick="setA(this,'150')">150 EGP<small class="en-only">School supplies</small><small class="ar-only" style="font-family:var(--font-ar)">مستلزمات دراسية</small></div>
+          <div class="abtn active" onclick="setA(this,'500')">500 EGP<small class="en-only">Psychosocial support</small><small class="ar-only" style="font-family:var(--font-ar)">دعم نفسي</small></div>
+          <div class="abtn" onclick="setA(this,'1000')">1,000 EGP<small class="en-only">Caregiver training</small><small class="ar-only" style="font-family:var(--font-ar)">تدريب مربية</small></div>
+          <div class="abtn" onclick="setA(this,'2500')">2,500 EGP<small class="en-only">Monthly child care</small><small class="ar-only" style="font-family:var(--font-ar)">رعاية شهرية</small></div>
+          <div class="abtn" onclick="setA(this,'5000')">5,000 EGP<small class="en-only">Full program month</small><small class="ar-only" style="font-family:var(--font-ar)">شهر برنامج كامل</small></div>
+          <div class="abtn" onclick="setA(this,'custom')">✏️<small class="en-only">Custom</small><small class="ar-only" style="font-family:var(--font-ar)">مبلغ خاص</small></div>
+        </div>
+        <div class="custom-wrap" id="cWrap" style="display:none;"><input type="number" placeholder="Enter amount in EGP (min. 150)" min="150"></div>
+        <div class="rec-toggle">
+          <div class="tog"><div class="tog-dot"></div></div>
+          <div class="rec-txt">
+            <strong class="en-only">Monthly recurring donation</strong>
+            <strong class="ar-only" style="font-family:var(--font-ar)">تبرع شهري متكرر</strong>
+            <span class="en-only">Make a sustained difference — cancel anytime</span>
+            <span class="ar-only" style="font-family:var(--font-ar)">أثر مستدام — إلغاء في أي وقت</span>
+          </div>
+        </div>
+        <div class="frow">
+          <div class="ff"><label class="en-only">Full Name</label><label class="ar-only" style="font-family:var(--font-ar)">الاسم الكامل</label><input type="text" placeholder="Your name"></div>
+          <div class="ff"><label class="en-only">Country / Currency</label><label class="ar-only" style="font-family:var(--font-ar)">الدولة / العملة</label>
+            <select>
+              <option>Egypt (EGP)</option><option>UAE (AED)</option><option>Saudi Arabia (SAR)</option><option>Kuwait (KWD)</option><option>Qatar (QAR)</option><option>Other (USD)</option>
+            </select>
+          </div>
+        </div>
+        <div class="ff"><label class="en-only">Email Address</label><label class="ar-only" style="font-family:var(--font-ar)">البريد الإلكتروني</label><input type="email" placeholder="your@email.com"></div>
+        <div class="ff"><label class="en-only">Phone (optional)</label><label class="ar-only" style="font-family:var(--font-ar)">الهاتف (اختياري)</label><input type="tel" placeholder="+20 1xx xxx xxxx"></div>
+        <button class="donate-submit"><span class="en-only">🤍 Donate Now — Support a Child Today</span><span class="ar-only" style="font-family:var(--font-ar)">🤍 تبرع الآن — ادعم طفلاً اليوم</span></button>
+        <div class="pay-row">
+          <div class="pbadge">VISA</div><div class="pbadge">Mastercard</div><div class="pbadge">Fawry</div><div class="pbadge">CIB</div>
+          <div class="sec-txt">🔒 <span class="en-only">Secured</span><span class="ar-only" style="font-family:var(--font-ar)">مؤمَّن</span></div>
+        </div>
+      </div>
+      <div class="di">
+        <h3 class="en-only">Every pound reaches a child in need</h3>
+        <h3 class="ar-only" style="font-family:var(--font-ar);direction:rtl">كل جنيه يصل لطفل يحتاجه</h3>
+        <p class="ssub en-only" style="max-width:100%;margin-bottom:2rem;">We invest every donation directly into our programs with full transparency. Here is what your contribution makes possible:</p>
+        <p class="ssub ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right;max-width:100%;margin-bottom:2rem;">نستثمر كل تبرع مباشرةً في برامجنا بشفافية كاملة. إليك ما يتيحه مساهمتك:</p>
+        <div class="imp-list">
+          <div class="ii"><div class="idot" style="background:var(--teal)"></div><p><strong>150 EGP</strong> — <span class="en-only">Full set of school supplies for one child for a semester</span><span class="ar-only" style="font-family:var(--font-ar)">مجموعة كاملة من المستلزمات الدراسية لطفل لفصل دراسي</span></p></div>
+          <div class="ii"><div class="idot" style="background:var(--gold)"></div><p><strong>500 EGP</strong> — <span class="en-only">One month of psychosocial support for a child in a care home</span><span class="ar-only" style="font-family:var(--font-ar)">شهر كامل من الدعم النفسي لطفل في دار رعاية</span></p></div>
+          <div class="ii"><div class="idot" style="background:var(--teal-dark)"></div><p><strong>1,000 EGP</strong> — <span class="en-only">Full professional training certification for one caregiver</span><span class="ar-only" style="font-family:var(--font-ar)">دورة تدريب مهني كاملة لمربية واحدة</span></p></div>
+          <div class="ii"><div class="idot" style="background:var(--coral)"></div><p><strong>2,500 EGP</strong> — <span class="en-only">One child's complete monthly care, education & development</span><span class="ar-only" style="font-family:var(--font-ar)">رعاية وتعليم وتنمية طفل واحد لشهر كامل</span></p></div>
+          <div class="ii"><div class="idot" style="background:var(--navy)"></div><p><strong>5,000 EGP</strong> — <span class="en-only">An entire month of a community prevention program</span><span class="ar-only" style="font-family:var(--font-ar)">شهر كامل من برنامج وقاية مجتمعي</span></p></div>
+        </div>
+        <div class="bank-card">
+          <h4 class="en-only">International & Bank Transfer</h4>
+          <h4 class="ar-only" style="font-family:var(--font-ar)">التحويل البنكي والدولي</h4>
+          <div class="brow"><span class="en-only">Bank</span><span class="ar-only" style="font-family:var(--font-ar)">البنك</span><strong>CIB Egypt</strong></div>
+          <div class="brow"><span class="en-only">Account Name</span><span class="ar-only" style="font-family:var(--font-ar)">اسم الحساب</span><strong>Sanad — Alternative Parental Care</strong></div>
+          <div class="brow"><span class="en-only">Account No.</span><span class="ar-only" style="font-family:var(--font-ar)">رقم الحساب</span><strong>100035764423</strong></div>
+          <div class="brow"><span>IBAN</span><strong>EG13 0010 0000 0000 1003 5764 423</strong></div>
+          <div class="brow"><span class="en-only">Gulf donors</span><span class="ar-only" style="font-family:var(--font-ar)">متبرعو الخليج</span><strong class="en-only">Contact us for SWIFT</strong><strong class="ar-only" style="font-family:var(--font-ar)">تواصل معنا للحصول على SWIFT</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PARTNERS ══ -->
+<section class="partners-section">
+  <div class="si">
+    <div class="stag"><span class="stag-line"></span><span class="en-only">Strategic Partners</span><span class="ar-only" style="font-family:var(--font-ar)">الشركاء الاستراتيجيون</span></div>
+    <h2 class="sh2 en-only">Trusted by the world's leading organizations</h2>
+    <h2 class="sh2 ar-only" style="font-family:var(--font-ar);direction:rtl">ثقة المنظمات الرائدة عالمياً</h2>
+    <div class="pg">
+      <div class="pc"><div class="pn">UNICEF</div></div>
+      <div class="pc"><div class="pn">Save the Children</div></div>
+      <div class="pc"><div class="pn">SOS Children's Villages</div></div>
+      <div class="pc"><div class="pn" class="en-only">Ministry of<br>Social Solidarity</div></div>
+      <div class="pc"><div class="pn">PwC Egypt</div></div>
+      <div class="pc"><div class="pn">Pearson International</div></div>
+      <div class="pc"><div class="pn">Dar al-Ifta Egypt</div></div>
+      <div class="pc"><div class="pn">USAID Egypt</div></div>
+      <div class="pc"><div class="pn">EU Delegation</div></div>
+      <div class="pc"><div class="pn">GIZ Egypt</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ AWARDS ══ -->
+<section class="awards-section">
+  <div class="si">
+    <div class="stag"><span class="stag-line"></span><span class="en-only">Accreditation & Recognition</span><span class="ar-only" style="font-family:var(--font-ar)">الاعتماد والتقدير</span></div>
+    <h2 class="sh2 en-only">Internationally recognized standards</h2>
+    <h2 class="sh2 ar-only" style="font-family:var(--font-ar);direction:rtl">معايير معترف بها دولياً</h2>
+    <div class="awards-grid">
+      <div class="aw"><div class="aw-icon">🎓</div><div><h4 class="en-only">Pearson Vocational Qualification (2012)</h4><h4 class="ar-only" style="font-family:var(--font-ar)">مؤهل بيرسون المهني (2012)</h4><p class="en-only">Internationally accredited to provide professional certification for caregivers — one of the first NGOs in Egypt to earn this status.</p><p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">معتمدون دولياً لتقديم الشهادة المهنية للمربيين — من أوائل المنظمات غير الحكومية في مصر التي حصلت على هذه المكانة.</p></div></div>
+      <div class="aw"><div class="aw-icon">✅</div><div><h4 class="en-only">Pearson Quality Assurance (2016)</h4><h4 class="ar-only" style="font-family:var(--font-ar)">ضمان جودة بيرسون (2016)</h4><p class="en-only">Full quality assurance certification supporting all educational training processes and professional development programs.</p><p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">شهادة ضمان جودة كاملة تدعم جميع عمليات التدريب التعليمي وبرامج التطوير المهني.</p></div></div>
+      <div class="aw"><div class="aw-icon">🏛️</div><div><h4 class="en-only">MoSS Care Home Quality Standards</h4><h4 class="ar-only" style="font-family:var(--font-ar)">معايير جودة وزارة التضامن</h4><p class="en-only">National accreditation by the Ministry of Social Solidarity in collaboration with PwC (2014).</p><p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">اعتماد وطني من وزارة التضامن الاجتماعي بالتعاون مع مؤسسة PwC (2014).</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NEWS ══ -->
+<section class="news-section" id="news">
+  <div class="si">
+    <div class="news-hdr">
+      <div>
+        <div class="stag"><span class="stag-line"></span><span class="en-only">Latest News</span><span class="ar-only" style="font-family:var(--font-ar)">آخر الأخبار</span></div>
+        <h2 class="sh2" style="margin-bottom:0;" class="en-only">From the field</h2>
+        <h2 class="sh2 ar-only" style="font-family:var(--font-ar);direction:rtl;margin-bottom:0">من الميدان</h2>
+      </div>
+      <a href="#" class="news-all en-only">View all news →</a>
+      <a href="#" class="news-all ar-only" style="font-family:var(--font-ar)">← كل الأخبار</a>
+    </div>
+    <div class="ng">
+      <div class="ncard">
+        <div class="nimg" style="background:linear-gradient(135deg,var(--teal-deeper),var(--teal));"><div class="nimg-badge en-only">Program Update</div><div class="nimg-badge ar-only" style="font-family:var(--font-ar)">تحديث البرنامج</div></div>
+        <div class="nbody">
+          <div class="ndate">March 2026</div>
+          <h4 class="en-only">Career Guidance Toward Supporting Care Leavers — New Module Launched</h4>
+          <h4 class="ar-only" style="font-family:var(--font-ar);direction:rtl">التوجيه المهني لدعم مغادري دور الرعاية — إطلاق وحدة جديدة</h4>
+          <a href="#" class="nread en-only">Read more →</a>
+          <a href="#" class="nread ar-only" style="font-family:var(--font-ar)">← اقرأ أكثر</a>
+        </div>
+      </div>
+      <div class="ncard">
+        <div class="nimg" style="background:linear-gradient(135deg,var(--navy),var(--navy-mid));"><div class="nimg-badge en-only">Youth Program</div><div class="nimg-badge ar-only" style="font-family:var(--font-ar)">برنامج الشباب</div></div>
+        <div class="nbody">
+          <div class="ndate">March 2026</div>
+          <h4 class="en-only">Empowering Youth with Life & Professional Skills for a Stable Future</h4>
+          <h4 class="ar-only" style="font-family:var(--font-ar);direction:rtl">تمكين الشباب بمهارات الحياة والمهارات المهنية لمستقبل مستقر</h4>
+          <a href="#" class="nread en-only">Read more →</a>
+          <a href="#" class="nread ar-only" style="font-family:var(--font-ar)">← اقرأ أكثر</a>
+        </div>
+      </div>
+      <div class="ncard">
+        <div class="nimg" style="background:linear-gradient(135deg,#1A5F3A,#2D8A57);"><div class="nimg-badge en-only">Advocacy</div><div class="nimg-badge ar-only" style="font-family:var(--font-ar)">المناصرة</div></div>
+        <div class="nbody">
+          <div class="ndate">February 2026</div>
+          <h4 class="en-only">Sanad Participates in National Kafala Reform Dialogue with the Ministry</h4>
+          <h4 class="ar-only" style="font-family:var(--font-ar);direction:rtl">سند تشارك في الحوار الوطني لإصلاح نظام الكفالة مع الوزارة</h4>
+          <a href="#" class="nread en-only">Read more →</a>
+          <a href="#" class="nread ar-only" style="font-family:var(--font-ar)">← اقرأ أكثر</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ GET INVOLVED ══ -->
+<section class="involve-section">
+  <div class="inv-header">
+    <div class="stag" style="justify-content:center;color:var(--teal);"><span class="stag-line" style="background:var(--teal);"></span><span class="en-only">Get Involved</span><span class="ar-only" style="font-family:var(--font-ar)">شارك معنا</span></div>
+    <h2 class="sh2" style="color:white;text-align:center;" class="en-only">There are many ways to be Sanad</h2>
+    <h2 class="sh2 ar-only" style="font-family:var(--font-ar);direction:rtl;color:white;text-align:center">هناك طرق كثيرة لتكون سنداً</h2>
+    <p class="ssub en-only" style="color:rgba(255,255,255,0.6);margin:0.5rem auto 0;text-align:center;">Whether you give, volunteer, or partner — your role in this mission matters.</p>
+    <p class="ssub ar-only" style="font-family:var(--font-ar);direction:rtl;color:rgba(255,255,255,0.6);margin:0.5rem auto 0;text-align:center;">سواء تبرعت أو تطوعت أو شاركت — دورك في هذه الرسالة مهم.</p>
+  </div>
+  <div class="inv-grid">
+    <div class="icard">
+      <div class="icard-icon">❤️</div>
+      <h3 class="en-only">Donate</h3>
+      <h3 class="ar-only" style="font-family:var(--font-ar)">تبرّع</h3>
+      <p class="en-only">Your Zakat, Sadaqah, or general donation funds programs that directly reach children and caregivers. Every pound creates measurable change.</p>
+      <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">زكاتك أو صدقتك أو تبرعك العام يموّل برامج تصل مباشرة إلى الأطفال والمربيين. كل جنيه يحدث تغييراً ملموساً.</p>
+      <button class="ibtn" onclick="document.getElementById('donate').scrollIntoView({behavior:'smooth'})"><span class="en-only">Donate now →</span><span class="ar-only" style="font-family:var(--font-ar)">← تبرع الآن</span></button>
+    </div>
+    <div class="icard">
+      <div class="icard-icon">🙋</div>
+      <h3 class="en-only">Volunteer</h3>
+      <h3 class="ar-only" style="font-family:var(--font-ar)">تطوّع</h3>
+      <p class="en-only">Share your expertise — whether you're a lawyer, designer, trainer, or student with passion. We match your skills to our live needs.</p>
+      <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">شارك بخبرتك — سواء كنت محامياً أو مصمماً أو مدرباً أو طالباً متحمساً. نطابق مهاراتك مع احتياجاتنا الفعلية.</p>
+      <div class="vol-mini-form vif" id="vf">
+        <h4 class="en-only">Quick Interest Form</h4>
+        <h4 class="ar-only" style="font-family:var(--font-ar)">نموذج الاهتمام السريع</h4>
+        <input type="text" placeholder="Your name / اسمك">
+        <input type="email" placeholder="Email / البريد الإلكتروني">
+        <input type="text" placeholder="Your skill / مهارتك">
+        <button class="vsub"><span class="en-only">Submit →</span><span class="ar-only" style="font-family:var(--font-ar)">← أرسل</span></button>
+      </div>
+      <button class="ibtn" onclick="toggleVF()"><span class="en-only">Apply to volunteer →</span><span class="ar-only" style="font-family:var(--font-ar)">← سجّل للتطوع</span></button>
+    </div>
+    <div class="icard">
+      <div class="icard-icon">🤝</div>
+      <h3 class="en-only">Partner with Us</h3>
+      <h3 class="ar-only" style="font-family:var(--font-ar)">شارك مؤسسياً</h3>
+      <p class="en-only">Build measurable CSR impact through certified child protection training. We work with corporations, foundations, and government to scale our reach.</p>
+      <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">ابنِ أثراً اجتماعياً مقاساً من خلال التدريب المعتمد لحماية الطفل. نعمل مع الشركات والمؤسسات والجهات الحكومية.</p>
+      <button class="ibtn"><span class="en-only">Explore partnership →</span><span class="ar-only" style="font-family:var(--font-ar)">← استكشف الشراكة</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NEWSLETTER ══ -->
+<div class="nl-section">
+  <div class="nl-inner">
+    <h3 class="en-only">Stay informed. Stay connected to the mission.</h3>
+    <h3 class="ar-only" style="font-family:var(--font-ar);direction:rtl">ابقَ على اطلاع. ابقَ متصلاً بالرسالة.</h3>
+    <div class="nl-form">
+      <input type="email" placeholder="Your email address / بريدك الإلكتروني">
+      <button class="en-only">Subscribe →</button>
+      <button class="ar-only" style="font-family:var(--font-ar)">← اشترك</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="fg">
+    <div class="fbrand">
+      <div class="f-logo">
+        <div class="logo-mark" style="width:38px;height:38px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3C7 3 4 7 4 12C4 15.5 6 18.5 9 20V17C7.5 15.8 6.5 14 6.5 12C6.5 8.4 9 5.5 12 5.5C15 5.5 17.5 8.4 17.5 12C17.5 14 16.5 15.8 15 17V20C18 18.5 20 15.5 20 12C20 7 17 3 12 3Z" fill="white"/><circle cx="12" cy="12" r="2.5" fill="white"/></svg>
+        </div>
+        <div class="logo-text-wrap">
+          <span class="logo-name en-only" style="color:white;">Sanad</span>
+          <span class="logo-name ar-only" style="font-family:var(--font-ar);color:white;">سند</span>
+          <span class="logo-sub en-only" style="color:rgba(255,255,255,0.35);">For Alternative Parental Care</span>
+          <span class="logo-sub ar-only" style="font-family:var(--font-ar);color:rgba(255,255,255,0.35);">للرعاية الوالدية البديلة</span>
+        </div>
+      </div>
+      <p class="en-only">Transforming alternative parental care in Egypt and the MENA region since 2008. Every child deserves a family — or the very best alternative.</p>
+      <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">نحوّل منظومة الرعاية الوالدية البديلة في مصر ومنطقة الشرق الأوسط منذ 2008. كل طفل يستحق أسرة — أو أفضل بديل ممكن.</p>
+      <div class="freg">✓ <span class="en-only">Reg. No. 7478 — Ministry of Social Solidarity, 2008</span><span class="ar-only" style="font-family:var(--font-ar)">رقم تسجيل 7478 — وزارة التضامن الاجتماعي، 2008</span></div>
+    </div>
+    <div class="fc">
+      <h4 class="en-only">Programs</h4><h4 class="ar-only" style="font-family:var(--font-ar)">البرامج</h4>
+      <a href="#" class="en-only">Prevention</a><a href="#" class="ar-only" style="font-family:var(--font-ar)">الوقاية</a>
+      <a href="#" class="en-only">Protection</a><a href="#" class="ar-only" style="font-family:var(--font-ar)">الحماية</a>
+      <a href="#" class="en-only">Advocacy</a><a href="#" class="ar-only" style="font-family:var(--font-ar)">المناصرة</a>
+      <a href="#" class="en-only">Training Services</a><a href="#" class="ar-only" style="font-family:var(--font-ar)">خدمات التدريب</a>
+      <a href="#" class="en-only">Kafala System</a><a href="#" class="ar-only" style="font-family:var(--font-ar)">نظام الكفالة</a>
+    </div>
+    <div class="fc">
+      <h4 class="en-only">Organisation</h4><h4 class="ar-only" style="font-family:var(--font-ar)">المؤسسة</h4>
+      <a href="#" class="en-only">About Sanad</a><a href="#" class="ar-only" style="font-family:var(--font-ar)">عن سند</a>
+      <a href="#" class="en-only">Board Members</a><a href="#" class="ar-only" style="font-family:var(--font-ar)">مجلس الإدارة</a>
+      <a href="#" class="en-only">Our Team</a><a href="#" class="ar-only" style="font-family:var(--font-ar)">فريقنا</a>
+      <a href="#" class="en-only">Partners</a><a href="#" class="ar-only" style="font-family:var(--font-ar)">الشركاء</a>
+      <a href="#" class="en-only">Annual Reports</a><a href="#" class="ar-only" style="font-family:var(--font-ar)">التقارير السنوية</a>
+    </div>
+    <div class="fc">
+      <h4 class="en-only">Contact</h4><h4 class="ar-only" style="font-family:var(--font-ar)">تواصل معنا</h4>
+      <a href="mailto:info@sanadorphans.org">info@sanadorphans.org</a>
+      <a href="tel:+201027744425">+20 102 774 4425</a>
+      <a href="#" class="en-only">3 Al Bairouny St., Baron Palace, Heliopolis, Cairo</a>
+      <a href="#" class="ar-only" style="font-family:var(--font-ar)">3 شارع البيروني، قصر البارون، مصر الجديدة، القاهرة</a>
+      <div class="socials" style="margin-top:1.25rem;">
+        <a class="soc" href="#">f</a>
+        <a class="soc" href="#">in</a>
+        <a class="soc" href="#">▶</a>
+        <a class="soc" href="#">✕</a>
+      </div>
+    </div>
+  </div>
+  <div class="fb">
+    <p class="en-only">© 2026 Sanad for Alternative Parental Care. All rights reserved.</p>
+    <p class="ar-only" style="font-family:var(--font-ar)">© 2026 مؤسسة سند للرعاية الوالدية البديلة. جميع الحقوق محفوظة.</p>
+    <p class="en-only">Privacy Policy · Terms of Use · Donation Return Policy</p>
+    <p class="ar-only" style="font-family:var(--font-ar)">سياسة الخصوصية · شروط الاستخدام · سياسة استرداد التبرعات</p>
+  </div>
+</footer>
+
+<script>
+function setLang(lang){
+  var body=document.body,html=document.getElementById('htmlRoot');
+  if(lang==='ar'){
+    body.classList.add('ar');
+    html.setAttribute('lang','ar');
+    html.setAttribute('dir','rtl');
+    document.getElementById('btnAr').classList.add('active');
+    document.getElementById('btnEn').classList.remove('active');
+  } else {
+    body.classList.remove('ar');
+    html.setAttribute('lang','en');
+    html.setAttribute('dir','ltr');
+    document.getElementById('btnEn').classList.add('active');
+    document.getElementById('btnAr').classList.remove('active');
+  }
+}
+function setD(el){document.querySelectorAll('.dtyp').forEach(b=>b.classList.remove('active'));el.classList.add('active');}
+function setA(el,v){document.querySelectorAll('.abtn').forEach(b=>b.classList.remove('active'));el.classList.add('active');document.getElementById('cWrap').style.display=v==='custom'?'block':'none';}
+function toggleVF(){var f=document.getElementById('vf');f.style.display=f.style.display==='block'?'none':'block';}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{var t=document.querySelector(a.getAttribute('href'));if(t&&a.getAttribute('href').length>1){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});});
+</script>
+</body>
+</html>

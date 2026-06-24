@@ -56,3 +56,24 @@ new Glide('.partners', {
 
 }).mount()
 
+
+function setLang(lang){
+  var body=document.body,html=document.getElementById('htmlRoot');
+  if(lang==='ar'){
+    body.classList.add('ar');
+    html.setAttribute('lang','ar');
+    html.setAttribute('dir','rtl');
+    document.getElementById('btnAr').classList.add('active');
+    document.getElementById('btnEn').classList.remove('active');
+  } else {
+    body.classList.remove('ar');
+    html.setAttribute('lang','en');
+    html.setAttribute('dir','ltr');
+    document.getElementById('btnEn').classList.add('active');
+    document.getElementById('btnAr').classList.remove('active');
+  }
+}
+function setD(el){document.querySelectorAll('.dtyp').forEach(b=>b.classList.remove('active'));el.classList.add('active');}
+function setA(el,v){document.querySelectorAll('.abtn').forEach(b=>b.classList.remove('active'));el.classList.add('active');document.getElementById('cWrap').style.display=v==='custom'?'block':'none';}
+function toggleVF(){var f=document.getElementById('vf');f.style.display=f.style.display==='block'?'none':'block';}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{var t=document.querySelector(a.getAttribute('href'));if(t&&a.getAttribute('href').length>1){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});});

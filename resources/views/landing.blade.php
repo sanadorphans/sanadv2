@@ -39,25 +39,147 @@
 @section('page_name') {{ __('lang.home') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.4')}}">
+    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.5')}}">
     <link rel="stylesheet" href="{{asset('css/ImportantLink.css?v=1.5')}}"/>
 @endsection
 
 @section('content')
 
-    {{-- <div id="popup">
-       <a href="https://conference.sanadorphans.org/ar/home-ar/"><img src="https://conference.sanadorphans.org/wp-content/uploads/2024/12/sanad-confrence-Poster-1-0%D9%A2-1024x550.jpg" alt="conference" width="300"></a>
-    </div> --}}
-    <div class="buttons-botton">
-        <a href="{{ route('web.donations.index') }}">{{ __('lang.donate_now') }}</a>
+<section class="hero" id="home">
+  <div class="hero-teal-accent"></div>
+  <div class="hero-grid-pattern"></div>
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>{{ __('lang.hero_badge') }}</span>
+      </div>
+      <h1 class="hero-h1">
+        @if(app()->getLocale() == 'ar')
+          <span style="font-family:var(--font-ar); direction:rtl;">{!! __('lang.hero_title') !!}</span>
+        @else
+          <span>{!! __('lang.hero_title') !!}</span>
+        @endif
+      </h1>
+      <p class="hero-sub" style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar); direction:rtl; text-align:right;' : '' }}">
+        {{ __('lang.hero_subtitle') }}
+      </p>
+      <div class="hero-btns">
+        <a href="#donate" class="btn-teal">{{ __('lang.our_services') }} <span class="en-only">→</span><span class="ar-only">←</span></a>
+        <a href="#programs" class="btn-outline-w">{{ __('lang.consultation2') }} <span class="en-only">→</span><span class="ar-only">←</span></a>
+      </div>
     </div>
-    <div class="fullscreen-video-container">
-        <iframe src="https://www.youtube.com/embed/lNpo7sIex6s?si=oxXJ9-_wct4JbPTa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <div class="fullscreen-video-content">
-            <h1>{{ __('lang.vision') }}</h1>
-            <button> <a style="color:#fff" href="{{ route('web.pages.who_we_are') }}">{{ __('lang.more') }}</a></button>
+
+    <div class="hero-right">
+      <div class="donate-grid">
+        <div class="dform">
+          <span class="flabel" style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">
+            {{ __('lang.i_want_to_support') }}
+          </span>
+
+          <div class="dtype-wrap" style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">
+            <div class="dtyp active" onclick="setD(this)">{{ __('lang.children_development') }}</div>
+            <div class="dtyp" onclick="setD(this)">{{ __('lang.youth_empowerment') }}</div>
+            <div class="dtyp" onclick="setD(this)">{{ __('lang.caregiver_training_btn') }}</div>
+            <div class="dtyp" onclick="setD(this)">{{ __('lang.general_donation') }}</div>
+          </div>
+
+          <span class="flabel" style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">
+            {{ __('lang.select_amount') }}
+          </span>
+
+          <div class="amounts-wrap">
+            <div class="abtn" onclick="setA(this,'150')">
+              150 EGP
+              <small style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">{{ __('lang.amt_school_supplies') }}</small>
+            </div>
+
+            <div class="abtn active" onclick="setA(this,'500')">
+              500 EGP
+              <small style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">{{ __('lang.amt_psychosocial') }}</small>
+            </div>
+
+            <div class="abtn" onclick="setA(this,'1000')">
+              1,000 EGP
+              <small style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">{{ __('lang.amt_caregiver') }}</small>
+            </div>
+
+            <div class="abtn" onclick="setA(this,'2500')">
+              2,500 EGP
+              <small style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">{{ __('lang.amt_monthly_care') }}</small>
+            </div>
+
+            <div class="abtn" onclick="setA(this,'5000')">
+              5,000 EGP
+              <small style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">{{ __('lang.amt_full_program') }}</small>
+            </div>
+
+            <div class="abtn" onclick="setA(this,'custom')">
+              ✏️
+              <small style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">{{ __('lang.amt_custom') }}</small>
+            </div>
+          </div>
+
+          <div class="custom-wrap" id="cWrap" style="display:none;">
+            <input type="number" placeholder="{{ __('lang.custom_placeholder') }}" min="150">
+          </div>
+
+          <div class="frow">
+            <div class="ff">
+              <label style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">{{ __('lang.full_name') }}</label>
+              <input name="name" type="text" id="name"  placeholder="{{ __('lang.name_placeholder') }}" required>
+
+            </div>
+
+            <div class="ff">
+              <label style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">{{ __('lang.country') }}</label>
+              <input name="country" type="country" id="country" placeholder="{{ __('lang.country_placeholder') }}" required>
+
+            </div>
+
+            <div class="ff">
+              <label style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">{{ __('lang.email_address') }}</label>
+              <input type="email" placeholder="{{ __('lang.email_placeholder') }}" name="email" id="email" required>
+            </div>
+
+            <button class="donate-submit" style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">
+              {{ __('lang.donate_now') }}
+            </button>
+
+            <div class="pay-row">
+                <div class="sec-txt" style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">
+                🔒 <span>{{ __('lang.secured') }}</span>
+              </div>
+              <div class="pbadge">VISA</div>
+              <div class="pbadge">Mastercard</div>
+              <div class="pbadge">CIB</div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;display:block;">
+      <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#29B8C1" opacity="0.15"/>
+      <path d="M0,40 C480,10 960,60 1440,40 L1440,60 L0,60 Z" fill="#29B8C1" opacity="0.08"/>
+    </svg>
+  </div>
+</section>
+<section class="trusted-by">
+  <h3>Trusted by</h3>
+  <div class="logos">
+    <div class="logo-track">
+        @forelse ($Partners as $Partner)
+            <img src="{{ asset('storage/' . $Partner->image) }}" alt="image" width="100" height="100">
+        @empty
+        @endforelse
+    </div>
+  </div>
+</section>
 
     <section id="about">
          <h2>{{ __('lang.aboutTitle') }}</h2>
