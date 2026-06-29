@@ -5,6 +5,7 @@
     $details = 'description' . '_' . app()->getLocale();
     $image = 'image' . '_' . app()->getLocale();
     $mobile_image = 'mobile_image' . '_' . app()->getLocale();
+    $details2 = 'details' . '_' . app()->getLocale();
 
     if (!function_exists('to_arabic_number')) {
         function to_arabic_number($Month) {
@@ -39,13 +40,14 @@
 @section('page_name') {{ __('lang.home') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.5')}}">
+    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.7')}}">
     <link rel="stylesheet" href="{{asset('css/ImportantLink.css?v=1.5')}}"/>
+    <link rel="stylesheet" href="{{asset('css/Impact.css?v=2.2')}}">
 @endsection
 
 @section('content')
 
-<section class="hero" id="home">
+<div class="hero" id="home">
   <div class="hero-teal-accent"></div>
   <div class="hero-grid-pattern"></div>
   <div class="hero-orb1"></div>
@@ -154,7 +156,6 @@
               </div>
               <div class="pbadge">VISA</div>
               <div class="pbadge">Mastercard</div>
-              <div class="pbadge">CIB</div>
             </div>
           </div>
         </div>
@@ -168,7 +169,8 @@
       <path d="M0,40 C480,10 960,60 1440,40 L1440,60 L0,60 Z" fill="#29B8C1" opacity="0.08"/>
     </svg>
   </div>
-</section>
+</div>
+
 <section class="trusted-by">
   <h3>Trusted by</h3>
   <div class="logos">
@@ -180,46 +182,82 @@
     </div>
   </div>
 </section>
-
-    <section id="about">
-         <h2>{{ __('lang.aboutTitle') }}</h2>
-         <div class="about">
-            <div class="aboutNums">
-                <div>
-                    <h3>{{ __('lang.aboutnum1') }}</h3>
-                    <p>{{ __('lang.aboutnumdes1') }}</p>
-                </div>
-                <div>
-                    <h3>{{ __('lang.aboutnum2') }}</h3>
-                    <p>{{ __('lang.aboutnumdes2') }}</p>
-                </div>
-                <div>
-                    <h3>{{ __('lang.aboutnum3') }}</h3>
-                    <p>{{ __('lang.aboutnumdes3') }}</p>
-                </div>
-            </div>
-            <div class="aboutdes">
-                <p>{{ __('lang.about_text1') }}</p>
-                {{-- <p>{{ __('lang.about_text2') }}</p>
-                <p>{{ __('lang.about_text3') }}</p> --}}
-            </div>
-         </div>
-    </section>
-
-    <section id="media">
-        <div class="title">
-            <h2>{{ __('lang.latest_news') }}</h2>
+<!-- ══ CHALLENGE / MISSION ══ -->
+<section class="challenge-section" id="about">
+  <div class="si">
+    <div class="stag"><span class="stag-line"></span><span class="en-only">The Challenge We Face</span><span class="ar-only" style="font-family:var(--font-ar)">التحدي الذي نواجهه</span></div>
+    <h2 class="sh2 en-only">1.4 million orphans in Egypt alone —<br>the system needs transformation</h2>
+    <h2 class="sh2 ar-only" style="font-family:var(--font-ar);direction:rtl">1.4 مليون طفل بلا رعاية والدية في مصر —<br>المنظومة تحتاج تحولاً جذرياً</h2>
+    <div class="challenge-grid">
+      <div>
+        <div class="c-stat">
+          <div class="c-num">{{ __('lang.aboutnum1') }}</div>
+          <div class="c-body">
+            <h4 class="en-only">{{ __('lang.aboutnumdes1') }}</h4>
+            <p class="en-only">UNICEF estimates 140 million children globally live without parental care. Most are in institutions, even though family-based care produces far better outcomes.</p>
+            <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">تقدّر اليونيسف أن 140 مليون طفل حول العالم يعيشون بلا رعاية والدية، معظمهم في مؤسسات رغم أن الرعاية الأسرية تحقق نتائج أفضل بكثير.</p>
+          </div>
         </div>
-        <div id="news">
-            {{-- <div class="glide news">
+        <div class="c-stat">
+          <div class="c-num">{{ __('lang.aboutnum2') }}</div>
+          <div class="c-body">
+            <h4 class="en-only">{{ __('lang.aboutnumdes2') }}</h4>
+            <p class="en-only">Africa carries one of the heaviest burdens of child care crisis. Egypt, at its heart, shoulders responsibility for the MENA region's largest orphan population.</p>
+            <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">تحمل أفريقيا عبء الأزمة بشكل مضاعف، ومصر في قلبها تتحمل مسؤولية أكبر تجمع للأيتام في منطقة الشرق الأوسط وشمال أفريقيا.</p>
+          </div>
+        </div>
+        <div class="c-stat">
+          <div class="c-num">{{ __('lang.aboutnum3') }}</div>
+          <div class="c-body">
+            <h4 class="en-only">{{ __('lang.aboutnumdes3') }}</h4>
+            <p class="en-only">Many leave care at 18 with no family support, no savings, and no preparation. Sanad works to change this from the root.</p>
+            <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">كثيرون يغادرون دور الرعاية عند سن 18 بلا دعم أسري ولا مدخرات ولا تأهيل. سند تعمل على تغيير هذا من جذوره.</p>
+          </div>
+        </div>
+        <!-- <a href="#programs" style="display:inline-flex;align-items:center;gap:6px;color:var(--teal-dark);font-weight:700;font-size:14px;text-decoration:none;margin-top:0.5rem;border-bottom:1px solid var(--teal-mid);padding-bottom:1px;">
+          <span class="en-only">See how Sanad responds →</span>
+          <span class="ar-only" style="font-family:var(--font-ar)">← اكتشف كيف تستجيب سند</span>
+        </a> -->
+      </div>
+      <div class="mission-visual-box">
+        <div class="mv-card">
+          <h3 class="en-only">Our Approach: Systemic Change</h3>
+          <h3 class="ar-only" style="font-family:var(--font-ar);direction:rtl">نهجنا: التغيير المنظومي</h3>
+          <p class="en-only">We don't just support individual children — we transform the entire alternative care ecosystem: developing care homes, empowering caregivers, facilitating Kafala, and preparing youth for life after care.</p>
+          <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">لا نكتفي بدعم الأطفال — نحوّل منظومة الرعاية البديلة بالكامل: تطوير دور الرعاية وتمكين المربيات وتيسير الكفالة وتأهيل الشباب للحياة المستقلة.</p>
+          <div class="mv-mini-stats">
+              @forelse ($impact_numbers as $number)
+                  <div class="mv-mini"><strong>{{ $number->number }}</strong><span class="en-only">{{ $number->$title }}</span></div>
+              @empty
+              @endforelse
+          </div>
+        </div>
+        <div class="mv-float">
+          <strong>18+</strong>
+          <span class="en-only">Years of Impact</span>
+          <span class="ar-only" style="font-family:var(--font-ar)">عاماً من الأثر</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ══ stories ══ -->
+<section class="challenge-section" id="about">
+  <div class="si">
+    <div class="stag"><span class="stag-line"></span><span class="en-only">{{ __('lang.stories') }}</span></div>
+    <h2 class="sh2 en-only">{!! isset($StoriesCategory->$details2) ? $StoriesCategory->$details2 : '' !!}</h2>
+    <section id="Impacts">
+        <div class="slider">
+            <div class="glide AllImpacts">
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
-                        @forelse ($news as $new)
-                            <div class="new new{{$new->id}}">
-                                <li class="glide__slide"><div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$new->image)}})"></div></li>
-                                <li class="glide__slide"><a title="news" title="arrow" href="/pages/news/{{$new->id}}"><p>{{$new->$title}}</p></a></li>
-                                <li class="glide__slide"><p>{{ app()->getLocale() == 'ar' ? to_arabic_number(date('F Y', strtotime($new->created_at))) : $new->created_at->formatLocalized('%B %Y') }}</p></li>
-                            </div>
+                        @forelse ($StoriesCategory->Story as $story)
+                            <li class="glide__slide">
+                                <a href="{{ route('web.stories.show',$story->id) }}">
+                                    <img alt="{{$story->$title}}" src="{{ asset('storage/' . $story->$image) }}">
+                                    <h1>{{$story->$title}}</h1>
+                                </a>
+                            </li>
                         @empty
                         @endforelse
                     </ul>
@@ -229,159 +267,130 @@
                     <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
                 </div>
             </div>
-        </div> --}}
-
-            <div class="news">
-            @forelse ($news as $new)
-                <div class="new new{{$new->id}}">
-                    <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$new->image)}})"></div>
-                    <a title="news" title="arrow" href="/pages/news/{{$new->id}}"><p>{{$new->$title}}</p></a>
-                    <p>{{ app()->getLocale() == 'ar' ? to_arabic_number(date('F Y', strtotime($new->created_at))) : $new->created_at->formatLocalized('%B %Y') }}</p>
-                </div>
-            @empty
-            @endforelse
-                <a title="more" class="more" href="/pages/news">{{ __('lang.more') }}</a>
-            </div>
-
-    </section>
-
-    <section id="qoutation">
-        <div class="title general">
-            <h2 class="GeneralTitle">{{ __('lang.we_Aspire') }}</h2>
-        </div>
-        <div class="qoutation">
-            <p class="qoutation_text">{{ __('lang.Home_qou') }}</p>
         </div>
     </section>
 
+  </div>
+</section>
 
-    {{-- <section id="services">
-        <div class="title general">
-            <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-            <h2 class="GeneralTitle">{{ __('lang.our_services') }}</h2>
-            <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
+<!-- ══ PROGRAMS ══ -->
+<section id="programs" style="background:var(--off-white);">
+  <div class="si">
+    <div class="stag"><span class="stag-line"></span><span class="en-only">What We Do</span><span class="ar-only" style="font-family:var(--font-ar)">ماذا نفعل</span></div>
+    <h2 class="sh2 en-only">Three pillars. One mission.</h2>
+    <h2 class="sh2 ar-only" style="font-family:var(--font-ar);direction:rtl">ثلاثة محاور. رسالة واحدة.</h2>
+    <p class="ssub en-only">Our programs work across every layer of the care system — from preventing family breakdown to advocating for national reform.</p>
+    <p class="ssub ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">تعمل برامجنا عبر جميع طبقات منظومة الرعاية — من الوقاية من تفكك الأسرة إلى المناصرة من أجل الإصلاح الوطني.</p>
+    <div class="prog-grid" style="margin-top:3rem;">
+    @forelse ($programs as $program)
+      <div class="prog-card">
+        <div class="prog-icon">
+          @if(isset($program->icon) && $program->icon)
+            <img src="{{ asset('storage/' . str_replace('\\', '/', $program->icon)) }}" alt="icon" width="100px">
+          @else
+            🛡️
+          @endif
         </div>
-      <div class="types">
-            @forelse ($services as $service)
-                <div class="service service{{$service->id}}" style="--background: url(../storage/{{str_replace("\\" , "/",$service->image)}})">
-                    <p>{{$service->$title}}</p>
-                    <a title="services" href="/pages/services/{{$service->id}}">{{ __('lang.more') }}</a>
-                </div>
-            @empty
-            @endforelse
-        </div>
-    </section> --}}
-
-    <section id="numbers">
-        <div class="title">
-            <h2>{{ __('lang.achievements') }}</h2>
-            <a title="impact" href="/pages/impact">{{ __('lang.more') }}</a>
-            <img class="persons-icons" src="{{asset('img/nav/persons-icons.svg')}}" alt="persons-icons" width="100" height="100">
-        </div>
-        <div class="glide slider-numbers">
-            <div class="glide__track" data-glide-el="track">
-                <ul class="glide__slides">
-                    @forelse ($impact_numbers as $number)
-                        <li class="glide__slide">
-                            <img src="{{ asset('storage/' . $number->image) }}" alt="{{ $number->$title }}" width="100" height="100">
-                            <span  class="counter">{{ $number->number }}</span>
-                            <p>{{ $number->$title }}</p>
-                        </li>
-                    @empty
-                    @endforelse
-                </ul>
-            </div>
-            <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><span>&#8592;</span></button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><span>&#8594;</span></button>
-            </div>
-            <div class="glide__bullets" data-glide-el="controls[nav]">
-                @forelse ($impact_numbers as $number)
-                    <span class="glide__bullet" data-glide-dir="{{$number->id - 1}}" title="bullet"></span>
+        <div class="prog-num">{{ $program->id }}</div>
+        <h3 class="en-only">{{ $program->$title }}</h3>
+        <p class="en-only">Strengthening families before crisis. We work with at-risk families to prevent unnecessary separation and keep children with their biological or extended kin.</p>
+        <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">تقوية الأسر قبل الأزمة. نعمل مع الأسر المعرّضة للخطر لمنع الانفصال غير الضروري والحفاظ على الأطفال في أكناف أسرهم.</p>
+        <div class="prog-tags">
+                @forelse($program->sub_programs as $sub_program)
+                    <a class="ptag en-only" href="{{ route('web.pages.sub_Programs',$sub_program->id) }}">{{ $sub_program->$title }}</a>
                 @empty
+                    <div class="alert alert-info">{{ __('lang.no_data') }}</div>
                 @endforelse
-            </div>
         </div>
-    </section>
+        <a href="{{ route('web.pages.programs', $program->id) }}" class="prog-lnk"><span class="en-only">Learn more →</span><span class="ar-only" style="font-family:var(--font-ar)">← اعرف أكثر</span></a>
+      </div>
+    @empty
+    @endforelse
+    </div>
+  </div>
+</section>
 
-    {{-- <section id="Links">
-        <div class="title general">
-            <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-            <h2 class="GeneralTitle">{{ __('lang.important links') }}</h2>
-            <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-        </div>
-        <div class="Links">
-            @forelse ($ImportantLinks as $ImportantLink)
-                <div class="Link Link{{$ImportantLink->id}}">
-                    <a href="{{$ImportantLink->link}}">
-                        <div class="image" style="--background: url('../storage/{{ str_replace('\\', '/', $ImportantLink->image) }}')"></div>
-                        <p>{{$ImportantLink->$title}}</p>
-                    </a>
-                </div>
-            @empty
-            @endforelse
-        </div>
-        <div class="moreLinks">
-            <a class="more" href="{{route('web.pages.ImportantLinks.index')}}">{{ __('lang.more') }}</a>
-        </div>
-    </section> --}}
+<!-- ══ NEWS ══ -->
+<section class="news-section" id="news">
+  <div class="si">
+    <div class="news-hdr">
+      <div>
+        <div class="stag"><span class="stag-line"></span><span class="en-only">Latest News</span><span class="ar-only" style="font-family:var(--font-ar)">آخر الأخبار</span></div>
+        <h2 class="sh2" style="margin-bottom:0;" class="en-only">From the field</h2>
+        <h2 class="sh2 ar-only" style="font-family:var(--font-ar);direction:rtl;margin-bottom:0">من الميدان</h2>
+      </div>
+      <a href="/pages/news" class="news-all en-only">View all news →</a>
+      <a href="/pages/news" class="news-all ar-only" style="font-family:var(--font-ar)">← كل الأخبار</a>
+    </div>
+    <div class="ng">
 
-    <section id="Accreditation">
-        <div class="title general">
-            <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-            <h2 class="GeneralTitle">{{ __('lang.Accreditation and Awards') }}</h2>
-            <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-        </div>
-        <div class="AllAccreditation">
-            <div class="Accreditation">
-                <img src="{{ asset('/img/Accreditation/E7dMxSow70rkm5QfJ5C0 1.png') }}" alt="Accreditation" width="50px" height="50px">
-                <div>
-                    <p>{{ __('lang.pearson_Accreditation') }}</p>
-                    <p>{{ __('lang.pearson_Accreditation2') }}</p>
+         @forelse ($news as $new)
+                <div class="ncard">
+                  <div class="nimg" style="background: url(../storage/{{str_replace("\\" , "/",$new->image)}})">
+                  <!-- <div class="nimg-badge en-only">Program Update</div><div class="nimg-badge ar-only" style="font-family:var(--font-ar)">تحديث البرنامج</div> -->
                 </div>
-            </div>
-            <div class="Accreditation">
-                <div class="logos">
-                    <img src="{{ asset('/img/Accreditation/6Q56Ocp7IhA1PcQrdXVN.png') }}" alt="Accreditation" width="50px" height="50px">
-                    <img src="{{ asset('/img/Accreditation/original.png') }}" alt="Accreditation" width="50px" height="50px">
+                  <div class="nbody">
+                    <div class="ndate">{{ app()->getLocale() == 'ar' ? to_arabic_number(date('F Y', strtotime($new->created_at))) : $new->created_at->formatLocalized('%B %Y') }}</div>
+                    <h4 class="en-only">{{$new->$title}}</h4>
+                    <a href="/pages/news/{{$new->id}}" class="nread en-only">{{ __('lang.more') }} →</a>
+                  </div>
                 </div>
-                <p>{{ __('lang.PWC_Accreditation') }}</p>
-            </div>
-        </div>
-        <div class="moreAwards">
-            <a class="more" href="/pages/awards">{{ __('lang.our_awards') }}</a>
-        </div>
-    </section>
+          @empty
+          @endforelse
+    </div>
+  </div>
+</section>
 
-    <section id="partners">
-        <div class="title general">
-            <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-            <h2 class="GeneralTitle">{{ __('lang.partners_list') }}</h2>
-            <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-        </div>
-        <div class="glide partners">
-            <div class="glide__track" data-glide-el="track">
-                <ul class="glide__slides">
-                    @forelse ($Partners as $Partner)
-                            <li class="glide__slide"><img src="{{ asset('storage/' . $Partner->image) }}" alt="image" width="100" height="100"></li>
-                    @empty
-                    @endforelse
-                </ul>
-            </div>
-            <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
-            </div>
-        </div>
-        <div class="moreAwards">
-            <a title="more" class="more" href="/pages/partners">{{ __('lang.more') }}</a>
-        </div>
-    </section>
+<!-- ══ GET INVOLVED ══ -->
+<section class="involve-section">
+  <div class="inv-header">
+    <div class="stag" style="justify-content:center;color:var(--teal);"><span class="stag-line" style="background:var(--teal);"></span><span class="en-only">Get Involved</span><span class="ar-only" style="font-family:var(--font-ar)">شارك معنا</span></div>
+    <h2 class="sh2" style="color:white;text-align:center;" class="en-only">There are many ways to be Sanad</h2>
+    <h2 class="sh2 ar-only" style="font-family:var(--font-ar);direction:rtl;color:white;text-align:center">هناك طرق كثيرة لتكون سنداً</h2>
+    <p class="ssub en-only" style="color:rgba(255,255,255,0.6);margin:0.5rem auto 0;text-align:center;">Whether you give, volunteer, or partner — your role in this mission matters.</p>
+    <p class="ssub ar-only" style="font-family:var(--font-ar);direction:rtl;color:rgba(255,255,255,0.6);margin:0.5rem auto 0;text-align:center;">سواء تبرعت أو تطوعت أو شاركت — دورك في هذه الرسالة مهم.</p>
+  </div>
+  <div class="inv-grid">
+    <div class="icard">
+      <div class="icard-icon">❤️</div>
+      <h3 class="en-only">Donate</h3>
+      <h3 class="ar-only" style="font-family:var(--font-ar)">تبرّع</h3>
+      <p class="en-only">Your Zakat, Sadaqah, or general donation funds programs that directly reach children and caregivers. Every pound creates measurable change.</p>
+      <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">زكاتك أو صدقتك أو تبرعك العام يموّل برامج تصل مباشرة إلى الأطفال والمربيين. كل جنيه يحدث تغييراً ملموساً.</p>
+      <button class="ibtn" onclick="document.getElementById('donate').scrollIntoView({behavior:'smooth'})"><span class="en-only">Donate now →</span><span class="ar-only" style="font-family:var(--font-ar)">← تبرع الآن</span></button>
+    </div>
+    <div class="icard">
+      <div class="icard-icon">🙋</div>
+      <h3 class="en-only">Volunteer</h3>
+      <h3 class="ar-only" style="font-family:var(--font-ar)">تطوّع</h3>
+      <p class="en-only">Share your expertise — whether you're a lawyer, designer, trainer, or student with passion. We match your skills to our live needs.</p>
+      <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">شارك بخبرتك — سواء كنت محامياً أو مصمماً أو مدرباً أو طالباً متحمساً. نطابق مهاراتك مع احتياجاتنا الفعلية.</p>
+      <div class="vol-mini-form vif" id="vf">
+        <h4 class="en-only">Quick Interest Form</h4>
+        <h4 class="ar-only" style="font-family:var(--font-ar)">نموذج الاهتمام السريع</h4>
+        <input type="text" placeholder="Your name / اسمك">
+        <input type="email" placeholder="Email / البريد الإلكتروني">
+        <input type="text" placeholder="Your skill / مهارتك">
+        <button class="vsub"><span class="en-only">Submit →</span><span class="ar-only" style="font-family:var(--font-ar)">← أرسل</span></button>
+      </div>
+      <button class="ibtn" onclick="toggleVF()"><span class="en-only">Apply to volunteer →</span><span class="ar-only" style="font-family:var(--font-ar)">← سجّل للتطوع</span></button>
+    </div>
+    <div class="icard">
+      <div class="icard-icon">🤝</div>
+      <h3 class="en-only">Partner with Us</h3>
+      <h3 class="ar-only" style="font-family:var(--font-ar)">شارك مؤسسياً</h3>
+      <p class="en-only">Build measurable CSR impact through certified child protection training. We work with corporations, foundations, and government to scale our reach.</p>
+      <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">ابنِ أثراً اجتماعياً مقاساً من خلال التدريب المعتمد لحماية الطفل. نعمل مع الشركات والمؤسسات والجهات الحكومية.</p>
+      <button class="ibtn"><span class="en-only">Explore partnership →</span><span class="ar-only" style="font-family:var(--font-ar)">← استكشف الشراكة</span></button>
+    </div>
+  </div>
+</section>
 
 @endsection
 
 
 @section('js')
     <script src="{{asset('js/Home.js?v=1.6')}}"></script>
+        <script src="{{asset('js/Stories.js?v=1.2')}}"></script>
 @endsection
 

@@ -18,22 +18,18 @@ class PressReleaseController extends Controller
         return view('cms.PressRelease.index')->with('PressReleases', $PressReleases);
     }
 
-    public function show($id){
+    public function show($slug){
 
         $locale = app()->getLocale();
         $columnName = $locale ? 'title_' . $locale : false;
-        $PressRelease = PressRelease::whereNotNull($columnName)->findOrFail($id);
+        $PressRelease = $this->findOrFailBySlug(PressRelease::class, $slug);
 
-        if (!$PressRelease) {
-            abort(404);
-        }else{
-            return view('cms.PressRelease.show')->with([
-                'PressRelease' => $PressRelease,
-                'other_PressReleases' => PressRelease::inRandomOrder()->whereNotNull($columnName)->take(3)->get(),
-                'title' => $PressRelease->title,
-                'date' => app()->getLocale() == 'ar' ? to_arabic_number(date('F Y', strtotime($PressRelease->created_at))) : $PressRelease->created_at->formatLocalized('%B %Y')
-            ]);
-        }
+        return view('cms.PressRelease.show')->with([
+            'PressRelease' => $PressRelease,
+            'other_PressReleases' => PressRelease::inRandomOrder()->whereNotNull($columnName)->take(3)->get(),
+            'title' => $PressRelease->title,
+            'date' => app()->getLocale() == 'ar' ? to_arabic_number(date('F Y', strtotime($PressRelease->created_at))) : $PressRelease->created_at->formatLocalized('%B %Y')
+        ]);
 
     }
 
@@ -64,4 +60,3 @@ function to_arabic_number($Month)
         $Month = str_replace("December", "ديسمبر", $Month);
         return $Month;
 }
-

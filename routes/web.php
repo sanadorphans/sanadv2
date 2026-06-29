@@ -104,18 +104,18 @@ Route::group([
 
     Route::prefix('pages')->name('web.')->group(function () {
         Route::get('/board',[BoardController::class,'index'])->name('board.index');
-        Route::get('/board/{id}',[BoardController::class,'show'])->name('board.show');
+        Route::get('/board/{slug}',[BoardController::class,'show'])->name('board.show');
         Route::get('/team-members',[TeamMemberController::class,'index'])->name('team_members.index');
-        Route::get('/team-members/{id}',[TeamMemberController::class,'show'])->name('team_members.show');
-        Route::get('/stories/{id}',[CMSStoriesController::class,'show'])->name('stories.show');
+        Route::get('/team-members/{slug}',[TeamMemberController::class,'show'])->name('team_members.show');
+        Route::get('/stories/{slug}',[CMSStoriesController::class,'show'])->name('stories.show');
         Route::get('/stories',[CMSStoriesController::class,'index'])->name('stories.index');
         Route::get('/PressRelease',[PressReleaseController::class,'index'])->name('PressRelease.index');
-        Route::get('/PressRelease/{id}',[PressReleaseController::class,'show'])->name('PressRelease.show');
+        Route::get('/PressRelease/{slug}',[PressReleaseController::class,'show'])->name('PressRelease.show');
         Route::get('/news',[NewsController::class,'index'])->name('news.index');
-        Route::get('/news/{id}',[NewsController::class,'show'])->name('news.show');
+        Route::get('/news/{slug}',[NewsController::class,'show'])->name('news.show');
         Route::get('/who-we-are',[PageController::class,'who_we_are'])->name('pages.who_we_are');
         Route::get('/careers',[PageController::class,'index'])->name('pages.vacancies');
-        Route::get('/careers/{id}',[PageController::class,'show'])->name('pages.carrer');
+        Route::get('/careers/{slug}',[PageController::class,'show'])->name('pages.carrer');
         Route::post('/careers/apply',[PageController::class,'apply'])->name('pages.carrer.apply');
         Route::get('/awards',[PageController::class,'awards'])->name('pages.certificates');
         Route::get('/important-links',[ImportantLinksController::class,'index'])->name('pages.ImportantLinks.index');
@@ -124,7 +124,7 @@ Route::group([
         Route::get('/periodical-newsletters',[PeriodicalNewsletterController::class,'index'])->name('pages.periodical_newsletters');
         Route::get('/media-bags',[MediaBagController::class,'index'])->name('pages.media_bags');
         Route::get('/events',[CmsEventController::class,'index'])->name('pages.events');
-        Route::get('/events/{id}',[CmsEventController::class,'show'])->name('pages.events.show');
+        Route::get('/events/{slug}',[CmsEventController::class,'show'])->name('pages.events.show');
         Route::get('/alliances',[AllianceController::class,'index'])->name('pages.alliances');
         Route::get('/aspirations',[AspirationController::class,'index'])->name('pages.Aspirations');
         Route::get('/accreditation',[AccreditationController::class,'index'])->name('pages.Accreditation ');
@@ -132,14 +132,14 @@ Route::group([
         Route::get('/sanad',[SanadController::class,'index'])->name('pages.sanad');
         Route::get('/partners',[PartnerController::class,'index'])->name('pages.partners');
         // Route::get('/partners/{id}',[PartnerController::class,'show'])->name('pages.partners');
-        Route::get('/knowledge-creation/{id}',[KnowledgeCreationController::class,'index'])->name('pages.KnowledgeCreation');
+        Route::get('/knowledge-creation/{slug}',[KnowledgeCreationController::class,'index'])->name('pages.KnowledgeCreation');
         Route::post('/knowledge-creation/search',[KnowledgeCreationController::class,'search'])->name('pages.KnowledgeCreation.search');
-        Route::get('/KnowledgeCreation/resources/{id}',[ResourceController::class,'index'])->name('pages.resource');
-        Route::post('/KnowledgeCreation/resources/{id}/download',[ResourceController::class,'download'])->name('pages.resource.download');
-        Route::get('/services/{id}',[ServiceController::class,'show'])->name('pages.services');
-        Route::get('/sub-services/{id}',[SubServiceController::class,'show'])->name('pages.sub_services');
-        Route::get('/program/{id}',[ProgramController::class,'show'])->name('pages.programs');
-        Route::get('/sub-programs/{id}',[SubProgramController::class,'show'])->name('pages.sub_Programs');
+        Route::get('/KnowledgeCreation/resources/{slug}',[ResourceController::class,'index'])->name('pages.resource');
+        Route::post('/KnowledgeCreation/resources/{slug}/download',[ResourceController::class,'download'])->name('pages.resource.download');
+        Route::get('/services/{slug}',[ServiceController::class,'show'])->name('pages.services');
+        Route::get('/sub-services/{slug}',[SubServiceController::class,'show'])->name('pages.sub_services');
+        Route::get('/program/{slug}',[ProgramController::class,'show'])->name('pages.programs');
+        Route::get('/sub-programs/{slug}',[SubProgramController::class,'show'])->name('pages.sub_Programs');
         Route::get('/impact',[PageController::class,'impact'])->name('pages.impact');
         Route::namespace('Donations')->group(function() {
             // Donations

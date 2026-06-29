@@ -15,10 +15,10 @@ class BoardController extends Controller
         $board = Board::orderBy('order')->get();
         return view('cms.board.index',compact(['board']));
     }
-    public function show($id)
+    public function show($slug)
     {
-        $board_member = Board::find($id);
-        $socialMediaBoard = SocialMediaStaff::where('board_name',$id)->get();
+        $board_member = $this->findOrFailBySlug(Board::class, $slug);
+        $socialMediaBoard = SocialMediaStaff::where('board_name',$board_member->id)->get();
         return view('cms.board.show',compact(['board_member','socialMediaBoard']));
     }
 

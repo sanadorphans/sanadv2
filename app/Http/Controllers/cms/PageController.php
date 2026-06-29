@@ -25,8 +25,8 @@ class PageController extends Controller
         $carrer_types = CarrerType::with('carrer')->get();
         return view('cms.carrers.index',compact(['carrers','carrer_types']));
     }
-    public function show($id){
-        $carrer = Carrer::find($id);
+    public function show($slug){
+        $carrer = $this->findOrFailBySlug(Carrer::class, $slug);
         return view('cms.carrers.show',compact(['carrer']));
     }
     public function apply(ApplyJobRequst $request){

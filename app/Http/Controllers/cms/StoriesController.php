@@ -16,9 +16,9 @@ class StoriesController extends Controller
         return view('cms.stories.index',compact(['StoriesCategory']));
     }
 
-    public function show($id)
+    public function show($slug)
     {
-        $story = Story::find($id);
+        $story = $this->findOrFailBySlug(Story::class, $slug);
         return view('cms.stories.show',compact(['story']));
     }
 }

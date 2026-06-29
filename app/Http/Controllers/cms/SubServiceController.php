@@ -13,19 +13,19 @@ use Illuminate\Support\Facades\Response;
 class SubServiceController extends Controller
 {
     //
-    public function show($id)
+    public function show($slug)
     {
         $locale = app()->getLocale();
         $columnName = $locale ? 'title_' . $locale : false;
-        $SubService = SubService::with('items')->whereNotNull($columnName)->find($id);
-        if (!$SubService) {
+        $SubService = $this->findOrFailBySlug(SubService::class, $slug);
+        if ($columnName && is_null($SubService->$columnName)) {
             abort(404);
-        }else{
-            return view('cms.services.sub.index')->with([
-                'sub_service' => $SubService,
-                'resource' =>  Resource::find(id: 9),
-            ]);
         }
+        $SubService->load('items');
+        return view('cms.services.sub.index')->with([
+            'sub_service' => $SubService,
+            'resource' =>  Resource::find(9),
+        ]);
     }
 
 

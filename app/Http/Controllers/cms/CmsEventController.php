@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 
 class CmsEventController extends Controller
 {
-    public function show($id)
+    public function show($slug)
     {
-        $event = CmsEvent::find($id);
+        $event = $this->findOrFailBySlug(CmsEvent::class, $slug);
         return view('cms.events.show',compact(['event']));
     }
 }

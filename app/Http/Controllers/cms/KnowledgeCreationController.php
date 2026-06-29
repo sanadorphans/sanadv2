@@ -9,15 +9,17 @@ use App\Http\Controllers\Controller;
 
 class KnowledgeCreationController extends Controller
 {
-    function index($id){
-        if($id == 1){
-            $KnowledgeCreation = KnowledgeCreation::with('Resources')->find($id);
+    function index($slug){
+        $KnowledgeCreation = $this->findOrFailBySlug(KnowledgeCreation::class, $slug);
+
+        if($KnowledgeCreation->id == 1){
+            $KnowledgeCreation->load('Resources');
             return view('cms.resources.index',compact(['KnowledgeCreation']));
-        }else if($id == 2){
-            $KnowledgeCreation = KnowledgeCreation::with('ConferencesAndForum')->find($id);
+        }else if($KnowledgeCreation->id == 2){
+            $KnowledgeCreation->load('ConferencesAndForum');
             return view('cms.conferencesAndForums.index',compact(['KnowledgeCreation']));
-        }else if($id == 3){
-            $KnowledgeCreation = KnowledgeCreation::with('Events')->find($id);
+        }else if($KnowledgeCreation->id == 3){
+            $KnowledgeCreation->load('Events');
             return view('cms.events.index',compact(['KnowledgeCreation']));
         }
 
@@ -31,16 +33,6 @@ class KnowledgeCreationController extends Controller
         // Perform the search query based on the search term w
         $results = Resource::where('title_ar', 'LIKE', '%' . $searchValue . '%')
                 ->orwhere('title_en', 'LIKE', '%' . $searchValue . '%')->get();
-
-        // $data = '';
-        // foreach($results as $result){
-        //     $data = `
-        //     <div class="resource">
-        //         <a href="{{ route('web.pages.resource',$result->id}) }}"><div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$result->image})}})"></div></a>
-        //         <a href="{{ route('web.pages.resource',$result->id}) }}"><h1>$result->title_ar}</h1></a>
-        //     </div>
-        //     `;
-        // }
 
         // Return the search results as JSON response
         return response()->json($results);

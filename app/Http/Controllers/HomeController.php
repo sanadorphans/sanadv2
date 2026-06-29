@@ -12,6 +12,8 @@ use App\Models\AnnualReport;
 use App\Models\ImpactNumber;
 use App\Models\PeriodicalNewsletter;
 use App\Models\ImportantLink;
+use App\Models\StoriesCategory;
+use App\Models\Program;
 
 
 class HomeController extends Controller
@@ -21,7 +23,7 @@ class HomeController extends Controller
 
         $slides = Slide::get();
         $impact_numbers = ImpactNumber::get();
-        $news = News::orderBy('created_at','desc')->paginate(4);
+        $news = News::orderBy('created_at','desc')->paginate(3);
         $services = Service::get();
         $NewsLetter = PeriodicalNewsletter::first();
         $AnnualReport = AnnualReport::orderBy('order')->first();
@@ -30,8 +32,9 @@ class HomeController extends Controller
         $ImportantLinks  = ImportantLink::inRandomOrder()->limit(3)->get();
         $Partners = Partner::inRandomOrder()->limit(8)->get();
         $stories = Story::latest()->limit(10)->get();
-
-        return view('landing',compact(['slides','impact_numbers','news','services','NewsLetter','AnnualReport','Campaign','Partners','stories','ImportantLinks']));
+        $StoriesCategory = StoriesCategory::with('Story')->first();
+        $programs = Program::with('sub_programs')->get();
+        return view('landing',compact(['slides','impact_numbers','news','services','NewsLetter','AnnualReport','Campaign','Partners','stories','ImportantLinks','StoriesCategory','programs']));
     }
 
     

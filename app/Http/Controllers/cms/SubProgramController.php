@@ -8,17 +8,16 @@ use App\Http\Controllers\Controller;
 
 class SubProgramController extends Controller
 {
-    public function show($id)
+    public function show($slug)
     {
         $locale = app()->getLocale();
         $columnName = $locale ? 'title_' . $locale : false;
-        $SubProgram = SubProgram::whereNotNull($columnName)->find($id);
-        if (!$SubProgram) {
+        $SubProgram = $this->findOrFailBySlug(SubProgram::class, $slug);
+        if ($columnName && is_null($SubProgram->$columnName)) {
             abort(404);
-        }else{
-            return view('cms.Programs.sub.index')->with([
-                'sub_program' => $SubProgram,
-            ]);
         }
+        return view('cms.Programs.sub.index')->with([
+            'sub_program' => $SubProgram,
+        ]);
     }
 }

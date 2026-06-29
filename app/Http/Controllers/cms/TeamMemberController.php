@@ -16,10 +16,10 @@ class TeamMemberController extends Controller
         return view('cms.team_members.index',compact(['team_members']));
     }
 
-    public function show($id)
+    public function show($slug)
     {
-        $team_member = TeamMember::find($id);
-        $socialMediaStaff = SocialMediaStaff::where('staff_name',$id)->get();
+        $team_member = $this->findOrFailBySlug(TeamMember::class, $slug);
+        $socialMediaStaff = SocialMediaStaff::where('staff_name',$team_member->id)->get();
         return view('cms.team_members.show',compact(['team_member','socialMediaStaff']));
     }
 

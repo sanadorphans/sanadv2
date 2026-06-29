@@ -8,14 +8,15 @@ use App\Http\Controllers\Controller;
 
 class ServiceController extends Controller
 {
-    public function show($id)
+    public function show($slug)
     {
         $locale = app()->getLocale();
         $columnName = $locale ? 'title_' . $locale : 'title_en'; // fallback if needed
 
-        $service = Service::with(['sub_services' => function ($query) use ($columnName) {
+        $service = $this->findOrFailBySlug(Service::class, $slug);
+        $service->load(['sub_services' => function ($query) use ($columnName) {
             $query->whereNotNull($columnName)->orderBy('order');
-        }])->findOrFail($id);
+        }]);
 
         return view('cms.services.index')->with([
             'service' => $service,
@@ -25,4 +26,3 @@ class ServiceController extends Controller
 
     }
 }
-

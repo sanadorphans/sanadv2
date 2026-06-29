@@ -17,22 +17,18 @@ class NewsController extends Controller{
         return view('cms.news.index')->with('news', $news);
     }
 
-    public function show($id){
+    public function show($slug){
 
         $locale = app()->getLocale();
         $columnName = $locale ? 'title_' . $locale : false;
-        $new = News::whereNotNull($columnName)->findOrFail($id);
+        $new = $this->findOrFailBySlug(News::class, $slug);
 
-        if (!$new) {
-            abort(404);
-        }else{
-            return view('cms.news.show')->with([
-                'new' => $new,
-                'other_news' => News::inRandomOrder()->whereNotNull($columnName)->take(3)->get(),
-                'title' => $new->title,
-                'date' => app()->getLocale() == 'ar' ? to_arabic_number(date('F Y', strtotime($new->created_at))) : $new->created_at->formatLocalized('%B %Y')
-            ]);
-        }
+        return view('cms.news.show')->with([
+            'new' => $new,
+            'other_news' => News::inRandomOrder()->whereNotNull($columnName)->take(3)->get(),
+            'title' => $new->title,
+            'date' => app()->getLocale() == 'ar' ? to_arabic_number(date('F Y', strtotime($new->created_at))) : $new->created_at->formatLocalized('%B %Y')
+        ]);
 
     }
 
