@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'trusted-by' => 'Trusted by',
     'consultation2' => 'Our Consultation',
     'protection_police' => 'To view the Protection policy: ',
     'minimum_donation_50' => 'Minimum donation is 150EGP',
@@ -967,6 +968,51 @@ The Sanad Society Team",
   'clickHere' => 'Click here',
   'toShowAnneulReport' => 'To view the Sanad Impact',
   'report_2023_2024' => 'Annual Report 2023-2024',
+
+    // ── Landing page: direction-aware arrow ──
+    'arrow_dir' => '→',
+
+    // ── Challenge section ──
+    'challenge_tag' => 'The Challenge We Face',
+    'challenge_h2' => '1.4 million orphans in Egypt alone —<br>the system needs transformation',
+    'aboutp1' => 'UNICEF estimates 140 million children globally live without parental care. Most are in institutions, even though family-based care produces far better outcomes.',
+    'aboutp2' => 'Africa carries one of the heaviest burdens of child care crisis. Egypt, at its heart, shoulders responsibility for the MENA region\'s largest orphan population.',
+    'aboutp3' => 'Many leave care at 18 with no family support, no savings, and no preparation. Sanad works to change this from the root.',
+
+    // ── Mission visual card ──
+    'approach_h3' => 'Our Approach: Systemic Change',
+    'approach_p' => 'We don\'t just support individual children — we transform the entire alternative care ecosystem: developing care homes, empowering caregivers, facilitating Kafala, and preparing youth for life after care.',
+    'years_of_impact' => 'Years of Impact',
+
+    // ── Programs section ──
+    'what_we_do' => 'What We Do',
+    'three_pillars' => 'Three pillars. One mission.',
+    'programs_sub' => 'Our programs work across every layer of the care system — from preventing family breakdown to advocating for national reform.',
+    'program_p' => 'Strengthening families before crisis. We work with at-risk families to prevent unnecessary separation and keep children with their biological or extended kin.',
+    'learn_more' => 'Learn more →',
+
+    // ── News section ──
+    'latest_news_tag' => 'Latest News',
+    'from_the_field' => 'From the field',
+    'view_all_news' => 'View all news →',
+
+    // ── Get Involved section ──
+    'get_involved_tag' => 'Get Involved',
+    'get_involved_h2' => 'There are many ways to be Sanad',
+    'get_involved_p' => 'Whether you give, volunteer, or partner — your role in this mission matters.',
+    'donate_h3' => 'Donate',
+    'donate_p' => 'Your Zakat, Sadaqah, or general donation funds programs that directly reach children and caregivers. Every pound creates measurable change.',
+    'donate_btn' => 'Donate now →',
+    'volunteer_h3' => 'Volunteer',
+    'volunteer_p' => 'Share your expertise — whether you\'re a lawyer, designer, trainer, or student with passion. We match your skills to our live needs.',
+    'quick_form_h4' => 'Quick Interest Form',
+    'submit_btn' => 'Submit →',
+    'apply_volunteer' => 'Apply to volunteer →',
+    'partner_h3' => 'Partner with Us',
+    'partner_p' => 'Build measurable CSR impact through certified child protection training. We work with corporations, foundations, and government to scale our reach.',
+    'explore_partnership' => 'Explore partnership →',
+    'subscribe_for_newsletters' => 'Subscribe For Our Newsletters',
+    'subscribe_btn' => 'Subscribe',
 ];
 
 

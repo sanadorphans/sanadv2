@@ -69,8 +69,8 @@
         {{ __('lang.hero_subtitle') }}
       </p>
       <div class="hero-btns">
-        <a href="#donate" class="btn-teal">{{ __('lang.our_services') }} <span class="en-only">→</span><span class="ar-only">←</span></a>
-        <a href="#programs" class="btn-outline-w">{{ __('lang.consultation2') }} <span class="en-only">→</span><span class="ar-only">←</span></a>
+        <a href="{{ route('targetaudience') }}" class="btn-teal">{{ __('lang.our_services') }} {{ __('lang.arrow_dir') }}</a>
+        <a href="https://sanadorphans.org/en/pages/sub-services/37" class="btn-outline-w">{{ __('lang.consultation2') }} {{ __('lang.arrow_dir') }}</a>
       </div>
     </div>
 
@@ -172,7 +172,7 @@
 </div>
 
 <section class="trusted-by">
-  <h3>Trusted by</h3>
+  <h3>{{ __('lang.trusted-by') }}</h3>
   <div class="logos">
     <div class="logo-track">
         @forelse ($Partners as $Partner)
@@ -185,33 +185,29 @@
 <!-- ══ CHALLENGE / MISSION ══ -->
 <section class="challenge-section" id="about">
   <div class="si">
-    <div class="stag"><span class="stag-line"></span><span class="en-only">The Challenge We Face</span><span class="ar-only" style="font-family:var(--font-ar)">التحدي الذي نواجهه</span></div>
-    <h2 class="sh2 en-only">1.4 million orphans in Egypt alone —<br>the system needs transformation</h2>
-    <h2 class="sh2 ar-only" style="font-family:var(--font-ar);direction:rtl">1.4 مليون طفل بلا رعاية والدية في مصر —<br>المنظومة تحتاج تحولاً جذرياً</h2>
+    <div class="stag"><span class="stag-line"></span><span>{{ __('lang.challenge_tag') }}</span></div>
+    <h2 class="sh2">{!! __('lang.challenge_h2') !!}</h2>
     <div class="challenge-grid">
       <div>
         <div class="c-stat">
           <div class="c-num">{{ __('lang.aboutnum1') }}</div>
           <div class="c-body">
-            <h4 class="en-only">{{ __('lang.aboutnumdes1') }}</h4>
-            <p class="en-only">UNICEF estimates 140 million children globally live without parental care. Most are in institutions, even though family-based care produces far better outcomes.</p>
-            <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">تقدّر اليونيسف أن 140 مليون طفل حول العالم يعيشون بلا رعاية والدية، معظمهم في مؤسسات رغم أن الرعاية الأسرية تحقق نتائج أفضل بكثير.</p>
+            <h4>{{ __('lang.aboutnumdes1') }}</h4>
+            <p>{{ __('lang.aboutp1') }}</p>
           </div>
         </div>
         <div class="c-stat">
           <div class="c-num">{{ __('lang.aboutnum2') }}</div>
           <div class="c-body">
-            <h4 class="en-only">{{ __('lang.aboutnumdes2') }}</h4>
-            <p class="en-only">Africa carries one of the heaviest burdens of child care crisis. Egypt, at its heart, shoulders responsibility for the MENA region's largest orphan population.</p>
-            <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">تحمل أفريقيا عبء الأزمة بشكل مضاعف، ومصر في قلبها تتحمل مسؤولية أكبر تجمع للأيتام في منطقة الشرق الأوسط وشمال أفريقيا.</p>
+            <h4>{{ __('lang.aboutnumdes2') }}</h4>
+            <p>{{ __('lang.aboutp2') }}</p>
           </div>
         </div>
         <div class="c-stat">
           <div class="c-num">{{ __('lang.aboutnum3') }}</div>
           <div class="c-body">
-            <h4 class="en-only">{{ __('lang.aboutnumdes3') }}</h4>
-            <p class="en-only">Many leave care at 18 with no family support, no savings, and no preparation. Sanad works to change this from the root.</p>
-            <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">كثيرون يغادرون دور الرعاية عند سن 18 بلا دعم أسري ولا مدخرات ولا تأهيل. سند تعمل على تغيير هذا من جذوره.</p>
+            <h4>{{ __('lang.aboutnumdes3') }}</h4>
+            <p>{{ __('lang.aboutp3') }}</p>
           </div>
         </div>
         <!-- <a href="#programs" style="display:inline-flex;align-items:center;gap:6px;color:var(--teal-dark);font-weight:700;font-size:14px;text-decoration:none;margin-top:0.5rem;border-bottom:1px solid var(--teal-mid);padding-bottom:1px;">
@@ -221,21 +217,18 @@
       </div>
       <div class="mission-visual-box">
         <div class="mv-card">
-          <h3 class="en-only">Our Approach: Systemic Change</h3>
-          <h3 class="ar-only" style="font-family:var(--font-ar);direction:rtl">نهجنا: التغيير المنظومي</h3>
-          <p class="en-only">We don't just support individual children — we transform the entire alternative care ecosystem: developing care homes, empowering caregivers, facilitating Kafala, and preparing youth for life after care.</p>
-          <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">لا نكتفي بدعم الأطفال — نحوّل منظومة الرعاية البديلة بالكامل: تطوير دور الرعاية وتمكين المربيات وتيسير الكفالة وتأهيل الشباب للحياة المستقلة.</p>
+          <h3>{{ __('lang.approach_h3') }}</h3>
+          <p>{{ __('lang.approach_p') }}</p>
           <div class="mv-mini-stats">
               @forelse ($impact_numbers as $number)
-                  <div class="mv-mini"><strong>{{ $number->number }}</strong><span class="en-only">{{ $number->$title }}</span></div>
+                  <div class="mv-mini"><strong>{{ $number->number }}</strong><span>{{ $number->$title }}</span></div>
               @empty
               @endforelse
           </div>
         </div>
         <div class="mv-float">
           <strong>18+</strong>
-          <span class="en-only">Years of Impact</span>
-          <span class="ar-only" style="font-family:var(--font-ar)">عاماً من الأثر</span>
+          <span>{{ __('lang.years_of_impact') }}</span>
         </div>
       </div>
     </div>
@@ -244,9 +237,9 @@
 <!-- ══ stories ══ -->
 <section class="challenge-section" id="about">
   <div class="si">
-    <div class="stag"><span class="stag-line"></span><span class="en-only">{{ __('lang.stories') }}</span></div>
+    <div class="stag"><span class="stag-line"></span><span>{{ __('lang.stories') }}</span></div>
     <h2 class="sh2 en-only">{!! isset($StoriesCategory->$details2) ? $StoriesCategory->$details2 : '' !!}</h2>
-    <section id="Impacts">
+    <div id="Impacts">
         <div class="slider">
             <div class="glide AllImpacts">
                 <div class="glide__track" data-glide-el="track">
@@ -268,7 +261,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
   </div>
 </section>
@@ -276,33 +269,32 @@
 <!-- ══ PROGRAMS ══ -->
 <section id="programs" style="background:var(--off-white);">
   <div class="si">
-    <div class="stag"><span class="stag-line"></span><span class="en-only">What We Do</span><span class="ar-only" style="font-family:var(--font-ar)">ماذا نفعل</span></div>
-    <h2 class="sh2 en-only">Three pillars. One mission.</h2>
-    <h2 class="sh2 ar-only" style="font-family:var(--font-ar);direction:rtl">ثلاثة محاور. رسالة واحدة.</h2>
-    <p class="ssub en-only">Our programs work across every layer of the care system — from preventing family breakdown to advocating for national reform.</p>
-    <p class="ssub ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">تعمل برامجنا عبر جميع طبقات منظومة الرعاية — من الوقاية من تفكك الأسرة إلى المناصرة من أجل الإصلاح الوطني.</p>
+    <div class="stag"><span class="stag-line"></span><span>{{ __('lang.what_we_do') }}</span></div>
+    <h2 class="sh2">{{ __('lang.three_pillars') }}</h2>
+    <p class="ssub">{{ __('lang.programs_sub') }}</p>
     <div class="prog-grid" style="margin-top:3rem;">
     @forelse ($programs as $program)
       <div class="prog-card">
         <div class="prog-icon">
-          @if(isset($program->icon) && $program->icon)
-            <img src="{{ asset('storage/' . str_replace('\\', '/', $program->icon)) }}" alt="icon" width="100px">
-          @else
-            🛡️
-          @endif
+            @if ($program->id == 1)
+              <img src="https://sanadorphans.org/storage/link/Home.png" alt="icon" width="100px">
+            @elseif($program->id == 2)
+              <img src="https://sanadorphans.org/storage/link/Shield.png" alt="icon" width="100px">
+            @else
+              <img src="https://sanadorphans.org/storage/link/Justice%20balance%20scales%20symbol%20for%20law%20and%20fairness.png" alt="icon" width="100px">
+            @endif
         </div>
         <div class="prog-num">{{ $program->id }}</div>
-        <h3 class="en-only">{{ $program->$title }}</h3>
-        <p class="en-only">Strengthening families before crisis. We work with at-risk families to prevent unnecessary separation and keep children with their biological or extended kin.</p>
-        <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">تقوية الأسر قبل الأزمة. نعمل مع الأسر المعرّضة للخطر لمنع الانفصال غير الضروري والحفاظ على الأطفال في أكناف أسرهم.</p>
+        <h3>{{ $program->$title }}</h3>
+        <p>{{ __('lang.program_p') }}</p>
         <div class="prog-tags">
                 @forelse($program->sub_programs as $sub_program)
-                    <a class="ptag en-only" href="{{ route('web.pages.sub_Programs',$sub_program->id) }}">{{ $sub_program->$title }}</a>
+                    <a class="ptag" href="{{ route('web.pages.sub_Programs',$sub_program->id) }}">{{ $sub_program->$title }}</a>
                 @empty
                     <div class="alert alert-info">{{ __('lang.no_data') }}</div>
                 @endforelse
         </div>
-        <a href="{{ route('web.pages.programs', $program->id) }}" class="prog-lnk"><span class="en-only">Learn more →</span><span class="ar-only" style="font-family:var(--font-ar)">← اعرف أكثر</span></a>
+        <a href="{{ route('web.pages.programs', $program->id) }}" class="prog-lnk">{{ __('lang.learn_more') }}</a>
       </div>
     @empty
     @endforelse
@@ -315,12 +307,10 @@
   <div class="si">
     <div class="news-hdr">
       <div>
-        <div class="stag"><span class="stag-line"></span><span class="en-only">Latest News</span><span class="ar-only" style="font-family:var(--font-ar)">آخر الأخبار</span></div>
-        <h2 class="sh2" style="margin-bottom:0;" class="en-only">From the field</h2>
-        <h2 class="sh2 ar-only" style="font-family:var(--font-ar);direction:rtl;margin-bottom:0">من الميدان</h2>
+        <div class="stag"><span class="stag-line"></span><span>{{ __('lang.latest_news_tag') }}</span></div>
+        <h2 class="sh2" style="margin-bottom:0;">{{ __('lang.from_the_field') }}</h2>
       </div>
-      <a href="/pages/news" class="news-all en-only">View all news →</a>
-      <a href="/pages/news" class="news-all ar-only" style="font-family:var(--font-ar)">← كل الأخبار</a>
+      <a href="/pages/news" class="news-all">{{ __('lang.view_all_news') }}</a>
     </div>
     <div class="ng">
 
@@ -331,8 +321,8 @@
                 </div>
                   <div class="nbody">
                     <div class="ndate">{{ app()->getLocale() == 'ar' ? to_arabic_number(date('F Y', strtotime($new->created_at))) : $new->created_at->formatLocalized('%B %Y') }}</div>
-                    <h4 class="en-only">{{$new->$title}}</h4>
-                    <a href="/pages/news/{{$new->id}}" class="nread en-only">{{ __('lang.more') }} →</a>
+                    <h4>{{$new->$title}}</h4>
+                    <a href="/pages/news/{{$new->id}}" class="nread">{{ __('lang.more') }} {{ __('lang.arrow_dir') }}</a>
                   </div>
                 </div>
           @empty
@@ -344,44 +334,28 @@
 <!-- ══ GET INVOLVED ══ -->
 <section class="involve-section">
   <div class="inv-header">
-    <div class="stag" style="justify-content:center;color:var(--teal);"><span class="stag-line" style="background:var(--teal);"></span><span class="en-only">Get Involved</span><span class="ar-only" style="font-family:var(--font-ar)">شارك معنا</span></div>
-    <h2 class="sh2" style="color:white;text-align:center;" class="en-only">There are many ways to be Sanad</h2>
-    <h2 class="sh2 ar-only" style="font-family:var(--font-ar);direction:rtl;color:white;text-align:center">هناك طرق كثيرة لتكون سنداً</h2>
-    <p class="ssub en-only" style="color:rgba(255,255,255,0.6);margin:0.5rem auto 0;text-align:center;">Whether you give, volunteer, or partner — your role in this mission matters.</p>
-    <p class="ssub ar-only" style="font-family:var(--font-ar);direction:rtl;color:rgba(255,255,255,0.6);margin:0.5rem auto 0;text-align:center;">سواء تبرعت أو تطوعت أو شاركت — دورك في هذه الرسالة مهم.</p>
+    <div class="stag" style="justify-content:center;color:var(--teal);"><span class="stag-line" style="background:var(--teal);"></span><span>{{ __('lang.get_involved_tag') }}</span></div>
+    <h2 class="sh2" style="color:white;text-align:center;">{{ __('lang.get_involved_h2') }}</h2>
+    <p class="ssub" style="color:rgba(255,255,255,0.6);margin:0.5rem auto 0;text-align:center;">{{ __('lang.get_involved_p') }}</p>
   </div>
   <div class="inv-grid">
     <div class="icard">
       <div class="icard-icon">❤️</div>
-      <h3 class="en-only">Donate</h3>
-      <h3 class="ar-only" style="font-family:var(--font-ar)">تبرّع</h3>
-      <p class="en-only">Your Zakat, Sadaqah, or general donation funds programs that directly reach children and caregivers. Every pound creates measurable change.</p>
-      <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">زكاتك أو صدقتك أو تبرعك العام يموّل برامج تصل مباشرة إلى الأطفال والمربيين. كل جنيه يحدث تغييراً ملموساً.</p>
-      <button class="ibtn" onclick="document.getElementById('donate').scrollIntoView({behavior:'smooth'})"><span class="en-only">Donate now →</span><span class="ar-only" style="font-family:var(--font-ar)">← تبرع الآن</span></button>
+      <h3>{{ __('lang.donate_h3') }}</h3>
+      <p>{{ __('lang.donate_p') }}</p>
+      <a href="{{ route('web.donations.index') }}" class="ibtn">{{ __('lang.donate_btn') }}</a>
     </div>
     <div class="icard">
       <div class="icard-icon">🙋</div>
-      <h3 class="en-only">Volunteer</h3>
-      <h3 class="ar-only" style="font-family:var(--font-ar)">تطوّع</h3>
-      <p class="en-only">Share your expertise — whether you're a lawyer, designer, trainer, or student with passion. We match your skills to our live needs.</p>
-      <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">شارك بخبرتك — سواء كنت محامياً أو مصمماً أو مدرباً أو طالباً متحمساً. نطابق مهاراتك مع احتياجاتنا الفعلية.</p>
-      <div class="vol-mini-form vif" id="vf">
-        <h4 class="en-only">Quick Interest Form</h4>
-        <h4 class="ar-only" style="font-family:var(--font-ar)">نموذج الاهتمام السريع</h4>
-        <input type="text" placeholder="Your name / اسمك">
-        <input type="email" placeholder="Email / البريد الإلكتروني">
-        <input type="text" placeholder="Your skill / مهارتك">
-        <button class="vsub"><span class="en-only">Submit →</span><span class="ar-only" style="font-family:var(--font-ar)">← أرسل</span></button>
-      </div>
-      <button class="ibtn" onclick="toggleVF()"><span class="en-only">Apply to volunteer →</span><span class="ar-only" style="font-family:var(--font-ar)">← سجّل للتطوع</span></button>
+      <h3>{{ __('lang.volunteer_h3') }}</h3>
+      <p>{{ __('lang.volunteer_p') }}</p>
+      <a href="#" class="ibtn">{{ __('lang.apply_volunteer') }}</a>
     </div>
     <div class="icard">
       <div class="icard-icon">🤝</div>
-      <h3 class="en-only">Partner with Us</h3>
-      <h3 class="ar-only" style="font-family:var(--font-ar)">شارك مؤسسياً</h3>
-      <p class="en-only">Build measurable CSR impact through certified child protection training. We work with corporations, foundations, and government to scale our reach.</p>
-      <p class="ar-only" style="font-family:var(--font-ar);direction:rtl;text-align:right">ابنِ أثراً اجتماعياً مقاساً من خلال التدريب المعتمد لحماية الطفل. نعمل مع الشركات والمؤسسات والجهات الحكومية.</p>
-      <button class="ibtn"><span class="en-only">Explore partnership →</span><span class="ar-only" style="font-family:var(--font-ar)">← استكشف الشراكة</span></button>
+      <h3>{{ __('lang.partner_h3') }}</h3>
+      <p>{{ __('lang.partner_p') }}</p>
+      <a href="#" class="ibtn">{{ __('lang.explore_partnership') }}</a>
     </div>
   </div>
 </section>

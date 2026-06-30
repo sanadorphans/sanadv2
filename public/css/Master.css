@@ -1056,4 +1056,107 @@ footer{background:#061828;padding:4.5rem 2rem 2.5rem;}
 .socials{display:flex;gap:10px;}
 .soc{width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;font-weight:700;transition:all 0.2s;}
 .soc:hover{background:rgba(41,184,193,0.2);color:var(--teal);}
-.section-map {display: flex; justify-content: space-evenly; width: 100%;}
+.section-map {display: flex; flex-direction: column; width: 100%;}
+.footer-columns {display: flex; justify-content: space-evenly; width: 100%;}
+
+/* Footer subscribe section styling */
+.footer-subscribe {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0 4.5rem;
+}
+[dir="rtl"] .footer-subscribe {
+    text-align: right;
+}
+.footer-subscribe h4 {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 1.125rem;
+    font-family: 'Cairo', sans-serif;
+}
+.footer-subscribe-form {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.footer-subscribe-form input[type="email"] {
+    background-color: #d1d5db; /* Light grey background */
+    border: none;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    color: #1f2937;
+    outline: none;
+    flex: 1;
+    min-width: 200px;
+    max-width: 350px;
+    height: 48px;
+    font-family: 'Cairo', sans-serif;
+}
+.footer-subscribe-form input[type="email"]::placeholder {
+    color: #6b7280;
+}
+.footer-subscribe-form .btn-subscribe {
+    background-color: #1ec1ca; /* Teal color matching design */
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 28px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    height: 48px;
+    font-family: 'Cairo', sans-serif;
+}
+.footer-subscribe-form .btn-subscribe:hover {
+    background-color: #179ea5;
+    transform: translateY(-1px);
+}
+.footer-subscribe-form .btn-donate-now {
+    background-color: #f37246; /* Coral orange color matching brand */
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 28px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    height: 48px;
+    font-family: 'Cairo', sans-serif;
+}
+.footer-subscribe-form .btn-donate-now:hover {
+    background-color: #d95e34;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 800px) {
+    .footer-columns {
+        flex-direction: column;
+    }
+    .footer-subscribe {
+        padding: 0 10px;
+        text-align: center;
+    }
+    [dir="rtl"] .footer-subscribe {
+        text-align: center;
+    }
+    .footer-subscribe-form {
+        justify-content: center;
+    }
+    .footer-subscribe-form input[type="email"] {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
