@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\Slide;
 use App\Models\Story;
@@ -15,15 +16,14 @@ use App\Models\ImportantLink;
 use App\Models\StoriesCategory;
 use App\Models\Program;
 
-
-class HomeController extends Controller
+class HomebController extends Controller
 {
-
+ 
     function index(){
 
         $slides = Slide::get();
         $impact_numbers = ImpactNumber::get();
-        $news = News::orderBy('created_at','desc')->paginate(4);
+        $news = News::orderBy('created_at','desc')->paginate(3);
         $services = Service::get();
         $NewsLetter = PeriodicalNewsletter::first();
         $AnnualReport = AnnualReport::orderBy('order')->first();
@@ -34,7 +34,7 @@ class HomeController extends Controller
         $stories = Story::latest()->limit(10)->get();
         $StoriesCategory = StoriesCategory::with('Story')->first();
         $programs = Program::with('sub_programs')->get();
-        return view('landing',compact(['slides','impact_numbers','news','services','NewsLetter','AnnualReport','Campaign','Partners','stories','ImportantLinks','StoriesCategory','programs']));
+        return view('landing2',compact(['slides','impact_numbers','news','services','NewsLetter','AnnualReport','Campaign','Partners','stories','ImportantLinks','StoriesCategory','programs']));
     }
 
     

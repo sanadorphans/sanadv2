@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomebController;
 use App\Http\Controllers\cms\NewsController;
 use App\Http\Controllers\cms\PageController;
 use App\Http\Controllers\DonationController;
@@ -96,6 +97,7 @@ Route::group([
         Route::post('/consultation/chat/store/{id}',[RepliesController::class,'store']);
     });
 
+    Route::get('/landing2', [HomebController::class,'index'])->name('landing2');
     Route::get('/', [HomeController::class,'index'])->name('landing');
     Route::get('/target-audience', [HomeController::class,'index2'])->name('targetaudience');
     Route::get('/contact-us',[ContactUsController::class,'index'])->name('contact_us');

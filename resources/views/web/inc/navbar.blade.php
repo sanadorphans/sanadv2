@@ -179,11 +179,11 @@
                     </div>
                 </li> --}}
             </ul>
-               {{--  <div class="buttons">
+            <div class="buttons">
                     <a href="{{ route('web.donations.index') }}">{{ __('lang.donate_now') }}</a>
                     <a style="background:rgb(243, 114, 70);" href="https://sanadorphans.org/en/pages/sub-services/37">{{ __('lang.consultation2') }}</a>
 
-            @if (!Auth::user())
+                {{-- @if (!Auth::user())
                     <a href="{{ route('login') }}">{{ __('lang.get_our_services') }}</a>
                 @else
                 <ul>
@@ -206,8 +206,8 @@
                         </div>
                     </li>
                 </ul>
-                @endif 
-            </div>--}}
+                @endif --}}
+            </div>
         </div>
     </nav>
 

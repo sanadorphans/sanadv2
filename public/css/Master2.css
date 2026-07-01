@@ -165,9 +165,6 @@ p,h1,h2,h3,h4,h5,h6{
     color: #001A31;
 }
 
-a:hover{
-    color: #001A31;
-}
 ul{
     list-style: none;
 }
@@ -486,9 +483,9 @@ nav .navbar-brand img{
 
 nav .navbar-nav {
     grid-area: nav;
-    justify-self: center;
+    justify-self: end;
     display: grid;
-    grid-template-columns:70% 30%;
+    grid-template-columns:90% 10%;
     grid-template-rows: 100%;
     grid-template-areas: "li buttons";
     width: 100%;
@@ -550,7 +547,7 @@ nav .deactive{
     display: none;
 }
 
-#footer{
+footer{
     background-color: #001A31;
     display: grid;
     justify-items: center;
@@ -561,33 +558,33 @@ nav .deactive{
     padding: 4vw 0 1vw 0;
 }
 
-#footer .brand{
+footer .brand{
     display: grid;
     justify-items: center;
     align-items: center;
     grid-area: brand;
 }
-#footer .brand h2{
+footer .brand h2{
     color:white;
     font-size: 1.5vw;
     margin: 1vw;
 }
 
-#footer .brand .contactUs .phone-link a{
+footer .brand .contactUs .phone-link a{
     color:white;
 }
-#footer .brand .contactUs .phone-link a:hover{
+footer .brand .contactUs .phone-link a:hover{
     color:#35C0CA;
 }
-#footer .brand .contactUs .social-icons img{
+footer .brand .contactUs .social-icons img{
     width: 2.2vw;
 }
-#footer  h2{
+footer  h2{
     text-align: center;
     position: relative;
     color: #fff;
 }
-#footer .brand .contactUs h2::after{
+footer .brand .contactUs h2::after{
     content: "";
     position: absolute;
     bottom:-40%;
@@ -600,105 +597,33 @@ nav .deactive{
     background-color: #fff;
     border-radius: 20px;
 }
-#footer .brand .contactUs ul:nth-of-type(1){
+footer .brand .contactUs ul:nth-of-type(1){
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#footer .brand .contactUs ul:nth-of-type(1) li{
+footer .brand .contactUs ul:nth-of-type(1) li{
     margin: 1vw;
 }
 
-#footer .brand .contactUs ul:nth-of-type(2){
+footer .brand .contactUs ul:nth-of-type(2){
     margin: 2vw 0;
 }
-#footer .brand .contactUs ul:nth-of-type(2) li{
+footer .brand .contactUs ul:nth-of-type(2) li{
     margin: 1vw;
     font-size: 1.2vw;
 }
-#footer .brand .contactUs ul:nth-of-type(2) li i{
+footer .brand .contactUs ul:nth-of-type(2) li i{
     margin: 0 1vw;
 }
-#footer .brand .contactUs ul:nth-of-type(2) li a{
+footer .brand .contactUs ul:nth-of-type(2) li a{
     color: #fff;
     font-weight: normal;
 }
-#footer .brand .contactUs ul:nth-of-type(2) li a:hover{
+footer .brand .contactUs ul:nth-of-type(2) li a:hover{
     color: #fff
  }
-#footer .newsletters form{
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    margin: 2vw 0;
-}
-#footer .newsletters {
-    grid-area: newsletter;
-}
 
-#footer .newsletters form input{
-    padding: 0.8vw;
-    margin: 0.5vw;
-    border-radius: 1vw;
-    outline: none;
-    border: none;
-    width: 25vw;
-    font-size: 1.2vw;
-    font-weight: 600;
-    color: #001A31;
-    font-family: 'cairo';
-}
-
-#footer .newsletters form input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    font-family: 'cairo', Arial, Helvetica, sans-serif;
-    opacity: 1; /* Firefox */
-    font-size: 1.2vw;
-    font-weight: bold;
-    color: #001A31;
-}
-
-#footer .newsletters form input:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    font-family: 'cairo', Arial, Helvetica, sans-serif;
-    opacity: 1; /* Firefox */
-    font-size: 1.2vw;
-    font-weight: bold;
-    color: #001A31;}
-
-#footer .newsletters form input::-ms-input-placeholder { /* Microsoft Edge */
-    font-family: 'cairo', Arial, Helvetica, sans-serif;
-    opacity: 1; /* Firefox */
-    font-size: 1.2vw;
-    font-weight: bold;
-    color: #001A31;
-}
-
-form input[type="submit"],form button[type="submit"]{
-    background-color: #35C0CA;
-    color: #fff !important;
-    font-family: 'cairo', Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 1.2vw;
-    cursor: pointer;
-}
-
-#footer .newsletters h2{
-    font-size: 1.4vw;
-    margin: 3vw 0;
-}
-
-#footer .newsletters h2::after{
-    content: "";
-    position: absolute;
-    bottom: -1vw;
-    left: 50%;
-    /* support safari */
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    width: 8vw;
-    height: 1.5vh;
-    background-color: #fff;
-    border-radius: 20px;
-}
 #mc_embed_signup div.mce_inline_error {
     background:none !important;
     text-align: left;
@@ -985,69 +910,41 @@ html[lang="ar"] .pagination nav div:nth-of-type(2) div:nth-of-type(2) span svg{
         margin: 10px;
         padding: 10px;
     }
-    #footer{
+    footer{
         grid-template-columns: 100%;
         grid-template-rows: 50% 50%;
         grid-template-areas: "brand" "newsletter";
         padding: 80px 20px 10px 0;
     }
-    #footer .brand .contactUs ul:nth-of-type(1) {
+    footer .brand .contactUs ul:nth-of-type(1) {
         flex-wrap: wrap;
     }
-    #footer .brand h2{
+    footer .brand h2{
         font-size: 22px;
         margin: 20px;
     }
-    #footer .brand .contactUs .social-icons img{
+    footer .brand .contactUs .social-icons img{
         width: 30px;
     }
 
-    #footer .brand .contactUs h2::after{
+    footer .brand .contactUs h2::after{
         width: 40%;
         height: 6px;
         border-radius: 20px;
         bottom:-50%;
     }
-    #footer .brand .contactUs ul:nth-of-type(1) li{
+    footer .brand .contactUs ul:nth-of-type(1) li{
         margin: 10px;
     }
 
-    #footer .brand .contactUs ul:nth-of-type(2){
+    footer .brand .contactUs ul:nth-of-type(2){
         margin: 40px 0;
     }
-    #footer .brand .contactUs ul:nth-of-type(2) li{
+    footer .brand .contactUs ul:nth-of-type(2) li{
         margin: 10px;
         font-size: 18px;
     }
-    #footer .newsletters form{
-        margin: 40px 0 0 0;
-    }
-
-    #footer .newsletters form input{
-        padding: 10px;
-        margin: 10px auto;
-        border-radius: 10px;
-        width: 100%;
-        font-size: 18px;
-    }
-    #footer .newsletters form input::placeholder{
-        font-size: 18px;
-    }
-    #footer .newsletters form button{
-        padding: 10px 40px;
-        margin: 20px 0;
-        font-size: 18px;
-        border-radius: 20px;
-    }
-    #footer .newsletters h2{
-        font-size: 18px;
-    }
-    #footer .newsletters h2::after{
-        width: 40%;
-        height: 6px;
-        border-radius: 20px;
-        bottom:-50%;
-    }
+    
     #copyRights{
         padding: 10px;
         font-size: 18px;
@@ -1141,3 +1038,4 @@ html[lang="ar"] .pagination nav div:nth-of-type(2) div:nth-of-type(2) span svg{
         height: 20px;
     }
 }
+
