@@ -49,7 +49,7 @@
         <div class="navbar-nav navbar-nav-hover">
             <img class="deactive" src="{{asset('img/nav/remove.svg')}}" alt="deactive" width="30" height="30" onclick="toggleNavActive()">
             <ul>
-                <li class="navItem" onclick="toggleActiveClass(this)">
+                <li class="navItem">
                     <a class="navLink" href="#">
                             <span >{{ __('lang.our_services') }}</span>
                             <span class="bg-blue"></span>
@@ -64,7 +64,7 @@
                             @endforelse
                     </div>
                 </li>
-                <li class="navItem" onclick="toggleActiveClass(this)">
+                <li class="navItem">
                     <a class="navLink" href="#">
                             <span >{{ __('lang.our_programs') }}</span>
                             <span class="bg-blue"></span>
@@ -79,7 +79,7 @@
                             @endforelse
                     </div>
                 </li>
-                <li class="navItem " onclick="toggleActiveClass(this)">
+                <li class="navItem">
                     <a class="navLink" href="#">
                         <span >{{ __('lang.our_impact') }}</span>
                         <span class="bg-blue"></span>
@@ -97,7 +97,7 @@
                             </a>
                     </div>
                 </li>
-                <li class="navItem " onclick="toggleActiveClass(this)">
+                <li class="navItem">
                     <a class="navLink" href="#">
                         <span >{{ __('lang.Who We Are') }}</span>
                         <span class="bg-blue"></span>
@@ -121,7 +121,7 @@
                             </a>
                     </div>
                 </li>
-                <li class="navItem " onclick="toggleActiveClass(this)">
+                <li class="navItem">
                     <a class="navLink" href="#">
                         <span >{{ __('lang.media_center') }}</span>
                         <span class="bg-blue"></span>
@@ -158,7 +158,7 @@
                     </div>
                 </li>
 
-                <li class="navItem " onclick="toggleActiveClass(this)">
+                <li class="navItem">
                     <a href="{{ route('web.pages.vacancies') }}">
                         <span>{{ __('lang.join_wataneya') }}</span>
                     </a>

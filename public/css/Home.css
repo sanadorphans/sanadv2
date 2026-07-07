@@ -1141,7 +1141,7 @@ h2.sh2 {
 
 .ng {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
 }
 
@@ -1158,7 +1158,7 @@ h2.sh2 {
 }
 
 .nimg {
-    height: 160px;
+    height: 230px;
     display: flex;
     align-items: flex-end;
     padding: 1.125rem;

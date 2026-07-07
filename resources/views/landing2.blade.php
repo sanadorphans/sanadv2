@@ -205,12 +205,55 @@ form div input {
     font-size: 14px !important;
     padding: 12px !important;
 }
+        /* Hero Video Background Styles */
+        .hero {
+            position: relative;
+            background: #0A2533; /* fallback navy background */
+        }
+        .hero-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .hero-video-bg iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            border: none;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .hero-video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 37, 51, 0.65); /* navy dark overlay */
+            z-index: 1;
+        }
     </style>
 @endsection
 
 @section('content')
 
 <div class="hero" id="home">
+  <div class="hero-video-bg">
+    <iframe src="https://www.youtube.com/embed/lNpo7sIex6s?si=oxXJ9-_wct4JbPTa&autoplay=1&mute=1&loop=1&playlist=lNpo7sIex6s&controls=0&playsinline=1&rel=0&enablejsapi=1" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen>
+    </iframe>
+    <div class="hero-video-overlay"></div>
+  </div>
   <div class="hero-teal-accent"></div>
   <div class="hero-grid-pattern"></div>
   <div class="hero-orb1"></div>
@@ -484,7 +527,7 @@ form div input {
 
          @forelse ($news as $new)
                 <div class="ncard">
-                  <div class="nimg" style="background: url(../storage/{{str_replace("\\" , "/",$new->image)}})">
+                  <div class="nimg" style="background: url(../storage/{{str_replace("\\" , "/",$new->image)}});background-size: cover;">
                   <!-- <div class="nimg-badge en-only">Program Update</div><div class="nimg-badge ar-only" style="font-family:var(--font-ar)">تحديث البرنامج</div> -->
                 </div>
                   <div class="nbody">
@@ -767,7 +810,30 @@ form div input {
             });
 
 
-        })
+        });
+
+        function resizeHeroVideo() {
+            const hero = document.getElementById('home');
+            const iframe = document.querySelector('.hero-video-bg iframe');
+            if (!hero || !iframe) return;
+
+            const w = hero.offsetWidth;
+            const h = hero.offsetHeight;
+            const videoRatio = 16 / 9;
+            const containerRatio = w / h;
+
+            if (containerRatio > videoRatio) {
+                iframe.style.width = w + 'px';
+                iframe.style.height = (w / videoRatio) + 'px';
+            } else {
+                iframe.style.width = (h * videoRatio) + 'px';
+                iframe.style.height = h + 'px';
+            }
+        }
+
+        window.addEventListener('resize', resizeHeroVideo);
+        document.addEventListener('DOMContentLoaded', resizeHeroVideo);
+        window.addEventListener('load', resizeHeroVideo);
     </script>
 @endpush
 

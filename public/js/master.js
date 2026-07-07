@@ -7,28 +7,25 @@ function toggleNavActive() {
     classList.toggle('active');
 }
 
-// This function toggles the 'active' class on the dropdown menu element inside a list item (li).
-function toggleActiveClass(li) {
-    document.querySelectorAll('nav .dropdownMenu').forEach((dropdownMenu) => {
-        // Get the 'classList' property of the dropdown menu element
-        const { classList } = dropdownMenu;
-        // Toggle the 'active' class on the dropdown menu element
-        classList.remove('active');
-    })
+// Hover-based dropdown: open on mouseenter, close on mouseleave
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('nav .navItem').forEach(function (li) {
+        var dropdown = li.querySelector('.dropdownMenu');
+        if (!dropdown) return;
 
-    // Get the classList property of the dropdown menu element
-    const { classList } = li.querySelector('nav .dropdownMenu');
-    // Toggle the 'active' class on the dropdown menu element
-    classList.add('active');
-    window.addEventListener('dblclick', (e) => {
-        document.querySelectorAll('nav .dropdownMenu').forEach((dropdownMenu) => {
-            // Get the 'classList' property of the dropdown menu element
-            const { classList } = dropdownMenu;
-            // Toggle the 'active' class on the dropdown menu element
-            classList.remove('active');
-        })
-    })
-}
+        li.addEventListener('mouseenter', function () {
+            // Close all other open dropdowns
+            document.querySelectorAll('nav .dropdownMenu.active').forEach(function (d) {
+                if (d !== dropdown) d.classList.remove('active');
+            });
+            dropdown.classList.add('active');
+        });
+
+        li.addEventListener('mouseleave', function () {
+            dropdown.classList.remove('active');
+        });
+    });
+});
 
 // if scroll y in 50px then make nav fixed
 window.addEventListener('scroll', function() {

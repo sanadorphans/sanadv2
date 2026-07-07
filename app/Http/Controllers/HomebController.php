@@ -23,7 +23,7 @@ class HomebController extends Controller
 
         $slides = Slide::get();
         $impact_numbers = ImpactNumber::get();
-        $news = News::orderBy('created_at','desc')->paginate(3);
+        $news = News::orderBy('created_at','desc')->paginate(4);
         $services = Service::get();
         $NewsLetter = PeriodicalNewsletter::first();
         $AnnualReport = AnnualReport::orderBy('order')->first();
