@@ -66,30 +66,15 @@ body.ar {
 }
 
 .hero-orb1 {
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(41, 184, 193, 0.15) 0%, transparent 70%);
+    display: none; /* removed */
 }
 
 .hero-orb2 {
-    position: absolute;
-    bottom: 100px;
-    left: -80px;
-    width: 360px;
-    height: 360px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(41, 184, 193, 0.08) 0%, transparent 70%);
+    display: none; /* removed */
 }
 
 .hero-grid-pattern {
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(rgba(41, 184, 193, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(41, 184, 193, 0.04) 1px, transparent 1px);
-    background-size: 50px 50px;
+    display: none; /* removed – squares decorative layer */
 }
 
 .hero-teal-accent {
@@ -251,70 +236,96 @@ h1.hero-h1 .accent {
 }
 
 .trusted-by {
+    padding: 3rem 2rem;
+    background: var(--white);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    overflow: hidden;
+}
+
+.trusted-by .si {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1160px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.trusted-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text);
+    white-space: nowrap;
+    margin: 0;
+}
+
+.logos-marquee {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+}
+
+.marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    width: max-content;
+    animation: infiniteScroll 50s linear infinite;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+.marquee-item {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* أو space-between لو عايز توزيع متساوي */
-    gap: 40px;
-    /* المسافة بين النص واللوجوهات */
-    flex-wrap: wrap;
-    /* يخليها متجاوبة على الموبايل */
-    padding: 20px;
-    flex-flow: row;
-    /* يخلي النص فوق اللوجوهات */
 }
 
-.trusted-by h3 {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    width: 10%;
-}
-
-.logos {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    width: 50%;
-}
-
-.logo-track {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    animation: scrollLogos 40s linear infinite;
-}
-
-.logo-track img {
-    width: 150px;
-    height: auto;
+.marquee-item img {
+    height: 60px;
+    width: auto;
+    max-width: 140px;
     object-fit: contain;
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
+    filter: grayscale(100%) opacity(0.6);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.logo-track img:hover {
-    transform: scale(1.1);
+.marquee-item img:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.08);
 }
 
-@keyframes scrollLogos {
+@keyframes infiniteScroll {
     from {
         transform: translateX(0);
     }
-
     to {
         transform: translateX(-50%);
     }
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-    .logo-track {
-        gap: 30px;
+@media (max-width: 800px) {
+    .trusted-by .si {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    .trusted-title {
+        white-space: normal;
+    }
+    .marquee-track {
+        gap: 2rem;
         animation-duration: 30s;
     }
-
-    .logo-track img {
-        height: 40px;
+    .marquee-item img {
+        height: 45px;
     }
 }
 
@@ -1122,7 +1133,7 @@ h2.sh2 {
 
 /* ══ NEWS ══ */
 .news-section {
-    background: white;
+    background: var(--off-white);
 }
 
 .news-hdr {

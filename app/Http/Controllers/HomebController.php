@@ -30,7 +30,7 @@ class HomebController extends Controller
         $Campaign = Campaign::latest()->first();
         // show 10 parteners randomly
         $ImportantLinks  = ImportantLink::inRandomOrder()->limit(3)->get();
-        $Partners = Partner::inRandomOrder()->limit(8)->get();
+        $Partners = Partner::inRandomOrder()->limit(20)->get();
         $stories = Story::latest()->limit(10)->get();
         $StoriesCategory = StoriesCategory::with('Story')->first();
         $programs = Program::with('sub_programs')->get();

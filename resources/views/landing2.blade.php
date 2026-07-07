@@ -47,7 +47,7 @@
 @section('page_name') {{ __('lang.home') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.7')}}">
+    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.8')}}">
     <link rel="stylesheet" href="{{asset('css/ImportantLink.css?v=1.5')}}"/>
     <link rel="stylesheet" href="{{asset('css/Impact.css?v=2.2')}}">
     <style>
@@ -224,12 +224,13 @@ form div input {
             position: absolute;
             top: 50%;
             left: 50%;
+            /* Scale up so YouTube's control bar/title are outside the clipped container */
+            width: 125%;
+            height: 125%;
             transform: translate(-50%, -50%);
             pointer-events: none;
             border: none;
             z-index: 0;
-            width: 100%;
-            height: 100%;
         }
         .hero-video-overlay {
             position: absolute;
@@ -237,8 +238,157 @@ form div input {
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(10, 37, 51, 0.65); /* navy dark overlay */
+            background: rgba(10, 37, 51, 0.35); /* lighter overlay – video shows through, white text stays readable */
             z-index: 1;
+        }
+
+        /* ── Play Button ── */
+        .hero-play-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.12);
+            border: 1.5px solid rgba(255,255,255,0.3);
+            border-radius: 100px;
+            padding: 10px 22px 10px 14px;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            backdrop-filter: blur(6px);
+            text-decoration: none;
+            margin-top: 0.5rem;
+        }
+        .hero-play-btn:hover {
+            background: rgba(255,255,255,0.22);
+            border-color: rgba(255,255,255,0.55);
+            transform: scale(1.04);
+        }
+        .hero-play-icon {
+            width: 36px;
+            height: 36px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .hero-play-icon svg {
+            width: 14px;
+            height: 14px;
+            fill: #0A2533;
+            margin-left: 2px;
+        }
+
+        /* ── Video Modal ── */
+        #videoModal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0,0,0,0.88);
+            align-items: center;
+            justify-content: center;
+            animation: fadeInModal 0.25s ease;
+        }
+        #videoModal.open {
+            display: flex;
+        }
+        @keyframes fadeInModal {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        .vm-inner {
+            position: relative;
+            width: 90vw;
+            max-width: 960px;
+            aspect-ratio: 16/9;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+        }
+        .vm-inner iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .vm-close {
+            position: absolute;
+            top: -44px;
+            right: 0;
+            background: rgba(255,255,255,0.1);
+            border: 1.5px solid rgba(255,255,255,0.25);
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: white;
+            font-size: 18px;
+            line-height: 1;
+            transition: background 0.2s;
+        }
+        .vm-close:hover { background: rgba(255,255,255,0.22); }
+
+        /* ── News Glide ── */
+        .news-glide {
+            width: 80%;
+            margin: auto;
+            position: relative;
+        }
+        .news-glide .glide__track {
+            margin: auto;
+        }
+        .news-glide .glide__arrow {
+            padding: 0;
+            background-color: transparent;
+            border: 0 solid rgba(255,255,255,0.5);
+            box-shadow: 0 0 0 0 rgba(0,0,0,0.1);
+            text-shadow: 0 0 0 0 rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+        .news-glide .glide__arrow--left {
+            -webkit-transform: rotate(270deg) translate(50%,0);
+            transform: rotate(270deg) translate(50%,0);
+            left: -4.5em;
+            z-index: 5;
+            position: absolute;
+            top: 50%;
+        }
+        .news-glide .glide__arrow--right {
+            -webkit-transform: rotate(90deg) translate(-50%,0);
+            transform: rotate(90deg) translate(-50%,0);
+            right: -4.5em;
+            z-index: 5;
+            position: absolute;
+            top: 50%;
+        }
+        .news-glide .glide__arrow img {
+            width: 6vw;
+            height: auto;
+        }
+        @media (max-width: 800px) {
+            .news-glide {
+                width: 100%;
+            }
+            .news-glide .glide__arrow img {
+                width: 50px;
+            }
+            .news-glide .glide__arrow--left {
+                -webkit-transform: rotate(270deg) translate(120%,0);
+                transform: rotate(270deg) translate(120%,0);
+                left: -0.2em;
+            }
+            .news-glide .glide__arrow--right {
+                -webkit-transform: rotate(90deg) translate(-120%,0);
+                transform: rotate(90deg) translate(-120%,0);
+                right: -0.2em;
+            }
         }
     </style>
 @endsection
@@ -247,7 +397,7 @@ form div input {
 
 <div class="hero" id="home">
   <div class="hero-video-bg">
-    <iframe src="https://www.youtube.com/embed/lNpo7sIex6s?si=oxXJ9-_wct4JbPTa&autoplay=1&mute=1&loop=1&playlist=lNpo7sIex6s&controls=0&playsinline=1&rel=0&enablejsapi=1" 
+    <iframe src="https://www.youtube.com/embed/lNpo7sIex6s?si=oxXJ9-_wct4JbPTa&autoplay=1&mute=1&loop=1&playlist=lNpo7sIex6s&controls=0&playsinline=1&rel=0&enablejsapi=1&modestbranding=1&disablekb=1&fs=0&iv_load_policy=3" 
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen>
@@ -255,9 +405,6 @@ form div input {
     <div class="hero-video-overlay"></div>
   </div>
   <div class="hero-teal-accent"></div>
-  <div class="hero-grid-pattern"></div>
-  <div class="hero-orb1"></div>
-  <div class="hero-orb2"></div>
   <div class="hero-inner">
     <div>
       <div class="hero-badge">
@@ -278,6 +425,12 @@ form div input {
         <a href="{{ route('targetaudience') }}" class="btn-teal">{{ __('lang.our_services') }} {{ __('lang.arrow_dir') }}</a>
         <a href="https://sanadorphans.org/en/pages/sub-services/37" class="btn-outline-w">{{ __('lang.consultation2') }} {{ __('lang.arrow_dir') }}</a>
       </div>
+      <button class="hero-play-btn" id="heroPlayBtn" onclick="openVideoModal()">
+        <span class="hero-play-icon">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><polygon points="4,2 14,8 4,14"/></svg>
+        </span>
+        <span>{{ app()->getLocale() == 'ar' ? 'شاهد الفيديو' : 'Watch Video' }}</span>
+      </button>
     </div>
 
     <div class="hero-right">
@@ -382,14 +535,69 @@ form div input {
   </div>
 </div>
 
+<!-- ══ VIDEO MODAL ══ -->
+<div id="videoModal" onclick="handleModalClick(event)">
+  <div class="vm-inner">
+    <div class="vm-close" onclick="closeVideoModal()">&#x2715;</div>
+    <iframe id="modalVideoIframe"
+      src=""
+      allow="autoplay; encrypted-media; fullscreen"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+<!-- ══ NEWS ══ -->
+<section class="news-section" id="news">
+  <div class="si">
+    <div class="news-hdr">
+      <div>
+        <div class="stag"><span class="stag-line"></span><span>{{ __('lang.latest_news_tag') }}</span></div>
+        <h2 class="sh2" style="margin-bottom:0;">{{ __('lang.from_the_field') }}</h2>
+      </div>
+      <a href="/pages/news" class="news-all">{{ __('lang.view_all_news') }}</a>
+    </div>
+    <div class="slider" style="width: 100%; margin: 2vw 0;">
+      <div class="glide news-glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+             @forelse ($news as $new)
+                <li class="glide__slide">
+                  <div class="ncard" style="margin: 10px; background: white; height: 100%;">
+                    <div class="nimg" style="background: url(../storage/{{str_replace("\\" , "/",$new->image)}});background-size: cover; background-position: center; height: 230px;">
+                    </div>
+                    <div class="nbody" style="padding: 1.5rem;">
+                      <div class="ndate" style="font-size: 12px; color: var(--muted); margin-bottom: 0.5rem;">{{ app()->getLocale() == 'ar' ? to_arabic_number(date('F Y', strtotime($new->created_at))) : $new->created_at->formatLocalized('%B %Y') }}</div>
+                      <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 1rem; line-height: 1.4; min-height: 48px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{$new->$title}}</h4>
+                      <a href="/pages/news/{{$new->id}}" class="nread" style="font-size: 13px; color: var(--teal); font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">{{ __('lang.more') }} {{ __('lang.arrow_dir') }}</a>
+                    </div>
+                  </div>
+                </li>
+             @empty
+             @endforelse
+          </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow"></button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="trusted-by">
-  <h3>{{ __('lang.trusted-by') }}</h3>
-  <div class="logos">
-    <div class="logo-track">
-        @forelse ($Partners as $Partner)
-            <img src="{{ asset('storage/' . $Partner->image) }}" alt="image" width="100" height="100">
-        @empty
-        @endforelse
+  <div class="si">
+    <h3 class="trusted-title">{{ __('lang.trusted-by') }}</h3>
+    <div class="logos-marquee">
+      <div class="marquee-track" id="partnerMarquee">
+          @forelse ($Partners as $Partner)
+              <div class="marquee-item">
+                  <img src="{{ asset('storage/' . $Partner->image) }}" alt="partner logo">
+              </div>
+          @empty
+          @endforelse
+      </div>
     </div>
   </div>
 </section>
@@ -513,34 +721,6 @@ form div input {
   </div>
 </section>
 
-<!-- ══ NEWS ══ -->
-<section class="news-section" id="news">
-  <div class="si">
-    <div class="news-hdr">
-      <div>
-        <div class="stag"><span class="stag-line"></span><span>{{ __('lang.latest_news_tag') }}</span></div>
-        <h2 class="sh2" style="margin-bottom:0;">{{ __('lang.from_the_field') }}</h2>
-      </div>
-      <a href="/pages/news" class="news-all">{{ __('lang.view_all_news') }}</a>
-    </div>
-    <div class="ng">
-
-         @forelse ($news as $new)
-                <div class="ncard">
-                  <div class="nimg" style="background: url(../storage/{{str_replace("\\" , "/",$new->image)}});background-size: cover;">
-                  <!-- <div class="nimg-badge en-only">Program Update</div><div class="nimg-badge ar-only" style="font-family:var(--font-ar)">تحديث البرنامج</div> -->
-                </div>
-                  <div class="nbody">
-                    <div class="ndate">{{ app()->getLocale() == 'ar' ? to_arabic_number(date('F Y', strtotime($new->created_at))) : $new->created_at->formatLocalized('%B %Y') }}</div>
-                    <h4>{{$new->$title}}</h4>
-                    <a href="/pages/news/{{$new->id}}" class="nread">{{ __('lang.more') }} {{ __('lang.arrow_dir') }}</a>
-                  </div>
-                </div>
-          @empty
-          @endforelse
-    </div>
-  </div>
-</section>
 
 <!-- ══ GET INVOLVED ══ -->
 <section class="involve-section">
@@ -832,8 +1012,69 @@ form div input {
         }
 
         window.addEventListener('resize', resizeHeroVideo);
-        document.addEventListener('DOMContentLoaded', resizeHeroVideo);
+        document.addEventListener('DOMContentLoaded', function() {
+            resizeHeroVideo();
+            if (document.querySelector('.news-glide')) {
+                new Glide('.news-glide', {
+                    type: 'carousel',
+                    startAt: 0,
+                    autoplay: 4000,
+                    perView: 4,
+                    gap: 20,
+                    breakpoints: {
+                        1200: {
+                            perView: 3
+                        },
+                        800: {
+                            perView: 1
+                        }
+                    }
+                }).mount();
+            }
+            // Setup infinite scrolling marquee for partners
+            const marqueeTrack = document.getElementById('partnerMarquee');
+            if (marqueeTrack) {
+                const marqueeItems = Array.from(marqueeTrack.children);
+                marqueeItems.forEach(item => {
+                    const clone = item.cloneNode(true);
+                    marqueeTrack.appendChild(clone);
+                });
+                marqueeItems.forEach(item => {
+                    const clone = item.cloneNode(true);
+                    marqueeTrack.appendChild(clone);
+                });
+            }
+        });
         window.addEventListener('load', resizeHeroVideo);
+
+        // ── Video Modal ──
+        var VIDEO_URL = 'https://www.youtube.com/embed/lNpo7sIex6s?autoplay=1&mute=0&controls=1&rel=0&enablejsapi=1';
+
+        function openVideoModal() {
+            var modal = document.getElementById('videoModal');
+            var iframe = document.getElementById('modalVideoIframe');
+            iframe.src = VIDEO_URL;
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoModal() {
+            var modal = document.getElementById('videoModal');
+            var iframe = document.getElementById('modalVideoIframe');
+            modal.classList.remove('open');
+            iframe.src = ''; // stop video on close
+            document.body.style.overflow = '';
+        }
+
+        function handleModalClick(e) {
+            if (e.target === document.getElementById('videoModal')) {
+                closeVideoModal();
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeVideoModal();
+        });
     </script>
 @endpush
 
