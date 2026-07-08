@@ -23,7 +23,7 @@ class KnowledgeController extends Controller
 
         $locale = app()->getLocale();
         $columnName = $locale ? 'title_' . $locale : false;
-        $article = Knowledge::findOrFailBySlug(Knowledge::class, $slug);
+        $article = $this->findOrFailBySlug(Knowledge::class, $slug);
 
         return view('cms.articales.show')->with([
             'article' => $article,
