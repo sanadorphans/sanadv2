@@ -49,7 +49,7 @@
             <div class="news">
                 @forelse ($articles as $article)
                       <div class="ncard" style="margin: 10px; background: white; height: 100%;">
-                        <div class="nimg" style="background: url(../storage/{{str_replace("\\" , "/",$article->image)}});background-size: cover; background-position: center; height: 230px;">
+                        <div class="nimg" style="background: url(/storage/{{str_replace("\\" , "/",$article->image)}});background-size: cover; background-position: center; height: 230px;">
                         </div>
                         <div class="nbody" style="padding: 1.5rem;">
                           <div class="ndate" style="font-size: 12px; color: var(--muted); margin-bottom: 0.5rem;">{{ app()->getLocale() == 'ar' ? to_arabic_number(date('F Y', strtotime($article->created_at))) : $article->created_at->formatLocalized('%B %Y') }}</div>
