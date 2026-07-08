@@ -995,6 +995,7 @@ The Sanad Society Team",
     'latest_news_tag' => 'Latest News',
     'from_the_field' => 'From the field',
     'view_all_news' => 'View all news →',
+    'view_all_stories' => 'View all stories →',
 
     // ── Get Involved section ──
     'get_involved_tag' => 'Get Involved',

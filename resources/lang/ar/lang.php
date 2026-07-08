@@ -1029,6 +1029,7 @@ return [
     'latest_news_tag' => 'آخر الأخبار',
     'from_the_field' => 'من الميدان',
     'view_all_news' => '← كل الأخبار',
+    'view_all_stories' => '← كل القصص',
 
     // ── Get Involved section ──
     'get_involved_tag' => 'شارك معنا',

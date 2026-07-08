@@ -656,8 +656,12 @@ form div input {
 <!-- ══ stories ══ -->
 <section class="challenge-section" id="about">
   <div class="si">
-    <div class="stag"><span class="stag-line"></span><span>{{ __('lang.stories') }}</span></div>
-    <h2 class="sh2 en-only">{!! isset($StoriesCategory->$details2) ? $StoriesCategory->$details2 : '' !!}</h2>
+    <div class="news-hdr">
+      <div class="stag"><span class="stag-line"></span><span>{{ __('lang.stories') }}</span></div>
+      <a href="/pages/stories" class="news-all">{{ __('lang.view_all_stories') }}</a>
+    </div>
+    <h2 class="sh2" style="margin-bottom:0;">{!! isset($StoriesCategory->$details2) ? $StoriesCategory->$details2 : '' !!}</h2>
+
     <div id="Impacts">
         <div class="slider">
             <div class="glide AllImpacts">
@@ -681,7 +685,6 @@ form div input {
             </div>
         </div>
     </div>
-
   </div>
 </section>
 

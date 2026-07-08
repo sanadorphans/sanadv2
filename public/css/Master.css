@@ -1223,3 +1223,11 @@ html[lang="ar"] .pagination nav div:nth-of-type(2) div:nth-of-type(2) span svg{
     cursor: not-allowed;
 }
 
+/* Align "View all" link with the stag tag (top of header block) */
+.news-hdr {
+    align-items: flex-start;
+}
+
+.news-all {
+    margin-top: 4px;
+}
