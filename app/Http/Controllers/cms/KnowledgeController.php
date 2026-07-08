@@ -16,7 +16,7 @@ class KnowledgeController extends Controller
             ->whereNotNull($columnName)
             ->paginate(12);
 
-        return view('cms.article.index')->with('articles', $articles);
+        return view('cms.articales.index')->with('articles', $articles);
     }
 
     public function show($slug){
@@ -25,7 +25,7 @@ class KnowledgeController extends Controller
         $columnName = $locale ? 'title_' . $locale : false;
         $article = Knowledge::findOrFailBySlug(Knowledge::class, $slug);
 
-        return view('cms.knowledge.show')->with([
+        return view('cms.articales.show')->with([
             'article' => $article,
             'other_articles' => Knowledge::inRandomOrder()->whereNotNull($columnName)->take(3)->get(),
             'title' => $article->title,
