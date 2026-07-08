@@ -17,7 +17,7 @@
     @include('web.inc.map')
     <section class="ShowNew new{{ $article->id }}">
         <h1>{{ $article->$title }}</h1>
-        <p>{{ $date }}</p>
+        <p style="text-align:center;">{{ $date }}</p>
         <img src="/storage/{{ $article->image }}" alt="{{ $article->title }}">
         <p>{!! $article->$details !!}</p>
     </section>
