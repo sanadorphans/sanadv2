@@ -740,7 +740,7 @@ form div input {
       <div class="icard-icon">🙋</div>
       <h3>{{ __('lang.volunteer_h3') }}</h3>
       <p>{{ __('lang.volunteer_p') }}</p>
-      <a href="#" class="ibtn">{{ __('lang.apply_volunteer') }}</a>
+      <a href="https://forms.office.com/r/ky00KxTAu0" class="ibtn">{{ __('lang.apply_volunteer') }}</a>
     </div>
     <div class="icard">
       <div class="icard-icon">🤝</div>
@@ -852,6 +852,15 @@ form div input {
                             </a>
                         @empty
                         @endforelse
+                </div>
+                  <div>
+                    <h4>{{ __('lang.Knowledge creation') }}</h4>
+                            <a href="{{ route('web.article.index') }}" >
+                                <span>{{ __('lang.articles') }}</span>
+                            </a>
+                        <a href="{{ route('web.pages.technical_reports') }}">
+                                    <span>{{ __('lang.technical_reports') }}</span>
+                                </a>
                 </div>
             </div>
         </div>

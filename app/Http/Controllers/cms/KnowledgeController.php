@@ -11,24 +11,24 @@ class KnowledgeController extends Controller
     public function index(){
         $locale = app()->getLocale();
         $columnName = $locale ? 'title_' . $locale : false;
-        $knowledge = knowledge::orderBy('created_at','desc')
+        $articles = knowledge::orderBy('created_at','desc')
             ->whereNotNull($columnName)
             ->paginate(12);
 
-        return view('cms.knowledge.index')->with('knowledge', $knowledge);
+        return view('cms.article.index')->with('articles', $articles);
     }
 
     public function show($slug){
 
         $locale = app()->getLocale();
         $columnName = $locale ? 'title_' . $locale : false;
-        $knowledge = knowledge::findOrFailBySlug(knowledge::class, $slug);
+        $article = knowledge::findOrFailBySlug(knowledge::class, $slug);
 
         return view('cms.knowledge.show')->with([
-            'knowledge' => $knowledge,
-            'other_knowledge' => knowledge::inRandomOrder()->whereNotNull($columnName)->take(3)->get(),
-            'title' => $knowledge->title,
-            'date' => app()->getLocale() == 'ar' ? to_arabic_number(date('F Y', strtotime($knowledge->created_at))) : $knowledge->created_at->formatLocalized('%B %Y')
+            'article' => $article,
+            'other_articles' => knowledge::inRandomOrder()->whereNotNull($columnName)->take(3)->get(),
+            'title' => $article->title,
+            'date' => app()->getLocale() == 'ar' ? to_arabic_number(date('F Y', strtotime($article->created_at))) : $article->created_at->formatLocalized('%B %Y')
         ]);
 
     }

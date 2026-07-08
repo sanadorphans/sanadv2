@@ -6,7 +6,7 @@
 @endphp
 
 @section('page_name')
-    {{ $new->$title }}
+    {{ $article->$title }}
 @endsection
 
 @section('style')
@@ -15,20 +15,20 @@
 
 @section('content')
     @include('web.inc.map')
-    <section class="ShowNew new{{ $new->id }}">
-        <h1>{{ $new->$title }}</h1>
+    <section class="ShowNew new{{ $article->id }}">
+        <h1>{{ $article->$title }}</h1>
         <p>{{ $date }}</p>
-        <img src="/storage/{{ $new->image }}" alt="{{ $new->title }}">
-        <p>{!! $new->$details !!}</p>
+        <img src="/storage/{{ $article->image }}" alt="{{ $article->title }}">
+        <p>{!! $article->$details !!}</p>
     </section>
     <aside>
         <h1>{{ __('lang.read_too') }}</h1>
         <div class="news">
-            @forelse($other_news as $new)
-                <div class="new new{{$new->id}}">
-                    <a href="/pages/news/{{$new->id}}">
-                        <div class="image" style="--background: url(../storage/{{str_replace("\/" , "/",$new->image)}})"></div>
-                        <p>{{$new->$title}}</p>
+            @forelse($other_articles as $article)
+                <div class="new new{{$article->id}}">
+                    <a href="/pages/article/{{$article->id}}">
+                        <div class="image" style="--background: url(../storage/{{str_replace("\/" , "/",$article->image)}})"></div>
+                        <p>{{$article->$title}}</p>
                     </a>
                 </div>
             @empty

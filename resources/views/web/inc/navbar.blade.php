@@ -92,6 +92,9 @@
                             <a href="{{ route('web.stories.index') }}">
                                 <span>{{ __('lang.stories') }}</span>
                             </a>
+                            <a href="{{ route('web.article.index') }}" >
+                                <span>{{ __('lang.articles') }}</span>
+                            </a>
                             <a href="{{ route('web.pages.Aspirations') }}">
                                 <span>{{ __('lang.Our_Aspirations') }}</span>
                             </a>

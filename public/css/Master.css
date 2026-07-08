@@ -1140,3 +1140,86 @@ html[lang="ar"] .pagination nav div:nth-of-type(2) div:nth-of-type(2) span svg{
         height: 20px;
     }
 }
+
+/* Custom Simple & Professional Pagination Styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem auto;
+    padding: 0;
+    list-style: none;
+    gap: 8px;
+    width: 100%;
+}
+
+.pagination nav {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination ul.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 8px;
+}
+
+.pagination li,
+.pagination ul.pagination li {
+    display: inline-block;
+    margin: 0;
+}
+
+.pagination li a,
+.pagination li span,
+.pagination ul.pagination li a,
+.pagination ul.pagination li span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #4a5568;
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.pagination li a:hover,
+.pagination ul.pagination li a:hover {
+    color: #fff;
+    background-color: #35C0CA;
+    border-color: #35C0CA;
+}
+
+.pagination li.active span,
+.pagination ul.pagination li.active span,
+.pagination li.active a,
+.pagination ul.pagination li.active a {
+    color: #fff !important;
+    background-color: #35C0CA !important;
+    border-color: #35C0CA !important;
+    cursor: default;
+}
+
+.pagination li.disabled span,
+.pagination ul.pagination li.disabled span {
+    color: #a0aec0 !important;
+    background-color: #f7fafc !important;
+    border-color: #edf2f7 !important;
+    cursor: not-allowed;
+}
+

@@ -116,8 +116,8 @@ Route::group([
         Route::get('/PressRelease/{slug}',[PressReleaseController::class,'show'])->name('PressRelease.show');
         Route::get('/news',[NewsController::class,'index'])->name('news.index');
         Route::get('/news/{slug}',[NewsController::class,'show'])->name('news.show');
-        Route::get('/knowledges',[knowledgeController::class,'index'])->name('knowledge.index');
-        Route::get('/knowledges/{slug}',[knowledgeController::class,'show'])->name('knowledge.show');
+        Route::get('/articles',[knowledgeController::class,'index'])->name('article.index');
+        Route::get('/articles/{slug}',[knowledgeController::class,'show'])->name('article.show');
         Route::get('/who-we-are',[PageController::class,'who_we_are'])->name('pages.who_we_are');
         Route::get('/careers',[PageController::class,'index'])->name('pages.vacancies');
         Route::get('/careers/{slug}',[PageController::class,'show'])->name('pages.carrer');
