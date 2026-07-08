@@ -65,10 +65,12 @@
    margin: 1vw 0;
    text-align: center;
    color: #35C0CA;
+       width: 100%;
 }
 .ShowNew p{
     font-size:1.4vw;
     text-align: justify;
+    width: 100%;
 }
 .ShowNew img{
     width: 50%;

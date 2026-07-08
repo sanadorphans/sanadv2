@@ -749,7 +749,7 @@ form div input {
       <div class="icard-icon">🤝</div>
       <h3>{{ __('lang.partner_h3') }}</h3>
       <p>{{ __('lang.partner_p') }}</p>
-      <a href="#" class="ibtn">{{ __('lang.explore_partnership') }}</a>
+      <a href="https://forms.cloud.microsoft/Pages/DesignPageV2.aspx?subpage=design&token=64591834d4264b49975bfa5416abd43e&id=g11yLv_fmkufB2_5vZQDnbdQwRJeFZhGu2boj7erustUMlFVR1ZKMjk1Vk41SjVYWldRRkJQVEJHUi4u" class="ibtn">{{ __('lang.explore_partnership') }}</a>
     </div>
   </div>
 </section>

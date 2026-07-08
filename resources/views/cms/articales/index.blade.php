@@ -34,7 +34,7 @@
 
 @section('style')
     <link rel="stylesheet" href="{{asset('css/MediaCenter.css?v=1.5')}}"/>
-    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.8')}}">
+    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.9')}}">
 @endsection
 
 @section('content')
