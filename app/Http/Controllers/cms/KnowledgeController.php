@@ -4,7 +4,7 @@ namespace App\Http\Controllers\cms;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\knowledge;
+use App\Models\Knowledge;
 
 class KnowledgeController extends Controller
 {
@@ -12,7 +12,7 @@ class KnowledgeController extends Controller
     public function index(){
         $locale = app()->getLocale();
         $columnName = $locale ? 'title_' . $locale : false;
-        $articles = knowledge::orderBy('created_at','desc')
+        $articles = Knowledge::orderBy('created_at','desc')
             ->whereNotNull($columnName)
             ->paginate(12);
 
@@ -23,11 +23,11 @@ class KnowledgeController extends Controller
 
         $locale = app()->getLocale();
         $columnName = $locale ? 'title_' . $locale : false;
-        $article = knowledge::findOrFailBySlug(knowledge::class, $slug);
+        $article = Knowledge::findOrFailBySlug(Knowledge::class, $slug);
 
         return view('cms.knowledge.show')->with([
             'article' => $article,
-            'other_articles' => knowledge::inRandomOrder()->whereNotNull($columnName)->take(3)->get(),
+            'other_articles' => Knowledge::inRandomOrder()->whereNotNull($columnName)->take(3)->get(),
             'title' => $article->title,
             'date' => app()->getLocale() == 'ar' ? to_arabic_number(date('F Y', strtotime($article->created_at))) : $article->created_at->formatLocalized('%B %Y')
         ]);
