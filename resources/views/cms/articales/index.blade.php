@@ -30,7 +30,7 @@
     }
 @endphp
 
-@section('page_name') {{ __('lang.article') }} @endsection
+@section('page_name') {{ __('lang.articles') }} @endsection
 
 @section('style')
     <link rel="stylesheet" href="{{asset('css/MediaCenter.css?v=1.5')}}"/>
@@ -43,7 +43,7 @@
       <div class="si">
         <div class="news-hdr">
           <div>
-            <div class="stag"><span class="stag-line"></span><span>{{ __('lang.article') }}</span></div>
+            <div class="stag"><span class="stag-line"></span><span>{{ __('lang.articles') }}</span></div>
           </div>
         </div>
             <div class="news">
