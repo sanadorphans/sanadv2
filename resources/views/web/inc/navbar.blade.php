@@ -62,6 +62,9 @@
                                 </a>
                             @empty
                             @endforelse
+                            <a href="{{ route('web.pages.sub_services', 37) }}">
+                                <span>{{ __('lang.consultation2') }}</span>
+                            </a>                    
                     </div>
                 </li>
                 <li class="navItem">

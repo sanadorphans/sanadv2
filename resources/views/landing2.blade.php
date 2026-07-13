@@ -412,11 +412,7 @@ form div input {
         <span>{{ __('lang.hero_badge') }}</span>
       </div>
       <h1 class="hero-h1">
-        @if(app()->getLocale() == 'ar')
-          <span style="font-family:var(--font-ar); direction:rtl;">{!! __('lang.hero_title') !!}</span>
-        @else
           <span>{!! __('lang.hero_title') !!}</span>
-        @endif
       </h1>
       <p class="hero-sub" style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar); direction:rtl; text-align:right;' : '' }}">
         {{ __('lang.hero_subtitle') }}
@@ -749,7 +745,13 @@ form div input {
       <div class="icard-icon">🤝</div>
       <h3>{{ __('lang.partner_h3') }}</h3>
       <p>{{ __('lang.partner_p') }}</p>
-      <a href="https://forms.cloud.microsoft/Pages/DesignPageV2.aspx?subpage=design&token=64591834d4264b49975bfa5416abd43e&id=g11yLv_fmkufB2_5vZQDnbdQwRJeFZhGu2boj7erustUMlFVR1ZKMjk1Vk41SjVYWldRRkJQVEJHUi4u" class="ibtn">{{ __('lang.explore_partnership') }}</a>
+      <a href="https://forms.cloud.microsoft/r/jHynWah2Lx?origin=lprLink" class="ibtn">{{ __('lang.explore_partnership') }}</a>
+    </div>
+    <div class="icard">
+      <div class="icard-icon">📋</div>
+      <h3>{{ __('lang.apply_service_h3') }}</h3>
+      <p>{{ __('lang.apply_service_p') }}</p>
+      <a href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=g11yLv_fmkufB2_5vZQDnU5PaS2gYgRIrD8TJ0D6LvVURVBCUVBLVVlKU1NMRTNCQkgyNTVRWlhXWi4u&route=shorturl" class="ibtn">{{ __('lang.apply_service_btn') }}</a>
     </div>
   </div>
 </section>

@@ -105,17 +105,16 @@
     <section id="service">
         <div class="service">
         @if($sub_service->id == 37)
-                <button style="color:#fff;background:#35C0CA;width:15%;"> <a style="color:#fff;" href="https://forms.office.com/pages/responsepage.aspx?id=g11yLv_fmkufB2_5vZQDnYt-qNTHUTtCj-DLbk9A77NURElBTjhCT0JJRjA4VjVHTUhLSUFUNkpIWS4u&route=shorturl" target="_blank">{{ __('lang.Apply') }}</a></button>
+            <a style="color:#fff;background:#35C0CA;width:15%;padding:20px;text-align: center;" href="https://forms.office.com/pages/responsepage.aspx?id=g11yLv_fmkufB2_5vZQDnYt-qNTHUTtCj-DLbk9A77NURElBTjhCT0JJRjA4VjVHTUhLSUFUNkpIWS4u&route=shorturl" target="_blank">{{ __('lang.Apply') }}</a>
         @else
-                <button style="color:#fff;background:#35C0CA;width:15%;"> <a style="color:#fff;" href="https://forms.cloud.microsoft/r/JVGxFj8WXK" target="_blank">{{ __('lang.Apply') }}</a></button>
+             <a style="color:#fff;background:#35C0CA;width:15%;padding:20px;text-align: center;" href="https://forms.cloud.microsoft/r/JVGxFj8WXK" target="_blank">{{ __('lang.Apply') }}</a>
         @endif
         </div>
     </section>
-    <div class="slider">
+    <div class="slider" style="margin-bottom:50px;">
     <div class="glide AllImpacts">
         <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
-
             <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/original-8D046854-26FA-4919-872B-E55076023210.jpeg" alt="image" width="100" height="100"></li>
             <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/processed-C8A12AB2-750E-459C-8DE1-D5323AEB5839.jpeg" alt="image" width="100" height="100"></li>
             <li class="glide__slide"><img src="https://sanadorphans.org/storage/services-testimonials/processed-6D16A562-DCDA-424C-9D13-B4693705A5C5.jpeg" alt="image" width="100" height="100"></li>
@@ -131,6 +130,7 @@
         </div>
     </div>
 </div>
+
 @endsection
 
 
