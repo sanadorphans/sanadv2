@@ -999,8 +999,8 @@ The Sanad Society Team",
 
     // ── Get Involved section ──
     'get_involved_tag' => 'Get Involved',
-    'get_involved_h2' => 'There are many ways to be Sanad',
-    'get_involved_p' => 'Whether you give, volunteer, or partner — your role in this mission matters.',
+    'get_involved_h2' => 'There Are Many Ways to Support Sanad',
+    'get_involved_p' => 'Your role in this mission matters.',
     'donate_h3' => 'Donate',
     'donate_p' => 'Your Zakat, Sadaqah, or general donation funds programs that directly reach children and caregivers. Every pound creates measurable change.',
     'donate_btn' => 'Donate now →',

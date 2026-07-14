@@ -63,9 +63,9 @@ footer{background:#061828;padding:4.5rem 2rem 2.5rem;}
 .f-logo .logo-name{color:white;}
 .f-logo .logo-sub{color:rgba(255,255,255,0.35);}
 .freg{display:inline-flex;align-items:center;gap:6px;background:rgba(41,184,193,0.08);border:1px solid rgba(41,184,193,0.15);border-radius:7px;padding:6px 12px;font-size:11px;color:rgba(255,255,255,0.4);margin-top:1.25rem;}
-.fc h4{font-size:16px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.125rem;}
-.fc a{display:block;font-size:14px;color:rgba(255,255,255,0.52);text-decoration:none;margin-bottom:8px;transition:color 0.15s;}
-.fc a:hover{color:white;}
+.fc h4{font-size:18px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:#ffffff;margin-bottom:1.125rem;}
+.fc a{display:block;font-size:16px;color:#ffffff;text-decoration:none;margin-bottom:8px;transition:color 0.15s;}
+.fc a:hover{color:var(--teal);}
 .fb{max-width:1160px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.07);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
 .fb p{font-size:12px;color:rgba(255,255,255,0.25);}
 .socials{display:flex;gap:10px;}
@@ -636,7 +636,14 @@ form div input {
           <p>{{ __('lang.approach_p') }}</p>
           <div class="mv-mini-stats">
               @forelse ($impact_numbers as $number)
-                  <div class="mv-mini"><strong>{{ $number->number }}</strong><span>{{ $number->$title }}</span></div>
+                  @php
+                      $numStr = app()->getLocale() == 'ar' ? to_arabic_number(number_format((int)$number->number)) : number_format((int)$number->number);
+                      $isLong = mb_strlen($numStr) > 6;
+                  @endphp
+                  <div class="mv-mini">
+                      <strong class="{{ $isLong ? 'long-number' : '' }}">{{ $numStr }}</strong>
+                      <span>{{ $number->$title }}</span>
+                  </div>
               @empty
               @endforelse
           </div>
@@ -726,7 +733,7 @@ form div input {
   <div class="inv-header">
     <div class="stag" style="justify-content:center;color:var(--teal);"><span class="stag-line" style="background:var(--teal);"></span><span>{{ __('lang.get_involved_tag') }}</span></div>
     <h2 class="sh2" style="color:white;text-align:center;">{{ __('lang.get_involved_h2') }}</h2>
-    <p class="ssub" style="color:rgba(255,255,255,0.6);margin:0.5rem auto 0;text-align:center;">{{ __('lang.get_involved_p') }}</p>
+    <p class="ssub" style="color:#ffffff; margin:0.5rem auto 0; text-align:center; font-size: 1.2rem;">{{ __('lang.get_involved_p') }}</p>
   </div>
   <div class="inv-grid">
     <div class="icard">

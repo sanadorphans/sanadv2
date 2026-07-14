@@ -874,10 +874,10 @@ body.ar .nl-inner h3 {
 }
 
 .mv-card {
-    background: var(--navy);
+    background: var(--teal-light);
     border-radius: 20px;
     padding: 2.5rem;
-    color: white;
+    color: var(--text);
     position: relative;
     overflow: hidden;
 }
@@ -900,32 +900,32 @@ body.ar .nl-inner h3 {
 
 .mv-card h3 {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: 1.85rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: white;
+    color: var(--navy);
     position: relative;
 }
 
 .mv-card p {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.15rem;
+    color: var(--text);
     line-height: 1.8;
     position: relative;
 }
 
 .mv-mini-stats {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     margin-top: 2rem;
     flex-wrap: wrap;
 }
 
 .mv-mini {
-    background: rgba(41, 184, 193, 0.15);
-    border: 1px solid rgba(41, 184, 193, 0.25);
+    background: var(--white);
+    border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 1rem 1.25rem;
+    padding: 1rem 0.75rem;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -933,23 +933,29 @@ body.ar .nl-inner h3 {
     min-width: 80px;
     flex: 1;
     text-align: center;
+    box-shadow: 0 4px 12px rgba(10, 37, 51, 0.05);
 }
 
 .mv-mini strong {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: 1.85rem;
     font-weight: 900;
-    color: var(--teal);
+    color: var(--teal-dark);
     display: block;
     line-height: 1;
 }
 
+.mv-mini strong.long-number {
+    font-size: 1.35rem;
+}
+
 .mv-mini span {
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    color: var(--text);
     margin-top: 4px;
     display: block;
     line-height: 1.3;
+    font-weight: 600;
 }
 
 .mv-float {
@@ -978,10 +984,11 @@ body.ar .nl-inner h3 {
 }
 
 .mv-float span {
-    font-size: 11px;
+    font-size: 13px;
     opacity: 0.85;
     display: block;
     margin-top: 4px;
+    font-weight: 600;
 }
 
 
@@ -1284,15 +1291,15 @@ h2.sh2 {
 }
 
 .icard h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 0.625rem;
     color: white;
 }
 
 .icard p {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.62);
+    font-size: 1.1rem;
+    color: white;
     line-height: 1.8;
     margin-bottom: 1.625rem;
 }
@@ -1302,7 +1309,7 @@ h2.sh2 {
     align-items: center;
     gap: 6px;
     color: var(--teal);
-    font-size: 13.5px;
+    font-size: 15px;
     font-weight: 700;
     cursor: pointer;
     background: none;
