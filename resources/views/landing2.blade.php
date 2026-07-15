@@ -47,7 +47,7 @@
 @section('page_name') {{ __('lang.home') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.8')}}">
+    <link rel="stylesheet" href="{{asset('css/Home.css?v=3.0')}}">
     <link rel="stylesheet" href="{{asset('css/ImportantLink.css?v=1.5')}}"/>
     <link rel="stylesheet" href="{{asset('css/Impact.css?v=2.2')}}">
     <style>
@@ -62,7 +62,7 @@ footer{background:#061828;padding:4.5rem 2rem 2.5rem;}
 .f-logo{display:flex;align-items:center;gap:11px;}
 .f-logo .logo-name{color:white;}
 .f-logo .logo-sub{color:rgba(255,255,255,0.35);}
-.freg{display:inline-flex;align-items:center;gap:6px;background:rgba(41,184,193,0.08);border:1px solid rgba(41,184,193,0.15);border-radius:7px;padding:6px 12px;font-size:11px;color:rgba(255,255,255,0.4);margin-top:1.25rem;}
+.freg{display:inline-flex;align-items:center;gap:6px;background:rgba(41,184,193,0.08);border:1px solid rgba(41,184,193,0.15);border-radius:7px;padding:8px 16px;font-size:14px;color:#ffffff;margin-top:1.25rem;}
 .fc h4{font-size:18px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:#ffffff;margin-bottom:1.125rem;}
 .fc a{display:block;font-size:16px;color:#ffffff;text-decoration:none;margin-bottom:8px;transition:color 0.15s;}
 .fc a:hover{color:var(--teal);}
@@ -390,6 +390,90 @@ form div input {
                 right: -0.2em;
             }
         }
+
+        /* ══ HERO & DFORM OPTIMIZATIONS ══ */
+        @media (min-width: 801px) {
+            .hero-inner {
+                grid-template-columns: 1.15fr 0.7fr 1.25fr !important;
+                gap: 2rem !important;
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+            .hero-spacer {
+                display: block;
+            }
+        }
+        @media (max-width: 800px) {
+            .hero-spacer {
+                display: none;
+            }
+        }
+        .dform {
+            padding: 1.75rem 2rem !important;
+        }
+        .support-select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            font-size: 14px;
+            color: var(--text);
+            background: white;
+            outline: none;
+            font-family: inherit;
+            cursor: pointer;
+            appearance: auto !important;
+            -webkit-appearance: auto !important;
+            -moz-appearance: auto !important;
+        }
+        .support-select:focus {
+            border-color: var(--teal);
+        }
+        .amounts-wrap {
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 8px !important;
+        }
+        @media (max-width: 600px) {
+            .amounts-wrap {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        .form-fields-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 0.875rem;
+        }
+        .ff-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 16px;
+        }
+        .form-fields-grid .ff {
+            margin-bottom: 0;
+        }
+        .form-fields-grid .donate-submit {
+            margin-bottom: 0;
+            height: 48px;
+            padding: 0 16px;
+            width: 100%;
+        }
+        .pay-row {
+            display: flex !important;
+            align-items: center;
+            justify-content: space-between !important;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        @media (max-width: 600px) {
+            .ff-row {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .form-fields-grid .donate-submit {
+                height: 52px;
+            }
+        }
     </style>
 @endsection
 
@@ -397,7 +481,7 @@ form div input {
 
 <div class="hero" id="home">
   <div class="hero-video-bg">
-    <iframe src="https://www.youtube.com/embed/lNpo7sIex6s?si=oxXJ9-_wct4JbPTa&autoplay=1&mute=1&loop=1&playlist=lNpo7sIex6s&controls=0&playsinline=1&rel=0&enablejsapi=1&modestbranding=1&disablekb=1&fs=0&iv_load_policy=3" 
+    <iframe src="https://www.youtube.com/embed/lNpo7sIex6s?si=oxXJ9-_wct4JbPTa&autoplay=1&mute=1&loop=1&playlist=lNpo7sIex6s&controls=0&playsinline=1&rel=0&enablejsapi=1&modestbranding=1&disablekb=1&fs=0&iv_load_policy=3&cc_load_policy=0&hl=en" 
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen>
@@ -429,18 +513,21 @@ form div input {
       </button>
     </div>
 
+    <div class="hero-spacer"></div>
+
     <div class="hero-right">
       <div class="donate-grid">
         <div class="dform">
-          <span class="flabel" style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">
-            {{ __('lang.i_want_to_support') }}
-          </span>
-
-          <div class="dtype-wrap" style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">
-            <div class="dtyp active" data-value="{{ __('lang.d_txt9') }}" onclick="setD(this)">{{ __('lang.children_development') }}</div>
-            <div class="dtyp" data-value="{{ __('lang.d_txt6') }}" onclick="setD(this)">{{ __('lang.youth_empowerment') }}</div>
-            <div class="dtyp" data-value="{{ __('lang.d_txt7') }}" onclick="setD(this)">{{ __('lang.caregiver_training_btn') }}</div>
-            <div class="dtyp" data-value="{{ __('lang.d_txt8') }}" onclick="setD(this)">{{ __('lang.general_donation') }}</div>
+          <div class="ff" style="margin-bottom: 1.25rem;">
+            <label class="flabel" style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }} margin-bottom: 6px; display: block;">
+              {{ __('lang.i_want_to_support') }}
+            </label>
+            <select id="support_type_select" class="support-select" onchange="setDFromSelect(this.value)">
+              <option value="{{ __('lang.d_txt9') }}">{{ __('lang.children_development') }}</option>
+              <option value="{{ __('lang.d_txt6') }}">{{ __('lang.youth_empowerment') }}</option>
+              <option value="{{ __('lang.d_txt7') }}">{{ __('lang.caregiver_training_btn') }}</option>
+              <option value="{{ __('lang.d_txt8') }}">{{ __('lang.general_donation') }}</option>
+            </select>
           </div>
 
           <span class="flabel" style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">
@@ -463,16 +550,6 @@ form div input {
               <small style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">{{ __('lang.amt_caregiver') }}</small>
             </div>
 
-            <div class="abtn" onclick="setA(this,'2500')">
-              2,500 EGP
-              <small style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">{{ __('lang.amt_monthly_care') }}</small>
-            </div>
-
-            <div class="abtn" onclick="setA(this,'5000')">
-              5,000 EGP
-              <small style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">{{ __('lang.amt_full_program') }}</small>
-            </div>
-
             <div class="abtn" onclick="setA(this,'custom')">
               ✏️
               <small style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">{{ __('lang.amt_custom') }}</small>
@@ -487,17 +564,18 @@ form div input {
             @csrf
             <input type="hidden" name="type" id="donation_type" value="{{ __('lang.d_txt9') }}">
             <input type="hidden" name="amount" id="donation_amount" value="500">
-          <div class="frow">
-            <div class="ff">
-              <label style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">{{ __('lang.full_name') }}</label>
-              <input name="name" type="text" id="name"  placeholder="{{ __('lang.name_placeholder') }}" required>
+          
+          <div class="form-fields-grid">
+            <div class="ff-row">
+              <div class="ff">
+                <label style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">{{ __('lang.full_name') }}</label>
+                <input name="name" type="text" id="name" placeholder="{{ __('lang.name_placeholder') }}" required>
+              </div>
 
-            </div>
-
-            <div class="ff">
-              <label style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">{{ __('lang.country') }}</label>
-              <input name="country" type="country" id="country" placeholder="{{ __('lang.country_placeholder') }}" required>
-
+              <div class="ff">
+                <label style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">{{ __('lang.country') }}</label>
+                <input name="country" type="country" id="country" placeholder="{{ __('lang.country_placeholder') }}" required>
+              </div>
             </div>
 
             <div class="ff">
@@ -505,17 +583,21 @@ form div input {
               <input type="email" placeholder="{{ __('lang.email_placeholder') }}" name="email" id="email" required>
             </div>
 
-            <button type="submit" class="donate-submit" style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">
-              {{ __('lang.donate_now') }}
-            </button>
+            <div class="ff">
+              <button type="submit" class="donate-submit" style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">
+                {{ __('lang.donate_now') }}
+              </button>
+            </div>
+          </div>
 
-            <div class="pay-row">
-                <div class="sec-txt" style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">
+          <div class="pay-row">
+              <div class="sec-txt" style="{{ app()->getLocale() == 'ar' ? 'font-family:var(--font-ar);' : '' }}">
                 🔒 <span>{{ __('lang.secured') }}</span>
               </div>
-              <div class="pbadge">VISA</div>
-              <div class="pbadge">Mastercard</div>
-            </div>
+              <div style="display: flex; gap: 8px;">
+                <div class="pbadge">VISA</div>
+                <div class="pbadge">Mastercard</div>
+              </div>
           </div>
         </form>
         </div>
@@ -789,7 +871,7 @@ form div input {
                         style="--fa-animation-duration: 3s;"></i> info@sanadorphans.org </li>
                 <li style="color:white;"><i class="fa-solid fa-map-location-dot fa-bounce"
                         style="--fa-animation-duration: 3s;"></i><a href="https://www.google.co.uk/maps/place/%D8%AC%D9%85%D8%B9%D9%8A%D8%A9+%D9%88%D8%B7%D9%86%D9%8A%D8%A9+%D9%84%D8%AA%D9%86%D9%85%D9%8A%D8%A9+%D9%88%D8%AA%D8%B7%D9%88%D9%8A%D8%B1+%D8%AF%D9%88%D8%B1+%D8%A7%D9%84%D8%A3%D9%8A%D8%AA%D8%A7%D9%85%E2%80%AD/@30.086658,31.3289431,15z/data=!4m5!3m4!1s0x0:0x7728f47eab7d5044!8m2!3d30.086658!4d31.3289431?hl=ar&shorturl=1">{{ __('lang.address_wataneya') }}</a></li>
-            <div class="freg">✓ <span class="en-only">{{ __('lang.Advertisement_number') }}  </span></div>
+            <div class="freg">✓ {{ __('lang.Advertisement_number') }}</div>
             <!-- <li style="color:white;"> {{ __('lang.protection_police') }} <a  href="https://sanadorphans.org/storage/link/protectionism.pdf" target="_blank">{{ __('lang.d_txt23') }}</a> </li> -->
             </ul>
         </div>
@@ -933,6 +1015,13 @@ form div input {
             }
         };
 
+        window.setDFromSelect = function(val) {
+            var input = document.getElementById('donation_type');
+            if (input) {
+                input.value = val;
+            }
+        };
+
         // Redefine setA to update the hidden 'amount' input and handle custom amount toggle
         window.setA = function(el, v) {
             document.querySelectorAll('.abtn').forEach(b => b.classList.remove('active'));
@@ -1069,7 +1158,7 @@ form div input {
         window.addEventListener('load', resizeHeroVideo);
 
         // ── Video Modal ──
-        var VIDEO_URL = 'https://www.youtube.com/embed/lNpo7sIex6s?autoplay=1&mute=0&controls=1&rel=0&enablejsapi=1';
+        var VIDEO_URL = 'https://www.youtube.com/embed/lNpo7sIex6s?autoplay=1&mute=0&controls=1&rel=0&enablejsapi=1&cc_load_policy=0&hl=en';
 
         function openVideoModal() {
             var modal = document.getElementById('videoModal');
