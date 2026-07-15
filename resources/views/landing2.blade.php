@@ -504,10 +504,26 @@ form div input {
             gap: 12px !important;
         }
         .mv-mini {
-            min-height: 130px !important;
+            min-height: 180px !important;
             justify-content: center !important;
             gap: 8px !important;
-            padding: 1rem 0.5rem !important;
+            padding: 1.25rem 0.5rem !important;
+        }
+        .mv-mini-icon {
+            width: 58px !important;
+            height: 58px !important;
+            border-radius: 18px !important;
+            margin: 0 auto 0.5rem !important;
+            display: grid !important;
+            place-items: center !important;
+            background: linear-gradient(180deg, #e7f8f8, #f9feff) !important;
+            border: 1px solid rgba(10, 174, 181, 0.10) !important;
+            box-shadow: 0 10px 24px rgba(10, 174, 181, 0.08) !important;
+        }
+        .mv-mini-icon img {
+            width: 28px !important;
+            height: 28px !important;
+            object-fit: contain !important;
         }
         .mv-mini strong {
             font-size: 1.6rem !important;
@@ -519,6 +535,327 @@ form div input {
             font-size: 11.5px !important;
             color: var(--text) !important;
             margin-top: 0 !important;
+        }
+
+        /* ══ INVOLVE SECTION WHITE BACKGROUND & CARDS REDESIGN ══ */
+        .involve-section {
+            background: #ffffff !important;
+            padding: 5.5rem 2rem !important;
+        }
+        .involve-section .sh2 {
+            color: var(--navy) !important;
+            text-align: center !important;
+            font-family: var(--font-display) !important;
+            font-weight: 800 !important;
+            font-size: 2.5rem !important;
+        }
+        .involve-section .ssub {
+            color: var(--muted) !important;
+            margin: 0.5rem auto 0 !important;
+            text-align: center !important;
+            font-size: 1.15rem !important;
+            max-width: 760px !important;
+        }
+        .inv-grid {
+            max-width: 90% !important;
+            margin: 0 auto !important;
+            display: grid !important;
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 1.5rem !important;
+        }
+        .icard {
+            position: relative !important;
+            overflow: hidden !important;
+            border: none !important;
+            border-radius: 20px !important;
+            padding: 2.5rem 2rem !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: flex-start !important;
+            align-items: flex-start !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            box-shadow: 0 10px 30px rgba(8, 39, 70, 0.05) !important;
+        }
+        .icard:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 20px 40px rgba(8, 39, 70, 0.12) !important;
+        }
+        .icard::after {
+            content: '' !important;
+            position: absolute !important;
+            top: -45px !important;
+            right: -45px !important;
+            width: 150px !important;
+            height: 150px !important;
+            border-radius: 50% !important;
+            background: rgba(255, 255, 255, 0.08) !important;
+            pointer-events: none !important;
+            z-index: 1 !important;
+        }
+        [dir="rtl"] .icard::after {
+            right: auto !important;
+            left: -45px !important;
+        }
+        
+        /* Distinct gradient card backgrounds from prototype */
+        .icard-donate {
+            background: linear-gradient(135deg, #f78918, #ffaf3d) !important;
+        }
+        .icard-volunteer {
+            background: linear-gradient(135deg, #0d355f, #082746) !important;
+        }
+        .icard-partner {
+            background: linear-gradient(135deg, #082746, #113f70) !important;
+        }
+        .icard-service {
+            background: linear-gradient(135deg, #0aaeb5, #18c7c5) !important;
+        }
+        .icard-icon, .icard h3, .icard p, .ibtn {
+            position: relative !important;
+            z-index: 2 !important;
+        }
+
+        .icard-icon {
+            width: 58px !important;
+            height: 58px !important;
+            border-radius: 18px !important;
+            background: rgba(255, 255, 255, 0.15) !important;
+            border: 1px solid rgba(255, 255, 255, 0.25) !important;
+            display: grid !important;
+            place-items: center !important;
+            margin-bottom: 1.5rem !important;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05) !important;
+        }
+        .icard-icon svg {
+            width: 28px !important;
+            height: 28px !important;
+            stroke: #ffffff !important;
+        }
+        .icard h3 {
+            font-size: 1.45rem !important;
+            font-weight: 700 !important;
+            margin-bottom: 0.8rem !important;
+            color: #ffffff !important;
+            font-family: var(--font-display) !important;
+        }
+        .icard p {
+            font-size: 0.95rem !important;
+            color: rgba(255, 255, 255, 0.9) !important;
+            line-height: 1.6 !important;
+            margin-bottom: 2rem !important;
+        }
+        .ibtn {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 8px !important;
+            background: #ffffff !important;
+            color: var(--navy) !important;
+            border-radius: 999px !important;
+            padding: 0.8rem 1.5rem !important;
+            font-weight: 700 !important;
+            font-size: 14px !important;
+            text-decoration: none !important;
+            margin-top: auto !important;
+            border: none !important;
+            transition: all 0.2s ease !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+        }
+        .ibtn:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+            color: var(--navy) !important;
+        }
+        
+        @media (max-width: 1024px) {
+            .inv-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1.5rem !important;
+            }
+        }
+        @media (max-width: 600px) {
+            .inv-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        /* ══ LANDING2 COMPACT FOOTER DESIGN ══ */
+        #landing2-footer {
+            background: #0E2230 !important;
+            color: #ffffff !important;
+            padding: 0 !important;
+            border-top: 1px solid rgba(255,255,255,0.08) !important;
+        }
+        #landing2-footer .si {
+            width: 90% !important;
+            margin: 0 auto !important;
+        }
+        #landing2-footer .footer-grid {
+            display: grid !important;
+            grid-template-columns: 1.3fr 0.8fr 1fr 1fr 1.2fr !important;
+            gap: 2.5rem !important;
+            padding: 4rem 0 2.5rem !important;
+        }
+        #landing2-footer .footer-col {
+            display: flex !important;
+            flex-direction: column !important;
+        }
+        #landing2-footer .footer-col h4 {
+            color: #ffffff !important;
+            font-size: 15px !important;
+            font-weight: 700 !important;
+            margin-bottom: 1.2rem !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
+            border-bottom: none !important;
+            padding-bottom: 0 !important;
+            font-family: var(--font-display) !important;
+        }
+        #landing2-footer .footer-col a {
+            display: block !important;
+            color: rgba(255,255,255,0.7) !important;
+            font-size: 13.5px !important;
+            margin-bottom: 0.65rem !important;
+            text-decoration: none !important;
+            transition: color 0.2s ease !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+        #landing2-footer .footer-col a:hover {
+            color: var(--teal) !important;
+        }
+        #landing2-footer .brand {
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+            margin-bottom: 1rem !important;
+            text-decoration: none !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+        #landing2-footer .brand div {
+            display: flex !important;
+            flex-direction: column !important;
+        }
+        #landing2-footer .brand strong {
+            font-size: 16px !important;
+            color: #ffffff !important;
+            display: block !important;
+            line-height: 1.2 !important;
+        }
+        #landing2-footer .brand span {
+            font-size: 9px !important;
+            color: rgba(255,255,255,0.5) !important;
+            text-transform: uppercase !important;
+            display: block !important;
+            margin-top: 2px !important;
+        }
+        #landing2-footer .socials {
+            display: flex !important;
+            gap: 10px !important;
+            margin-top: 1rem !important;
+        }
+        #landing2-footer .socials a {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 36px !important;
+            height: 36px !important;
+            border-radius: 50% !important;
+            background: rgba(255,255,255,0.08) !important;
+            transition: background 0.2s ease !important;
+            margin: 0 !important;
+        }
+        #landing2-footer .socials a:hover {
+            background: var(--teal) !important;
+        }
+        #landing2-footer .socials a img {
+            width: 18px !important;
+            height: 18px !important;
+            object-fit: contain !important;
+            filter: brightness(0) invert(1) !important;
+        }
+        #landing2-footer .newsletter {
+            display: flex !important;
+            margin-top: 0.5rem !important;
+            border-radius: 999px !important;
+            overflow: hidden !important;
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            width: 100% !important;
+            background: rgba(255, 255, 255, 0.05) !important;
+            padding: 4px !important;
+            align-items: center !important;
+        }
+        #landing2-footer .newsletter input {
+            flex: 1 !important;
+            background: transparent !important;
+            border: none !important;
+            padding: 8px 16px !important;
+            color: #ffffff !important;
+            font-size: 13.5px !important;
+            outline: none !important;
+        }
+        #landing2-footer .newsletter button.btn-subscribe {
+            background: #1ec1ca !important;
+            color: #ffffff !important;
+            border: none !important;
+            border-radius: 999px !important;
+            padding: 8px 20px !important;
+            font-weight: 700 !important;
+            font-size: 13.5px !important;
+            cursor: pointer !important;
+            transition: all 0.2s ease !important;
+            height: auto !important;
+        }
+        #landing2-footer .newsletter button.btn-subscribe:hover {
+            background: #179ea5 !important;
+        }
+        #landing2-footer .btn-donate-now {
+            display: block !important;
+            text-align: center !important;
+            background: #1ec1ca !important;
+            color: #ffffff !important;
+            padding: 10px 20px !important;
+            border-radius: 999px !important;
+            text-decoration: none !important;
+            font-size: 13.5px !important;
+            font-weight: 700 !important;
+            transition: all 0.2s ease !important;
+            border: none !important;
+        }
+        #landing2-footer .btn-donate-now:hover {
+            background: #179ea5 !important;
+            transform: translateY(-1px) !important;
+            color: #ffffff !important;
+        }
+        #landing2-footer .copyright {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            padding: 1.5rem 0 !important;
+            border-top: 1px solid rgba(255,255,255,0.08) !important;
+            font-size: 12px !important;
+            color: rgba(255,255,255,0.5) !important;
+        }
+
+        /* Responsive Footer */
+        @media (max-width: 1024px) {
+            #landing2-footer .footer-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 2rem !important;
+            }
+        }
+        @media (max-width: 768px) {
+            #landing2-footer .footer-grid {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+                padding: 3rem 0 2rem !important;
+            }
+            #landing2-footer .copyright {
+                flex-direction: column !important;
+                gap: 10px !important;
+                text-align: center !important;
+            }
         }
     </style>
 @endsection
@@ -769,6 +1106,11 @@ form div input {
                       $isLong = mb_strlen($numStr) > 6;
                   @endphp
                   <div class="mv-mini">
+                      @if($number->image)
+                          <div class="mv-mini-icon">
+                              <img src="{{ asset('storage/' . str_replace('\\', '/', $number->image)) }}" alt="icon">
+                          </div>
+                      @endif
                       <strong class="{{ $isLong ? 'long-number' : '' }}">{{ $numStr }}</strong>
                       <span>{{ $number->$title }}</span>
                   </div>
@@ -860,166 +1202,128 @@ form div input {
 <section class="involve-section">
   <div class="inv-header">
     <div class="stag" style="justify-content:center;color:var(--teal);"><span class="stag-line" style="background:var(--teal);"></span><span>{{ __('lang.get_involved_tag') }}</span></div>
-    <h2 class="sh2" style="color:white;text-align:center;">{{ __('lang.get_involved_h2') }}</h2>
-    <p class="ssub" style="color:#ffffff; margin:0.5rem auto 0; text-align:center; font-size: 1.2rem;">{{ __('lang.get_involved_p') }}</p>
+    <h2 class="sh2">{{ __('lang.get_involved_h2') }}</h2>
+    <p class="ssub">{{ __('lang.get_involved_p') }}</p>
   </div>
   <div class="inv-grid">
-    <div class="icard">
-      <div class="icard-icon">❤️</div>
-      <h3>{{ __('lang.donate_h3') }}</h3>
-      <p>{{ __('lang.donate_p') }}</p>
-      <a href="{{ route('web.donations.index') }}" class="ibtn">{{ __('lang.donate_btn') }}</a>
-    </div>
-    <div class="icard">
-      <div class="icard-icon">🙋</div>
-      <h3>{{ __('lang.volunteer_h3') }}</h3>
-      <p>{{ __('lang.volunteer_p') }}</p>
-      <a href="https://forms.office.com/r/ky00KxTAu0" class="ibtn">{{ __('lang.apply_volunteer') }}</a>
-    </div>
-    <div class="icard">
-      <div class="icard-icon">🤝</div>
+    <div class="icard icard-partner">
+      <div class="icard-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 13l-2 2a2.8 2.8 0 01-4-4l3-3a2.8 2.8 0 014 0l1 1m2 2l2-2a2.8 2.8 0 114 4l-3 3a2.8 2.8 0 01-4 0l-1-1M8 16l8-8"/></svg>
+      </div>
       <h3>{{ __('lang.partner_h3') }}</h3>
       <p>{{ __('lang.partner_p') }}</p>
       <a href="https://forms.cloud.microsoft/r/jHynWah2Lx?origin=lprLink" class="ibtn">{{ __('lang.explore_partnership') }}</a>
     </div>
-    <div class="icard">
-      <div class="icard-icon">📋</div>
+    <div class="icard icard-service">
+      <div class="icard-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a8 8 0 01-8 8H7l-4 2 1.2-4.2A8 8 0 1112 4h1a8 8 0 018 8z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg>
+      </div>
       <h3>{{ __('lang.apply_service_h3') }}</h3>
       <p>{{ __('lang.apply_service_p') }}</p>
       <a href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=g11yLv_fmkufB2_5vZQDnU5PaS2gYgRIrD8TJ0D6LvVURVBCUVBLVVlKU1NMRTNCQkgyNTVRWlhXWi4u&route=shorturl" class="ibtn">{{ __('lang.apply_service_btn') }}</a>
     </div>
+    <div class="icard icard-donate">
+      <div class="icard-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.35-9-8.5C1 8.5 4 5 7.5 5 9.6 5 11 6.2 12 8c1-1.8 2.4-3 4.5-3C20 5 23 8.5 21 12.5 19 16.65 12 21 12 21z"/></svg>
+      </div>
+      <h3>{{ __('lang.donate_h3') }}</h3>
+      <p>{{ __('lang.donate_p') }}</p>
+      <a href="{{ route('web.donations.index') }}" class="ibtn">{{ __('lang.donate_btn') }}</a>
+    </div>
+    <div class="icard icard-volunteer">
+      <div class="icard-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c.5-4 2.5-6 6-6s5.5 2 6 6M10 20c.5-4 2.5-6 6-6s5.5 2 6 6"/></svg>
+      </div>
+      <h3>{{ __('lang.volunteer_h3') }}</h3>
+      <p>{{ __('lang.volunteer_p') }}</p>
+      <a href="https://forms.office.com/r/ky00KxTAu0" class="ibtn">{{ __('lang.apply_volunteer') }}</a>
+    </div>
   </div>
 </section>
 
-<footer id="footer">
-     <div class="brand">
-        <img src="{{asset('img/footer/sanad-slogn-off.svg')}}" alt="sanad-slogn-off" width="40%">
-        <h2>{{ __('lang.join_social') }}</h2>
-        <div class="contactUs">
-            <ul>
-                @forelse ($socials as $social)
-                    <li class="social-icons">
-                        <a href="{{$social->social_link}}" target="_blank" title="{{$social->social_key}}">
-                            <img src="/storage/{{$social->social_icon}}" alt="{{$social->social_key}}" width="20" height="auto">
-                        </a>
-                    </li>
-                @empty
-
-                @endforelse
-            </ul>
-            <h2>{{__('lang.contactInfo')}}</h2>
-            <ul class="support">
-                <li style="color:white;"><i class="fa-solid fa-phone fa-shake"
-                        style="--fa-animation-duration: 3s;"></i> {{ __('lang.home_phone_wataneya') }} </li>
-                <li style="color:white;"><i class="fa-solid fa-mobile fa-shake"
-                        style="--fa-animation-duration: 3s;"></i> {{ __('lang.phone_number_wataneya') }} </li>
-                <li style="color:white;"><i class="fa-solid fa-envelope fa-bounce"
-                        style="--fa-animation-duration: 3s;"></i> info@sanadorphans.org </li>
-                <li style="color:white;"><i class="fa-solid fa-map-location-dot fa-bounce"
-                        style="--fa-animation-duration: 3s;"></i><a href="https://www.google.co.uk/maps/place/%D8%AC%D9%85%D8%B9%D9%8A%D8%A9+%D9%88%D8%B7%D9%86%D9%8A%D8%A9+%D9%84%D8%AA%D9%86%D9%85%D9%8A%D8%A9+%D9%88%D8%AA%D8%B7%D9%88%D9%8A%D8%B1+%D8%AF%D9%88%D8%B1+%D8%A7%D9%84%D8%A3%D9%8A%D8%AA%D8%A7%D9%85%E2%80%AD/@30.086658,31.3289431,15z/data=!4m5!3m4!1s0x0:0x7728f47eab7d5044!8m2!3d30.086658!4d31.3289431?hl=ar&shorturl=1">{{ __('lang.address_wataneya') }}</a></li>
-            <div class="freg">✓ {{ __('lang.Advertisement_number') }}</div>
-            <!-- <li style="color:white;"> {{ __('lang.protection_police') }} <a  href="https://sanadorphans.org/storage/link/protectionism.pdf" target="_blank">{{ __('lang.d_txt23') }}</a> </li> -->
-            </ul>
+<footer id="landing2-footer">
+  <div class="si">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a class="brand" href="#home">
+          <img src="{{asset('img/footer/sanad-slogn-off.svg')}}" alt="Sanad" style="width: 74px; height: 48px; object-fit: contain;">
+          <div>
+            <strong>SANAD</strong>
+            <span>{{ app()->getLocale() == 'ar' ? 'للأيتام' : 'FOR ALTERNATIVE PARENTAL CARE' }}</span>
+          </div>
+        </a>
+        <p style="font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6; margin: 1rem 0;">
+          {{ app()->getLocale() == 'ar' ? 'مؤسسة سند للرعاية البديلة هي مركز خبرة يسعى لتطوير رعاية بديلة عالية الجودة للأطفال والشباب...' : 'Sanad is a centre of expertise advancing quality alternative parental care through evidence, capacity building and systems change.' }}
+        </p>
+        <div class="socials">
+          @forelse ($socials as $social)
+              <a href="{{$social->social_link}}" target="_blank" title="{{$social->social_key}}">
+                  <img src="{{ asset('storage/' . str_replace('\\', '/', $social->social_icon)) }}" alt="{{$social->social_key}}">
+              </a>
+          @empty
+          @endforelse
         </div>
-     </div>
+      </div>
 
+      <div class="footer-col">
+        <h4>{{ __('lang.Who We Are') }}</h4>
+        <a href="{{ route('web.pages.who_we_are') }}">{{ __('lang.about') }}</a>
+        <a href="{{ route('web.board.index') }}">{{ __('lang.board_members') }}</a>
+        <a href="{{ route('web.team_members.index') }}">{{ __('lang.staff') }}</a>
+        <a href="{{ route('web.pages.partners') }}">{{ __('lang.Partners_Network') }}</a>
+        <a href="{{ route('web.pages.certificates') }}">{{ __('lang.awards') }}</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>{{ __('lang.our_services') }}</h4>
+        @forelse (\App\Models\Service::get() as $service)
+            <a href="{{ route('web.pages.services', $service->id) }}">{{ $service->$title }}</a>
+        @empty
+        @endforelse
+      </div>
+
+      <div class="footer-col">
+        <h4>{{ __('lang.contactInfo') }}</h4>
+        <p style="margin-bottom: 0.8rem; color: rgba(255,255,255,0.7); font-size: 13.5px; line-height: 1.5;">
+          <i class="fa-solid fa-map-location-dot fa-bounce" style="margin-right: 6px; color: #ffffff !important; --fa-animation-duration: 3s;"></i> 
+          {{ __('lang.address_wataneya') }}
+        </p>
+        <p style="margin-bottom: 0.8rem; color: rgba(255,255,255,0.7); font-size: 13.5px; line-height: 1.5;">
+          <i class="fa-solid fa-phone fa-shake" style="margin-right: 6px; color: #ffffff !important; --fa-animation-duration: 3s;"></i> 
+          {{ __('lang.home_phone_wataneya') }}
+        </p>
+        <p style="margin-bottom: 0.8rem; color: rgba(255,255,255,0.7); font-size: 13.5px; line-height: 1.5;">
+          <i class="fa-solid fa-mobile fa-shake" style="margin-right: 6px; color: #ffffff !important; --fa-animation-duration: 3s;"></i> 
+          {{ __('lang.phone_number_wataneya') }}
+        </p>
+        <p style="margin-bottom: 0.8rem; color: rgba(255,255,255,0.7); font-size: 13.5px; line-height: 1.5;">
+          <i class="fa-solid fa-envelope fa-bounce" style="margin-right: 6px; color: #ffffff !important; --fa-animation-duration: 3s;"></i> 
+          info@sanadorphans.org
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>{{ __('lang.subscribe_for_newsletters') }}</h4>
+        <p style="font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 1rem; line-height: 1.5;">
+          {{ app()->getLocale() == 'ar' ? 'اشترك في النشرة الإخبارية ليصلك آخر المستجدات.' : 'Subscribe for the latest insights and updates.' }}
+        </p>
+        <div class="newsletter">
+          <input type="email" placeholder="{{ __('lang.email_placeholder') }}" required>
+          <button type="button" class="btn-subscribe">{{ __('lang.subscribe_btn') }}</button>
+        </div>
+        <div style="margin-top: 1rem;">
+          <a href="{{ route('web.donations.index') }}" class="btn-donate-now" style="display: block !important; text-align: center !important; background: var(--teal) !important; color: #fff !important; padding: 8px 16px !important; border-radius: 8px !important; text-decoration: none !important; font-size: 13px !important; font-weight: 700 !important;">{{ __('lang.donate_now') }}</a>
+        </div>
+      </div>
     </div>
 
-    <div class="section-map">
-        <div class="footer-columns">
-            <div class="fc">
-                <div>
-                    <h4>{{ __('lang.our_services') }}</h4>
-                        @forelse (\App\Models\Service::get() as $service)
-                            <a href="{{ route('web.pages.services', $service->id) }}" >
-                                <span>{{ $service->$title }}</span>
-                            </a>
-                        @empty
-                        @endforelse
-                </div>
-                 <div>
-                    <h4>{{ __('lang.Who We Are') }}</h4>
-                    <a href="{{ route('web.pages.who_we_are') }}">
-                        <span>{{ __('lang.about') }}</span>
-                    </a>
-                    <a href="{{ route('web.board.index') }}">
-                        <span>{{ __('lang.board_members') }}</span>
-                    </a>
-                    <a href="{{ route('web.team_members.index') }}">
-                        <span>{{ __('lang.staff') }}</span>
-                    </a>
-                    <a href="{{ route('web.pages.partners') }}">
-                        <span>{{ __('lang.Partners_Network') }}</span>
-                    </a>
-                    <a href="{{ route('web.pages.certificates') }}">
-                        <span>{{ __('lang.awards') }}</span>
-                    </a>
-                </div>
-            </div>
-            <div class="fc">
-                <div>
-                    <h4>{{ __('lang.media_center') }}</h4>
-                    <a href="#">
-                        <span>{{ __('lang.Photos_and_videos') }}</span>
-                    </a>
-                    <a href="{{ route('web.news.index') }}">
-                        <span>{{ __('lang.news') }}</span>
-                    </a>
-                    <a href="{{ route('web.PressRelease.index') }}">
-                        <span>{{ __('lang.Press_Releases') }}</span>
-                    </a>
-                    {{-- <a href="{{ route('web.pages.campaigns') }}">
-                        <span>{{ __('lang.campaigns') }}</span>
-                    </a> --}}
-                    {{-- <a href="{{ route('web.pages.events') }}">
-                        <span>{{ __('lang.events') }}</span>
-                    </a> --}}
-                    {{-- <a href="{{ route('web.pages.media_bags') }}">
-                        <span>{{ __('lang.media_kit') }}</span>
-                    </a> --}}
-                    <a href="{{ route('web.pages.technical_reports') }}">
-                        <span>{{ __('lang.technical_reports') }}</span>
-                    </a>
-                    <a href="{{ route('web.pages.periodical_newsletters') }}">
-                        <span>{{ __('lang.periodical_newsletters') }}</span>
-                    </a>
-                </div>
-                 <div>
-                    <h4>{{ __('lang.our_programs') }}</h4>
-                        @forelse (\App\Models\Program::get() as $program)
-                            <a href="{{ route('web.pages.programs', $program->id) }}" >
-                                <span>{{ $program->$title }}</span>
-                            </a>
-                        @empty
-                        @endforelse
-                </div>
-                  <div>
-                    <h4>{{ __('lang.Knowledge creation') }}</h4>
-                            <a href="{{ route('web.article.index') }}" >
-                                <span>{{ __('lang.articles') }}</span>
-                            </a>
-                        <a href="{{ route('web.pages.technical_reports') }}">
-                                    <span>{{ __('lang.technical_reports') }}</span>
-                                </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-subscribe">
-            <h4>{{ __('lang.subscribe_for_newsletters') }}</h4>
-            <div class="footer-subscribe-form">
-                <input type="email" placeholder="{{ __('lang.email_placeholder') }}" required>
-                <button type="button" class="btn-subscribe">{{ __('lang.subscribe_btn') }}</button>
-                <a href="{{ route('web.donations.index') }}" class="btn-donate-now">{{ __('lang.donate_now') }}</a>
-            </div>
-        </div>
+    <div class="copyright">
+      <span>
+        {{ app()->getLocale() == 'ar' ? '© 2026 مؤسسة سند للرعاية الوالدية البديلة. جميع الحقوق محفوظة.' : '© 2026 Sanad for Alternative Parental Care. All rights reserved.' }}
+      </span>
+      <span>✓ {{ __('lang.Advertisement_number') }}</span>
     </div>
-    <!-- <div class="fb">
-        <p class="en-only">© 2026 Sanad for Alternative Parental Care. All rights reserved.</p>
-        <p class="ar-only" style="font-family:var(--font-ar)">© 2026 مؤسسة سند للرعاية الوالدية البديلة. جميع الحقوق محفوظة.</p>
-        <p class="en-only">Privacy Policy · Terms of Use · Donation Return Policy</p>
-        <p class="ar-only" style="font-family:var(--font-ar)">سياسة الخصوصية · شروط الاستخدام · سياسة استرداد التبرعات</p>
-    </div> -->
+  </div>
 </footer>
 
 
