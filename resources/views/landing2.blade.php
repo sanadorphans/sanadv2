@@ -474,6 +474,52 @@ form div input {
                 height: 52px;
             }
         }
+
+        /* ══ HERO TEXT READABILITY ══ */
+        .hero-badge {
+            font-size: 14px !important;
+            color: #ffffff !important;
+        }
+        .badge-dot {
+            background: #ffffff !important;
+        }
+        .hero-sub {
+            font-size: 1.25rem !important;
+            color: #ffffff !important;
+            font-weight: 400 !important;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+        }
+        
+        /* ══ IMPACT CARDS CONTRAST & ALIGNMENT ══ */
+        .mv-card {
+            background: #0E2230 !important; /* dark navy background for contrast */
+            color: #ffffff !important;
+        }
+        .mv-card h3, .mv-card p {
+            color: #ffffff !important;
+        }
+        .mv-mini-stats {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)) !important;
+            gap: 12px !important;
+        }
+        .mv-mini {
+            min-height: 130px !important;
+            justify-content: center !important;
+            gap: 8px !important;
+            padding: 1rem 0.5rem !important;
+        }
+        .mv-mini strong {
+            font-size: 1.6rem !important;
+        }
+        .mv-mini strong.long-number {
+            font-size: 1.2rem !important;
+        }
+        .mv-mini span {
+            font-size: 11.5px !important;
+            color: var(--text) !important;
+            margin-top: 0 !important;
+        }
     </style>
 @endsection
 
