@@ -47,9 +47,9 @@
 @section('page_name') {{ __('lang.home') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Home.css?v=3.0')}}">
-    <link rel="stylesheet" href="{{asset('css/ImportantLink.css?v=1.5')}}"/>
-    <link rel="stylesheet" href="{{asset('css/Impact.css?v=2.2')}}">
+    <link rel="stylesheet" href="{{asset('css/Home.css?v=3.1')}}">
+    <link rel="stylesheet" href="{{asset('css/ImportantLink.css?v=1.6')}}"/>
+    <link rel="stylesheet" href="{{asset('css/Impact.css?v=2.3')}}">
     <style>
         section {
             padding: 5.5rem 2rem;
@@ -516,9 +516,9 @@ form div input {
             margin: 0 auto 0.5rem !important;
             display: grid !important;
             place-items: center !important;
-            background: linear-gradient(180deg, #e7f8f8, #f9feff) !important;
-            border: 1px solid rgba(10, 174, 181, 0.10) !important;
-            box-shadow: 0 10px 24px rgba(10, 174, 181, 0.08) !important;
+            background: #F37246 !important;
+            border: 1px solid rgba(243, 114, 70, 0.3) !important;
+            box-shadow: 0 8px 20px rgba(243, 114, 70, 0.25) !important;
         }
         .mv-mini-icon img {
             width: 28px !important;
