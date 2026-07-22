@@ -7,7 +7,7 @@
 @section('page_name') {{ __('lang.important links') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/ImportantLink.css?v=1.2')}}"/>
+    <link rel="stylesheet" href="{{asset('css/ImportantLink.css?v=1.3')}}"/>
 @endsection
 
 @section('content')
@@ -21,7 +21,7 @@
         <div class="Links">
             @forelse ($ImportantLinks as $ImportantLink)
                 <div class="Link Link{{$ImportantLink->id}}">
-                    <a href="{{$ImportantLink->link}}">
+                    <a href="{{$ImportantLink->link}}" target="_blank">
                         <div class="image" style="--background: url(../storage/{{str_replace("\/" , "/",$ImportantLink->image)}})"></div>
                         <p>{{$ImportantLink->$title}}</p>
                     </a>

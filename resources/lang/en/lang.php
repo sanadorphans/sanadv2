@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'knowledge_hub' => 'Knowledge Hub',
     'trusted-by' => 'Trusted by',
     'consultation2' => 'Our Consultation',
     'protection_police' => 'To view the Protection policy: ',
@@ -74,7 +75,7 @@ return [
     'our_programs' => 'Our Programs',
     'our_awards' => 'Our Awards',
     'Accreditation and Awards' => 'Accreditation and Awards',
-    'important links' => 'Important Links',
+    'Media Gate' => 'Media Gate',
     'aboutnum1' => '140 M​',
     'aboutnum2' => '35 M​',
     'aboutnum3' => ' 1.4 M​',

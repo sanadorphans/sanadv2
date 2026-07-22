@@ -599,10 +599,10 @@ form div input {
         
         /* Distinct gradient card backgrounds from prototype */
         .icard-donate {
-            background: linear-gradient(135deg, #f78918, #ffaf3d) !important;
+            background: linear-gradient(135deg, #F37246, #F37246) !important;
         }
         .icard-volunteer {
-            background: linear-gradient(135deg, #0d355f, #082746) !important;
+            background: linear-gradient(135deg, #f78918, #f78918) !important;
         }
         .icard-partner {
             background: linear-gradient(135deg, #082746, #113f70) !important;
@@ -813,7 +813,7 @@ form div input {
         #landing2-footer .btn-donate-now {
             display: block !important;
             text-align: center !important;
-            background: #1ec1ca !important;
+            background: #F37246 !important;
             color: #ffffff !important;
             padding: 10px 20px !important;
             border-radius: 999px !important;
@@ -1179,7 +1179,7 @@ form div input {
               <img src="https://sanadorphans.org/storage/link/Justice%20balance%20scales%20symbol%20for%20law%20and%20fairness.png" alt="icon" width="100px">
             @endif
         </div>
-        <div class="prog-num">{{ $program->id }}</div>
+        <!-- <div class="prog-num">{{ $program->id }}</div> -->
         <h3>{{ $program->$title }}</h3>
         <p>{{ __('lang.program_p') }}</p>
         <div class="prog-tags">
@@ -1304,7 +1304,7 @@ form div input {
 
       <div class="footer-col">
         <h4>{{ __('lang.subscribe_for_newsletters') }}</h4>
-        <p style="font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 1rem; line-height: 1.5;">
+        <p style="font-size: 13px; color: rgba(255,255,,0.7)255; margin-bottom: 1rem; line-height: 1.5;">
           {{ app()->getLocale() == 'ar' ? 'اشترك في النشرة الإخبارية ليصلك آخر المستجدات.' : 'Subscribe for the latest insights and updates.' }}
         </p>
         <div class="newsletter">
@@ -1312,7 +1312,7 @@ form div input {
           <button type="button" class="btn-subscribe">{{ __('lang.subscribe_btn') }}</button>
         </div>
         <div style="margin-top: 1rem;">
-          <a href="{{ route('web.donations.index') }}" class="btn-donate-now" style="display: block !important; text-align: center !important; background: var(--teal) !important; color: #fff !important; padding: 8px 16px !important; border-radius: 8px !important; text-decoration: none !important; font-size: 13px !important; font-weight: 700 !important;">{{ __('lang.donate_now') }}</a>
+          <a href="{{ route('web.donations.index') }}" class="btn-donate-now" style="display: block !important; text-align: center !important; background: #F37246 !important; color: #fff !important; padding: 8px 16px !important; border-radius: 8px !important; text-decoration: none !important; font-size: 13px !important; font-weight: 700 !important;">{{ __('lang.donate_now') }}</a>
         </div>
       </div>
     </div>

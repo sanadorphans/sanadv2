@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'knowledge_hub' => 'مركز المعرفة',
     'trusted-by' => 'يثق بنا',
     'consultation2' => 'استشارة',
     'protection_police' => 'للأطلاع علي سياسة الحماية: ',
@@ -75,7 +76,7 @@ return [
     'our_programs' => 'برامجنا',
     'our_awards' => 'جوائزنا',
     'Accreditation and Awards' => 'الاعتمادات والجوائز',
-    'important links' => 'روابط هامة',
+    'Media Gate' => 'Media Gate',
     'aboutnum1' => '140​',
     'aboutnum2' => '35​',
     'aboutnum3' => '1.4​',

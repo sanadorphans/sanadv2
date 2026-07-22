@@ -95,9 +95,6 @@
                             <a href="{{ route('web.stories.index') }}">
                                 <span>{{ __('lang.stories') }}</span>
                             </a>
-                            <a href="{{ route('web.article.index') }}" >
-                                <span>{{ __('lang.articles') }}</span>
-                            </a>
                             <a href="{{ route('web.pages.Aspirations') }}">
                                 <span>{{ __('lang.Our_Aspirations') }}</span>
                             </a>
@@ -143,9 +140,6 @@
                             <a href="{{ route('web.PressRelease.index') }}">
                                 <span>{{ __('lang.Press_Releases') }}</span>
                             </a>
-                            <!-- <a href="#">
-                                <span>{{ __('lang.Photos_and_videos') }}</span>
-                            </a> -->
                             {{-- <a href="{{ route('web.pages.campaigns') }}">
                                 <span>{{ __('lang.campaigns') }}</span>
                             </a> --}}
@@ -169,6 +163,21 @@
                         <span>{{ __('lang.join_wataneya') }}</span>
                     </a>
                 </li>
+                <!-- <li class="navItem">
+                    <a class="navLink" href="#">
+                        <span >{{ __('lang.knowledge_hub') }}</span>
+                        <span class="bg-blue"></span>
+                        <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
+                    </a>
+                    <div class="dropdownMenu">
+                            <a href="{{ route('web.pages.ImportantLinks.index') }}">
+                                <span>{{ __('lang.Media Gate') }}</span>
+                            </a>
+                            <a href="{{ route('web.article.index') }}" >
+                                <span>{{ __('lang.articles') }}</span>
+                            </a>
+                    </div>
+                </li> -->
                 {{-- <li class="navItem" onclick="toggleActiveClass(this)">
                     <a class="navLink" href="#" >
                         <span>{{ __('lang.our_partners') }}</span>
@@ -186,9 +195,8 @@
                 </li> --}}
             </ul>
             <div class="buttons">
-                    <a href="{{ route('web.donations.index') }}">{{ __('lang.donate_now') }}</a>
-                    <a style="background:rgb(243, 114, 70);" href="https://sanadorphans.org/en/pages/sub-services/37">{{ __('lang.consultation2') }}</a>
-
+                    <a style="background:rgb(243, 114, 70);" href="{{ route('web.donations.index') }}">{{ __('lang.donate_now') }}</a>
+                    <a style="background:#35C0CA;" href="https://sanadorphans.org/en/pages/sub-services/37">{{ __('lang.consultation2') }}</a>
                 {{-- @if (!Auth::user())
                     <a href="{{ route('login') }}">{{ __('lang.get_our_services') }}</a>
                 @else
