@@ -15,7 +15,7 @@
     <section id="Links">
         <div class="title general">
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-            <h1 class="GeneralTitle">{{ __('lang.important links') }}</h1>
+            <h1 class="GeneralTitle">{{ __('lang.Media Gate') }}</h1>
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
         </div>
         <div class="Links">

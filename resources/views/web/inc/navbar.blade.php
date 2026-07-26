@@ -163,7 +163,7 @@
                         <span>{{ __('lang.join_wataneya') }}</span>
                     </a>
                 </li>
-                <!-- <li class="navItem">
+                <li class="navItem">
                     <a class="navLink" href="#">
                         <span >{{ __('lang.knowledge_hub') }}</span>
                         <span class="bg-blue"></span>
@@ -177,7 +177,7 @@
                                 <span>{{ __('lang.articles') }}</span>
                             </a>
                     </div>
-                </li> -->
+                </li>
                 {{-- <li class="navItem" onclick="toggleActiveClass(this)">
                     <a class="navLink" href="#" >
                         <span>{{ __('lang.our_partners') }}</span>
@@ -196,7 +196,7 @@
             </ul>
             <div class="buttons">
                     <a style="background:rgb(243, 114, 70);" href="{{ route('web.donations.index') }}">{{ __('lang.donate_now') }}</a>
-                    <a style="background:#35C0CA;" href="https://sanadorphans.org/en/pages/sub-services/37">{{ __('lang.consultation2') }}</a>
+                    <!-- <a style="background:#35C0CA;" href="https://sanadorphans.org/en/pages/sub-services/37">{{ __('lang.consultation2') }}</a> -->
                 {{-- @if (!Auth::user())
                     <a href="{{ route('login') }}">{{ __('lang.get_our_services') }}</a>
                 @else
