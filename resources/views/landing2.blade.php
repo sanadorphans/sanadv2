@@ -51,6 +51,12 @@
     <link rel="stylesheet" href="{{asset('css/ImportantLink.css?v=1.6')}}"/>
     <link rel="stylesheet" href="{{asset('css/Impact.css?v=2.3')}}">
     <style>
+      .knowledge_hub{
+    display: block !important;
+}
+      .knowledge_hub2{
+    display: none !important;
+}
         section {
             padding: 5.5rem 2rem;
         }

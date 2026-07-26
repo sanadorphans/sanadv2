@@ -163,7 +163,8 @@
                         <span>{{ __('lang.join_wataneya') }}</span>
                     </a>
                 </li>
-                <li class="navItem">
+
+                <li class="navItem knowledge_hub">
                     <a class="navLink" href="#">
                         <span >{{ __('lang.knowledge_hub') }}</span>
                         <span class="bg-blue"></span>
@@ -196,7 +197,7 @@
             </ul>
             <div class="buttons">
                     <a style="background:rgb(243, 114, 70);" href="{{ route('web.donations.index') }}">{{ __('lang.donate_now') }}</a>
-                    <!-- <a style="background:#35C0CA;" href="https://sanadorphans.org/en/pages/sub-services/37">{{ __('lang.consultation2') }}</a> -->
+                    <a style="background:#35C0CA;" class="knowledge_hub2" href="https://sanadorphans.org/en/pages/sub-services/37">{{ __('lang.consultation2') }}</a>
                 {{-- @if (!Auth::user())
                     <a href="{{ route('login') }}">{{ __('lang.get_our_services') }}</a>
                 @else
